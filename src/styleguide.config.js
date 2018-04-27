@@ -20,15 +20,15 @@ export const styleguideBase = fs.existsSync(path.join(process.cwd(), 'styleguide
 
 export const srcBase = fs.existsSync(path.join(process.cwd(), 'src')) ?
   path.join(process.cwd(), 'src') :
-  path.join(__dirname, '../src');
+  path.join(__dirname, '../lib');
 
 export const layoutRendererBase = fs.existsSync(path.join(process.cwd(), 'components/LayoutRenderer.js')) ?
   path.join(process.cwd(), 'components/LayoutRenderer.js') :
-  path.join(__dirname, '../src/components/LayoutRenderer.js');
+  path.join(__dirname, '../lib/components/LayoutRenderer.js');
 
 export const wrapperBase = fs.existsSync(path.join(process.cwd(), 'components/Wrapper.js')) ?
   path.join(process.cwd(), 'components/Wrapper.js') :
-  path.join(__dirname, '../src/components/Wrapper.js');
+  path.join(__dirname, '../lib/components/Wrapper.js');
 
 /* eslint-disable no-nested-ternary */
 export const jsonExtension = fs.existsSync(path.join(process.cwd(), 'styleguide/styleguide.ext.json')) ?
@@ -88,8 +88,6 @@ export const config = {
           include: [
             path.resolve(srcBase),
             path.resolve(styleguideBase),
-            path.resolve(path.join(__dirname, '../src')), // this may be duplicate with styleguideBase, but this prevent failure if we latter add more file in here
-            path.resolve(__dirname), // this may be duplicate with styleguideBase, but this prevent failure if we latter add more file in here
           ],
           loader: 'babel-loader',
         },
