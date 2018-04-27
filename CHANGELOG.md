@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [?NEXT?] - ????-??-??
 
 - Using $PACKAGE_NAME.
+- Fix wrong path for `writing your own` components.
 
 ## [v0.0.3] - 2018-04-27
 
