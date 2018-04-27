@@ -1,6 +1,6 @@
 # rollup-documentation
 
-rollup-documentation npm package.
+rollup-documentation contains the default [react-styleguide](https://react-styleguidist.js.org/) configuration of Yeutech Company Limited.
 
 **Master**
 

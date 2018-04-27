@@ -5,7 +5,6 @@ import webpack from 'webpack';
 import { generateCSSReferences, generateJSReferences } from 'mini-html-webpack-plugin';
 import merge from 'webpack-merge';
 
-console.log(generateCSSReferences, generateJSReferences);
 /** we decide either to use the package.json from react or the one from the current working dir
  * this will make the configured both, within project and when imported
  */
