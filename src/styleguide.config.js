@@ -23,11 +23,11 @@ export const srcBase = fs.existsSync(path.join(process.cwd(), 'src')) ?
   path.join(__dirname, '../lib');
 
 export const layoutRendererBase = fs.existsSync(path.join(process.cwd(), 'components/LayoutRenderer.js')) ?
-  path.join(process.cwd(), 'components/LayoutRenderer.js') :
+  path.join(process.cwd(), 'styleguide/components/LayoutRenderer.js') :
   path.join(__dirname, '../lib/components/LayoutRenderer.js');
 
-export const wrapperBase = fs.existsSync(path.join(process.cwd(), 'components/Wrapper.js')) ?
-  path.join(process.cwd(), 'components/Wrapper.js') :
+export const wrapperBase = fs.existsSync(path.join(process.cwd(), 'styleguide/components/Wrapper.js')) ?
+  path.join(process.cwd(), 'styleguide/components/Wrapper.js') :
   path.join(__dirname, '../lib/components/Wrapper.js');
 
 /* eslint-disable no-nested-ternary */

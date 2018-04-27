@@ -6,7 +6,7 @@
 
 ## Use your own
 
-You can use your own `<Wrapper />` within every projects that use rollup-documentation.
+You can use your own `<Wrapper />` within every projects that use $PACKAGE_NAME.
 
 If you create one in your project under `styleguide/components/Wrapper.js`, it will be automatically picked instead of ours by our configuration.
 
