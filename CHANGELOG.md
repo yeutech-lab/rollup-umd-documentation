@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [?NEXT?] - ????-??-??
 
 - Using lib within docs by default.
+- Removing all babel deps to devDeps.
 
 ## [v0.0.2] - 2018-04-27
 
