@@ -1,6 +1,6 @@
 ## Use your own
 
-You can use your own `<LayoutRenderer />` within every projects that use $PACKAGE_NAME.
+You can use your own `<LayoutRenderer />` within every projects that use rollup-documentation.
 
 If you create one in your project under `styleguide/components/LayoutRenderer.js`, it will be automatically picked instead of ours by our configuration.
 
