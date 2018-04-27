@@ -9,8 +9,9 @@
 
 [![image](https://user-images.githubusercontent.com/1866564/38087911-2f85c6e2-3384-11e8-9383-676504307e3f.png)]($CI_PROJECT_URL)
 
-$PACKAGE_NAME package is TODO.
+$PACKAGE_NAME contains the default [react-styleguide](https://react-styleguidist.js.org/) configuration of Yeutech Company Limited.
 
-```html
-<strong>Contribute to improve our documentation, it support HTML, React and Markdown!</strong>
-```
+It also exports UI components for the general documentation `<Layout />`, a `<Wrapper />` for wrapping every JS examples, and a base64 logo for all documentation.
+
+This package is aimed to maintain and keep up to date all documentation across all rollup-umd projects.
+

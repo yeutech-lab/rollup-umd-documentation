@@ -1,0 +1,53 @@
+{
+  "ignore": [
+    "**/__tests__/**",
+    "**/*.test.{js,jsx,ts,tsx}",
+    "**/*.spec.{js,jsx,ts,tsx}",
+    "**/*.d.ts"
+  ],
+  "sections": [
+    {
+      "name": "Introduction",
+      "content": "docs/introduction.md"
+    },
+    {
+      "name": "Installation",
+      "content": "docs/installation.md"
+    },
+    {
+      "name": "Upgrading",
+      "content": "docs/upgrading.md"
+    },
+    {
+      "name": "Configuration",
+      "content": "docs/configuration.md"
+    },
+    {
+      "name": "UI components",
+      "content": "docs/ui.md",
+      "components": "src/components/**/*.js"
+    },
+    {
+      "name": "FAQ",
+      "content": "docs/faq.md"
+    },
+    {
+      "name": "Contribute",
+      "content": "docs/contribute.md",
+      "sections": [
+        {
+          "name": "Commands",
+          "content": "docs/commands.md"
+        },
+        {
+          "name": "Branches",
+          "content": "docs/branches.md"
+        },
+        {
+          "name": "Release",
+          "content": "docs/release.md"
+        }
+      ]
+    }
+  ]
+}

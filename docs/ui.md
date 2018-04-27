@@ -1,8 +1,16 @@
-WIP
+$PACKAGE_NAME provide two major react component for [react-styleguide](https://react-styleguidist.js.org/).
 
-```js
-<strong>
-  Start writing components in <code>components/**/*.js</code> to get auto generated documentation for $PACKAGE_NAME UI components, 
-  read how to at <a href="https://dev-tools.yeutech.com/rollup-umd/#ui-components" target="_blank">this link</a>
-</strong>
-```
+Within projects, they are automatically used.
+
+## `<LayoutRenderer />` 
+
+It is the react-styleguide layout.
+
+## `<Wrapper />`
+
+It is the react-styleguide javascript wrapper used for each test.
+
+It is automatically used when marking the highlight code in markdown as `js`: 
+
+If you wish not to compute the javascript but just display the highlight, just mark your highlight code as `js static`:
+
