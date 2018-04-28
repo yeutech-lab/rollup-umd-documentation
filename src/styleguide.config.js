@@ -22,7 +22,7 @@ export const srcBase = fs.existsSync(path.join(process.cwd(), 'src')) ?
   path.join(process.cwd(), 'src') :
   path.join(__dirname, '../lib');
 
-export const layoutRendererBase = fs.existsSync(path.join(process.cwd(), 'components/LayoutRenderer.js')) ?
+export const layoutRendererBase = fs.existsSync(path.join(process.cwd(), 'styleguide/components/LayoutRenderer.js')) ?
   path.join(process.cwd(), 'styleguide/components/LayoutRenderer.js') :
   path.join(__dirname, '../lib/components/LayoutRenderer.js');
 
