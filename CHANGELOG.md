@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [?NEXT?] - ????-??-??
 
+- Added `bottomLogo`.
+
+## [v0.0.4] - 2018-04-27
+
 - Using $PACKAGE_NAME.
 - Fix wrong path for `writing your own` components.
 

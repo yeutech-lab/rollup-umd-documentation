@@ -71,12 +71,13 @@ const styles = ({
  * @param children: generally the whole documentation
  * @param toc
  * @param hasSidebar: define if the sidebar should be visible
- * @param logo: If you need to change the logo, just wrap that component and pass a new logo
+ * @param logo: pass a new logo
+ * @param bottomLogo: pass a new bottom logo
  * @returns {XML}
  * @constructor
  */
 function LayoutRenderer({
-   classes, className, title, children, toc, hasSidebar, logo
+   classes, className, title, children, toc, hasSidebar, logo, bottomLogo
  }) {
   return (
     <BootstrapProvider theme={theme}>
@@ -92,7 +93,7 @@ function LayoutRenderer({
               title="Yeutech Company Limited"
             >
               <img
-                src={`data:image/png;base64,${logo}`}
+                src={`data:image/png;base64,${bottomLogo}`}
                 height="55px"
                 alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
                 title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
@@ -121,24 +122,27 @@ function LayoutRenderer({
 
 LayoutRenderer.defaultProps = {
   logo: defaultLogo,
+  bottomLogo: defaultLogo,
   className: null,
 };
 
 LayoutRenderer.propTypes = {
   /** @ignore */
   classes: PropTypes.object.isRequired,
-  /** if you want pass extra class */
+  /** @ignore */
   className: PropTypes.string,
-  /** the page title */
-  title: PropTypes.string.isRequired,
   /** @ignore */
   children: PropTypes.node.isRequired,
-  /** @ignore */ // TODO: see what is toc
+  /** The documentation title */
+  title: PropTypes.string.isRequired,
+  /** TBD */
   toc: PropTypes.node.isRequired,
   /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
   /** define the logo used by the layout */
   logo: PropTypes.string,
+  /** define the bottom logo used by the layout */
+  bottomLogo: PropTypes.string,
 };
 
 export default Styled(styles)(LayoutRenderer);
