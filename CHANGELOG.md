@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [?NEXT?] - ????-??-??
 
+- Upgrade dependency [bootstrap-styled](https://www.npmjs.com/package/bootstrap-styled) from ^1.6.4 to ^1.6.5.
+
+## [v0.0.6] - 2018-04-28
+
 - Fix `LayoutRenderer` use your own.
 
 ## [v0.0.5] - 2018-04-28
