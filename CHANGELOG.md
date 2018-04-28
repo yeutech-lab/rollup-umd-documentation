@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [?NEXT?] - ????-??-??
 
+- Fix `LayoutRenderer` use your own.
+
+## [v0.0.5] - 2018-04-28
+
 - Added `bottomLogo`.
 
 ## [v0.0.4] - 2018-04-27
