@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [?NEXT?] - ????-??-??
+## [v0.0.7] - 2018-04-28
 
 - Upgrade dependency [bootstrap-styled](https://www.npmjs.com/package/bootstrap-styled) from ^1.6.4 to ^1.6.5.
 
