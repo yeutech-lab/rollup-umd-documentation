@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [?NEXT?] - ????-??-??
+## [v0.0.6] - 2018-04-28
 
 - Fix `LayoutRenderer` use your own.
 
