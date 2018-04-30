@@ -9,7 +9,7 @@ All you need to care is:
 This is how you generally use it: 
 
 ```js static
-const { config } = require('rollup-documentation/lib/styleguide.config.js');
+const { config } = require('rollup-documentation/lib/styleguide.config');
 module.exports = config;
 ```
 
@@ -37,7 +37,7 @@ It is also possible to override any options within this configuration.
 For example, if you want to override the default you can do as follow:
 
 ```js static
-const { config } = require('rollup-documentation/lib/styleguide.config.js');
+const { config } = require('$PACKAGE_NAME/lib/styleguide.config');
 module.exports = {
   ...config,
   // start overriding our default configuration here
@@ -49,30 +49,33 @@ module.exports = {
 If you want to modify the webpack configuration within the styleguide:
 
 ```js static
-const { webpackMerge, config } = require('rollup-umd-scripts/lib/styleguide.config');
+const { webpackMerge, config } = require('$PACKAGE_NAME/lib/styleguide.config');
+
+const myWebpackConfig = {}; // do your things...
 
 module.exports = {
-  config,
+  ...config,
   // start overriding our default configuration here
   skipComponentsWithoutExample: false,
   showCode: false,
   // modify our default webpack configuration here
-  webpackConfig: webpackMerge(webpackConfig),
+  webpackConfig: webpackMerge(myWebpackConfig),
 }
 ```
 
 If you want to completely override the webpackConfiguration :
 
 ```js static
-const { webpackMerge, config } = require('rollup-umd-scripts/lib/styleguide.config');
+const { config } = require('$PACKAGE_NAME/lib/styleguide.config');
+const myWebpackConfig = {}; // do your things...
 
 module.exports = {
-  config,
+  ...config,
   // start overriding our default configuration here
   skipComponentsWithoutExample: false,
   showCode: false,
   // override completely our webpack configuration here
-  webpackConfig,
+  webpackConfig: myWebpackConfig,
 }
 ``` 
 

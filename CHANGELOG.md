@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [?NEXT?] - ????-??-??
 
-- TODO: write changelog before preparing next tag
+- Corrected wrong import in documentation.
 
 ## [v0.0.7] - 2018-04-28
 
