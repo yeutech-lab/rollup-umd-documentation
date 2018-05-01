@@ -101,7 +101,7 @@ export const config = {
   getComponentPathLine(componentPath) {
     const name = path.basename(componentPath, '.js');
     const dir = name === 'index' ? path.dirname(componentPath) : `${path.dirname(componentPath)}/${name}`;
-    return `import ${name} from '${dir.replace(/^src\//, 'lib/')}';`;
+    return `import ${name} from '${pkg.name}/${dir.replace(/^src\//, 'lib/')}';`;
   },
   ...jsonExtension,
 };
