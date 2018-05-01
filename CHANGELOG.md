@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [?NEXT?] - ????-??-??
 
-- TODO: write changelog before preparing next tag
+- Improve FAQ.
 
 ## [v0.0.8] - 2018-04-30
 
