@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [?NEXT?] - ????-??-??
 
 - Improve FAQ.
+- Fix documentation import line.
 
 ## [v0.0.8] - 2018-04-30
 
