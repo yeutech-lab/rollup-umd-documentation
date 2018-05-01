@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [?NEXT?] - ????-??-??
 
-- TODO: write changelog before preparing next tag
+- Upgrade ci image to `image: kopaxgroup/node10-jdk8-flyway4-sonarscanner2-docker17-debian`.
 
 ## [v0.0.9] - 2018-05-01
 
