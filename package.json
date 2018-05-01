@@ -1,6 +1,6 @@
 {
   "name": "rollup-documentation",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "rollup-documentation",
   "main": "lib/index.js",
   "jsnext:main": "dist/rollup-documentation.es.js",
