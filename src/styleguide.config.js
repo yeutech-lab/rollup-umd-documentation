@@ -99,8 +99,9 @@ export const config = {
     Wrapper: wrapperBase,
   },
   getComponentPathLine(componentPath) {
-    const name = path.basename(componentPath, '.js');
+    let name = path.basename(componentPath, '.js');
     const dir = name === 'index' ? path.dirname(componentPath) : `${path.dirname(componentPath)}/${name}`;
+    name = name === 'index' ? path.basename(dir) : name;
     return `import ${name} from '${pkg.name}/${dir.replace(/^src\//, 'lib/')}';`;
   },
   ...jsonExtension,
