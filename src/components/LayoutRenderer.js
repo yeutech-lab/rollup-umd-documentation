@@ -65,19 +65,11 @@ const styles = ({
 /**
  * This is the main layout for the whole documentation.
  * It doesn't provide react-router but you could add it here.
- * @param classes: className used by styleguide
- * @param className: className to be passed
- * @param title: title to be used for the view
- * @param children: generally the whole documentation
- * @param toc
- * @param hasSidebar: define if the sidebar should be visible
- * @param logo: pass a new logo
- * @param bottomLogo: pass a new bottom logo
  * @returns {XML}
  * @constructor
  */
 function LayoutRenderer({
-   classes, className, title, children, toc, hasSidebar, logo, bottomLogo
+   theme, classes, className, title, children, toc, hasSidebar, logo, bottomLogo, bottomLogoText, logoHref, bottomLogoHref
  }) {
   return (
     <BootstrapProvider theme={theme}>
@@ -85,9 +77,9 @@ function LayoutRenderer({
         <main className={classes.content}>
           {children}
           <footer className={classes.footer}>
-            <span>Module provided by</span>
+            <span>{bottomLogoText}</span>
             <a
-              href="https://www.yeutech.vn"
+              href={bottomLogoHref}
               target="_blank"
               alt="Yeutech Company Limited"
               title="Yeutech Company Limited"
@@ -104,12 +96,29 @@ function LayoutRenderer({
         {hasSidebar && (
           <div className={classes.sidebar}>
             <div className={classes.logo}>
-              <img
-                src={`data:image/png;base64,${logo}`}
-                height="70px"
-                alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
-                title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
-              />
+              {logoHref ? (
+                <a
+                  href={logoHref}
+                  target="_blank"
+                  alt="Yeutech Company Limited"
+                  title="Yeutech Company Limited"
+                >
+                  <img
+                    src={`data:image/png;base64,${logo}`}
+                    height="70px"
+                    alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
+                    title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
+                  />
+                </a>
+              ) : (
+                <img
+                  src={`data:image/png;base64,${logo}`}
+                  height="70px"
+                  alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
+                  title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
+                />
+              )}
+
               <Logo>{title}</Logo>
             </div>
             {toc}
@@ -122,8 +131,12 @@ function LayoutRenderer({
 
 LayoutRenderer.defaultProps = {
   logo: defaultLogo,
+  logoHref: null,
   bottomLogo: defaultLogo,
+  bottomLogoHref: 'https://www.yeutech.vn',
+  bottomLogoText: 'Module provided by',
   className: null,
+  theme,
 };
 
 LayoutRenderer.propTypes = {
@@ -137,12 +150,20 @@ LayoutRenderer.propTypes = {
   title: PropTypes.string.isRequired,
   /** TBD */
   toc: PropTypes.node.isRequired,
+  /** theme to be used by BootstrapProvider */
+  theme : PropTypes.object,
   /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
   /** define the logo used by the layout */
   logo: PropTypes.string,
+  /** logo link */
+  logoHref: PropTypes.string,
   /** define the bottom logo used by the layout */
   bottomLogo: PropTypes.string,
+  /** bottom logo link */
+  bottomLogoHref: PropTypes.string,
+  /** text prefix of bottom logo */
+  bottomLogoText: PropTypes.string,
 };
 
 export default Styled(styles)(LayoutRenderer);
