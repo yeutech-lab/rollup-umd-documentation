@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [?NEXT?] - ????-??-??
+## [v0.0.12] - 2018-05-07
 
 - Added `theme` props to `LayoutRenderer`.
 - Added some more props in `LayoutRenderer`.
