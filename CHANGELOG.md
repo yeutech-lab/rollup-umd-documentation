@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [?NEXT?] - ????-??-??
+
+- TODO: write changelog before preparing next tag
+
 ## [v0.0.11] - 2018-05-07
 
 - Fix component path when name is `index`.
