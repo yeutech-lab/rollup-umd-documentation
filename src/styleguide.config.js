@@ -172,6 +172,7 @@ export const config = {
   styleguideComponents: {
     StyleGuideRenderer: layoutRendererBase,
     Wrapper: wrapperBase,
+    LogoRenderer: path.join(__dirname, '../lib/rsg-components/Logo/LogoRenderer.js'),
   },
   getComponentPathLine(componentPath) {
     let name = path.basename(componentPath, '.js');

@@ -192,15 +192,15 @@
     "lint-staged"
   ],
   "dependencies": {
-    "react": "^16.3.2",
-    "prop-types": "^15.6.1",
-    "styled-components": "^3.2.6",
-    "react-transition-group": "^2.2.1",
     "bootstrap-styled": "^1.6.5",
     "classnames": "^2.2.5",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-styleguidist": "^7.0.12",
+    "react-transition-group": "^2.2.1",
     "rsg-components": "^3.0.0",
+    "styled-components": "^3.2.6",
     "webpack": "^4.6.0",
-    "react-styleguidist": "^7.0.8",
     "webpack-merge": "^4.1.2"
   },
   "peerDependencies": {}

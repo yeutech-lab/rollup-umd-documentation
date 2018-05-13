@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [?NEXT?] - ????-??-??
 
+- Update react-styleguidist@7.0.8 to @7.0.12.
 - Added loader.
 
 ## [v0.0.12] - 2018-05-07
