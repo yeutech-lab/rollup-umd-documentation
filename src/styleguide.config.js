@@ -37,6 +37,7 @@ export const jsonExtension = fs.existsSync(path.join(process.cwd(), 'styleguide/
     require(path.join(__dirname, '../styleguide/styleguide.ext.json')) : {};
 
 export const config = {
+  serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060,
   styleguideDir: 'public',
   components: 'src/components/**/*.js',
   previewDelay: 500,
@@ -173,6 +174,9 @@ export const config = {
     StyleGuideRenderer: layoutRendererBase,
     Wrapper: wrapperBase,
     LogoRenderer: path.join(__dirname, '../lib/rsg-components/Logo/LogoRenderer.js'),
+    LinkRenderer: path.join(__dirname, '../lib/rsg-components/Link/LinkRenderer.js'),
+    TypeRenderer: path.join(__dirname, '../lib/rsg-components/Type/TypeRenderer.js'),
+    CodeRenderer: path.join(__dirname, '../lib/rsg-components/Code/CodeRenderer.js'),
   },
   getComponentPathLine(componentPath) {
     let name = path.basename(componentPath, '.js');
