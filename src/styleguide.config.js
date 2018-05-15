@@ -37,7 +37,7 @@ export const jsonExtension = fs.existsSync(path.join(process.cwd(), 'styleguide/
     require(path.join(__dirname, '../styleguide/styleguide.ext.json')) : {};
 
 export const config = {
-  serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT, 10) : 6060,
+  serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060, // eslint-disable-line radix
   ribbon: {
     url: 'javascript:void(0)', // eslint-disable-line no-script-url
   },

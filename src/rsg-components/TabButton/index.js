@@ -1,1 +1,1 @@
-export { default } from '../TabButton/TabButtonRenderer';
+export { default } from './TabButtonRenderer';

@@ -1,1 +1,1 @@
-export { default } from '../Methods/MethodsRenderer';
+export { default } from './MethodsRenderer';

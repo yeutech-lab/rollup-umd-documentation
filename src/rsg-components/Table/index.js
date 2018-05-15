@@ -1,1 +1,1 @@
-export { default } from '../Table/TableRenderer';
+export { default } from './TableRenderer';

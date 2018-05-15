@@ -1,1 +1,1 @@
-export { default } from '../Welcome/WelcomeRenderer';
+export { default } from './WelcomeRenderer';

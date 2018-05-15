@@ -1,1 +1,1 @@
-export { default } from '../Pathline/PathlineRenderer';
+export { default } from './PathlineRenderer';

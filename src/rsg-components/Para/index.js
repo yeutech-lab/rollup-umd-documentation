@@ -1,1 +1,1 @@
-export { default } from '../Para/ParaRenderer';
+export { default } from './ParaRenderer';

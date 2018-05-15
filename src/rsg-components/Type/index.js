@@ -1,1 +1,1 @@
-export { default } from '../Type/TypeRenderer';
+export { default } from './TypeRenderer';

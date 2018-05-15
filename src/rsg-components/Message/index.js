@@ -1,1 +1,1 @@
-export { default } from '../Message/MessageRenderer';
+export { default } from './MessageRenderer';

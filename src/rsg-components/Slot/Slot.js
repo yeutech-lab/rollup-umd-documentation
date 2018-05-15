@@ -1,15 +1,9 @@
 // Inspired by https://github.com/camwest/react-slot-fill
-/* eslint-disable no-shadow */
-import React from 'react'; // eslint-disable-line no-unused-vars
+/* eslint-disable */
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Slot({
-  name,
-  active,
-  onlyActive,
-  className,
-  props = {},
-}, { slots }) {
+export default function Slot({ name, active, onlyActive, className, props = {} }, { slots }) {
   const fills = slots[name];
   if (!fills) {
     throw new Error(`Slot "${name}" not found, available slots: ${Object.keys(slots).join(', ')}`);
@@ -25,7 +19,7 @@ export default function Slot({
       }
 
       const { onClick } = props;
-      let props = {
+      props = {
         ...props,
         name: id,
         // Set active prop to active fill
@@ -35,7 +29,7 @@ export default function Slot({
         onClick: onClick && ((...attrs) => onClick(id, ...attrs)),
       };
 
-      const Fill = render; // eslint-disable-line no-unused-vars
+      Fill = render;
     }
 
     return <Fill key={index} {...props} />;
@@ -59,4 +53,4 @@ Slot.propTypes = {
 Slot.contextTypes = {
   slots: PropTypes.object.isRequired,
 };
-/* eslint-enable no-shadow */
+/* eslint-enable */

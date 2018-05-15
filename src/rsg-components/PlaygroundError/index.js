@@ -1,1 +1,1 @@
-export { default } from '../PlaygroundError/PlaygroundErrorRenderer';
+export { default } from './PlaygroundErrorRenderer';

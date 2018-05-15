@@ -203,7 +203,6 @@
     "javascript-stringify": "^1.6.0",
     "markdown-to-jsx": "^6.6.3",
     "mini-html-webpack-plugin": "^0.2.3",
-    "navigation-bar": "git+ssh://git@module.kopaxgroup.com:20024/bootstrap-styled/navigation-bar.git#1.0.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-codemirror2": "^5.0.1",
