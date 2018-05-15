@@ -1,32 +1,28 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+/* eslint-disable */
+import React from 'react';
 import PropTypes from 'prop-types';
-import Ul from 'bootstrap-styled/lib/Ul'; // eslint-disable-line no-unused-vars
-import Li from 'bootstrap-styled/lib/Li'; // eslint-disable-line no-unused-vars
-import Link from '../Link'; // eslint-disable-line no-unused-vars
+import Link from '../Link';
 
-export function ComponentsListRenderer({ itemsNode }) {
-  const items = itemsNode.filter((item) => item.name);
+export function ComponentsListRenderer({ items }) {
+  items = items.filter(item => item.name);
 
   if (!items.length) {
     return null;
   }
 
   return (
-    <Ul>
-      {items.map(({
-        heading, // eslint-disable-line no-unused-vars
-        name,
-        href,
-        content,
-      }) => (
-        <Li key={href}>
+    <ul>
+      {items.map(({ heading, name, href, content }) => (
+        <li
+          key={href}
+        >
           <Link href={href}>
             {name}
           </Link>
           {content}
-        </Li>
+        </li>
       ))}
-    </Ul>
+    </ul>
   );
 }
 
@@ -36,3 +32,4 @@ ComponentsListRenderer.propTypes = {
 };
 
 export default ComponentsListRenderer;
+/* eslint-disable */

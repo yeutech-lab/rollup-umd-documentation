@@ -1,1 +1,1 @@
-export { default } from '../ToolbarButton/ToolbarButtonRenderer';
+export { default } from './ToolbarButtonRenderer';

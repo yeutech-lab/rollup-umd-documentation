@@ -1,22 +1,23 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+/* eslint-disable */
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import splitExampleCode from 'react-styleguidist/lib/utils/splitExampleCode';
 import { transform } from 'buble';
-import PlaygroundError from '../PlaygroundError'; // eslint-disable-line no-unused-vars
-import Wrapper from '../Wrapper'; // eslint-disable-line no-unused-vars
+import PlaygroundError from '../PlaygroundError';
+import Wrapper from '../Wrapper';
 
 /* eslint-disable no-invalid-this, react/no-multi-comp */
 
-const Fragment = React.Fragment ? React.Fragment : 'div'; // eslint-disable-line no-unused-vars
+const Fragment = React.Fragment ? React.Fragment : 'div';
 const FragmentTag = React.Fragment ? 'React.Fragment' : 'div';
 
 const compileCode = (code, config) => transform(code, config).code;
-const wrapCodeInFragment = (code) => `<${FragmentTag}>${code}</${FragmentTag}>;`;
+const wrapCodeInFragment = code => `<${FragmentTag}>${code}</${FragmentTag}>;`;
 
 // Wrap everything in a React component to leverage the state management
 // of this component
-class PreviewComponent extends Component { // eslint-disable-line no-unused-vars
+class PreviewComponent extends Component {
   static propTypes = {
     component: PropTypes.func.isRequired,
     initialState: PropTypes.object.isRequired,
@@ -141,7 +142,7 @@ export default class Preview extends Component {
     return false;
   }
 
-  handleError = (err) => {
+  handleError = err => {
     this.unmountPreview();
 
     this.setState({
@@ -155,9 +156,10 @@ export default class Preview extends Component {
     const { error } = this.state;
     return (
       <Fragment>
-        <div ref={(ref) => (this.mountNode === ref)} />
+        <div ref={(ref) => (this.mountNode = ref)} />
         {error && <PlaygroundError message={error} />}
       </Fragment>
     );
   }
 }
+/* eslint-enable */

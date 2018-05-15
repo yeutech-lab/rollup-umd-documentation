@@ -1,1 +1,1 @@
-export { default } from '../Name/NameRenderer';
+export { default } from './NameRenderer';

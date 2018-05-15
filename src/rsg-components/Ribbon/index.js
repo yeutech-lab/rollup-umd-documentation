@@ -1,1 +1,1 @@
-export { default } from '../Ribbon/Ribbon';
+export { default } from './Ribbon';
