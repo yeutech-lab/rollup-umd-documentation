@@ -1,83 +1,46 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import Styled from 'rsg-components/Styled';
+import Table from 'bootstrap-styled/lib/Table'; // eslint-disable-line no-unused-vars
+import Thead from 'bootstrap-styled/lib/Table/Thead'; // eslint-disable-line no-unused-vars
+import Tr from 'bootstrap-styled/lib/Table/Tr'; // eslint-disable-line no-unused-vars
+import Th from 'bootstrap-styled/lib/Table/Th'; // eslint-disable-line no-unused-vars
+import Tbody from 'bootstrap-styled/lib/Table/Tbody'; // eslint-disable-line no-unused-vars
+import Td from 'bootstrap-styled/lib/Table/Td'; // eslint-disable-line no-unused-vars
 
-export const styles = ({ space, color, fontFamily, fontSize }) => ({
-	table: {
-		width: '100%',
-		borderCollapse: 'collapse',
-		marginBottom: space[4],
-	},
-	tableHead: {
-		borderBottom: [[1, color.border, 'solid']],
-	},
-	cellHeading: {
-		color: color.base,
-		paddingRight: space[2],
-		paddingBottom: space[1],
-		textAlign: 'left',
-		fontFamily: fontFamily.base,
-		fontWeight: 'bold',
-		fontSize: fontSize.small,
-		whiteSpace: 'nowrap',
-	},
-	cell: {
-		color: color.base,
-		paddingRight: space[2],
-		paddingTop: space[1],
-		paddingBottom: space[1],
-		verticalAlign: 'top',
-		fontFamily: fontFamily.base,
-		fontSize: fontSize.small,
-		'&:last-child': {
-			isolate: false,
-			width: '99%',
-			paddingRight: 0,
-		},
-		'& p:last-child': {
-			isolate: false,
-			marginBottom: 0,
-		},
-	},
-});
-
-export function TableRenderer({ classes, columns, rows, getRowKey }) {
-	return (
-		<table className={classes.table}>
-			<thead className={classes.tableHead}>
-				<tr>
-					{columns.map(({ caption }) => (
-						<th key={caption} className={classes.cellHeading}>
-							{caption}
-						</th>
-					))}
-				</tr>
-			</thead>
-			<tbody>
-				{rows.map(row => (
-					<tr key={getRowKey(row)}>
-						{columns.map(({ render }, index) => (
-							<td key={index} className={classes.cell}>
-								{render(row)}
-							</td>
-						))}
-					</tr>
-				))}
-			</tbody>
-		</table>
-	);
+export function TableRenderer({ columns, rows, getRowKey }) {
+  return (
+    <Table>
+      <Thead>
+        <Tr>
+          {columns.map(({ caption }) => (
+            <Th key={caption}>
+              {caption}
+            </Th>
+          ))}
+        </Tr>
+      </Thead>
+      <Tbody>
+        {rows.map((row) => (
+          <Tr key={getRowKey(row)}>
+            {columns.map(({ render }, index) => (
+              <Td key={index}>
+                {render(row)}
+              </Td>
+            ))}
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  );
 }
 
 TableRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	columns: PropTypes.arrayOf(
-		PropTypes.shape({
-			caption: PropTypes.string.isRequired,
-			render: PropTypes.func.isRequired,
-		})
-	).isRequired,
-	rows: PropTypes.arrayOf(PropTypes.object).isRequired,
-	getRowKey: PropTypes.func.isRequired,
+  columns: PropTypes.arrayOf(PropTypes.shape({
+    caption: PropTypes.string.isRequired,
+    render: PropTypes.func.isRequired,
+  })).isRequired,
+  rows: PropTypes.arrayOf(PropTypes.object).isRequired,
+  getRowKey: PropTypes.func.isRequired,
 };
 
-export default Styled(styles)(TableRenderer);
+export default TableRenderer;

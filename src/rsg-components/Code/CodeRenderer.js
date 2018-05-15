@@ -1,5 +1,5 @@
-import React from 'react';
-import Code from 'bootstrap-styled/lib/Code';
+import React from 'react'; // eslint-disable-line no-unused-vars
+import Code from 'bootstrap-styled/lib/Code'; // eslint-disable-line no-unused-vars
 
 export function CodeRenderer({ className, children }) {
   const isHighlighted = className && className.indexOf('lang-') !== -1;

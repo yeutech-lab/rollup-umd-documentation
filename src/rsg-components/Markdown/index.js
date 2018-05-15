@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Markdown/Markdown';
+export { default } from './Markdown';

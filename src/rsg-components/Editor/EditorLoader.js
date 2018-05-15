@@ -1,23 +1,23 @@
-import React, { Component } from 'react';
-import EditorLoaderRenderer from 'rsg-components/Editor/EditorLoaderRenderer';
+import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import EditorLoaderRenderer from './EditorLoaderRenderer'; // eslint-disable-line no-unused-vars
 
 export default class EditorLoader extends Component {
-	state = {
-		editor: null,
-	};
+  state = {
+    editor: null,
+  };
 
-	componentDidMount() {
-		import('rsg-components/Editor/Editor').then(module => {
-			this.setState({ editor: module.default });
-		});
-	}
+  componentDidMount() {
+    import('./Editor').then((module) => {
+      this.setState({ editor: module.default });
+    });
+  }
 
-	render() {
-		const Editor = this.state.editor;
-		if (Editor) {
-			return <Editor {...this.props} />;
-		}
+  render() {
+    const Editor = this.state.editor;
+    if (Editor) {
+      return <Editor {...this.props} />;
+    }
 
-		return <EditorLoaderRenderer />;
-	}
+    return <EditorLoaderRenderer />;
+  }
 }

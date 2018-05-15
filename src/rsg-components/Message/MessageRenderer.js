@@ -1,25 +1,17 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import Markdown from 'rsg-components/Markdown';
-import Styled from 'rsg-components/Styled';
+import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
 
-const styles = ({ space }) => ({
-	root: {
-		marginBottom: space[4],
-	},
-});
-
-export function MessageRenderer({ classes, children }) {
-	return (
-		<div className={classes.root}>
-			<Markdown text={Array.isArray(children) ? children.join('\n') : children} />
-		</div>
-	);
+export function MessageRenderer({ children }) {
+  return (
+    <div>
+      <Markdown text={Array.isArray(children) ? children.join('\n') : children} />
+    </div>
+  );
 }
 
 MessageRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
-export default Styled(styles)(MessageRenderer);
+export default MessageRenderer;

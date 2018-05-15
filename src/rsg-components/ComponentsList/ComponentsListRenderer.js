@@ -1,66 +1,38 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Link from 'rsg-components/Link';
-import Styled from 'rsg-components/Styled';
+import Ul from 'bootstrap-styled/lib/Ul'; // eslint-disable-line no-unused-vars
+import Li from 'bootstrap-styled/lib/Li'; // eslint-disable-line no-unused-vars
+import Link from '../Link'; // eslint-disable-line no-unused-vars
 
-const styles = ({ color, fontFamily, fontSize, space, mq }) => ({
-	list: {
-		margin: 0,
-		paddingLeft: space[2],
-	},
-	item: {
-		color: color.base,
-		display: 'block',
-		margin: [[space[1], 0, space[1], 0]],
-		fontFamily: fontFamily.base,
-		fontSize: fontSize.base,
-		listStyle: 'none',
-		overflow: 'hidden',
-		textOverflow: 'ellipsis',
-	},
-	isChild: {
-		[mq.small]: {
-			display: 'inline-block',
-			margin: [[0, space[1], 0, 0]],
-		},
-	},
-	heading: {
-		color: color.base,
-		marginTop: space[1],
-		fontFamily: fontFamily.base,
-		fontWeight: 'bold',
-	},
-});
+export function ComponentsListRenderer({ itemsNode }) {
+  const items = itemsNode.filter((item) => item.name);
 
-export function ComponentsListRenderer({ classes, items }) {
-	items = items.filter(item => item.name);
+  if (!items.length) {
+    return null;
+  }
 
-	if (!items.length) {
-		return null;
-	}
-
-	return (
-		<ul className={classes.list}>
-			{items.map(({ heading, name, href, content }) => (
-				<li
-					className={cx(classes.item, (!content || !content.props.items.length) && classes.isChild)}
-					key={href}
-				>
-					<Link className={cx(heading && classes.heading)} href={href}>
-						{name}
-					</Link>
-					{content}
-				</li>
-			))}
-		</ul>
-	);
+  return (
+    <Ul>
+      {items.map(({
+        heading, // eslint-disable-line no-unused-vars
+        name,
+        href,
+        content,
+      }) => (
+        <Li key={href}>
+          <Link href={href}>
+            {name}
+          </Link>
+          {content}
+        </Li>
+      ))}
+    </Ul>
+  );
 }
 
 ComponentsListRenderer.propTypes = {
-	items: PropTypes.array.isRequired,
-	classes: PropTypes.object.isRequired,
-	useIsolatedLinks: PropTypes.bool,
+  items: PropTypes.array.isRequired,
+  useIsolatedLinks: PropTypes.bool,
 };
 
-export default Styled(styles)(ComponentsListRenderer);
+export default ComponentsListRenderer;

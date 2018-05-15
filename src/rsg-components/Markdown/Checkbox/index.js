@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Markdown/Checkbox/CheckboxRenderer';
+export { default } from './CheckboxRenderer';

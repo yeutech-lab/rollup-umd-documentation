@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/TableOfContents/TableOfContents';
+export { default } from '../TableOfContents/TableOfContents';

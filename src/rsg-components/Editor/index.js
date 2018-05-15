@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Editor/EditorLoader';
+export { default } from './EditorLoader';

@@ -1,21 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'; // eslint-disable-line no-unused-vars
+import Input from 'bootstrap-styled/lib/Input'; // eslint-disable-line no-unused-vars
 
-import Styled from 'rsg-components/Styled';
-
-const styles = () => ({
-	input: {
-		isolate: false,
-		display: 'inline-block',
-		verticalAlign: 'middle',
-	},
-});
-
-export function CheckboxRenderer({ classes, ...rest }) {
-	return <input {...rest} type="checkbox" className={classes.input} />;
+export function CheckboxRenderer({ ...rest }) {
+  return <Input {...rest} type="checkbox" />;
 }
-CheckboxRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-};
 
-export default Styled(styles)(CheckboxRenderer);
+export default CheckboxRenderer;

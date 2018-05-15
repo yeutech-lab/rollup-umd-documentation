@@ -1,35 +1,21 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import Code from 'rsg-components/Code';
-import Styled from 'rsg-components/Styled';
-import cx from 'classnames';
+import Code from 'bootstrap-styled/lib/Code'; // eslint-disable-line no-unused-vars
 
-export const styles = ({ fontSize, color }) => ({
-	name: {
-		fontSize: fontSize.small,
-		color: color.name,
-	},
-	isDeprecated: {
-		color: color.light,
-		textDecoration: 'line-through',
-	},
-});
-
-export function NameRenderer({ classes, children, deprecated }) {
-	const classNames = cx(classes.name, {
-		[classes.isDeprecated]: deprecated,
-	});
-	return (
-		<span className={classNames}>
-			<Code>{children}</Code>
-		</span>
-	);
+export function NameRenderer({
+  children,
+  deprecated, // eslint-disable-line no-unused-vars
+}) {
+  return (
+    <span>
+      <Code>{children}</Code>
+    </span>
+  );
 }
 
 NameRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	children: PropTypes.node.isRequired,
-	deprecated: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  deprecated: PropTypes.bool,
 };
 
-export default Styled(styles)(NameRenderer);
+export default NameRenderer;

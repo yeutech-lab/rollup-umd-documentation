@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/PlaygroundError/PlaygroundErrorRenderer';
+export { default } from '../PlaygroundError/PlaygroundErrorRenderer';

@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Text/TextRenderer';
+export { default } from '../Text/TextRenderer';

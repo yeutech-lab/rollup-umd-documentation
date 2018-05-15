@@ -1,58 +1,37 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Heading from 'rsg-components/Heading';
-import Styled from 'rsg-components/Styled';
+import A from 'bootstrap-styled/lib/A'; // eslint-disable-line no-unused-vars
+import Heading from '../Heading'; // eslint-disable-line no-unused-vars
 
-function SectionHeadingRenderer({ classes, children, toolbar, id, href, depth, deprecated }) {
-	const headingLevel = Math.min(6, depth);
-	const sectionNameClasses = cx(classes.sectionName, {
-		[classes.isDeprecated]: deprecated,
-	});
+function SectionHeadingRenderer({
+  children,
+  toolbar,
+  id,
+  href,
+  depth,
+  deprecated, // eslint-disable-line no-unused-vars
+}) {
+  const headingLevel = Math.min(6, depth);
 
-	return (
-		<div className={classes.wrapper}>
-			<Heading level={headingLevel} id={id}>
-				<a href={href} className={sectionNameClasses}>
-					{children}
-				</a>
-			</Heading>
-			<div className={classes.toolbar}>{toolbar}</div>
-		</div>
-	);
+  return (
+    <div>
+      <Heading level={headingLevel} id={id}>
+        <A href={href}>
+          {children}
+        </A>
+      </Heading>
+      <div>{toolbar}</div>
+    </div>
+  );
 }
 
-const styles = ({ color, space }) => ({
-	wrapper: {
-		display: 'flex',
-		flexDirection: 'row',
-		alignItems: 'center',
-		marginBottom: space[1],
-	},
-	toolbar: {
-		marginLeft: 'auto',
-	},
-	sectionName: {
-		'&:hover, &:active': {
-			isolate: false,
-			textDecoration: 'underline',
-			cursor: 'pointer',
-		},
-	},
-	isDeprecated: {
-		textDecoration: 'line-through',
-		color: color.light,
-	},
-});
-
 SectionHeadingRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	children: PropTypes.node,
-	toolbar: PropTypes.node,
-	id: PropTypes.string.isRequired,
-	href: PropTypes.string.isRequired,
-	depth: PropTypes.number.isRequired,
-	deprecated: PropTypes.bool,
+  children: PropTypes.node,
+  toolbar: PropTypes.node,
+  id: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  depth: PropTypes.number.isRequired,
+  deprecated: PropTypes.bool,
 };
 
-export default Styled(styles)(SectionHeadingRenderer);
+export default SectionHeadingRenderer;

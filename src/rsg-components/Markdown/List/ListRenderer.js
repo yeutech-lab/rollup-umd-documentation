@@ -1,45 +1,23 @@
-import React, { Children, cloneElement } from 'react';
+import React, { Children, cloneElement } from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Styled from 'rsg-components/Styled';
+import Ol from 'bootstrap-styled/lib/Ol'; // eslint-disable-line no-unused-vars
+import Ul from 'bootstrap-styled/lib/Ul'; // eslint-disable-line no-unused-vars
 
-const styles = ({ space, color, fontFamily }) => ({
-	list: {
-		marginTop: 0,
-		marginBottom: space[2],
-		paddingLeft: space[3],
-		fontSize: 'inherit',
-	},
-	ordered: {
-		listStyleType: 'decimal',
-	},
-	li: {
-		color: color.base,
-		fontFamily: fontFamily.base,
-		fontSize: 'inherit',
-		lineHeight: 1.5,
-		listStyleType: 'inherit',
-	},
-});
+export function ListRenderer({ ordered, children }) {
+  const Tag = ordered ? Ol : Ul; // eslint-disable-line no-unused-vars
 
-export function ListRenderer({ classes, ordered, children }) {
-	const Tag = ordered ? 'ol' : 'ul';
-
-	const classNames = cx(classes.list, ordered && classes.ordered);
-
-	return (
-		<Tag className={classNames}>
-			{Children.map(children, li => cloneElement(li, { className: classes.li }))}
-		</Tag>
-	);
+  return (
+    <Tag>
+      {Children.map(children, (li) => cloneElement(li))}
+    </Tag>
+  );
 }
 ListRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	ordered: PropTypes.bool,
-	children: PropTypes.node.isRequired,
+  ordered: PropTypes.bool,
+  children: PropTypes.node.isRequired,
 };
 ListRenderer.defaultProps = {
-	ordered: false,
+  ordered: false,
 };
 
-export default Styled(styles)(ListRenderer);
+export default ListRenderer;
