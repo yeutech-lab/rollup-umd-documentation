@@ -63,7 +63,7 @@ const sidebar = {
 
 const content = {
   paddingLeft: 0,
-}
+};
 
 // Styleguide and custom theme export
 module.exports = {
