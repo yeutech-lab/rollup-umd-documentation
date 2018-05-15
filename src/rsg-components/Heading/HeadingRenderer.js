@@ -1,50 +1,33 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Styled from 'rsg-components/Styled';
+import H1 from 'bootstrap-styled/lib/H1'; // eslint-disable-line no-unused-vars
+import H2 from 'bootstrap-styled/lib/H2'; // eslint-disable-line no-unused-vars
+import H3 from 'bootstrap-styled/lib/H3'; // eslint-disable-line no-unused-vars
+import H4 from 'bootstrap-styled/lib/H4'; // eslint-disable-line no-unused-vars
+import H5 from 'bootstrap-styled/lib/H5'; // eslint-disable-line no-unused-vars
+import H6 from 'bootstrap-styled/lib/H6'; // eslint-disable-line no-unused-vars
 
-const styles = ({ color, fontFamily, fontSize }) => ({
-	heading: {
-		margin: 0,
-		color: color.base,
-		fontFamily: fontFamily.base,
-		fontWeight: 'normal',
-	},
-	heading1: {
-		fontSize: fontSize.h1,
-	},
-	heading2: {
-		fontSize: fontSize.h2,
-	},
-	heading3: {
-		fontSize: fontSize.h3,
-	},
-	heading4: {
-		fontSize: fontSize.h4,
-	},
-	heading5: {
-		fontSize: fontSize.h5,
-	},
-	heading6: {
-		fontSize: fontSize.h6,
-	},
-});
+const typoList = {
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+};
 
-function HeadingRenderer({ classes, level, children, ...props }) {
-	const Tag = `h${level}`;
-	const headingClasses = cx(classes.heading, classes[`heading${level}`]);
-
-	return (
-		<Tag {...props} className={headingClasses}>
-			{children}
-		</Tag>
-	);
+function HeadingRenderer({ level, children, ...props }) {
+  const Tag = typoList[`H${level}`] || H1; // eslint-disable-line no-unused-vars
+  return (
+    <Tag {...props}>
+      {children}
+    </Tag>
+  );
 }
 
 HeadingRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
-	children: PropTypes.node,
+  level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
+  children: PropTypes.node,
 };
 
-export default Styled(styles)(HeadingRenderer);
+export default HeadingRenderer;

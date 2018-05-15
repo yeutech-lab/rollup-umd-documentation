@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Markdown/MarkdownHeading/MarkdownHeadingRenderer';
+export { default } from './MarkdownHeadingRenderer';

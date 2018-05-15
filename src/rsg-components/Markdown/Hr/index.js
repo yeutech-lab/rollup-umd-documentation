@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Markdown/Hr/HrRenderer';
+export { default } from './HrRenderer';

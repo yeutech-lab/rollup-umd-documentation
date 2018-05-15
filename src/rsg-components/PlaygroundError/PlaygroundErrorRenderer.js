@@ -1,25 +1,13 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import Styled from 'rsg-components/Styled';
+import Pre from 'bootstrap-styled/lib/Pre'; // eslint-disable-line no-unused-vars
 
-const styles = ({ fontFamily, fontSize, color }) => ({
-	root: {
-		margin: 0,
-		lineHeight: 1.2,
-		fontSize: fontSize.small,
-		fontFamily: fontFamily.monospace,
-		color: color.error,
-		whiteSpace: 'pre',
-	},
-});
-
-export function PlaygroundErrorRenderer({ classes, message }) {
-	return <pre className={classes.root}>{message}</pre>;
+export function PlaygroundErrorRenderer({ message }) {
+  return <Pre>{message}</Pre>;
 }
 
 PlaygroundErrorRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	message: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
 };
 
-export default Styled(styles)(PlaygroundErrorRenderer);
+export default PlaygroundErrorRenderer;

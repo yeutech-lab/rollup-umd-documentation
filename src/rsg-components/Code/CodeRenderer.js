@@ -1,31 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
-import Styled from 'rsg-components/Styled';
+import React from 'react'; // eslint-disable-line no-unused-vars
+import Code from 'bootstrap-styled/lib/Code'; // eslint-disable-line no-unused-vars
 
-const styles = ({ fontFamily }) => ({
-	code: {
-		fontFamily: fontFamily.monospace,
-		fontSize: 'inherit',
-		color: 'inherit',
-		background: 'transparent',
-		whiteSpace: 'inherit',
-	},
-});
-
-export function CodeRenderer({ classes, className, children }) {
-	const classNames = cx(className, classes.code);
-
-	const isHighlighted = className && className.indexOf('lang-') !== -1;
-	if (isHighlighted) {
-		return <code className={classNames} title={console.log('test')} dangerouslySetInnerHTML={{ __html: children }} />;
-	}
-	return <code className={classNames}>{children}</code>;
+export function CodeRenderer({ className, children }) {
+  const isHighlighted = className && className.indexOf('lang-') !== -1;
+  if (isHighlighted) {
+    return <Code className={className} dangerouslySetInnerHTML={{ __html: children }} />;
+  }
+  return <Code className={className}>{children}</Code>;
 }
-CodeRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	className: PropTypes.string,
-	children: PropTypes.node.isRequired,
-};
 
-export default Styled(styles)(CodeRenderer);
+export default CodeRenderer;

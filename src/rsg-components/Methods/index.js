@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Methods/MethodsRenderer';
+export { default } from '../Methods/MethodsRenderer';

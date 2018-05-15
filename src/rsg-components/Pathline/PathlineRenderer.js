@@ -1,40 +1,26 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
 import copy from 'clipboard-copy';
-import MdContentCopy from 'react-icons/lib/md/content-copy';
-import ToolbarButton from 'rsg-components/ToolbarButton';
-import Styled from 'rsg-components/Styled';
+import Fa from 'bootstrap-styled/lib/Fa'; // eslint-disable-line no-unused-vars
+import '!!style-loader!css-loader!../../../node_modules/font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
+import ToolbarButton from '../ToolbarButton'; // eslint-disable-line no-unused-vars
 
-export const styles = ({ space, fontFamily, fontSize, color }) => ({
-	pathline: {
-		fontFamily: fontFamily.monospace,
-		fontSize: fontSize.small,
-		color: color.light,
-	},
-	copyButton: {
-		marginLeft: space[0],
-	},
-});
-
-export function PathlineRenderer({ classes, children }) {
-	return (
-		<div className={classes.pathline}>
-			{children}
-			<ToolbarButton
-				small
-				className={classes.copyButton}
-				onClick={() => copy(children)}
-				title="Copy to clipboard"
-			>
-				<MdContentCopy />
-			</ToolbarButton>
-		</div>
-	);
+export function PathlineRenderer({ children }) {
+  return (
+    <div>
+      {children}
+      <ToolbarButton
+        onClick={() => copy(children)}
+        title="Copy to clipboard"
+      >
+        <Fa copy />
+      </ToolbarButton>
+    </div>
+  );
 }
 
 PathlineRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	children: PropTypes.string,
+  children: PropTypes.string,
 };
 
-export default Styled(styles)(PathlineRenderer);
+export default PathlineRenderer;

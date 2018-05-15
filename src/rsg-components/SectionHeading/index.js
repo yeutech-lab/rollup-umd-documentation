@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/SectionHeading/SectionHeading';
+export { default } from '../SectionHeading/SectionHeading';

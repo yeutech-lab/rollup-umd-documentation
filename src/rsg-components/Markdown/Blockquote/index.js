@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Markdown/Blockquote/BlockquoteRenderer';
+export { default } from './BlockquoteRenderer';

@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/Slot/Slot';
+export { default } from '../Slot/Slot';

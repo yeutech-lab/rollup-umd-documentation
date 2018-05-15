@@ -1,19 +1,13 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import Styled from 'rsg-components/Styled';
+import Article from 'bootstrap-styled/lib/Article'; // eslint-disable-line no-unused-vars
 
-const styles = () => ({
-	// Just default jss-isolate rules
-	root: {},
-});
-
-export function ExamplesRenderer({ classes, children }) {
-	return <article className={classes.root}>{children}</article>;
+export function ExamplesRenderer({ children }) {
+  return <Article>{children}</Article>;
 }
 
 ExamplesRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	children: PropTypes.node,
+  children: PropTypes.node,
 };
 
-export default Styled(styles)(ExamplesRenderer);
+export default ExamplesRenderer;

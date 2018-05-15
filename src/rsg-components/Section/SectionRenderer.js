@@ -1,44 +1,45 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
-import Styled from 'rsg-components/Styled';
-import SectionHeading from 'rsg-components/SectionHeading';
-import Markdown from 'rsg-components/Markdown';
-
-const styles = ({ space }) => ({
-	root: {
-		marginBottom: space[4],
-	},
-});
+import Section from 'bootstrap-styled/lib/Section'; // eslint-disable-line no-unused-vars
+import SectionHeading from '../SectionHeading'; // eslint-disable-line no-unused-vars
+import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
 
 export function SectionRenderer(allProps) {
-	const { classes, name, slug, content, components, sections, depth, description } = allProps;
+  const {
+    name,
+    slug,
+    content,
+    components,
+    sections,
+    depth,
+    description,
+  } = allProps;
 
-	return (
-		<section className={classes.root}>
-			{name && (
-				<SectionHeading depth={depth} id={slug} slotName="sectionToolbar" slotProps={allProps}>
-					{name}
-				</SectionHeading>
-			)}
-			{description && <Markdown text={description} />}
-			{content}
-			{sections}
-			{components}
-		</section>
-	);
+  return (
+    <Section>
+      {name && (
+        <SectionHeading depth={depth} id={slug} slotName="sectionToolbar" slotProps={allProps}>
+          {name}
+        </SectionHeading>
+      )}
+      {description && <Markdown text={description} />}
+      {content}
+      {sections}
+      {components}
+    </Section>
+  );
 }
 
 SectionRenderer.propTypes = {
-	classes: PropTypes.object.isRequired,
-	name: PropTypes.string,
-	description: PropTypes.string,
-	slug: PropTypes.string,
-	filepath: PropTypes.string,
-	content: PropTypes.node,
-	components: PropTypes.node,
-	sections: PropTypes.node,
-	isolated: PropTypes.bool,
-	depth: PropTypes.number.isRequired,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  slug: PropTypes.string,
+  filepath: PropTypes.string,
+  content: PropTypes.node,
+  components: PropTypes.node,
+  sections: PropTypes.node,
+  isolated: PropTypes.bool,
+  depth: PropTypes.number.isRequired,
 };
 
-export default Styled(styles)(SectionRenderer);
+export default SectionRenderer;
