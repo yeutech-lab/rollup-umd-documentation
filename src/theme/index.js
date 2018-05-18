@@ -14,7 +14,7 @@ const makeThemeNavigationStyleguideBs = newMakeThemeNavigationStyleguide({
 });
 
 const themeList = [
-  makeThemeBs,
+  toMakeTheme(makeThemeBs),
   toMakeTheme(makeThemeNavigationStyleguideBs),
   makeThemeStyleguideBs,
 ];
