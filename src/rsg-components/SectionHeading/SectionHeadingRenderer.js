@@ -16,7 +16,7 @@ function SectionHeadingRenderer({
   return (
     <div>
       <Heading level={headingLevel} id={id}>
-        <A href={href}>
+        <A href={href} color="gray-dark">
           {children}
         </A>
       </Heading>

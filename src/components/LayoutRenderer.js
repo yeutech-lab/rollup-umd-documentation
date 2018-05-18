@@ -1,66 +1,21 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Styled from 'react-styleguidist/lib/rsg-components/Styled';
-import Logo from 'react-styleguidist/lib/rsg-components/Logo';
-
+// import Logo from 'react-styleguidist/lib/rsg-components/Logo';
 import cn from 'classnames';
-import theme from 'bootstrap-styled/lib/theme';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
-
+import NavigationStyleguide from 'navigation-bar/lib/NavigationStyleguide/NavigationStyleguide';
+import Img from 'bootstrap-styled/lib/Img';
+import Footer from 'bootstrap-styled/lib/Footer';
+import A from 'bootstrap-styled/lib/A';
+import styled from 'styled-components';
+import theme from '../theme';
 import defaultLogo from './logo';
+import Logo from '../rsg-components/Logo';
 
-const styles = ({
-  color, fontFamily, fontSize, sidebarWidth, mq, space, maxWidth,
-}) => ({
-  root: {
-    backgroundColor: color.baseBackground,
-  },
-  hasSidebar: {
-    paddingLeft: sidebarWidth,
-    [mq.small]: {
-      paddingLeft: 0,
-    },
-  },
-  content: {
-    maxWidth,
-    padding: [[space[2], space[4]]],
-    margin: [[0, 'auto']],
-    [mq.small]: {
-      padding: space[2],
-    },
-    display: 'block',
-  },
-  sidebar: {
-    backgroundColor: color.sidebarBackground,
-    border: [[color.border, 'solid']],
-    borderWidth: [[0, 1, 0, 0]],
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    width: sidebarWidth,
-    overflow: 'auto',
-    '-webkit-overflow-scrolling': 'touch',
-    [mq.small]: {
-      position: 'static',
-      width: 'auto',
-      borderWidth: [[1, 0, 0, 0]],
-      paddingBottom: space[0],
-    },
-  },
-  logo: {
-    padding: space[2],
-    borderBottom: [[1, color.border, 'solid']],
-  },
-  footer: {
-    display: 'block',
-    color: color.light,
-    fontFamily: fontFamily.base,
-    fontSize: fontSize.small,
-    textAlign: 'right',
-  },
-});
+export const Main = styled.main`
+  margin-left: 300px;
+`;
 
 /**
  * This is the main layout for the whole documentation.
@@ -69,61 +24,58 @@ const styles = ({
  * @constructor
  */
 function LayoutRenderer({
-   theme, classes, className, title, children, toc, hasSidebar, logo, bottomLogo, bottomLogoText, logoHref, bottomLogoHref
+   theme, className, title, children, toc, hasSidebar, logo, bottomLogo, bottomLogoText, logoHref, bottomLogoHref
  }) {
   return (
     <BootstrapProvider theme={theme}>
-      <div className={cn(className, classes.root, hasSidebar && classes.hasSidebar)}>
-        <main className={classes.content}>
+      {hasSidebar && (
+        <NavigationStyleguide>
+          {logoHref ? (
+            <A
+              href={logoHref}
+              target="_blank"
+              alt="Yeutech Company Limited"
+              title="Yeutech Company Limited"
+            >
+              <Img
+                src={`data:image/png;base64,${logo}`}
+                height="70px"
+                alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
+                title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
+              />
+            </A>
+          ) : (
+            <Img
+              src={`data:image/png;base64,${logo}`}
+              height="70px"
+              alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
+              title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
+            />
+          )}
+          <Logo>{title}</Logo>
+          {toc}
+        </NavigationStyleguide>
+      )}
+      <div className={cn(className)}>
+        <Main>
           {children}
-          <footer className={classes.footer}>
+          <Footer>
             <span>{bottomLogoText}</span>
-            <a
+            <A
               href={bottomLogoHref}
               target="_blank"
               alt="Yeutech Company Limited"
               title="Yeutech Company Limited"
             >
-              <img
+              <Img
                 src={`data:image/png;base64,${bottomLogo}`}
                 height="55px"
                 alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
                 title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
               />
-            </a>
-          </footer>
-        </main>
-        {hasSidebar && (
-          <div className={classes.sidebar}>
-            <div className={classes.logo}>
-              {logoHref ? (
-                <a
-                  href={logoHref}
-                  target="_blank"
-                  alt="Yeutech Company Limited"
-                  title="Yeutech Company Limited"
-                >
-                  <img
-                    src={`data:image/png;base64,${logo}`}
-                    height="70px"
-                    alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
-                    title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
-                  />
-                </a>
-              ) : (
-                <img
-                  src={`data:image/png;base64,${logo}`}
-                  height="70px"
-                  alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
-                  title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
-                />
-              )}
-
-              <Logo>{title}</Logo>
-            </div>
-            {toc}
-          </div>
-        )}
+            </A>
+          </Footer>
+        </Main>
       </div>
     </BootstrapProvider>
   );
@@ -140,8 +92,6 @@ LayoutRenderer.defaultProps = {
 };
 
 LayoutRenderer.propTypes = {
-  /** @ignore */
-  classes: PropTypes.object.isRequired,
   /** @ignore */
   className: PropTypes.string,
   /** @ignore */
@@ -166,4 +116,5 @@ LayoutRenderer.propTypes = {
   bottomLogoText: PropTypes.string,
 };
 
-export default Styled(styles)(LayoutRenderer);
+export default LayoutRenderer;
+

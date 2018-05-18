@@ -1,5 +1,6 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
+import Nav from 'bootstrap-styled/lib/Nav'; // eslint-disable-line no-unused-vars
 
 export function TableOfContentsRenderer({ children, searchTerm, onSearchTermChange }) {
   return (
@@ -13,7 +14,7 @@ export function TableOfContentsRenderer({ children, searchTerm, onSearchTermChan
             onChange={(event) => onSearchTermChange(event.target.value)}
           />
         </div>
-        <nav>{children}</nav>
+        <Nav>{children}</Nav>
       </div>
     </div>
   );
