@@ -196,6 +196,8 @@
   ],
   "dependencies": {
     "bootstrap-styled": "^1.6.5",
+    "bootstrap-styled-mixins": "^1.0.4",
+    "bootstrap-styled-theme": "0.0.1",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
     "clipboard-copy": "^2.0.0",
@@ -203,6 +205,7 @@
     "javascript-stringify": "^1.6.0",
     "markdown-to-jsx": "^6.6.3",
     "mini-html-webpack-plugin": "^0.2.3",
+    "navigation-bar": "^1.1.6",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-codemirror2": "^5.0.1",
