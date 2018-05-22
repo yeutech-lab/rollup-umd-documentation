@@ -1,8 +1,8 @@
-import Editor from '../Editor'; // eslint-disable-line no-unused-vars
-import Usage from '../Usage'; // eslint-disable-line no-unused-vars
-import IsolateButton from './IsolateButton'; // eslint-disable-line no-unused-vars
-import CodeTabButton from './CodeTabButton'; // eslint-disable-line no-unused-vars
-import UsageTabButton from './UsageTabButton'; // eslint-disable-line no-unused-vars
+import Editor from '../Editor';
+import Usage from '../Usage';
+import IsolateButton from './IsolateButton';
+import CodeTabButton from './CodeTabButton';
+import UsageTabButton from './UsageTabButton';
 
 export const EXAMPLE_TAB_CODE_EDITOR = 'rsg-code-editor';
 export const DOCS_TAB_USAGE = 'rsg-usage';

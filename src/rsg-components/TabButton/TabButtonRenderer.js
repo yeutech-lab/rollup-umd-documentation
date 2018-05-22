@@ -1,6 +1,6 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'bootstrap-styled/lib/Button'; // eslint-disable-line no-unused-vars
+import Button from 'bootstrap-styled/lib/Button';
 
 export function TabButtonRenderer({
   name,
@@ -14,12 +14,12 @@ export function TabButtonRenderer({
     </Button>
   );
 }
-
+/* eslint-disable react/require-default-props */
 TabButtonRenderer.propTypes = {
   name: PropTypes.string,
   onClick: PropTypes.func,
   active: PropTypes.bool,
   children: PropTypes.node,
 };
-
+/* eslint-enable react/require-default-props */
 export default TabButtonRenderer;

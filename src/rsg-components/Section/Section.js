@@ -1,10 +1,10 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
 import { DisplayModes } from 'react-styleguidist/lib/consts';
-import Examples from '../Examples'; // eslint-disable-line no-unused-vars
-import Components from '../Components'; // eslint-disable-line no-unused-vars
-import Sections from '../Sections'; // eslint-disable-line no-unused-vars
-import SectionRenderer from './SectionRenderer'; // eslint-disable-line no-unused-vars
+import Examples from '../Examples';
+import Components from '../Components';
+import Sections from '../Sections';
+import SectionRenderer from './SectionRenderer';
 
 export default function Section({ section, depth }, { displayMode }) {
   const {

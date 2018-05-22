@@ -1,5 +1,5 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
-import Input from 'bootstrap-styled/lib/Input'; // eslint-disable-line no-unused-vars
+import React from 'react';
+import Input from 'bootstrap-styled/lib/Input';
 
 export function CheckboxRenderer({ ...rest }) {
   return <Input {...rest} type="checkbox" />;

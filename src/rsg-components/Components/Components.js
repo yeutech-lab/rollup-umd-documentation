@@ -1,7 +1,7 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import ReactComponent from '../ReactComponent'; // eslint-disable-line no-unused-vars
-import ComponentsRenderer from './ComponentsRenderer'; // eslint-disable-line no-unused-vars
+import ReactComponent from '../ReactComponent';
+import ComponentsRenderer from './ComponentsRenderer';
 
 export default function Components({ components, depth }) {
   return (

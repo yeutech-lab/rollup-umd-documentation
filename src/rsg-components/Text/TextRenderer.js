@@ -1,4 +1,4 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
 
 export function TextRenderer({
@@ -9,7 +9,7 @@ export function TextRenderer({
   children,
   ...props
 }) {
-  const Tag = semantic || 'span'; // eslint-disable-line no-unused-vars
+  const Tag = semantic || 'span';
 
   return (
     <Tag {...props}>
@@ -19,7 +19,7 @@ export function TextRenderer({
 }
 
 TextRenderer.propTypes = {
-  semantic: PropTypes.oneOf(['em', 'strong']),
+  semantic: PropTypes.oneOf(['em', 'strong']), // eslint-disable-line react/require-default-props
   size: PropTypes.oneOf(['inherit', 'small', 'base', 'text']),
   color: PropTypes.oneOf(['base', 'light']),
   underlined: PropTypes.bool,

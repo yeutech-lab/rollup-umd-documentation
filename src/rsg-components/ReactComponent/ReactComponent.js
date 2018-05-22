@@ -1,15 +1,15 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DisplayModes } from 'react-styleguidist/lib/consts';
-import Examples from '../Examples'; // eslint-disable-line no-unused-vars
-import SectionHeading from '../SectionHeading'; // eslint-disable-line no-unused-vars
-import JsDoc from '../JsDoc'; // eslint-disable-line no-unused-vars
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
-import Slot from '../Slot'; // eslint-disable-line no-unused-vars
-import { DOCS_TAB_USAGE } from '../slots'; // eslint-disable-line no-unused-vars
-import ReactComponentRenderer from './ReactComponentRenderer'; // eslint-disable-line no-unused-vars
+import Examples from '../Examples';
+import SectionHeading from '../SectionHeading';
+import JsDoc from '../JsDoc';
+import Markdown from '../Markdown';
+import Slot from '../Slot';
+import { DOCS_TAB_USAGE } from '../slots';
+import ReactComponentRenderer from './ReactComponentRenderer';
 
-const ExamplePlaceholder = // eslint-disable-line no-unused-vars
+const ExamplePlaceholder =
   process.env.STYLEGUIDIST_ENV !== 'production'
     ? require('../ExamplePlaceholder').default
     : () => <div />;

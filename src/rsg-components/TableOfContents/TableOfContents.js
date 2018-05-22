@@ -1,13 +1,13 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import filterSectionsByName from 'react-styleguidist/lib/utils/filterSectionsByName';
-import ComponentsList from '../ComponentsList'; // eslint-disable-line no-unused-vars
-import TableOfContentsRenderer from './TableOfContentsRenderer'; // eslint-disable-line no-unused-vars
+import ComponentsList from '../ComponentsList';
+import TableOfContentsRenderer from './TableOfContentsRenderer';
 
 export default class TableOfContents extends Component {
   static propTypes = {
-    sections: PropTypes.array.isRequired,
-    useIsolatedLinks: PropTypes.bool,
+    sections: PropTypes.array.isRequired, // eslint-disable-line react/require-default-props
+    useIsolatedLinks: PropTypes.bool, // eslint-disable-line react/require-default-props
   };
   state = {
     searchTerm: '',

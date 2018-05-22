@@ -1,22 +1,22 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 import PropTypes from 'prop-types';
 import { compiler } from 'markdown-to-jsx';
-import Table from 'bootstrap-styled/lib/Table'; // eslint-disable-line no-unused-vars
-import Thead from 'bootstrap-styled/lib/Table/Thead'; // eslint-disable-line no-unused-vars
-import Tbody from 'bootstrap-styled/lib/Table/Tbody'; // eslint-disable-line no-unused-vars
-import Th from 'bootstrap-styled/lib/Table/Th'; // eslint-disable-line no-unused-vars
-import Tr from 'bootstrap-styled/lib/Table/Tr'; // eslint-disable-line no-unused-vars
-import Td from 'bootstrap-styled/lib/Table/Td'; // eslint-disable-line no-unused-vars
-import Link from '../Link'; // eslint-disable-line no-unused-vars
-import Text from '../Text'; // eslint-disable-line no-unused-vars
-import Para from '../Para'; // eslint-disable-line no-unused-vars
-import Code from '../Code'; // eslint-disable-line no-unused-vars
-import MarkdownHeading from './MarkdownHeading/MarkdownHeadingRenderer'; // eslint-disable-line no-unused-vars
-import List from './List/ListRenderer'; // eslint-disable-line no-unused-vars
-import Blockquote from './Blockquote/BlockquoteRenderer'; // eslint-disable-line no-unused-vars
-import Pre from './Pre/PreRenderer'; // eslint-disable-line no-unused-vars
-import Checkbox from './Checkbox/CheckboxRenderer'; // eslint-disable-line no-unused-vars
-import Hr from './Hr/HrRenderer'; // eslint-disable-line no-unused-vars
+import Table from 'bootstrap-styled/lib/Table';
+import Thead from 'bootstrap-styled/lib/Table/Thead';
+import Tbody from 'bootstrap-styled/lib/Table/Tbody';
+import Th from 'bootstrap-styled/lib/Table/Th';
+import Tr from 'bootstrap-styled/lib/Table/Tr';
+import Td from 'bootstrap-styled/lib/Table/Td';
+import Link from '../Link';
+import Text from '../Text';
+import Para from '../Para';
+import Code from '../Code';
+import MarkdownHeading from './MarkdownHeading/MarkdownHeadingRenderer';
+import List from './List/ListRenderer';
+import Blockquote from './Blockquote/BlockquoteRenderer';
+import Pre from './Pre/PreRenderer';
+import Checkbox from './Checkbox/CheckboxRenderer';
+import Hr from './Hr/HrRenderer';
 
 
 export const baseOverrides = {

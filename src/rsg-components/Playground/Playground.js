@@ -1,12 +1,12 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
-import { DisplayModes } from 'react-styleguidist/lib/consts'; // eslint-disable-line no-unused-vars
-import Preview from '../Preview'; // eslint-disable-line no-unused-vars
-import Para from '../Para'; // eslint-disable-line no-unused-vars
-import Slot from '../Slot'; // eslint-disable-line no-unused-vars
-import { EXAMPLE_TAB_CODE_EDITOR } from '../slots'; // eslint-disable-line no-unused-vars
-import PlaygroundRenderer from './PlaygroundRenderer'; // eslint-disable-line no-unused-vars
+import { DisplayModes } from 'react-styleguidist/lib/consts';
+import Preview from '../Preview';
+import Para from '../Para';
+import Slot from '../Slot';
+import { EXAMPLE_TAB_CODE_EDITOR } from '../slots';
+import PlaygroundRenderer from './PlaygroundRenderer';
 
 export default class Playground extends Component {
   static propTypes = {
@@ -14,7 +14,7 @@ export default class Playground extends Component {
     evalInContext: PropTypes.func.isRequired,
     index: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    settings: PropTypes.object,
+    settings: PropTypes.object, // eslint-disable-line react/require-default-props
   };
 
   static contextTypes = {

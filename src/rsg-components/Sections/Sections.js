@@ -1,8 +1,9 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Section from '../Section'; // eslint-disable-line no-unused-vars
-import SectionsRenderer from './SectionsRenderer'; // eslint-disable-line no-unused-vars
+import Section from '../Section';
+import SectionsRenderer from './SectionsRenderer';
 
+/* eslint-disable react/no-array-index-key */
 export default function Sections({ sections, depth }) {
   return (
     <SectionsRenderer>
@@ -10,9 +11,9 @@ export default function Sections({ sections, depth }) {
     </SectionsRenderer>
   );
 }
-
+/* eslint-enable react/no-array-index-key */
 Sections.propTypes = {
   sections: PropTypes.array.isRequired,
-  root: PropTypes.bool,
+  root: PropTypes.bool, // eslint-disable-line react/require-default-props, react/no-unused-prop-types
   depth: PropTypes.number.isRequired,
 };

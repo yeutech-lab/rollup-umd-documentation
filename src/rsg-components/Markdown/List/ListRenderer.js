@@ -1,10 +1,10 @@
-import React, { Children, cloneElement } from 'react'; // eslint-disable-line no-unused-vars
+import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import Ol from 'bootstrap-styled/lib/Ol'; // eslint-disable-line no-unused-vars
-import Ul from 'bootstrap-styled/lib/Ul'; // eslint-disable-line no-unused-vars
+import Ol from 'bootstrap-styled/lib/Ol';
+import Ul from 'bootstrap-styled/lib/Ul';
 
 export function ListRenderer({ ordered, children }) {
-  const Tag = ordered ? Ol : Ul; // eslint-disable-line no-unused-vars
+  const Tag = ordered ? Ol : Ul;
 
   return (
     <Tag>

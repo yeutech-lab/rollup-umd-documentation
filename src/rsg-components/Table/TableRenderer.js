@@ -1,12 +1,13 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Table from 'bootstrap-styled/lib/Table'; // eslint-disable-line no-unused-vars
-import Thead from 'bootstrap-styled/lib/Table/Thead'; // eslint-disable-line no-unused-vars
-import Tr from 'bootstrap-styled/lib/Table/Tr'; // eslint-disable-line no-unused-vars
-import Th from 'bootstrap-styled/lib/Table/Th'; // eslint-disable-line no-unused-vars
-import Tbody from 'bootstrap-styled/lib/Table/Tbody'; // eslint-disable-line no-unused-vars
-import Td from 'bootstrap-styled/lib/Table/Td'; // eslint-disable-line no-unused-vars
+import Table from 'bootstrap-styled/lib/Table';
+import Thead from 'bootstrap-styled/lib/Table/Thead';
+import Tr from 'bootstrap-styled/lib/Table/Tr';
+import Th from 'bootstrap-styled/lib/Table/Th';
+import Tbody from 'bootstrap-styled/lib/Table/Tbody';
+import Td from 'bootstrap-styled/lib/Table/Td';
 
+/* eslint-disable react/no-array-index-key */
 export function TableRenderer({ columns, rows, getRowKey }) {
   return (
     <Table>
@@ -33,7 +34,7 @@ export function TableRenderer({ columns, rows, getRowKey }) {
     </Table>
   );
 }
-
+/* eslint-enable react/no-array-index-key */
 TableRenderer.propTypes = {
   columns: PropTypes.arrayOf(PropTypes.shape({
     caption: PropTypes.string.isRequired,

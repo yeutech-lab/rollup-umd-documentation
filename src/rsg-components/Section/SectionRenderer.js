@@ -1,8 +1,8 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Section from 'bootstrap-styled/lib/Section'; // eslint-disable-line no-unused-vars
-import SectionHeading from '../SectionHeading'; // eslint-disable-line no-unused-vars
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
+import Section from 'bootstrap-styled/lib/Section';
+import SectionHeading from '../SectionHeading';
+import Markdown from '../Markdown';
 
 export function SectionRenderer(allProps) {
   const {
@@ -29,7 +29,7 @@ export function SectionRenderer(allProps) {
     </Section>
   );
 }
-
+/* eslint-disable react/require-default-props, react/no-unused-prop-types */
 SectionRenderer.propTypes = {
   name: PropTypes.string,
   description: PropTypes.string,
@@ -41,5 +41,5 @@ SectionRenderer.propTypes = {
   isolated: PropTypes.bool,
   depth: PropTypes.number.isRequired,
 };
-
+/* eslint-enable react/require-default-props, react/no-unused-prop-types */
 export default SectionRenderer;

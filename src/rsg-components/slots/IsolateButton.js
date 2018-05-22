@@ -1,9 +1,9 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import '!!style-loader!css-loader!../../../node_modules/font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
 import PropTypes from 'prop-types';
-import Fa from 'bootstrap-styled/lib/Fa'; // eslint-disable-line no-unused-vars
+import Fa from 'bootstrap-styled/lib/Fa';
 import getUrl from 'react-styleguidist/lib/utils/getUrl';
-import ToolbarButton from '../ToolbarButton'; // eslint-disable-line no-unused-vars
+import ToolbarButton from '../ToolbarButton';
 
 const IsolateButton = ({ name, example, isolated }) =>
   isolated ? (
@@ -18,8 +18,8 @@ const IsolateButton = ({ name, example, isolated }) =>
 
 IsolateButton.propTypes = {
   name: PropTypes.string.isRequired,
-  example: PropTypes.number,
-  isolated: PropTypes.bool,
+  example: PropTypes.number, // eslint-disable-line react/require-default-props
+  isolated: PropTypes.bool, // eslint-disable-line react/require-default-props
 };
 
 export default IsolateButton;

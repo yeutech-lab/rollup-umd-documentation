@@ -1,5 +1,5 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
-import EditorLoaderRenderer from './EditorLoaderRenderer'; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react';
+import EditorLoaderRenderer from './EditorLoaderRenderer';
 
 export default class EditorLoader extends Component {
   state = {

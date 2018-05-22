@@ -1,7 +1,7 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'bootstrap-styled/lib/Button'; // eslint-disable-line no-unused-vars
-import A from 'bootstrap-styled/lib/A'; // eslint-disable-line no-unused-vars
+import Button from 'bootstrap-styled/lib/Button';
+import A from 'bootstrap-styled/lib/A';
 
 export function ToolbarButtonRenderer({
   onClick,
@@ -25,10 +25,10 @@ export function ToolbarButtonRenderer({
 }
 
 ToolbarButtonRenderer.propTypes = {
-  href: PropTypes.string,
-  onClick: PropTypes.func,
-  title: PropTypes.string,
-  children: PropTypes.node,
+  href: PropTypes.string, // eslint-disable-line react/require-default-props
+  onClick: PropTypes.func, // eslint-disable-line react/require-default-props
+  title: PropTypes.string, // eslint-disable-line react/require-default-props
+  children: PropTypes.node, // eslint-disable-line react/require-default-props
 };
 
 export default ToolbarButtonRenderer;
