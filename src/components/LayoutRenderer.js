@@ -1,21 +1,16 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-// import Logo from 'react-styleguidist/lib/rsg-components/Logo';
 import cn from 'classnames';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
-import NavigationStyleguide from 'navigation-bar/lib/NavigationStyleguide/NavigationStyleguide';
 import Img from 'bootstrap-styled/lib/Img';
 import Footer from 'bootstrap-styled/lib/Footer';
 import A from 'bootstrap-styled/lib/A';
-import styled from 'styled-components';
 import theme from '../theme';
 import defaultLogo from './logo';
-import Logo from '../rsg-components/Logo';
-
-export const Main = styled.main`
-  margin-left: 300px;
-`;
+import whiteLogo from './logo-white';
+import Main from './Main'
+import SideBar from './SideBar';
 
 /**
  * This is the main layout for the whole documentation.
@@ -29,32 +24,9 @@ function LayoutRenderer({
   return (
     <BootstrapProvider theme={theme}>
       {hasSidebar && (
-        <NavigationStyleguide>
-          {logoHref ? (
-            <A
-              href={logoHref}
-              target="_blank"
-              alt="Yeutech Company Limited"
-              title="Yeutech Company Limited"
-            >
-              <Img
-                src={`data:image/png;base64,${logo}`}
-                height="70px"
-                alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
-                title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
-              />
-            </A>
-          ) : (
-            <Img
-              src={`data:image/png;base64,${logo}`}
-              height="70px"
-              alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
-              title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
-            />
-          )}
-          <Logo>{title}</Logo>
-          {toc}
-        </NavigationStyleguide>
+        <div>
+          <SideBar logo={{ logo: logo, href: logoHref}} title={title} items={toc} theme={theme} />
+        </div>
       )}
       <div className={cn(className)}>
         <Main>
@@ -82,7 +54,7 @@ function LayoutRenderer({
 }
 
 LayoutRenderer.defaultProps = {
-  logo: defaultLogo,
+  logo: whiteLogo,
   logoHref: null,
   bottomLogo: defaultLogo,
   bottomLogoHref: 'https://www.yeutech.vn',

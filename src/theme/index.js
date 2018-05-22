@@ -1,21 +1,19 @@
 import createMakeTheme, { toMakeTheme } from 'bootstrap-styled-theme/lib';
-import makeThemeBs from 'bootstrap-styled/lib/theme/makeTheme';
+import { makeTheme as makeThemeBs } from 'bootstrap-styled/lib/theme/makeTheme'; // todo: fix error build when using import 'bootstrap-styled/lib/theme'
 import { makeTheme as makeThemeNavigationStyleguide } from 'navigation-bar/lib/NavigationStyleguide/theme';
 import { makeTheme as makeThemeStyleguideBs } from './styleguidist-bs';
 
-const newMakeThemeNavigationStyleguide = toMakeTheme(makeThemeNavigationStyleguide().navigationStyleguide);
-
-const makeThemeNavigationStyleguideBs = newMakeThemeNavigationStyleguide({
+const themeStyleguide = makeThemeNavigationStyleguide({
   navigationStyleguide: {
-    ...makeThemeNavigationStyleguide().navigationStyleguide,
+    '$nav-styleguide-bg-color': '#D85052',
     '$nav-styleguide-color': '#fff !important',
-    '$nav-styleguide-width-md': '200px',
+    '$nav-styleguide-hover-color': '#911515 !important',
   },
 });
 
 const themeList = [
-  toMakeTheme(makeThemeBs),
-  toMakeTheme(makeThemeNavigationStyleguideBs),
+  makeThemeBs,
+  toMakeTheme(themeStyleguide),
   makeThemeStyleguideBs,
 ];
 
