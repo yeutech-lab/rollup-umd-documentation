@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import omit from 'lodash.omit';
+import styled from 'styled-components';
 import NavigationStyleguide from 'navigation-bar/lib/NavigationStyleguide/NavigationStyleguide';
 import Img from 'bootstrap-styled/lib/Img';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -8,7 +10,13 @@ import A from 'bootstrap-styled/lib/A';
 import Logo from '../rsg-components/Logo';
 
 export const defaultProps = {
-  className: null,
+  theme: {
+    styleguide: {
+      '$rsg-sidebar-linear-gradient': 'linear-gradient( to right, #B31255, #3A007D)',
+      '$rsg-sidebar-logo-margin': '30px 0 0 0',
+      '$rsg-sidebar-logo-align': 'center',
+    },
+  },
 };
 
 export const propTypes = {
@@ -16,6 +24,14 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Theme variables. Can be: */
+  theme: PropTypes.shape({
+    styleguide: PropTypes.shape({
+      '$rsg-sidebar-linear-gradient': PropTypes.string,
+      '$rsg-sidebar-logo-margin': PropTypes.string,
+      '$rsg-sidebar-logo-align': PropTypes.string,
+    }),
+  }),
   /**
    * Replace or remove a className from the component.
    * See example <a href="https://www.npmjs.com/package/map-to-css-modules" target="_blank">here</a>.
@@ -26,7 +42,7 @@ export const propTypes = {
   items: PropTypes.node, // eslint-disable-line react/require-default-props
 };
 
-const SideBar = (props) => {
+const SideBarUnstyled = (props) => {
   const {
     className,
     cssModule,
@@ -34,13 +50,13 @@ const SideBar = (props) => {
     title,
     items,
     ...attributes
-  } = props;
+  } = omit(props, ['theme']);
   return (
     <NavigationStyleguide
       className={mapToCssModules(cn(className, 'navigation'), cssModule)}
       {...attributes}
     >
-      <div className="text-center">
+      <div className="navigation-logo">
         {logo.logoHref ? (
           <A
             href={logo.logoHref}
@@ -69,6 +85,21 @@ const SideBar = (props) => {
     </NavigationStyleguide>
   );
 };
+
+SideBarUnstyled.defaultProps = defaultProps;
+SideBarUnstyled.propTypes = propTypes;
+
+const SideBar = styled(SideBarUnstyled)` 
+  ${(props) => `
+    &.navigation {
+      background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
+      .navigation-logo {
+        margin:  ${props.theme.styleguide['$rsg-sidebar-logo-margin']};
+        text-align: ${props.theme.styleguide['$rsg-sidebar-logo-align']};
+      }
+    }
+ `}
+`;
 
 SideBar.defaultProps = defaultProps;
 SideBar.propTypes = propTypes;

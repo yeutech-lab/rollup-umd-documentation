@@ -54,21 +54,24 @@ const MainUnstyled = (props) => {
   );
 };
 
+MainUnstyled.defaultProps = defaultProps;
+MainUnstyled.propTypes = propTypes;
+
 export const Main = styled(MainUnstyled)`
   ${(props) => `
     ${bp.up(
     'xs',
     props.theme['$grid-breakpoints'],
     `
-        margin-left: ${props.theme.styleguide['$rsg-main-margin-left'].xs};
-      `
+      margin-left: ${props.theme.styleguide['$rsg-main-margin-left'].xs};
+    `
   )}
     ${bp.up(
     'md',
     props.theme['$grid-breakpoints'],
     `
-        margin-left: ${props.theme.styleguide['$rsg-main-margin-left'].md};
-      `
+      margin-left: ${props.theme.styleguide['$rsg-main-margin-left'].md};
+    `
   )}
   `}
 `;
