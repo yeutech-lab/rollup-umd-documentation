@@ -3,17 +3,23 @@ import { makeTheme as makeThemeBs } from 'bootstrap-styled/lib/theme/makeTheme';
 import { makeTheme as makeThemeNavigationStyleguide } from 'navigation-bar/lib/NavigationStyleguide/theme';
 import { makeTheme as makeThemeStyleguideBs } from './styleguidist-bs';
 
-const themeStyleguide = makeThemeNavigationStyleguide({
+const themeBsYeutech = makeThemeBs({
+  '$btn-primary-color': '#D85052',
+  '$btn-primary-bg': '#1C00ff00',
+  '$btn-primary-border': '#1C00ff00',
+  '$btn-box-shadow': '#1C00ff00 !important',
+});
+
+const themeNavigationYeutech = makeThemeNavigationStyleguide({
   navigationStyleguide: {
-    '$nav-styleguide-bg-color': '#D85052',
     '$nav-styleguide-color': '#fff !important',
-    '$nav-styleguide-hover-color': '#911515 !important',
+    '$nav-styleguide-hover-color': '#d9534f !important',
   },
 });
 
 const themeList = [
-  makeThemeBs,
-  toMakeTheme(themeStyleguide),
+  toMakeTheme(themeBsYeutech),
+  toMakeTheme(themeNavigationYeutech),
   makeThemeStyleguideBs,
 ];
 
