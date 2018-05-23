@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import P from 'bootstrap-styled/lib/P';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -9,10 +8,7 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-para-margin': '0 0 1.2em 0',
-      '$rsg-para-color': '#494949',
-      '$rsg-para-font-size': '1em',
-      '$rsg-para-line-height': '1.5',
+      '$rsg-props-description-font-size': '0.8em',
     },
   },
 };
@@ -22,17 +18,12 @@ export const propTypes = {
   /**
    * @ignore
    */
-  classes: PropTypes.object,
   className: PropTypes.string, // eslint-disable-line react/require-default-props
   children: PropTypes.node.isRequired,
-  semantic: PropTypes.oneOf(['p']),
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
-      '$rsg-para-margin': PropTypes.string,
-      '$rsg-para-color': PropTypes.string,
-      '$rsg-para-font-size': PropTypes.string,
-      '$rsg-para-line-height': PropTypes.string,
+      '$rsg-props-description-font-size': PropTypes.string,
     }),
   }),
   /**
@@ -43,38 +34,36 @@ export const propTypes = {
 };
 /* eslint-enable react/require-default-props */
 
-const ParaRendererUnstyled = (props) => {
+const DescriptionRendererUnstyled = (props) => {
   const {
     className,
     children,
-    semantic,
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
-  const Tag = (semantic && P) || 'div';
 
   return (
-    <Tag
-      className={mapToCssModules(cn(className, 'para-renderer'), cssModule)}
+    <div
+      className={mapToCssModules(cn(className, 'props-description-renderer'), cssModule)}
       {...attributes}
     >
       {children}
-    </Tag>
+    </div>
   );
 };
 
-ParaRendererUnstyled.defaultProps = defaultProps;
-ParaRendererUnstyled.propTypes = propTypes;
+DescriptionRendererUnstyled.defaultProps = defaultProps;
+DescriptionRendererUnstyled.propTypes = propTypes;
 
-const ParaRenderer = styled(ParaRendererUnstyled)` 
+const DescriptionRenderer = styled(DescriptionRendererUnstyled)` 
   ${(props) => `
-    &.para-renderer {
-      margin: ${props.theme.styleguide['$rsg-para-margin']};
-      color: ${props.theme.styleguide['$rsg-para-color']};
-      font-size: ${props.theme.styleguide['$rsg-para-font-size']};
-      line-height: ${props.theme.styleguide['$rsg-para-line-height']};
+    &.props-description-renderer {
+      font-size: ${props.theme.styleguide['$rsg-props-description-font-size']};
     }
  `}
 `;
 
-export default ParaRenderer;
+DescriptionRenderer.defaultProps = defaultProps;
+DescriptionRenderer.propTypes = propTypes;
+
+export default DescriptionRenderer;

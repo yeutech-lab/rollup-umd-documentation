@@ -76,6 +76,7 @@ export default class Playground extends Component {
     }
     return (
       <PlaygroundRenderer
+        className="d-flex justify-content-between"
         name={name}
         preview={preview}
         previewProps={settings.props || {}}

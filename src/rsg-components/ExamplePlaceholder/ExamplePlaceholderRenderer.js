@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'bootstrap-styled/lib/Button';
 import { DOCS_DOCUMENTING } from 'react-styleguidist/scripts/consts';
+import TabButton from '../TabButton';
 import Markdown from '../Markdown';
 
 export class ExamplePlaceholderRenderer extends Component {
@@ -45,9 +45,9 @@ Read more in the [documenting components guide](${DOCS_DOCUMENTING}).
     }
 
     return (
-      <Button onClick={this.handleOpen}>
+      <TabButton onClick={this.handleOpen}>
         Add examples to this component
-      </Button>
+      </TabButton>
     );
   }
 }

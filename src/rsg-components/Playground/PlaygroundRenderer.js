@@ -16,7 +16,7 @@ export function PlaygroundRenderer({
       <div {...props} data-preview={name}>
         {preview}
       </div>
-      <div>
+      <div className="d-flex justify-content-between">
         <div>{tabButtons}</div>
         <div>{toolbar}</div>
       </div>

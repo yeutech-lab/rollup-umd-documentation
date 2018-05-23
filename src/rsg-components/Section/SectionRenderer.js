@@ -25,6 +25,7 @@ export function SectionRenderer(allProps) {
       {description && <Markdown text={description} />}
       {content}
       {sections}
+
       {components}
     </Section>
   );

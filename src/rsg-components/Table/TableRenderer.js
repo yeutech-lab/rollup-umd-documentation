@@ -6,16 +6,18 @@ import Tr from 'bootstrap-styled/lib/Table/Tr';
 import Th from 'bootstrap-styled/lib/Table/Th';
 import Tbody from 'bootstrap-styled/lib/Table/Tbody';
 import Td from 'bootstrap-styled/lib/Table/Td';
+import Small from 'bootstrap-styled/lib/Small';
+import Strong from 'bootstrap-styled/lib/Strong';
 
 /* eslint-disable react/no-array-index-key */
 export function TableRenderer({ columns, rows, getRowKey }) {
   return (
-    <Table>
+    <Table size="sm">
       <Thead>
         <Tr>
           {columns.map(({ caption }) => (
             <Th key={caption}>
-              {caption}
+              <Small><Strong>{caption}</Strong></Small>
             </Th>
           ))}
         </Tr>

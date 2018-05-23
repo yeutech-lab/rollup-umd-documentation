@@ -14,8 +14,8 @@ export const defaultProps = {
     styleguide: {
       '$rsg-toc-display': 'block',
       '$rsg-toc-padding': '0',
-      '$rsg-toc-color': '#fff',
-      '$rsg-toc-hover-color': '#ce4953',
+      '$rsg-toc-form-width': '60%',
+      '$rsg-toc-form-margin': '0 auto',
     },
   },
 };
@@ -30,8 +30,8 @@ export const propTypes = {
     styleguide: PropTypes.shape({
       '$rsg-toc-display': PropTypes.string,
       '$rsg-toc-padding': PropTypes.string,
-      '$rsg-toc-color': PropTypes.string,
-      '$rsg-toc-hover-color': PropTypes.string,
+      '$rsg-toc-form-width': PropTypes.string,
+      '$rsg-toc-form-margin': PropTypes.string,
     }),
   }),
   /**
@@ -55,7 +55,7 @@ const TableOfContentsRendererUnstyled = (props) => {
       className={mapToCssModules(cn(className, 'rsg-toc'), cssModule)}
       {...attributes}
     >
-      <Form>
+      <Form className="rsg-toc-form">
         <Input
           size="sm"
           value={searchTerm}
@@ -77,9 +77,14 @@ TableOfContentsRendererUnstyled.propTypes = propTypes;
 const TableOfContentsRenderer = styled(TableOfContentsRendererUnstyled)`
   ${(props) => `
     &.rsg-toc {
+      .rsg-toc-form {
+        width: ${props.theme.styleguide['$rsg-toc-form-width']};
+        margin: ${props.theme.styleguide['$rsg-toc-form-margin']};
+      }
       .rsg-toc-nav {
         display: ${props.theme.styleguide['$rsg-toc-display']};
         padding: ${props.theme.styleguide['$rsg-toc-padding']};
+        text-align: left;
       }
     }
   `}

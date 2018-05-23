@@ -10,8 +10,10 @@ import Heading from '../Heading';
 export const defaultProps = {
   theme: {
     styleguide: {
+      '$rsg-section-heading-margin': '2.5em 0 0 0',
       '$rsg-section-heading-link-color': '#383535',
       '$rsg-section-heading-link-hover-color': '#CE4953',
+      '$rsg-section-heading-link-decoration': 'none',
     },
   },
 };
@@ -30,8 +32,10 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-section-heading-margin': PropTypes.string,
       '$rsg-section-heading-link-color': PropTypes.string,
       '$rsg-section-heading-link-hover-color': PropTypes.string,
+      '$rsg-section-heading-link-decoration': PropTypes.string,
     }),
   }),
   /**
@@ -75,7 +79,9 @@ SectionHeadingRendererUnstyled.propTypes = propTypes;
 const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)` 
   ${(props) => `
     &.section-heading {
+      margin: ${props.theme.styleguide['$rsg-section-heading-margin']};
       .section-heading-link {
+        text-decoration: ${props.theme.styleguide['$rsg-section-heading-link-decoration']};
         color: ${props.theme.styleguide['$rsg-section-heading-link-color']};
         &:hover {
           color: ${props.theme.styleguide['$rsg-section-heading-link-hover-color']};

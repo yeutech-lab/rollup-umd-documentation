@@ -12,6 +12,7 @@ import Text from '../Text';
 import Para from '../Para';
 import Table from '../Table';
 import { unquote, getType, showSpaces } from './util';
+import Description from './Description';
 
 function renderType(type) {
   if (!type) {
@@ -166,13 +167,13 @@ function renderDescription(prop) {
   const returnDocumentation = (tags.return && tags.return[0]) || (tags.returns && tags.returns[0]);
 
   return (
-    <div>
+    <Description>
       {description && <Markdown text={description} />}
       {extra && <Para>{extra}</Para>}
       <JsDoc {...tags} />
       {args.length > 0 && <Arguments args={args} heading />}
       {returnDocumentation && <Argument {...returnDocumentation} returns />}
-    </div>
+    </Description>
   );
 }
 
