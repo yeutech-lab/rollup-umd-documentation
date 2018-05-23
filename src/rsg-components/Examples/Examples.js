@@ -1,9 +1,10 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Playground from '../Playground'; // eslint-disable-line no-unused-vars
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
-import ExamplesRenderer from './ExamplesRenderer'; // eslint-disable-line no-unused-vars
+import Playground from '../Playground';
+import Markdown from '../Markdown';
+import ExamplesRenderer from './ExamplesRenderer';
 
+/* eslint-disable react/no-array-index-key */
 export default function Examples({ examples, name }, { codeRevision }) {
   return (
     <ExamplesRenderer>
@@ -29,6 +30,8 @@ export default function Examples({ examples, name }, { codeRevision }) {
     </ExamplesRenderer>
   );
 }
+/* eslint-enable react/no-array-index-key */
+
 Examples.propTypes = {
   examples: PropTypes.array.isRequired,
   name: PropTypes.string.isRequired,

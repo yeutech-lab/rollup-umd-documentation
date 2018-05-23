@@ -1,7 +1,7 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
 import map from 'lodash/map';
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
+import Markdown from '../Markdown';
 
 const plural = (array, caption) => (array.length === 1 ? caption : `${caption}s`);
 const list = (array) => array.map((item) => item.description).join(', ');
@@ -26,7 +26,7 @@ export default function JsDoc(props) {
   const markdown = getMarkdown(props);
   return markdown ? <Markdown text={markdown} /> : null;
 }
-
+/* eslint-disable react/require-default-props, react/no-unused-prop-types */
 JsDoc.propTypes = {
   deprecated: PropTypes.array,
   see: PropTypes.array,
@@ -35,3 +35,4 @@ JsDoc.propTypes = {
   version: PropTypes.array,
   since: PropTypes.array,
 };
+/* eslint-enable react/require-default-props, react/no-unused-prop-types */

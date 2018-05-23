@@ -1,6 +1,6 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Pathline from '../Pathline'; // eslint-disable-line no-unused-vars
+import Pathline from '../Pathline';
 
 export function ReactComponentRenderer({
   name,
@@ -34,7 +34,7 @@ export function ReactComponentRenderer({
     </div>
   );
 }
-
+/* eslint-disable react/require-default-props, react/no-unused-prop-types */
 ReactComponentRenderer.propTypes = {
   name: PropTypes.string.isRequired,
   heading: PropTypes.node.isRequired,
@@ -47,5 +47,5 @@ ReactComponentRenderer.propTypes = {
   examples: PropTypes.node,
   isolated: PropTypes.bool,
 };
-
+/* eslint-enable react/require-default-props, react/no-unused-prop-types */
 export default ReactComponentRenderer;

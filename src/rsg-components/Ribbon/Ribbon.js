@@ -1,6 +1,6 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import RibbonRenderer from './RibbonRenderer'; // eslint-disable-line no-unused-vars
+import RibbonRenderer from './RibbonRenderer';
 
 export default function Ribbon(props, { config }) {
   const { ribbon } = config;

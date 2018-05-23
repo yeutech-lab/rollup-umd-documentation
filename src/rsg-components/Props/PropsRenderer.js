@@ -1,17 +1,18 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
 import objectToString from 'javascript-stringify';
-import Arguments from '../Arguments'; // eslint-disable-line no-unused-vars
-import Argument from '../Argument'; // eslint-disable-line no-unused-vars
-import Code from '../Code'; // eslint-disable-line no-unused-vars
-import JsDoc from '../JsDoc'; // eslint-disable-line no-unused-vars
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
-import Name from '../Name'; // eslint-disable-line no-unused-vars
-import Type from '../Type'; // eslint-disable-line no-unused-vars
-import Text from '../Text'; // eslint-disable-line no-unused-vars
-import Para from '../Para'; // eslint-disable-line no-unused-vars
-import Table from '../Table'; // eslint-disable-line no-unused-vars
+import Arguments from '../Arguments';
+import Argument from '../Argument';
+import Code from '../Code';
+import JsDoc from '../JsDoc';
+import Markdown from '../Markdown';
+import Name from '../Name';
+import Type from '../Type';
+import Text from '../Text';
+import Para from '../Para';
+import Table from '../Table';
 import { unquote, getType, showSpaces } from './util';
+import Description from './Description';
 
 function renderType(type) {
   if (!type) {
@@ -166,13 +167,13 @@ function renderDescription(prop) {
   const returnDocumentation = (tags.return && tags.return[0]) || (tags.returns && tags.returns[0]);
 
   return (
-    <div>
+    <Description>
       {description && <Markdown text={description} />}
       {extra && <Para>{extra}</Para>}
       <JsDoc {...tags} />
       {args.length > 0 && <Arguments args={args} heading />}
       {returnDocumentation && <Argument {...returnDocumentation} returns />}
-    </div>
+    </Description>
   );
 }
 
@@ -203,7 +204,7 @@ function renderExtra(prop) {
       return null;
   }
 }
-
+/* eslint-disable react/no-array-index-key */
 function renderUnion(prop) {
   if (!Array.isArray(getType(prop).value)) {
     return <span>{getType(prop).value}</span>;
@@ -221,7 +222,7 @@ function renderUnion(prop) {
     </span>
   );
 }
-
+/* eslint-enable react/no-array-index-key */
 function renderName(prop) {
   const { name, tags = {} } = prop;
   return <Name deprecated={!!tags.deprecated}>{name}</Name>;

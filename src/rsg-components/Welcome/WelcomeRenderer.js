@@ -1,7 +1,7 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
 import { DOCS_COMPONENTS } from 'react-styleguidist/scripts/consts';
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
+import Markdown from '../Markdown';
 
 export function WelcomeRenderer({ patterns }) {
   return (

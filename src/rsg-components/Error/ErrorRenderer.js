@@ -1,8 +1,8 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Pre from 'bootstrap-styled/lib/Pre'; // eslint-disable-line no-unused-vars
-import P from 'bootstrap-styled/lib/P'; // eslint-disable-line no-unused-vars
-import A from 'bootstrap-styled/lib/A'; // eslint-disable-line no-unused-vars
+import Pre from 'bootstrap-styled/lib/Pre';
+import P from 'bootstrap-styled/lib/P';
+import A from 'bootstrap-styled/lib/A';
 
 export function ErrorRenderer({ error, info }) {
   return (

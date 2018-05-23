@@ -1,8 +1,8 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Logo from '../Logo'; // eslint-disable-line no-unused-vars
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
-import Ribbon from '../Ribbon'; // eslint-disable-line no-unused-vars
+import Logo from '../Logo';
+import Markdown from '../Markdown';
+import Ribbon from '../Ribbon';
 
 export function StyleGuideRenderer({
   title,
@@ -37,7 +37,7 @@ StyleGuideRenderer.propTypes = {
   homepageUrl: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   toc: PropTypes.node.isRequired,
-  hasSidebar: PropTypes.bool,
+  hasSidebar: PropTypes.bool, // eslint-disable-line react/require-default-props
 };
 
 export default StyleGuideRenderer;

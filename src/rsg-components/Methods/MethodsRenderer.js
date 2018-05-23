@@ -1,11 +1,11 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
-import Argument from '../Argument'; // eslint-disable-line no-unused-vars
-import Arguments from '../Arguments'; // eslint-disable-line no-unused-vars
-import Name from '../Name'; // eslint-disable-line no-unused-vars
-import JsDoc from '../JsDoc'; // eslint-disable-line no-unused-vars
-import Table from '../Table'; // eslint-disable-line no-unused-vars
+import Markdown from '../Markdown';
+import Argument from '../Argument';
+import Arguments from '../Arguments';
+import Name from '../Name';
+import JsDoc from '../JsDoc';
+import Table from '../Table';
 
 const getRowKey = (row) => row.name;
 

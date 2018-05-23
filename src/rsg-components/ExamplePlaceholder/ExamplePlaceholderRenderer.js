@@ -1,12 +1,12 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'bootstrap-styled/lib/Button'; // eslint-disable-line no-unused-vars
-import { DOCS_DOCUMENTING } from 'react-styleguidist/scripts/consts'; // eslint-disable-line no-unused-vars
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
+import { DOCS_DOCUMENTING } from 'react-styleguidist/scripts/consts';
+import TabButton from '../TabButton';
+import Markdown from '../Markdown';
 
 export class ExamplePlaceholderRenderer extends Component {
   static propTypes = {
-    name: PropTypes.string,
+    name: PropTypes.string, // eslint-disable-line react/require-default-props
   };
 
   constructor() {
@@ -45,9 +45,9 @@ Read more in the [documenting components guide](${DOCS_DOCUMENTING}).
     }
 
     return (
-      <Button onClick={this.handleOpen}>
+      <TabButton onClick={this.handleOpen}>
         Add examples to this component
-      </Button>
+      </TabButton>
     );
   }
 }

@@ -1,7 +1,7 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Props from '../Props'; // eslint-disable-line no-unused-vars
-import Methods from '../Methods'; // eslint-disable-line no-unused-vars
+import Props from '../Props';
+import Methods from '../Methods';
 
 export default function Usage({ props: { props, methods } }) {
   const propsNode = props && <Props props={props} />;

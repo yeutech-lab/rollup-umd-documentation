@@ -1,11 +1,11 @@
-import React, { Component } from 'react'; // eslint-disable-line no-unused-vars
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { HOMEPAGE, DisplayModes } from 'react-styleguidist/scripts/consts';
-import StyleGuideRenderer from './StyleGuideRenderer'; // eslint-disable-line no-unused-vars
-import TableOfContents from '../TableOfContents'; // eslint-disable-line no-unused-vars
-import Sections from '../Sections'; // eslint-disable-line no-unused-vars
-import Welcome from '../Welcome'; // eslint-disable-line no-unused-vars
-import Error from '../Error'; // eslint-disable-line no-unused-vars
+import StyleGuideRenderer from './StyleGuideRenderer';
+import TableOfContents from '../TableOfContents';
+import Sections from '../Sections';
+import Welcome from '../Welcome';
+import Error from '../Error';
 
 /**
  * This function will return true, if the sidebar should be visible and false otherwise.
@@ -31,6 +31,7 @@ function hasSidebar(displayMode, showSidebar, pagePerSection = false) {
 }
 
 export default class StyleGuide extends Component {
+  /* eslint-disable react/require-default-props */
   static propTypes = {
     codeRevision: PropTypes.number.isRequired,
     config: PropTypes.object.isRequired,
@@ -42,7 +43,7 @@ export default class StyleGuide extends Component {
     allSections: PropTypes.array.isRequired,
     pagePerSection: PropTypes.bool,
   };
-
+  /* eslint-enable react/require-default-props */
   static childContextTypes = {
     codeRevision: PropTypes.number.isRequired,
     config: PropTypes.object.isRequired,

@@ -1,16 +1,16 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Group from 'react-group'; // eslint-disable-line no-unused-vars
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
-import Name from '../Name'; // eslint-disable-line no-unused-vars
-import Type from '../Type'; // eslint-disable-line no-unused-vars
+import Group from 'react-group';
+import Markdown from '../Markdown';
+import Name from '../Name';
+import Type from '../Type';
 
 export function ArgumentRenderer({
   name,
   type,
   description,
   returns,
-  block,
+  block, // eslint-disable-line no-unused-vars
   ...props
 }) {
   return (
@@ -28,7 +28,7 @@ export function ArgumentRenderer({
     </Group>
   );
 }
-
+/* eslint-disable react/require-default-props */
 ArgumentRenderer.propTypes = {
   name: PropTypes.string,
   type: PropTypes.object,
@@ -36,5 +36,5 @@ ArgumentRenderer.propTypes = {
   returns: PropTypes.bool,
   block: PropTypes.bool,
 };
-
+/* eslint-disable react/require-default-props */
 export default ArgumentRenderer;

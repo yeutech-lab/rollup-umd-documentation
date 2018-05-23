@@ -1,7 +1,7 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Argument from '../Argument'; // eslint-disable-line no-unused-vars
-import Heading from '../Heading'; // eslint-disable-line no-unused-vars
+import Argument from '../Argument';
+import Heading from '../Heading';
 
 export function ArgumentsRenderer({
   args,
@@ -29,7 +29,7 @@ ArgumentsRenderer.propTypes = {
     type: PropTypes.object,
     description: PropTypes.string,
   })).isRequired,
-  heading: PropTypes.bool,
+  heading: PropTypes.bool, // eslint-disable-line react/require-default-props
 };
 
 export default ArgumentsRenderer;

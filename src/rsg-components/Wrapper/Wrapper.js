@@ -1,4 +1,4 @@
-import { Component } from 'react'; // eslint-disable-line no-unused-vars
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Wrapper extends Component {

@@ -1,6 +1,8 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
+import Ul from 'bootstrap-styled/lib/Ul';
+import Li from 'bootstrap-styled/lib/Li';
 import Link from '../Link';
 
 export function ComponentsListRenderer({ items }) {
@@ -11,18 +13,18 @@ export function ComponentsListRenderer({ items }) {
   }
 
   return (
-    <ul>
+    <Ul>
       {items.map(({ heading, name, href, content }) => (
-        <li
+        <Li
           key={href}
         >
           <Link href={href}>
             {name}
           </Link>
           {content}
-        </li>
+        </Li>
       ))}
-    </ul>
+    </Ul>
   );
 }
 

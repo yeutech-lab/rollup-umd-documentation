@@ -1,11 +1,11 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import H1 from 'bootstrap-styled/lib/H1'; // eslint-disable-line no-unused-vars
-import H2 from 'bootstrap-styled/lib/H2'; // eslint-disable-line no-unused-vars
-import H3 from 'bootstrap-styled/lib/H3'; // eslint-disable-line no-unused-vars
-import H4 from 'bootstrap-styled/lib/H4'; // eslint-disable-line no-unused-vars
-import H5 from 'bootstrap-styled/lib/H5'; // eslint-disable-line no-unused-vars
-import H6 from 'bootstrap-styled/lib/H6'; // eslint-disable-line no-unused-vars
+import H1 from 'bootstrap-styled/lib/H1';
+import H2 from 'bootstrap-styled/lib/H2';
+import H3 from 'bootstrap-styled/lib/H3';
+import H4 from 'bootstrap-styled/lib/H4';
+import H5 from 'bootstrap-styled/lib/H5';
+import H6 from 'bootstrap-styled/lib/H6';
 
 const typoList = {
   H1,
@@ -17,7 +17,7 @@ const typoList = {
 };
 
 function HeadingRenderer({ level, children, ...props }) {
-  const Tag = typoList[`H${level}`] || H1; // eslint-disable-line no-unused-vars
+  const Tag = typoList[`H${level}`] || H1;
   return (
     <Tag {...props}>
       {children}
@@ -27,7 +27,7 @@ function HeadingRenderer({ level, children, ...props }) {
 
 HeadingRenderer.propTypes = {
   level: PropTypes.oneOf([1, 2, 3, 4, 5, 6]).isRequired,
-  children: PropTypes.node,
+  children: PropTypes.node, // eslint-disable-line react/require-default-props
 };
 
 export default HeadingRenderer;

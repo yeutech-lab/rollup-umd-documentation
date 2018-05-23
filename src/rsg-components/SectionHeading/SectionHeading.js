@@ -1,8 +1,8 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
 import getUrl from 'react-styleguidist/lib/utils/getUrl';
-import Slot from '../Slot'; // eslint-disable-line no-unused-vars
-import SectionHeadingRenderer from './SectionHeadingRenderer'; // eslint-disable-line no-unused-vars
+import Slot from '../Slot';
+import SectionHeadingRenderer from './SectionHeadingRenderer';
 
 export default function SectionHeading({
   slotName,
@@ -25,10 +25,10 @@ export default function SectionHeading({
 }
 
 SectionHeading.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node, // eslint-disable-line react/require-default-props
   id: PropTypes.string.isRequired,
   slotName: PropTypes.string.isRequired,
   slotProps: PropTypes.object.isRequired,
   depth: PropTypes.number.isRequired,
-  deprecated: PropTypes.bool,
+  deprecated: PropTypes.bool, // eslint-disable-line react/require-default-props
 };

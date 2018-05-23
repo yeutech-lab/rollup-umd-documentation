@@ -1,6 +1,6 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
-import Markdown from '../Markdown'; // eslint-disable-line no-unused-vars
+import Markdown from '../Markdown';
 
 export function MessageRenderer({ children }) {
   return (
