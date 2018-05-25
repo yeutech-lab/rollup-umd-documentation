@@ -72,8 +72,8 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-code-background'] = u['$rsg-code-background'] || 'transparent';
   v['$rsg-code-white-space'] = u['$rsg-code-white-space'] || 'nowrap';
   // sidebar
-  v['$rsg-sidebar-linear-gradient'] = u['$rsg-sidebar-linear-gradient'] || 'linear-gradient( to right, #B31255, #3A007D)';
-  v['$rsg-sidebar-logo-margin'] = u['$rsg-sidebar-logo-margin'] || '30px 0 0 0';
+  v['$rsg-sidebar-linear-gradient'] = u['$rsg-sidebar-linear-gradient'] || 'linear-gradient(#3A007D, #B31255)';
+  v['$rsg-sidebar-logo-padding'] = u['$rsg-sidebar-logo-padding'] || '30px 0 10px 0';
   v['$rsg-sidebar-logo-align'] = u['$rsg-sidebar-logo-align'] || 'center';
   // markdown
   v['$rsg-markdown-block-quote-margin'] = u['$rsg-markdown-block-quote-margin'] || '16px 32px';
@@ -102,7 +102,13 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-markdown-list-li-font-size'] = u['$rsg-markdown-list-li-font-size'] || 'inherit';
   v['$rsg-markdown-list-li-line-height'] = u['$rsg-markdown-list-li-line-height'] || '1.5';
   v['$rsg-markdown-list-li-style-type'] = u['$rsg-markdown-list-li-style-type'] || 'inherit';
-
+  // component-list
+  v['$rsg-component-list-color'] = u['$rsg-component-list-color'] || '#9e9e9e';
+  v['$rsg-component-list-font-size'] = u['$rsg-component-list-font-size'] || '14px';
+  v['$rsg-component-list-line-height'] = u['$rsg-component-list-line-height'] || '2';
+  v['$rsg-component-list-heading-color'] = u['$rsg-component-list-heading-color'] || '#d9534f';
+  v['$rsg-component-list-heading-font-size'] = u['$rsg-component-list-heading-font-size'] || '16px';
+  v['$rsg-component-list-heading-font-weight'] = u['$rsg-component-list-heading-font-weight'] || '500';
   newTheme.styleguide = v;
   return { ...userTheme, ...newTheme };
 }

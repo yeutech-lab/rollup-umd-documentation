@@ -57,6 +57,7 @@ const TableOfContentsRendererUnstyled = (props) => {
     >
       <Form className="rsg-toc-form">
         <Input
+          className="rsg-toc-form-input"
           size="sm"
           value={searchTerm}
           placeholder="Filter by name"
@@ -78,13 +79,19 @@ const TableOfContentsRenderer = styled(TableOfContentsRendererUnstyled)`
   ${(props) => `
     &.rsg-toc {
       .rsg-toc-form {
-        width: ${props.theme.styleguide['$rsg-toc-form-width']};
-        margin: ${props.theme.styleguide['$rsg-toc-form-margin']};
+        background: #B31255;
+        padding: 0 0 20px 0;
+        .rsg-toc-form-input {
+          width: ${props.theme.styleguide['$rsg-toc-form-width']};
+          margin: ${props.theme.styleguide['$rsg-toc-form-margin']};
+        }
       }
       .rsg-toc-nav {
+        padding: 20px 0 0 0 !important;
+        background: white;
+        text-align: left;
         display: ${props.theme.styleguide['$rsg-toc-display']};
         padding: ${props.theme.styleguide['$rsg-toc-padding']};
-        text-align: left;
       }
     }
   `}

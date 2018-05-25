@@ -64,7 +64,9 @@ export const config = {
            v2.0 | 20110126
            License: none (public domain)
         */
-        
+        html, body {
+          height: 100%
+        }
         html, body, div, span, applet, object, iframe,
         h1, h2, h3, h4, h5, h6, p, blockquote, pre,
         a, abbr, acronym, address, big, cite, code,
@@ -107,28 +109,6 @@ export const config = {
         table {
           border-collapse: collapse;
           border-spacing: 0;
-        }
-        /* Pre loader css style */
-        * {
-          padding: 0;
-          margin: 0;
-        }
-    
-        html, body {
-          height: 100%;
-        }
-    
-        .panel {
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .pre-loader {
-          width: 4em;
-          height: 4em;  
-          fill: #d8452b; 
-          filter: drop-shadow(2px 2px 1px #cebebe);
         }
       </style>
       ${generateCSSReferences(css, publicPath)}
