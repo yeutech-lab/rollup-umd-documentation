@@ -16,7 +16,7 @@ export const defaultProps = {
       '$rsg-markdown-list-font-size': 'inherit',
       '$rsg-markdown-list-ordered-style-type': 'decimal',
       '$rsg-markdown-list-li-color': '#333',
-      '$rsg-markdown-list-li-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;',
+      '$rsg-markdown-list-li-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
       '$rsg-markdown-list-li-font-size': 'inherit',
       '$rsg-markdown-list-li-line-height': '1.5',
       '$rsg-markdown-list-li-style-type': 'inherit',

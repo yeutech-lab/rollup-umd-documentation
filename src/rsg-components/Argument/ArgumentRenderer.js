@@ -1,20 +1,65 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Group from 'react-group';
+import omit from 'lodash.omit';
+import styled from 'styled-components';
+import mapToCssModules from 'map-to-css-modules/lib';
+import cn from 'classnames';
 import Markdown from '../Markdown';
 import Name from '../Name';
 import Type from '../Type';
 
-export function ArgumentRenderer({
-  name,
-  type,
-  description,
-  returns,
-  block, // eslint-disable-line no-unused-vars
-  ...props
-}) {
+export const defaultProps = {
+  theme: {
+    styleguide: {
+      '$rsg-argument-margin': '0 0 8px 0',
+    },
+  },
+};
+
+/* eslint-disable react/require-default-props */
+export const propTypes = {
+  /**
+   * @ignore
+   */
+  className: PropTypes.string, // eslint-disable-line react/require-default-props
+  name: PropTypes.string,
+  type: PropTypes.object,
+  description: PropTypes.string,
+  returns: PropTypes.bool,
+  block: PropTypes.bool,
+  /** Theme variables. Can be: */
+  theme: PropTypes.shape({
+    styleguide: PropTypes.shape({
+      '$rsg-argument-margin': PropTypes.string,
+    }),
+  }),
+  /**
+   * Replace or remove a className from the component.
+   * See example <a href="https://www.npmjs.com/package/map-to-css-modules" target="_blank">here</a>.
+   */
+  cssModule: PropTypes.object, // eslint-disable-line react/require-default-props
+};
+/* eslint-enable react/require-default-props */
+
+
+const ArgumentRendererUnstyled = (props) => {
+  const {
+    className,
+    name,
+    type,
+    description,
+    returns,
+    block,
+    cssModule,
+    ...attributes
+  } = omit(props, ['theme']);
+
   return (
-    <Group {...props}>
+    <Group
+      className={mapToCssModules(cn(className, 'rsg-argument', (block && 'block')), cssModule)}
+      {...attributes}
+    >
       {returns && 'Returns'}
       {name && (
         <span>
@@ -27,14 +72,20 @@ export function ArgumentRenderer({
       {description && <Markdown text={`${description}`} inline />}
     </Group>
   );
-}
-/* eslint-disable react/require-default-props */
-ArgumentRenderer.propTypes = {
-  name: PropTypes.string,
-  type: PropTypes.object,
-  description: PropTypes.string,
-  returns: PropTypes.bool,
-  block: PropTypes.bool,
 };
-/* eslint-disable react/require-default-props */
+
+ArgumentRendererUnstyled.defaultProps = defaultProps;
+ArgumentRendererUnstyled.propTypes = propTypes;
+
+const ArgumentRenderer = styled(ArgumentRendererUnstyled)` 
+  ${(props) => `
+    &.rsg-argument.block {
+      font-size: ${props.theme.styleguide['$rsg-argument-margin']};
+    }
+ `}
+`;
+
+ArgumentRenderer.defaultProps = defaultProps;
+ArgumentRenderer.propTypes = propTypes;
+
 export default ArgumentRenderer;

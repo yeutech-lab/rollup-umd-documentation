@@ -11,7 +11,7 @@ export const defaultProps = {
       '$rsg-markdown-block-quote-margin': '16px 32px',
       '$rsg-markdown-block-quote-padding': '0',
       '$rsg-markdown-block-quote-color': '#333',
-      '$rsg-markdown-block-quote-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;',
+      '$rsg-markdown-block-quote-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
       '$rsg-markdown-block-quote-font-size': '15px',
       '$rsg-markdown-block-quote-line-height': '1.5',
       '$rsg-markdown-block-quote-border': 'none',

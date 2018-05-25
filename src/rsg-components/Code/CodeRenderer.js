@@ -10,11 +10,16 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-code-font-family': 'SF Mono, Monaco, Inconsolata, Fira Code, Fira Mono, Droid Sans Mono, Consolas, Roboto Mono, Source Code Pro, monospace;',
-      '$rsg-code-font-size': 'inherit',
-      '$rsg-code-color': 'inherit',
+      '$rsg-code-highlight-font-family': 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace',
+      '$rsg-code-highlight-font-size': 'inherit',
+      '$rsg-code-highlight-color': '#b11255',
+      '$rsg-code-highlight-background': 'transparent',
+      '$rsg-code-highlight-white-space': 'inherit',
+      '$rsg-code-font-family': 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace',
+      '$rsg-code-font-size': '16px',
+      '$rsg-code-color': '#4D0377',
       '$rsg-code-background': 'transparent',
-      '$rsg-code-white-space': 'inherit',
+      '$rsg-code-white-space': 'nowrap',
     },
   },
 };
@@ -28,6 +33,11 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-code-highlight-font-family': PropTypes.string,
+      '$rsg-code-highlight-font-size': PropTypes.string,
+      '$rsg-code-highlight-color': PropTypes.string,
+      '$rsg-code-highlight-background': PropTypes.string,
+      '$rsg-code-highlight-white-space': PropTypes.string,
       '$rsg-code-font-family': PropTypes.string,
       '$rsg-code-font-size': PropTypes.string,
       '$rsg-code-color': PropTypes.string,
@@ -54,21 +64,20 @@ const CodeRendererUnstyled = (props) => {
 
   const isHighlighted = className && className.indexOf('lang-') !== -1;
 
-  return (
-    isHighlighted ? (
+  if (isHighlighted) {
+    return (
       <Code
-        className={mapToCssModules(cn(className, 'code-renderer'), cssModule)}
-        {...attributes}
+        className={className}
         dangerouslySetInnerHTML={{ __html: children }}
-      />
-    ) : (
-      <Code
-        className={mapToCssModules(cn(className, 'code-renderer'), cssModule)}
-        {...attributes}
-      >
-        {children}
-      </Code>
-    )
+      />);
+  }
+  return (
+    <Code
+      className={mapToCssModules(cn(className, 'code-renderer'), cssModule)}
+      {...attributes}
+    >
+      {children}
+    </Code>
   );
 };
 
@@ -77,6 +86,13 @@ CodeRendererUnstyled.propTypes = propTypes;
 
 const CodeRenderer = styled(CodeRendererUnstyled)` 
   ${(props) => `
+    &.code-renderer-highlight {
+      font-family: ${props.theme.styleguide['$rsg-code-highlight-font-family']};
+      font-size: ${props.theme.styleguide['$rsg-code-highlight-font-size']};
+      color: ${props.theme.styleguide['$rsg-code-highlight-color']};
+      background: ${props.theme.styleguide['$rsg-code-highlight-background']};
+      white-space: ${props.theme.styleguide['$rsg-code-highlight-white-space']};
+    }
     &.code-renderer {
       font-family: ${props.theme.styleguide['$rsg-code-font-family']};
       font-size: ${props.theme.styleguide['$rsg-code-font-size']};
