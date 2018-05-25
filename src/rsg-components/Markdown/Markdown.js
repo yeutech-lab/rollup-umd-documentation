@@ -7,6 +7,8 @@ import Tbody from 'bootstrap-styled/lib/Table/Tbody';
 import Th from 'bootstrap-styled/lib/Table/Th';
 import Tr from 'bootstrap-styled/lib/Table/Tr';
 import Td from 'bootstrap-styled/lib/Table/Td';
+// todo: change css to have with bs (not use css file, css file to delete
+import '!!style-loader!css-loader!../../../loaders/tomorrow.css'; // eslint-disable-line import/no-webpack-loader-syntax
 import Link from '../Link';
 import Text from '../Text';
 import Para from '../Para';
@@ -17,8 +19,6 @@ import Blockquote from './Blockquote/BlockquoteRenderer';
 import Pre from './Pre/PreRenderer';
 import Checkbox from './Checkbox/CheckboxRenderer';
 import Hr from './Hr/HrRenderer';
-// todo: change css to have with bs (not use css file, css file to delete
-// import '!!style-loader!css-loader!../../../loaders/tomorrow.css'; // eslint-disable-line import/no-webpack-loader-syntax
 
 export const baseOverrides = {
   a: {

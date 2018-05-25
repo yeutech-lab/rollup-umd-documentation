@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/mode/jsx/jsx';
+import '!!style-loader!css-loader!../../../node_modules/codemirror/lib/codemirror.css'; // eslint-disable-line import/no-webpack-loader-syntax
 
+// todo: find rsg-codemirror-theme.css
 // // We’re explicitly specifying Webpack loaders here so we could skip specifying them in Webpack configuration.
 // // That way we could avoid clashes between our loaders and user loaders.
-// // eslint-disable-next-line import/no-unresolved
-// require('!!../../../loaders/style-loader!../../../loaders/css-loader!codemirror/lib/codemirror.css');
 // // eslint-disable-next-line import/no-unresolved
 // require('!!../../../loaders/style-loader!../../../loaders/css-loader!rsg-codemirror-theme.css');
 
