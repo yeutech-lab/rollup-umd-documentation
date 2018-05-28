@@ -29,6 +29,8 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   // table of content
   v['$rsg-toc-display'] = u['$rsg-toc-display'] || 'block';
   v['$rsg-toc-padding'] = u['$rsg-toc-padding'] || '0';
+  v['$rsg-toc-form-background'] = u['$rsg-toc-form-background'] || '#B31255';
+  v['$rsg-toc-form-padding'] = u['$rsg-toc-form-padding'] || '0 0 20px 0';
   v['$rsg-toc-form-width'] = u['$rsg-toc-form-width'] || '80%';
   v['$rsg-toc-form-margin'] = u['$rsg-toc-form-margin'] || '0 auto';
   // tab-button
@@ -68,10 +70,11 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   // code
   v['$rsg-code-font-family'] = u['$rsg-code-font-family'] || 'SF Mono, Monaco, Inconsolata, Fira Code, Fira Mono, Droid Sans Mono, Consolas, Roboto Mono, Source Code Pro, monospace;';
   v['$rsg-code-font-size'] = u['$rsg-code-font-size'] || 'inherit';
-  v['$rsg-code-color'] = u['$rsg-code-color'] || '#f47469';
+  v['$rsg-code-color'] = u['$rsg-code-color'] || '#d9534f';
   v['$rsg-code-background'] = u['$rsg-code-background'] || 'transparent';
   v['$rsg-code-white-space'] = u['$rsg-code-white-space'] || 'nowrap';
   // sidebar
+  v['$rsg-sidebar-box-shadow'] = u['$rsg-sidebar-box-shadow'] || '8px 0 5px -2px #e2e2e2';
   v['$rsg-sidebar-linear-gradient'] = u['$rsg-sidebar-linear-gradient'] || 'linear-gradient(#3A007D, #B31255)';
   v['$rsg-sidebar-logo-padding'] = u['$rsg-sidebar-logo-padding'] || '30px 0 10px 0';
   v['$rsg-sidebar-logo-align'] = u['$rsg-sidebar-logo-align'] || 'center';
@@ -105,10 +108,17 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   // component-list
   v['$rsg-component-list-color'] = u['$rsg-component-list-color'] || '#9e9e9e';
   v['$rsg-component-list-font-size'] = u['$rsg-component-list-font-size'] || '14px';
-  v['$rsg-component-list-line-height'] = u['$rsg-component-list-line-height'] || '2';
+  v['$rsg-component-list-line-height'] = u['$rsg-component-list-line-height'] || '2.5';
+  v['$rsg-component-list-heading-margin'] = u['$rsg-component-list-heading-margin'] || '15px 0 0 0';
+  v['$rsg-component-list-heading-border-bottom'] = u['$rsg-component-list-heading-border-bottom'] || '1px solid #d8d8d8';
   v['$rsg-component-list-heading-color'] = u['$rsg-component-list-heading-color'] || '#d9534f';
+  v['$rsg-component-list-heading-hover-color'] = u['$rsg-component-list-heading-hover-color'] || '#9e9e9e';
   v['$rsg-component-list-heading-font-size'] = u['$rsg-component-list-heading-font-size'] || '16px';
-  v['$rsg-component-list-heading-font-weight'] = u['$rsg-component-list-heading-font-weight'] || '500';
+  v['$rsg-component-list-heading-font-weight'] = u['$rsg-component-list-heading-font-weight'] || '600';
+  v['$rsg-component-list-icon-margin'] = u['$rsg-component-list-icon-margin'] || '15px 15px 0 0';
+  v['$rsg-component-list-icon-color'] = u['$rsg-component-list-icon-color'] || v['$rsg-component-list-heading-color'];
+
+
   newTheme.styleguide = v;
   return { ...userTheme, ...newTheme };
 }

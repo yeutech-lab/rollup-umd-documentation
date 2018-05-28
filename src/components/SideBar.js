@@ -12,6 +12,7 @@ import Logo from '../rsg-components/Logo';
 export const defaultProps = {
   theme: {
     styleguide: {
+      '$rsg-sidebar-box-shadow': '8px 0 5px -2px #e2e2e2',
       '$rsg-sidebar-linear-gradient': 'white',
       '$rsg-sidebar-logo-padding': '30px 0 10px 0',
       '$rsg-sidebar-logo-align': 'center',
@@ -27,6 +28,7 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-sidebar-box-shadow': PropTypes.string,
       '$rsg-sidebar-linear-gradient': PropTypes.string,
       '$rsg-sidebar-logo-padding': PropTypes.string,
       '$rsg-sidebar-logo-align': PropTypes.string,
@@ -92,6 +94,7 @@ SideBarUnstyled.propTypes = propTypes;
 const SideBar = styled(SideBarUnstyled)` 
   ${(props) => `
     &.navigation {
+      box-shadow: ${props.theme.styleguide['$rsg-sidebar-box-shadow']};
       .navigation-logo {
         background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
         padding: ${props.theme.styleguide['$rsg-sidebar-logo-padding']};
