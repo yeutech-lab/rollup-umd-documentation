@@ -20,6 +20,7 @@ export const defaultProps = {
       '$rsg-component-list-line-height': '2.5',
       '$rsg-component-list-heading-button-outline': 'none',
       '$rsg-component-list-heading-button-border': 'none',
+      '$rsg-component-list-heading-button-cursor': 'pointer',
       '$rsg-component-list-heading-margin': '15px 0 0 0',
       '$rsg-component-list-heading-border-bottom': '1px solid #d8d8d8',
       '$rsg-component-list-heading-color': '#d9534f',
@@ -46,6 +47,7 @@ export const propTypes = {
       '$rsg-component-list-line-height': PropTypes.string,
       '$rsg-component-list-heading-button-outline': PropTypes.string,
       '$rsg-component-list-heading-button-border': PropTypes.string,
+      '$rsg-component-list-heading-button-cursor': PropTypes.string,
       '$rsg-component-list-heading-margin': PropTypes.string,
       '$rsg-component-list-heading-border-bottom': PropTypes.string,
       '$rsg-component-list-heading-color': PropTypes.string,
@@ -183,6 +185,7 @@ const ComponentsListRenderer = styled(ComponentsListRendererUnstyled)`
           .list-button {
             outline: ${props.theme.styleguide['$rsg-component-list-heading-button-outline']};
             border: ${props.theme.styleguide['$rsg-component-list-heading-button-border']};
+            cursor: ${props.theme.styleguide['$rsg-component-list-heading-button-cursor']};
           }
         }
       & .level-0 {
