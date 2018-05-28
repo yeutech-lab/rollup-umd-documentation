@@ -9,9 +9,10 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-para-margin': '0 0 1.2em 0',
-      '$rsg-para-color': '#494949',
-      '$rsg-para-font-size': '1em',
+      '$rsg-para-margin': '0 0 8px 0',
+      '$rsg-para-color': '#333',
+      '$rsg-para-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      '$rsg-para-font-size': '16px',
       '$rsg-para-line-height': '1.5',
     },
   },
@@ -31,6 +32,7 @@ export const propTypes = {
     styleguide: PropTypes.shape({
       '$rsg-para-margin': PropTypes.string,
       '$rsg-para-color': PropTypes.string,
+      '$rsg-para-font-family': PropTypes.string,
       '$rsg-para-font-size': PropTypes.string,
       '$rsg-para-line-height': PropTypes.string,
     }),
@@ -71,6 +73,7 @@ const ParaRenderer = styled(ParaRendererUnstyled)`
     &.para-renderer {
       margin: ${props.theme.styleguide['$rsg-para-margin']};
       color: ${props.theme.styleguide['$rsg-para-color']};
+      font-family: ${props.theme.styleguide['$rsg-para-font-family']};
       font-size: ${props.theme.styleguide['$rsg-para-font-size']};
       line-height: ${props.theme.styleguide['$rsg-para-line-height']};
     }

@@ -18,9 +18,10 @@ export const defaultProps = {
         base: '1em',
         text: '1.2em',
       },
-      '$rsg-text-color': '#9e9e9e',
-      '$rsg-text-color-light': '#8eba89',
+      '$rsg-text-color': '#333',
+      '$rsg-text-color-light': '#555556',
       '$rsg-text-border-bottom': '1px dotted #9e9e9e',
+      '$rsg-text-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
     },
   },
 };
@@ -43,6 +44,7 @@ export const propTypes = {
       '$rsg-text-color': PropTypes.string,
       '$rsg-text-color-light': PropTypes.string,
       '$rsg-text-border-bottom': PropTypes.string,
+      '$rsg-text-font-family': PropTypes.string,
     }),
   }),
   /**
@@ -86,6 +88,9 @@ TextRendererUnstyled.propTypes = propTypes;
 
 const TextRenderer = styled(TextRendererUnstyled)` 
   ${(props) => `
+    &.text-renderer {
+      font-family: ${props.theme.styleguide['$rsg-text-font-family']};
+    }
     &.text-renderer.size-inherit {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].inherit};
     }
@@ -105,7 +110,7 @@ const TextRenderer = styled(TextRendererUnstyled)`
       color: ${props.theme.styleguide['$rsg-text-color']};
     }
     &.text-renderer.color-light {
-      color: ${props.theme.styleguide['$rsg-text-color']};
+      color: ${props.theme.styleguide['$rsg-text-color-light']};
     }
  `}
 `;

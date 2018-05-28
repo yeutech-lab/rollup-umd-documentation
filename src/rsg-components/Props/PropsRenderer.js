@@ -9,7 +9,6 @@ import Markdown from '../Markdown';
 import Name from '../Name';
 import Type from '../Type';
 import Text from '../Text';
-import Para from '../Para';
 import Table from '../Table';
 import { unquote, getType, showSpaces } from './util';
 import Description from './Description';
@@ -169,7 +168,7 @@ function renderDescription(prop) {
   return (
     <Description>
       {description && <Markdown text={description} />}
-      {extra && <Para>{extra}</Para>}
+      {extra && <Description>{extra}</Description>}
       <JsDoc {...tags} />
       {args.length > 0 && <Arguments args={args} heading />}
       {returnDocumentation && <Argument {...returnDocumentation} returns />}

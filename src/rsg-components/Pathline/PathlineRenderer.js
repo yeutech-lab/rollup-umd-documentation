@@ -15,6 +15,7 @@ export const defaultProps = {
       '$rsg-path-line-color': '#9e9e9e',
       '$rsg-path-line-font-size': '0.8em',
       '$rsg-path-line-margin': '0 0 1.5em 0',
+      '$rsg-path-line-cursor': 'pointer',
     },
   },
 };
@@ -31,6 +32,7 @@ export const propTypes = {
       '$rsg-path-line-color': PropTypes.string,
       '$rsg-path-line-font-size': PropTypes.string,
       '$rsg-path-line-margin': PropTypes.string,
+      '$rsg-path-line-cursor': PropTypes.string,
     }),
   }),
   /**
@@ -73,6 +75,11 @@ const PathlineRenderer = styled(PathlineRendererUnstyled)`
       margin: ${props.theme.styleguide['$rsg-path-line-margin']};
       font-size: ${props.theme.styleguide['$rsg-path-line-font-size']};
       color: ${props.theme.styleguide['$rsg-path-line-color']};
+      & i {
+        color: ${props.theme.styleguide['$rsg-path-line-color']};
+        font-size: ${props.theme.styleguide['$rsg-path-line-font-size']};
+        cursor: ${props.theme.styleguide['$rsg-path-line-cursor']};
+      }
     }
  `}
 `;

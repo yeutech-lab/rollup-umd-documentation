@@ -6,16 +6,18 @@ import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 
+
 export const defaultProps = {
   theme: {
     styleguide: {
       '$rsg-name-font-size': '0.8em',
-      '$rsg-name-color': '#2eb71f',
+      '$rsg-name-color': '#b11255',
       '$rsg-name-deprecated-color': '#f47469',
       '$rsg-name-deprecated-decoration': 'line-through',
     },
   },
 };
+
 /* eslint-disable react/require-default-props */
 export const propTypes = {
   /**

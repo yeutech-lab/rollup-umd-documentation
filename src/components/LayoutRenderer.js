@@ -11,6 +11,7 @@ import defaultLogo from './logo';
 import whiteLogo from './logo-white';
 import Main from './Main'
 import SideBar from './SideBar';
+import Ribbon from '../rsg-components/Ribbon';
 
 /**
  * This is the main layout for the whole documentation.
@@ -48,6 +49,7 @@ function LayoutRenderer({
             </A>
           </Footer>
         </Main>
+        <Ribbon />
       </div>
     </BootstrapProvider>
   );

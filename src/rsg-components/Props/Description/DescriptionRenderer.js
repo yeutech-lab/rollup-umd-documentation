@@ -8,7 +8,7 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-props-description-font-size': '0.8em',
+      '$rsg-props-description-font-size': '13px',
     },
   },
 };

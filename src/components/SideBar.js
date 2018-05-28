@@ -13,7 +13,7 @@ export const defaultProps = {
   theme: {
     styleguide: {
       '$rsg-sidebar-box-shadow': '8px 0 5px -2px #e2e2e2',
-      '$rsg-sidebar-linear-gradient': 'white',
+      '$rsg-sidebar-linear-gradient': 'linear-gradient(#3A007D, #B31255)',
       '$rsg-sidebar-logo-padding': '30px 0 10px 0',
       '$rsg-sidebar-logo-align': 'center',
     },
@@ -81,7 +81,7 @@ const SideBarUnstyled = (props) => {
             title={logo ? 'Yeutech Company Limited' : 'Brand logo'}
           />
         )}
-        <Logo>{title}</Logo>
+        <Logo className="navigation-logo-title">{title}</Logo>
       </div>
       {items}
     </NavigationStyleguide>
@@ -99,6 +99,9 @@ const SideBar = styled(SideBarUnstyled)`
         background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
         padding: ${props.theme.styleguide['$rsg-sidebar-logo-padding']};
         text-align: ${props.theme.styleguide['$rsg-sidebar-logo-align']};
+        .navigation-logo-title {
+          line-height: 1;
+        }
       }
     }
  `}

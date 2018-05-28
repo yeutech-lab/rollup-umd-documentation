@@ -15,7 +15,7 @@ export const defaultProps = {
       '$rsg-toc-display': 'block',
       '$rsg-toc-padding': '0',
       '$rsg-toc-form-background': '#B31255',
-      '$rsg-toc-form-padding': '0 0 20px 0',
+      '$rsg-toc-form-padding': '20px 0 20px 0',
       '$rsg-toc-form-width': '60%',
       '$rsg-toc-form-margin': '0 auto',
     },

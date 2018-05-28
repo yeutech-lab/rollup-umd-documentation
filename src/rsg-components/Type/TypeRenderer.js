@@ -9,8 +9,8 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-type-font-size': '0.9em',
-      '$rsg-type-color': '#c153ba',
+      '$rsg-type-font-size': '13px',
+      '$rsg-type-color': '#75096a',
     },
   },
 };
