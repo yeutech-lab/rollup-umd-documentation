@@ -18,6 +18,8 @@ export const defaultProps = {
       '$rsg-component-list-color': '#9e9e9e',
       '$rsg-component-list-font-size': '14px',
       '$rsg-component-list-line-height': '2.5',
+      '$rsg-component-list-heading-button-outline': 'none',
+      '$rsg-component-list-heading-button-border': 'none',
       '$rsg-component-list-heading-margin': '15px 0 0 0',
       '$rsg-component-list-heading-border-bottom': '1px solid #d8d8d8',
       '$rsg-component-list-heading-color': '#d9534f',
@@ -42,6 +44,8 @@ export const propTypes = {
       '$rsg-component-list-color': PropTypes.string,
       '$rsg-component-list-font-size': PropTypes.string,
       '$rsg-component-list-line-height': PropTypes.string,
+      '$rsg-component-list-heading-button-outline': PropTypes.string,
+      '$rsg-component-list-heading-button-border': PropTypes.string,
       '$rsg-component-list-heading-margin': PropTypes.string,
       '$rsg-component-list-heading-border-bottom': PropTypes.string,
       '$rsg-component-list-heading-color': PropTypes.string,
@@ -123,7 +127,7 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
                 tabIndex="0"
                 onClick={() => this.onClick(name)}
                 onKeyPress={() => this.onClick(name)}
-                className="d-flex justify-content-between"
+                className="list-button d-flex justify-content-between"
               >
                 <Link
                   className={`level-${level}`}
@@ -176,6 +180,10 @@ const ComponentsListRenderer = styled(ComponentsListRendererUnstyled)`
         .list-0 {
           margin: ${props.theme.styleguide['$rsg-component-list-heading-margin']};
           border-bottom: ${props.theme.styleguide['$rsg-component-list-heading-border-bottom']};
+          .list-button {
+            outline: ${props.theme.styleguide['$rsg-component-list-heading-button-outline']};
+            border: ${props.theme.styleguide['$rsg-component-list-heading-button-border']};
+          }
         }
       & .level-0 {
         color: ${props.theme.styleguide['$rsg-component-list-heading-color']} !important;

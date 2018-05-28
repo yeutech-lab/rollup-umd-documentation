@@ -109,6 +109,9 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-component-list-color'] = u['$rsg-component-list-color'] || '#9e9e9e';
   v['$rsg-component-list-font-size'] = u['$rsg-component-list-font-size'] || '14px';
   v['$rsg-component-list-line-height'] = u['$rsg-component-list-line-height'] || '2.5';
+  v['$rsg-component-list-heading-button-outline'] = u['$rsg-component-list-heading-button-outline'] || 'none';
+  v['$rsg-component-list-heading-button-border'] = u['$rsg-component-list-heading-button-border'] || 'none';
+
   v['$rsg-component-list-heading-margin'] = u['$rsg-component-list-heading-margin'] || '15px 0 0 0';
   v['$rsg-component-list-heading-border-bottom'] = u['$rsg-component-list-heading-border-bottom'] || '1px solid #d8d8d8';
   v['$rsg-component-list-heading-color'] = u['$rsg-component-list-heading-color'] || '#d9534f';
