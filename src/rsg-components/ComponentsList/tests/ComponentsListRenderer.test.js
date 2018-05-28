@@ -2,38 +2,61 @@
  * Testing our link component
  */
 import React from 'react';
-import { shallow } from 'enzyme';
-// import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
-import ComponentListRenderer from '../index';
+import {
+  // shallow,
+  mount,
+} from 'enzyme';
+import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
+import '!!style-loader!css-loader!../../../node_modules/font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
+import ComponentsListRenderer, { defaultProps } from '../ComponentsListRenderer';
 
-jest.mock('../../../../node_modules/react-styleguidist/lib/utils/getUrl', () => ({ getUrl: jest.fn() }));
-// import getUrl from '../../../../node_modules/react-styleguidist/lib/utils/getUrl';
+describe('<ComponentsListRenderer />', () => {
+  const { theme } = defaultProps;
+  let props;
+  let mappedItems;
+  // let onClick = jest.fn();
 
-
-const children = (<h1>Test</h1>);
-
-const renderComponent = (props = {}) => shallow(<ComponentListRenderer {...props}>{children}</ComponentListRenderer>);
-
-// const renderComponentUsingTheme = (props = {}) => mount(<BootstrapProvider><ComponentListRenderer {...props}>{children}</ComponentListRenderer></BootstrapProvider>);
-
-describe('<ComponentListRenderer />', () => {
-  // let onClick;
-  // let mappedItems;
-  // beforeAll(() => {
-  //   onClick = jest.fn();
-  // });
-  //
-  // beforeEach(() => {
-  //   mappedItems = [{
-  //     href: getUrl,
-  //   },];
-  //   onClick = jest.fn();
-  // });
-
-  it.skip('should render an <ComponentListRenderer> tag without a theme', () => {
-    const renderedComponent = renderComponent({
-      // items: mappedItems,
+  beforeEach(() => {
+    props = Object.assign(defaultProps, {
+      items: [{ href: 'blank#!/Button' }],
+      useIsolatedLinks: false,
     });
-    expect(renderedComponent.find('ComponentListRendererUnstyled').length).toBe(1);
   });
+
+  it('should render an ComponentListRenderer with theme', () => {
+    const renderedComponent = mount(
+      <BootstrapProvider theme={theme} injectGlobal={false}>
+        <ComponentsListRenderer
+          items={mappedItems}
+          {...props}
+        />
+      </BootstrapProvider>
+    );
+    expect(renderedComponent.find('Styled(ComponentsListRendererUnstyled)').length).toEqual(1);
+  });
+  it('should render a ComponentsListRenderer with items', () => {
+    const renderedComponent = mount(
+      <BootstrapProvider theme={theme} injectGlobal={false}>
+        <ComponentsListRenderer
+          items={mappedItems}
+          {...props}
+        />
+      </BootstrapProvider>
+    );
+    expect(renderedComponent.find('ComponentsListRendererUnstyled').props().items).toEqual([{ href: 'blank#!/Button' }]);
+  });
+  // it('should render an ComponentsListRenderer with an onClick that triggers collapse', () => {
+  //   const renderedComponent = mount(
+  //     <BootstrapProvider theme={theme} injectGlobal={false}>
+  //       <ComponentsListRenderer
+  //         items={mappedItems}
+  //         {...props}
+  //       />
+  //     </BootstrapProvider>
+  //   );
+  //   const divButton = renderedComponent.find('Styled(ComponentsListRendererUnstyled)');
+  //   expect(renderedComponent.find('Collapse').props().isOpen).toBe(false);
+  //   divButton.simulate('click');
+  //   expect(renderedComponent.find('Collapse').props().isOpen).toBe(true);
+  // });
 });
