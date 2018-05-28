@@ -69,7 +69,6 @@
       "sourceType": "module"
     },
     "rules": {
-      "function-paren-newline": ["error", "consistent"],
       "no-undef": 0,
       "arrow-parens": [
         "error",
@@ -129,7 +128,10 @@
       "react/jsx-no-target-blank": 0,
       "react/require-extension": 0,
       "react/self-closing-comp": 0,
-      "react/require-default-props": 0
+      "function-paren-newline": [
+        "error",
+        "consistent"
+      ]
     },
     "plugins": [
       "react",
@@ -138,6 +140,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.4",
