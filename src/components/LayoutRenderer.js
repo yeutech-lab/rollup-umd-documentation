@@ -29,7 +29,7 @@ function LayoutRenderer({
           <SideBar logo={{ logo: logo, href: logoHref}} title={title} items={toc} theme={theme} />
         </div>
       )}
-      <div className={cn(className)}>
+      <div>
         <Main>
           {children}
           <Footer>

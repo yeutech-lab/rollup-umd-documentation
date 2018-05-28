@@ -48,7 +48,7 @@ const MainUnstyled = (props) => {
 
   return (
     <ContentWrapper
-      className={mapToCssModules(cn(className, 'navigation'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-main', cssModule))}
       {...attributes}
     />
   );
