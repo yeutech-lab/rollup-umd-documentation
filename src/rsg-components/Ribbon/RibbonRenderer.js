@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import A from 'bootstrap-styled/lib/A';
+import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -110,6 +111,20 @@ RibbonRendererUnstyled.propTypes = propTypes;
 const RibbonRenderer = styled(RibbonRendererUnstyled)` 
   ${(props) => `
     &.rsg-ribbon {
+      ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+          visibility: hidden;
+        `
+  )}
+      ${bp.up(
+    'md',
+    props.theme['$grid-breakpoints'],
+    `
+          visibility: visible;
+        `
+  )}
       position: ${props.theme.styleguide['$rsg-ribbon-position']};
       top: ${props.theme.styleguide['$rsg-ribbon-top']};
       right: ${props.theme.styleguide['$rsg-ribbon-right']};
