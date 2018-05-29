@@ -12,8 +12,9 @@ import Logo from '../rsg-components/Logo';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-sidebar-linear-gradient': 'linear-gradient( to right, #B31255, #3A007D)',
-      '$rsg-sidebar-logo-margin': '30px 0 0 0',
+      '$rsg-sidebar-box-shadow': '8px 0 5px -2px #e2e2e2',
+      '$rsg-sidebar-linear-gradient': 'linear-gradient(#3A007D, #B31255)',
+      '$rsg-sidebar-logo-padding': '30px 0 10px 0',
       '$rsg-sidebar-logo-align': 'center',
     },
   },
@@ -27,8 +28,9 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-sidebar-box-shadow': PropTypes.string,
       '$rsg-sidebar-linear-gradient': PropTypes.string,
-      '$rsg-sidebar-logo-margin': PropTypes.string,
+      '$rsg-sidebar-logo-padding': PropTypes.string,
       '$rsg-sidebar-logo-align': PropTypes.string,
     }),
   }),
@@ -79,7 +81,7 @@ const SideBarUnstyled = (props) => {
             title={logo ? 'Yeutech Company Limited' : 'Brand logo'}
           />
         )}
-        <Logo>{title}</Logo>
+        <Logo className="navigation-logo-title">{title}</Logo>
       </div>
       {items}
     </NavigationStyleguide>
@@ -92,10 +94,14 @@ SideBarUnstyled.propTypes = propTypes;
 const SideBar = styled(SideBarUnstyled)` 
   ${(props) => `
     &.navigation {
-      background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
+      box-shadow: ${props.theme.styleguide['$rsg-sidebar-box-shadow']};
       .navigation-logo {
-        margin:  ${props.theme.styleguide['$rsg-sidebar-logo-margin']};
+        background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
+        padding: ${props.theme.styleguide['$rsg-sidebar-logo-padding']};
         text-align: ${props.theme.styleguide['$rsg-sidebar-logo-align']};
+        .navigation-logo-title {
+          line-height: 1;
+        }
       }
     }
  `}

@@ -7,7 +7,7 @@ import Img from 'bootstrap-styled/lib/Img';
 import Footer from 'bootstrap-styled/lib/Footer';
 import A from 'bootstrap-styled/lib/A';
 import theme from '../theme';
-import yeutechBadge from './yeutech-badge';
+import defaultLogo from './logo';
 import whiteLogo from './logo-white';
 import Main from './Main'
 import SideBar from './SideBar';
@@ -43,8 +43,8 @@ function LayoutRenderer({
               <Img
                 src={`data:image/png;base64,${bottomLogo}`}
                 height="43px"
-                alt={logo === yeutechBadge ? 'Yeutech Company Limited logo' : 'logo'}
-                title={logo === yeutechBadge ? 'Yeutech Company Limited' : 'Brand logo'}
+                alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
+                title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
               />
             </A>
           </Footer>
@@ -58,7 +58,7 @@ function LayoutRenderer({
 LayoutRenderer.defaultProps = {
   logo: whiteLogo,
   logoHref: null,
-  bottomLogo: yeutechBadge,
+  bottomLogo: defaultLogo,
   bottomLogoHref: 'https://www.yeutech.vn',
   bottomLogoText: '',
   className: null,

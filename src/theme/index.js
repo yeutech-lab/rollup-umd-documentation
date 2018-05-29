@@ -27,8 +27,8 @@ const themeBsYeutech = makeThemeBs({
 
 const themeNavigationYeutech = makeThemeNavigationStyleguide({
   navigationStyleguide: {
-    '$nav-styleguide-color': '#fff !important',
-    '$nav-styleguide-hover-color': '#d9534f !important',
+    '$nav-styleguide-bg-color': 'white',
+    '$nav-styleguide-border': 'none',
   },
 });
 
