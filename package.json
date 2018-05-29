@@ -69,7 +69,6 @@
       "sourceType": "module"
     },
     "rules": {
-      "no-undef": 0,
       "arrow-parens": [
         "error",
         "always"
@@ -134,7 +133,6 @@
       ]
     },
     "plugins": [
-      "react",
       "react"
     ]
   },
