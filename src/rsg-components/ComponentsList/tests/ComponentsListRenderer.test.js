@@ -1,5 +1,5 @@
 /**
- * Testing our link component
+ * Testing our ComponentsListRenderer component
  */
 import React from 'react';
 import { mount } from 'enzyme';
