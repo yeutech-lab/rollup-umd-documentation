@@ -8,10 +8,10 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-playground-margin': '24px',
-      '$rsg-playground-preview-padding': '8px',
+      '$rsg-playground-margin': '40px',
+      '$rsg-playground-preview-padding': '16px',
       '$rsg-playground-preview-border': '1px #e8e8e8 solid',
-      '$rsg-playground-preview-border-radius': '3',
+      '$rsg-playground-preview-border-radius': '3px',
       '$rsg-playground-preview-width': '100%',
       '$rsg-playground-preview-display': 'inline-block',
       '$rsg-playground-controls-display': 'flex',

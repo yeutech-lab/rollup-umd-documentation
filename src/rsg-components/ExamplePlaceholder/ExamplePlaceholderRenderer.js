@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DOCS_DOCUMENTING } from 'react-styleguidist/scripts/consts';
 import Button from 'bootstrap-styled/lib/Button';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
+import { DOCS_DOCUMENTING } from 'react-styleguidist/scripts/consts';
 import Markdown from '../Markdown';
 
 export const defaultProps = {
   theme: {
     styleguide: {
+      '$rsg-example-placeholder-outline': 'none',
       '$rsg-example-placeholder-padding': '0',
       '$rsg-example-placeholder-font-size': '15px',
       '$rsg-example-placeholder-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
@@ -34,6 +35,7 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-example-placeholder-outline': PropTypes.string,
       '$rsg-example-placeholder-padding': PropTypes.string,
       '$rsg-example-placeholder-font-size': PropTypes.string,
       '$rsg-example-placeholder-font-family': PropTypes.string,
@@ -59,12 +61,16 @@ export class ExamplePlaceholderRendererUnstyled extends Component {
   static defaultProps = defaultProps;
   static propTypes = propTypes;
 
-  state = {
-    isVisible: false,
-  };
+  constructor() {
+    super();
+    this.handleOpen = this.handleOpen.bind(this);
+    this.state = {
+      isVisible: false,
+    };
+  }
 
   handleOpen() {
-    this.setState({ isVisible: !this.state.isVisible });
+    this.setState({ isVisible: true });
   }
 
   render() {
@@ -74,10 +80,9 @@ export class ExamplePlaceholderRendererUnstyled extends Component {
       cssModule,
       ...attributes
     } = omit(this.props, ['theme']);
-
     const { isVisible } = this.state;
-
     if (isVisible) {
+      /* eslint-disable no-tabs */
       return (
         <Markdown
           text={`
@@ -87,14 +92,15 @@ Create **Readme.md** or **${name}.md** file in the component’s folder like thi
 
     \`\`\`js
     <${name} pizza="\uD83C\uDF55" />
-  \`\`\`
+	\`\`\`
 
 You may need to **restart** the style guide server after adding an example file.
 
 Read more in the [documenting components guide](${DOCS_DOCUMENTING}).
-          `}
+					`}
         />
       );
+      /* eslint-enable no-tabs */
     }
 
     return (
@@ -112,6 +118,7 @@ Read more in the [documenting components guide](${DOCS_DOCUMENTING}).
 const ExamplePlaceholderRenderer = styled(ExamplePlaceholderRendererUnstyled)` 
   ${(props) => `
     &.rsg-example-placeholder {
+      outline: ${props.theme.styleguide['$rsg-example-placeholder-outline']} !important;
       padding: ${props.theme.styleguide['$rsg-example-placeholder-padding']};
       font-size: ${props.theme.styleguide['$rsg-example-placeholder-font-size']};
       font-family: ${props.theme.styleguide['$rsg-example-placeholder-font-family']};
@@ -130,6 +137,5 @@ const ExamplePlaceholderRenderer = styled(ExamplePlaceholderRendererUnstyled)`
 
 ExamplePlaceholderRenderer.defaultProps = defaultProps;
 ExamplePlaceholderRenderer.propTypes = propTypes;
-
 
 export default ExamplePlaceholderRenderer;

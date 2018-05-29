@@ -10,7 +10,7 @@ import Markdown from '../Markdown';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-message-margin': '24px',
+      '$rsg-message-margin': '0 0 32px 0',
     },
   },
 };

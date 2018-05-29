@@ -11,7 +11,7 @@ import Markdown from '../Markdown';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-section-margin': '24px',
+      '$rsg-section-margin': '32px',
     },
   },
 };
@@ -54,6 +54,7 @@ const SectionRendererUnstyled = (props) => {
     components,
     sections,
     depth,
+    isolated,
     description,
     cssModule,
     ...attributes
@@ -61,7 +62,7 @@ const SectionRendererUnstyled = (props) => {
 
   return (
     <Section
-      className={mapToCssModules(cn(className, 'rsg-section'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-section', (isolated && 'isolated')), cssModule)}
       {...attributes}
     >
       {name && (
@@ -85,6 +86,9 @@ const SectionRenderer = styled(SectionRendererUnstyled)`
   ${(props) => `
     &.rsg-section {
       margin: ${props.theme.styleguide['$rsg-section-margin']};
+    }
+    &.rsg-section.isolated {
+      margin-left: 0 !important;
     }
  `}
 `;

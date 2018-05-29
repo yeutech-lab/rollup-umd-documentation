@@ -15,9 +15,9 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-table-width': '100%',
+      '$rsg-table-width': '90%',
       '$rsg-table-border-collapse': 'collapse',
-      '$rsg-table-margin': '24px',
+      '$rsg-table-margin': '24px 0 0 0',
       '$rsg-table-head-border-top': '0',
       '$rsg-table-head-border-bottom': '1px #e8e8e8 solid',
       '$rsg-table-cell-heading-color': '#333',

@@ -1,17 +1,14 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
-import Img from 'bootstrap-styled/lib/Img';
-import Footer from 'bootstrap-styled/lib/Footer';
-import A from 'bootstrap-styled/lib/A';
 import theme from '../theme';
-import defaultLogo from './logo';
-import whiteLogo from './logo-white';
 import Main from './Main'
 import SideBar from './SideBar';
 import Ribbon from '../rsg-components/Ribbon';
+import FooterRenderer from '../components/FooterRenderer';
+import whiteLogo from './logo-white';
+import defaultLogo from './yeutech-badge';
 
 /**
  * This is the main layout for the whole documentation.
@@ -20,7 +17,7 @@ import Ribbon from '../rsg-components/Ribbon';
  * @constructor
  */
 function LayoutRenderer({
-   theme, className, title, children, toc, hasSidebar, logo, bottomLogo, bottomLogoText, logoHref, bottomLogoHref
+   theme, className, title, children, toc, hasSidebar, logo, logoHref
  }) {
   return (
     <BootstrapProvider theme={theme}>
@@ -30,24 +27,9 @@ function LayoutRenderer({
         </div>
       )}
       <div>
-        <Main>
+        <Main hasSidebar>
           {children}
-          <Footer>
-            <span>{bottomLogoText}</span>
-            <A
-              href={bottomLogoHref}
-              target="_blank"
-              alt="Yeutech Company Limited"
-              title="Yeutech Company Limited"
-            >
-              <Img
-                src={`data:image/png;base64,${bottomLogo}`}
-                height="43px"
-                alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
-                title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
-              />
-            </A>
-          </Footer>
+          <FooterRenderer />
         </Main>
         <Ribbon />
       </div>

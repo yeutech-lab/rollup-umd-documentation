@@ -10,13 +10,24 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-toolbar-link-a-color': '#383535',
-      '$rsg-toolbar-link-a-hover-color': '#CE4953',
-      '$rsg-toolbar-link-margin': '16px 0 0 0',
-      '$rsg-toolbar-button-margin': '0 0 0 5px',
-      '$rsg-toolbar-button-padding': '0',
-      '$rsg-toolbar-button-a-color': '#9e9e9e',
-      '$rsg-toolbar-button-a-hover-color': '#CE4953',
+      '$rsg-toolbar-button-padding': '2px',
+      '$rsg-toolbar-button-color': '#B31255',
+      '$rsg-toolbar-button-background': 'transparent',
+      '$rsg-toolbar-button-transition': 'color 750ms ease-out',
+      '$rsg-toolbar-button-cursor': 'pointer',
+      '$rsg-toolbar-button-hover-focus-isolation': 'false',
+      '$rsg-toolbar-button-hover-focus-color': '#292b2c',
+      '$rsg-toolbar-button-hover-focus-transition': 'color 150ms ease-in',
+      '$rsg-toolbar-button-focus-isolation': 'false',
+      '$rsg-toolbar-button-focus-outline': '1 dotted #B31255',
+      '$rsg-toolbar-button-children-isolation': 'false',
+      '$rsg-toolbar-button-children-margin-left': '8px',
+      '$rsg-toolbar-button-svg-width': '24px',
+      '$rsg-toolbar-button-svg-height': '24px',
+      '$rsg-toolbar-button-svg-color': '#9e9e9e',
+      '$rsg-toolbar-button-svg-cursor': 'inherit',
+      '$rsg-toolbar-button-small-width': '14px',
+      '$rsg-toolbar-button-small-height': '14px',
     },
   },
 };
@@ -29,16 +40,29 @@ export const propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   title: PropTypes.string,
+  small: PropTypes.bool,
   children: PropTypes.node,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
-      '$rsg-toolbar-link-a-color': PropTypes.string,
-      '$rsg-toolbar-link-a-hover-color': PropTypes.string,
-      '$rsg-toolbar-link-margin': PropTypes.string,
-      '$rsg-toolbar-button-a-color': PropTypes.string,
-      '$rsg-toolbar-button-a-hover-color': PropTypes.string,
-      '$rsg-toolbar-button-margin': PropTypes.string,
+      '$rsg-toolbar-button-padding': PropTypes.string,
+      '$rsg-toolbar-button-color': PropTypes.string,
+      '$rsg-toolbar-button-background': PropTypes.string,
+      '$rsg-toolbar-button-transition': PropTypes.string,
+      '$rsg-toolbar-button-cursor': PropTypes.string,
+      '$rsg-toolbar-button-hover-focus-isolation': PropTypes.string,
+      '$rsg-toolbar-button-hover-focus-color': PropTypes.string,
+      '$rsg-toolbar-button-hover-focus-transition': PropTypes.string,
+      '$rsg-toolbar-button-focus-isolation': PropTypes.string,
+      '$rsg-toolbar-button-focus-outline': PropTypes.string,
+      '$rsg-toolbar-button-children-isolation': PropTypes.string,
+      '$rsg-toolbar-button-children-margin-left': PropTypes.string,
+      '$rsg-toolbar-button-svg-width': PropTypes.string,
+      '$rsg-toolbar-button-svg-height': PropTypes.string,
+      '$rsg-toolbar-button-svg-color': PropTypes.string,
+      '$rsg-toolbar-button-svg-cursor': PropTypes.string,
+      '$rsg-toolbar-button-small-width': PropTypes.string,
+      '$rsg-toolbar-button-small-height': PropTypes.string,
     }),
   }),
   /**
@@ -55,30 +79,44 @@ const ToolbarButtonRendererUnstyled = (props) => {
     onClick,
     href,
     title,
+    small,
     children,
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
 
+  const classNames = mapToCssModules(
+    cn(
+      className,
+      'rsg-toolbar-button',
+      { [small]: 'small' }
+    ), cssModule
+  );
+
+  if (href !== undefined) {
+    return (
+      <A
+        href={href}
+        title={title}
+        className={classNames}
+        aria-label={title}
+        {...attributes}
+      >
+        {children}
+      </A>
+    );
+  }
+
   return (
-    <div
-      className={mapToCssModules(cn(className, 'toolbar'), cssModule)}
+    <Button
+      onClick={onClick}
+      title={title}
+      className={classNames}
+      aria-label={title}
       {...attributes}
     >
-      {href !== undefined ? (
-        <div className="toolbar-link">
-          <A className="toolbar-link-a" href={href} title={title} aria-label={title}>
-            {children}
-          </A>
-        </div>
-      ) : (
-        <div className="toolbar-button">
-          <Button tag={A} className="toolbar-button-a" onClick={onClick} title={title} aria-label={title}>
-            {children}
-          </Button>
-        </div>
-      )}
-    </div>
+      {children}
+    </Button>
   );
 };
 
@@ -87,25 +125,36 @@ ToolbarButtonRendererUnstyled.propTypes = propTypes;
 
 const ToolbarButtonRenderer = styled(ToolbarButtonRendererUnstyled)` 
   ${(props) => `
-    &.toolbar {
-      .toolbar-link {
-        margin: ${props.theme.styleguide['$rsg-toolbar-link-margin']};
-        .toolbar-link-a {
-          color: ${props.theme.styleguide['$rsg-toolbar-link-a-color']};
-          &:hover {
-            color: ${props.theme.styleguide['$rsg-toolbar-link-a-hover-color']};
-          }
-        }
+    &.rsg-toolbar-button {
+      padding: ${props.theme.styleguide['$rsg-toolbar-button-padding']};
+      color: ${props.theme.styleguide['$rsg-toolbar-button-color']};
+      background: ${props.theme.styleguide['$rsg-toolbar-button-background']};
+      transition: ${props.theme.styleguide['$rsg-toolbar-button-transition']};
+      cursor: ${props.theme.styleguide['$rsg-toolbar-button-cursor']};
+      &:hover, &:focus {
+        isolation: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-isolate']};
+        color: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-color']};
+        transition: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-transition']};
       }
-      .toolbar-button {
-        margin: ${props.theme.styleguide['$rsg-toolbar-button-margin']};
-        .toolbar-button-a {
-          padding: ${props.theme.styleguide['$rsg-toolbar-button-padding']} !important;
-          color: ${props.theme.styleguide['$rsg-toolbar-button-a-color']};
-          &:hover {
-            color: ${props.theme.styleguide['$rsg-toolbar-button-a-hover-color']};
-          }
-        }
+      &:focus {
+        isolation: ${props.theme.styleguide['$rsg-toolbar-button-focus-isolate']};
+        outline: ${props.theme.styleguide['$rsg-toolbar-button-focus-outline']};
+      }
+      & + & {
+        isolation: ${props.theme.styleguide['$rsg-toolbar-button-children-isolate']};
+        margin-left: ${props.theme.styleguide['$rsg-toolbar-button-children-margin-left']};
+      }
+      &:i {
+        width: ${props.theme.styleguide['$rsg-toolbar-button-svg-width']};
+        height: ${props.theme.styleguide['$rsg-toolbar-button-svg-height']};
+        color: ${props.theme.styleguide['$rsg-toolbar-button-svg-color']};
+        cursor: ${props.theme.styleguide['$rsg-toolbar-button-svg-cursor']};
+      }
+    }
+    &.toolbar-button .small {
+      &:i {
+        width: ${props.theme.styleguide['$rsg-toolbar-button-small-width']};
+        height: ${props.theme.styleguide['$rsg-toolbar-button-small-height']};
       }
     }
  `}

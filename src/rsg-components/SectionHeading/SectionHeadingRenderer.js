@@ -10,10 +10,19 @@ import Heading from '../Heading';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-section-heading-margin': '2.5em 0 0 0',
-      '$rsg-section-heading-link-color': '#383535',
-      '$rsg-section-heading-link-hover-color': '#CE4953',
-      '$rsg-section-heading-link-decoration': 'none',
+      '$rsg-section-heading-display': 'flex',
+      '$rsg-section-heading-flex-direction': 'row',
+      '$rsg-section-heading-align-items': 'center',
+      '$rsg-section-heading-margin-bottom': '8px',
+      '$rsg-section-heading-section-name-isolation': 'false',
+      '$rsg-section-heading-section-name-text-decoration': 'underline',
+      '$rsg-section-heading-section-name-cursor': 'pointer',
+      '$rsg-section-heading-section-name-color': '#292b2c',
+      '$rsg-section-heading-deprecated-text-decoration': 'line-through',
+      '$rsg-section-heading-deprecated-cursor': '#767676',
+      '$rsg-section-heading-toolbar-margin-left': 'auto',
+      '$rsg-section-heading-1-link-color': '#B31255',
+      '$rsg-section-heading-2-link-color': '#767676',
     },
   },
 };
@@ -32,10 +41,19 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
-      '$rsg-section-heading-margin': PropTypes.string,
-      '$rsg-section-heading-link-color': PropTypes.string,
-      '$rsg-section-heading-link-hover-color': PropTypes.string,
-      '$rsg-section-heading-link-decoration': PropTypes.string,
+      '$rsg-section-heading-display': PropTypes.string,
+      '$rsg-section-heading-flex-direction': PropTypes.string,
+      '$rsg-section-heading-align-items': PropTypes.string,
+      '$rsg-section-heading-margin-bottom': PropTypes.string,
+      '$rsg-section-heading-section-name-isolation': PropTypes.string,
+      '$rsg-section-heading-section-name-text-decoration': PropTypes.string,
+      '$rsg-section-heading-section-name-cursor': PropTypes.string,
+      '$rsg-section-heading-section-name-color': PropTypes.string,
+      '$rsg-section-heading-deprecated-text-decoration': PropTypes.string,
+      '$rsg-section-heading-deprecated-cursor': PropTypes.string,
+      '$rsg-section-heading-toolbar-margin-left': PropTypes.string,
+      '$rsg-section-heading-1-link-color': PropTypes.string,
+      '$rsg-section-heading-2-link-color': PropTypes.string,
     }),
   }),
   /**
@@ -57,18 +75,19 @@ const SectionHeadingRendererUnstyled = (props) => {
     deprecated,
     ...attributes
   } = omit(props, ['theme']);
+
   const headingLevel = Math.min(6, depth);
   return (
     <div
-      className={mapToCssModules(cn(className, 'section-heading d-flex justify-content-between'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-section-heading'), cssModule)}
       {...attributes}
     >
       <Heading level={headingLevel} id={id}>
-        <A className="section-heading-link" href={href}>
+        <A className={`section-name level-${headingLevel} ${deprecated ? 'deprecated' : ''}`} href={href}>
           {children}
         </A>
       </Heading>
-      <div>{toolbar}</div>
+      <div className="toolbar">{toolbar}</div>
     </div>
   );
 };
@@ -78,14 +97,31 @@ SectionHeadingRendererUnstyled.propTypes = propTypes;
 
 const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)` 
   ${(props) => `
-    &.section-heading {
-      margin: ${props.theme.styleguide['$rsg-section-heading-margin']};
-      .section-heading-link {
-        text-decoration: ${props.theme.styleguide['$rsg-section-heading-link-decoration']};
-        color: ${props.theme.styleguide['$rsg-section-heading-link-color']};
-        &:hover {
-          color: ${props.theme.styleguide['$rsg-section-heading-link-hover-color']};
-        }
+    &.rsg-section-heading {
+      display: ${props.theme.styleguide['$rsg-section-heading-display']};
+      flex-direction: ${props.theme.styleguide['$rsg-section-heading-flex-direction']};
+      align-items: ${props.theme.styleguide['$rsg-section-heading-align-items']};
+      margin-bottom: ${props.theme.styleguide['$rsg-section-heading-margin-bottom']};
+      & .section-name {
+        &:hover, &:active {
+          isolation: ${props.theme.styleguide['$rsg-section-heading-section-name-isolation']};
+          text-decoration: ${props.theme.styleguide['$rsg-section-heading-section-name-text-decoration']};
+          cursor: ${props.theme.styleguide['$rsg-section-heading-section-name-cursor']};
+          color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
+        }        
+      }
+      & .deprecated {
+        text-decoration: ${props.theme.styleguide['$rsg-section-heading-deprecated-text-decoration']};
+        cursor: ${props.theme.styleguide['$rsg-section-heading-deprecated-cursor']};
+      }
+      & .toolbar {
+        margin-left: ${props.theme.styleguide['$rsg-section-heading-toolbar-margin-left']};
+      }
+      & .level-1 {
+        color: ${props.theme.styleguide['$rsg-section-heading-1-color']};
+      }
+      & .level-2 {
+        color: ${props.theme.styleguide['$rsg-section-heading-2-color']};
       }
     }
  `}
