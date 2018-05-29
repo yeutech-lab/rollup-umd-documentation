@@ -9,21 +9,11 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-font-family-base'] = u['$rsg-font-family-base'] || '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
   v['$rsg-font-family-monospace'] = u['$rsg-font-family-monospace'] || 'Consolas, "Liberation Mono", Menlo, monospace';
   v['$rsg-font-family-highlight'] = u['$rsg-font-family-highlight'] || 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace';
-
   // - font-size
   v['$rsg-font-size'] = u['$rsg-font-size'] || {
     sm: '13px',
     md: '15px',
     lg: '16px',
-  };
-  // - heading-font-size
-  v['$rsg-heading-font-size'] = u['$rsg-heading-font-size'] || {
-    h1: '48px',
-    h2: '36px',
-    h3: '24px',
-    h4: '18px',
-    h5: '16px',
-    h6: '16px',
   };
   // color
   v['$rsg-white'] = u['$rsg-white'] || '#fff';
@@ -31,43 +21,81 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-gray-light'] = u['$rsg-gray-light'] || '#9e9e9e';
   v['$rsg-gray'] = u['$rsg-gray'] || '#767676';
   v['$rsg-gray-dark'] = u['$rsg-gray-dark'] || '#292b2c';
-  v['$rsg-fuchsia'] = u['$rsg-fuchsia'] || '#b11255';
+  v['$rsg-fuchsia'] = u['$rsg-fuchsia'] || '#B31255';
   v['$rsg-ocher'] = u['$rsg-ocher'] || '#fc971b';
   v['$rsg-salmon'] = u['$rsg-salmon'] || '#f47469';
   v['$rsg-purple'] = u['$rsg-purple'] || '#75096a';
-
   // cursor
   v['$rsg-cursor'] = u['$rsg-cursor'] || 'pointer';
-
   // STYLEGUIDE COMPONENTS
   // main
-  v['$rsg-main-margin-left'] = u['$rsg-main-margin-left'] || {
+  v['$rsg-main-has-sidebar-padding-left'] = u['$rsg-main-has-sidebar-padding-left'] || {
     xs: '0',
     md: '250px',
   };
+  v['$rsg-main-content-padding'] = u['$rsg-main-content-padding'] || {
+    xs: '16px',
+    md: '16px 32px',
+  };
+  v['$rsg-main-content-max-width'] = u['$rsg-main-content-max-width'] || '1000px';
+  v['$rsg-main-content-margin'] = u['$rsg-main-content-margin'] || '0 auto';
+  v['$rsg-main-content-display'] = u['$rsg-main-content-display'] || 'block';
+
   // STYLEGUIDE COMPONENTS
+  // heading
+  v['$rsg-heading-margin'] = u['$rsg-heading-margin'] || '20px 0 0 0';
+  v['$rsg-heading-color'] = u['$rsg-heading-color'] || '#333';
   // toolbar
-  v['$rsg-toolbar-link-a-color'] = u['$rsg-toolbar-link-a-color'] || u['$rsg-gray-dark'];
-  v['$rsg-toolbar-link-a-hover-color'] = u['$rsg-toolbar-link-a-hover-color'] || v['$rsg-fuchsia'];
-  v['$rsg-toolbar-link-margin'] = u['$rsg-toolbar-link-margin'] || '16px 0 0 0';
-  v['$rsg-toolbar-button-a-color'] = u['$rsg-toolbar-button-a-color'] || v['$rsg-gray-light'];
-  v['$rsg-toolbar-button-a-hover-color'] = u['$rsg-toolbar-button-a-hover-color'] || v['$rsg-fuchsia'];
-  v['$rsg-toolbar-button-margin'] = u['$rsg-toolbar-button-margin'] || '0 0 0 5px';
-  v['$rsg-toolbar-button-padding'] = u['$rsg-toolbar-button-padding'] || '0';
+  v['$rsg-toolbar-button-padding'] = u['$rsg-toolbar-button-padding'] || '2px';
+  v['$rsg-toolbar-button-color'] = u['$rsg-toolbar-button-color'] || v['$rsg-fuchsia'];
+  v['$rsg-toolbar-button-background'] = u['$rsg-toolbar-button-background'] || 'transparent';
+  v['$rsg-toolbar-button-transition'] = u['$rsg-toolbar-button-transition'] || 'color 750ms ease-out';
+  v['$rsg-toolbar-button-cursor'] = u['$rsg-toolbar-button-cursor'] || 'pointer';
+  v['$rsg-toolbar-button-hover-focus-isolation'] = u['$rsg-toolbar-button-hover-focus-isolation'] || 'false';
+  v['$rsg-toolbar-button-hover-focus-color'] = u['$rsg-toolbar-button-hover-focus-color'] || v['$rsg-gray-dark'];
+  v['$rsg-toolbar-button-hover-focus-transition'] = u['$rsg-toolbar-button-hover-focus-transition'] || 'color 150ms ease-in';
+  v['$rsg-toolbar-button-focus-isolation'] = u['$rsg-toolbar-button-focus-isolation'] || 'false';
+  v['$rsg-toolbar-button-focus-outline'] = u['$rsg-toolbar-button-focus-outline'] || `1 dotted ${v['$rsg-fuchsia']}`;
+  v['$rsg-toolbar-button-children-isolation'] = u['$rsg-toolbar-button-children-isolation'] || 'false';
+  v['$rsg-toolbar-button-children-margin-left'] = u['$rsg-toolbar-button-children-margin-left'] || '8px';
+  v['$rsg-toolbar-button-svg-width'] = u['$rsg-toolbar-button-svg-width'] || '24px';
+  v['$rsg-toolbar-button-svg-height'] = u['$rsg-toolbar-button-svg-height'] || '24px';
+  v['$rsg-toolbar-button-svg-color'] = u['$rsg-toolbar-button-svg-color'] || v['$rsg-gray'];
+  v['$rsg-toolbar-button-svg-cursor'] = u['$rsg-toolbar-button-svg-cursor'] || 'inherit';
+  v['$rsg-toolbar-button-small-width'] = u['$rsg-toolbar-button-small-width'] || '14px';
+  v['$rsg-toolbar-button-small-height'] = u['$rsg-toolbar-button-small-height'] || '14px';
   // path-line
+  v['$rsg-path-line-font-family'] = u['$rsg-path-line-font-family'] || v['$rsg-font-family-monospace'];
   v['$rsg-path-line-color'] = u['$rsg-path-line-color'] || v['$rsg-gray-light'];
   v['$rsg-path-line-font-size'] = u['$rsg-path-line-font-size'] || '0.8em';
-  v['$rsg-path-line-margin'] = u['$rsg-path-line-margin'] || '0 0 1.5em 0';
+  v['$rsg-path-line-margin'] = u['$rsg-path-line-margin'] || '0 0 0 4px';
   v['$rsg-path-line-cursor'] = u['$rsg-path-line-cursor'] || v['$rsg-cursor'];
+  v['$rsg-path-line-icon-color'] = u['$rsg-path-line-icon-color'] || v['$rsg-path-line-color'];
+  v['$rsg-path-line-icon-font-size'] = u['$rsg-path-line-icon-font-size'] || v['$rsg-path-line-font-size'];
+  v['$rsg-path-line-icon-cursor'] = u['$rsg-path-line-icon-cursor'] || v['$rsg-cursor'];
+  v['$rsg-path-line-icon-position'] = u['$rsg-path-line-icon-position'] || 'relative';
+  v['$rsg-path-line-icon-bottom'] = u['$rsg-path-line-icon-bottom'] || '3px';
+  v['$rsg-path-line-icon-hover-color'] = u['$rsg-path-line-icon-hover-color'] || v['$rsg-fuchsia'];
   // tab-button
-  v['$rsg-tab-button-margin'] = u['$rsg-tab-button-margin'] || '1em 0 1em 0';
+  v['$rsg-tab-button-padding'] = u['$rsg-tab-button-padding'] || '8px 0 8px 0';
+  v['$rsg-tab-button-font-family'] = u['$rsg-tab-button-font-family'] || v['$rsg-font-family-base'];
+  v['$rsg-tab-button-font-size'] = u['$rsg-tab-button-font-size'] || v['$rsg-font-size'].md;
+  v['$rsg-tab-button-color'] = u['$rsg-tab-button-color'] || '#767676';
+  v['$rsg-tab-button-background'] = u['$rsg-tab-button-background'] || 'transparent';
+  v['$rsg-tab-button-text-transform'] = u['$rsg-tab-button-text-transform'] || 'uppercase';
+  v['$rsg-tab-button-transition'] = u['$rsg-tab-button-transition'] || 'color 750ms ease-out';
   v['$rsg-tab-button-border'] = u['$rsg-tab-button-border'] || 'none';
-  v['$rsg-tab-button-cursor'] = u['$rsg-tab-button-cursor'] || v['$rsg-cursor'];
-  v['$rsg-tab-button-color'] = u['$rsg-tab-button-color'] || v['$rsg-gray-light'];
-  v['$rsg-tab-button-hover-color'] = u['$rsg-tab-button-hover-color'] || v['$rsg-ocher'];
-  v['$rsg-tab-button-active-color'] = u['$rsg-tab-button-active-color'] || v['$rsg-tab-button-hover-color'];
-  v['$rsg-tab-button-active-border-bottom'] = u['$rsg-tab-button-active-border-bottom'] || '4px solid #fc971b';
-  v['$rsg-tab-button-active-box-shadow'] = u['$rsg-tab-button-active-box-shadow'] || 'none';
+  v['$rsg-tab-button-cursor'] = u['$rsg-tab-button-cursor'] || 'pointer';
+  v['$rsg-tab-button-box-shadow'] = u['$rsg-tab-button-box-shadow'] || 'none';
+  v['$rsg-tab-button-hover-focus-isolate'] = u['$rsg-tab-button-hover-focus-isolate'] || 'false';
+  v['$rsg-tab-button-hover-focus-outline'] = u['$rsg-tab-button-hover-focus-outline'] || '0';
+  v['$rsg-tab-button-hover-focus-color'] = u['$rsg-tab-button-hover-focus-color'] || v['$rsg-fuchsia'];
+  v['$rsg-tab-button-hover-focus-transition'] = u['$rsg-tab-button-hover-focus-transition'] || 'color 150ms ease-in';
+  v['$rsg-tab-button-focus-not-active-isolate'] = u['$rsg-tab-button-focus-not-active-isolate'] || 'false';
+  v['$rsg-tab-button-focus-not-active-outline'] = u['$rsg-tab-button-focus-not-active-outline'] || '0';
+  v['$rsg-tab-button-children-isolate'] = u['$rsg-tab-button-children-isolate'] || 'false';
+  v['$rsg-tab-button-children-margin-left'] = u['$rsg-tab-button-children-margin-left'] || '8px';
+  v['$rsg-tab-button-border-bottom'] = u['$rsg-tab-button-border-bottom'] || '2 #f28a25 solid';
   // Props table
   v['$rsg-name-font-size'] = u['$rsg-name-font-size'] || '13px';
   v['$rsg-name-color'] = u['$rsg-name-color'] || v['$rsg-fuchsia'];
@@ -82,10 +110,10 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-text-color'] = u['$rsg-text-color'] || v['$rsg-gray-dark'];
   v['$rsg-text-color-light'] = u['$rsg-text-color-light'] || v['$rsg-gray'];
   v['$rsg-text-border-top'] = u['$rsg-text-border-top'] || '0';
-  v['$rsg-text-border-bottom'] = u['$rsg-text-border-bottom'] || '1px dotted #9e9e9e';
+  v['$rsg-text-border-bottom'] = u['$rsg-text-border-bottom'] || `1px dotted ${v['$rsg-gray-light']}`;
   v['$rsg-text-font-family'] = u['$rsg-text-font-family'] || v['$rsg-font-family-base'];
   v['$rsg-type-font-size'] = u['$rsg-type-font-size'] || '13px';
-  v['$rsg-type-color'] = u['$rsg-type-color'] || v['$rsgpurple'];
+  v['$rsg-type-color'] = u['$rsg-type-color'] || v['$rsg-purple'];
   v['$rsg-para-margin'] = u['$rsg-para-margin'] || '0 0 8px 0';
   v['$rsg-para-color'] = u['$rsg-para-color'] || v['$rsg-gray-dark'];
   v['$rsg-para-font-family'] = u['$rsg-para-font-family'] || v['$rsg-font-family-base'];
@@ -104,18 +132,18 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-editor-font-size'] = u['$rsg-editor-font-size'] || '13px';
   v['$rsg-editor-color'] = u['$rsg-editor-color'] || v['$rsg-gray'];
   v['$rsg-editor-background-color'] = u['$rsg-editor-background-color'] || v['$rsg-gray-lighter'];
-  v['$rsg-editor-global-isolation'] = u['$rsg-editor-global-isolation'] || false;
+  v['$rsg-editor-global-isolation'] = u['$rsg-editor-global-isolation'] || 'false';
   v['$rsg-editor-global-font-family'] = u['$rsg-editor-global-font-family'] || v['$rsg-font-family-monospace'];
   v['$rsg-editor-global-height'] = u['$rsg-editor-global-height'] || 'auto';
   v['$rsg-editor-global-padding'] = u['$rsg-editor-global-padding'] || '4px 8px';
   v['$rsg-editor-global-font-size'] = u['$rsg-editor-global-font-size'] || '13px';
-  v['$rsg-editor-global-pre-isolation'] = u['$rsg-editor-global-pre-isolation'] || false;
+  v['$rsg-editor-global-pre-isolation'] = u['$rsg-editor-global-pre-isolation'] || 'false';
   v['$rsg-editor-global-pre-padding'] = u['$rsg-editor-global-pre-padding'] || '0';
-  v['$rsg-editor-global-scroll-isolation'] = u['$rsg-editor-global-scroll-isolation'] || false;
+  v['$rsg-editor-global-scroll-isolation'] = u['$rsg-editor-global-scroll-isolation'] || 'false';
   v['$rsg-editor-global-scroll-height'] = u['$rsg-editor-global-scroll-height'] || 'auto';
   v['$rsg-editor-global-scroll-overflow-y'] = u['$rsg-editor-global-scroll-overflow-y'] || 'hidden';
   v['$rsg-editor-global-scroll-overflow-x'] = u['$rsg-editor-global-scroll-overflow-x'] || 'auto';
-  v['$rsg-editor-global-error-isolation'] = u['$rsg-editor-global-error-isolation'] || false;
+  v['$rsg-editor-global-error-isolation'] = u['$rsg-editor-global-error-isolation'] || 'false';
   v['$rsg-editor-global-error-background'] = u['$rsg-editor-global-error-background'] || 'none';
   // error
   v['$rsg-error-margin'] = u['$rsg-error-margin'] || '8px';
@@ -127,16 +155,25 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-error-message-color'] = u['$rsg-error-message-color'] || u['$rsg-salmon'];
   v['$rsg-error-message-font-family'] = u['$rsg-error-message-font-family'] || v['$rsg-font-family-base'];
   // example placeholder
+  v['$rsg-example-placeholder-outline'] = u['$rsg-example-placeholder-outline'] || 'none';
   v['$rsg-example-placeholder-padding'] = u['$rsg-example-placeholder-padding'] || '0';
   v['$rsg-example-placeholder-font-size'] = u['$rsg-example-placeholder-font-size'] || '15px';
   v['$rsg-example-placeholder-font-family'] = u['$rsg-example-placeholder-font-family'] || v['$rsg-font-family-base'];
   v['$rsg-example-placeholder-decoration'] = u['$rsg-example-placeholder-decoration'] || 'underline';
   v['$rsg-example-placeholder-color'] = u['$rsg-example-placeholder-color'] || v['$rsg-gray'];
-  v['$rsg-example-placeholder-border'] = u['$rsg-example-placeholder-border'] || '0';
+  v['$rsg-example-placeholder-border'] = u['$rsg-example-placeholder-border'] || 'none';
   v['$rsg-example-placeholder-cursor'] = u['$rsg-example-placeholder-cursor'] || v['$rsg-cursor'];
   v['$rsg-example-placeholder-background'] = u['$rsg-example-placeholder-background'] || 'transparent';
   v['$rsg-example-placeholder-hover-isolate'] = u['$rsg-example-placeholder-hover-isolate'] || 'false';
   v['$rsg-example-placeholder-hover-color'] = u['$rsg-example-placeholder-hover-color'] || v['$rsg-gray-light'];
+  // footer
+  v['$rsg-footer-padding'] = u['$rsg-footer-padding'] || '40px 50px 40px 0';
+  v['$rsg-footer-position'] = u['$rsg-footer-position'] || 'absolute';
+  v['$rsg-footer-right'] = u['$rsg-footer-right'] || '0px';
+  v['$rsg-footer-img-height'] = u['$rsg-footer-img-height'] || {
+    xs: '35px',
+    md: '43px',
+  };
   // link
   v['$rsg-link-hover-isolate'] = u['$rsg-link-hover-isolate'] || 'false';
   // logo
@@ -146,12 +183,12 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-logo-font-size'] = u['$rsg-logo-font-size'] || '25px';
   v['$rsg-logo-font-weight'] = u['$rsg-logo-font-weight'] || 'normal';
   // message
-  v['$rsg-message-margin'] = u['$rsg-message-margin'] || '24px';
+  v['$rsg-message-margin'] = u['$rsg-message-margin'] || '0 0 32px 0';
   // playground
-  v['$rsg-playground-margin'] = u['$rsg-playground-margin'] || '24px';
-  v['$rsg-playground-preview-padding'] = u['$rsg-playground-preview-padding'] || '8px';
+  v['$rsg-playground-margin'] = u['$rsg-playground-margin'] || '40px';
+  v['$rsg-playground-preview-padding'] = u['$rsg-playground-preview-padding'] || '16px';
   v['$rsg-playground-preview-border'] = u['$rsg-playground-preview-border'] || '1px #e8e8e8 solid';
-  v['$rsg-playground-preview-border-radius'] = u['$rsg-playground-preview-border-radius'] || '3';
+  v['$rsg-playground-preview-border-radius'] = u['$rsg-playground-preview-border-radius'] || '3px';
   v['$rsg-playground-preview-width'] = u['$rsg-playground-preview-width'] || '100%';
   v['$rsg-playground-preview-display'] = u['$rsg-playground-preview-display'] || 'inline-block';
   v['$rsg-playground-controls-display'] = u['$rsg-playground-controls-display'] || 'flex';
@@ -195,39 +232,59 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-ribbon-link-transform'] = u['$rsg-ribbon-link-transform'] || 'rotate(45deg)';
   v['$rsg-ribbon-link-cursor'] = u['$rsg-ribbon-link-cursor'] || v['$rsg-cursor'];
   // section
-  v['$rsg-section-margin'] = u['$rsg-section-margin'] || '24px';
+  v['$rsg-section-margin'] = u['$rsg-section-margin'] || '0px';
   // section-heading
-  v['$rsg-section-heading-margin'] = u['$rsg-section-heading-margin'] || '2.5em 0 0 0';
-  v['$rsg-section-heading-link-decoration'] = u['$rsg-section-heading-link-decoration'] || 'none';
-  v['$rsg-section-heading-link-color'] = u['$rsg-section-heading-link-color'] || v['$rsg-gray-dark'];
-  v['$rsg-section-heading-link-hover-color'] = u['$rsg-section-heading-link-hover-color'] || v['$rsg-fuchsia'];
+  v['$rsg-section-heading-display'] = u['$rsg-section-heading-display'] || 'flex';
+  v['$rsg-section-heading-flex-direction'] = u['$rsg-section-heading-flex-direction'] || 'row';
+  v['$rsg-section-heading-align-items'] = u['$rsg-section-heading-align-items'] || 'center';
+  v['$rsg-section-heading-margin-bottom'] = u['$rsg-section-heading-margin-bottom'] || '8px';
+  v['$rsg-section-heading-section-name-isolation'] = u['$rsg-section-heading-section-name-isolation'] || 'false';
+  v['$rsg-section-heading-section-name-text-decoration'] = u['$rsg-section-heading-section-name-text-decoration'] || 'none';
+  v['$rsg-section-heading-section-name-cursor'] = u['$rsg-section-heading-section-name-cursor'] || 'pointer';
+  v['$rsg-section-heading-section-name-color'] = u['$rsg-section-heading-section-name-color'] || v['$rsg-gray-dark'];
+  v['$rsg-section-heading-deprecated-text-decoration'] = u['$rsg-section-heading-deprecated-text-decoration'] || 'line-through';
+  v['$rsg-section-heading-deprecated-cursor'] = u['$rsg-section-heading-deprecated-cursor'] || v['$rsg-gray'];
+  v['$rsg-section-heading-toolbar-margin-left'] = u['$rsg-section-heading-toolbar-margin-left'] || 'auto';
+  v['$rsg-section-heading-1-color'] = u['$rsg-section-heading-1-color'] || v['$rsg-fuchsia'];
+  v['$rsg-section-heading-2-color'] = u['$rsg-section-heading-2-color'] || v['$rsg-gray'];
   // code
-  v['$rsg-code-highlight-font-family'] = u['$rsg-code-font-family'] || v['$rsg-font-family-highlight'];
-  v['$rsg-code-highlight-font-size'] = u['$rsg-code-font-size'] || 'inherit';
-  v['$rsg-code-highlight-color'] = u['$rsg-code-color'] || v['$rsg-fuchsia'];
-  v['$rsg-code-highlight-background'] = u['$rsg-code-background'] || 'transparent';
-  v['$rsg-code-highlight-white-space'] = u['$rsg-code-white-space'] || 'nowrap';
   v['$rsg-code-font-family'] = u['$rsg-code-font-family'] || v['$rsg-font-family-highlight'];
-  v['$rsg-code-font-size'] = u['$rsg-code-font-size'] || '16px';
-  v['$rsg-code-color'] = u['$rsg-code-color'] || v['$rsg-purple'];
+  v['$rsg-code-font-size'] = u['$rsg-code-font-size'] || 'inherit';
+  v['$rsg-code-color'] = u['$rsg-code-color'] || 'inherit';
   v['$rsg-code-background'] = u['$rsg-code-background'] || 'transparent';
-  v['$rsg-code-white-space'] = u['$rsg-code-white-space'] || 'nowrap';
+  v['$rsg-code-white-space'] = u['$rsg-code-white-space'] || 'inherit';
   // menu
   // - sidebar
-  v['$rsg-sidebar-linear-gradient'] = u['$rsg-sidebar-linear-gradient'] || 'linear-gradient( to right, #B31255, #3A007D)';
-  v['$rsg-sidebar-logo-margin'] = u['$rsg-sidebar-logo-margin'] || '30px 0 0 0';
+  v['$rsg-sidebar-linear-gradient'] = u['$rsg-sidebar-linear-gradient'] || 'linear-gradient(#3A007D, #B31255)';
+  v['$rsg-sidebar-box-shadow'] = u['$rsg-sidebar-box-shadow'] || '8px 0 5px -2px #e2e2e2';
+  v['$rsg-sidebar-logo-padding'] = u['$rsg-sidebar-logo-padding'] || '30px 0 10px 0';
   v['$rsg-sidebar-logo-align'] = u['$rsg-sidebar-logo-align'] || 'center';
   // - table of content
   v['$rsg-toc-display'] = u['$rsg-toc-display'] || 'block';
   v['$rsg-toc-padding'] = u['$rsg-toc-padding'] || '0';
-  v['$rsg-toc-form-background'] = u['$rsg-toc-form-background'] || '#B31255';
+  v['$rsg-toc-form-background'] = u['$rsg-toc-form-background'] || v['$rsg-fuchsia'];
   v['$rsg-toc-form-padding'] = u['$rsg-toc-form-padding'] || '20px 0 20px 0';
   v['$rsg-toc-form-width'] = u['$rsg-toc-form-width'] || '80%';
   v['$rsg-toc-form-margin'] = u['$rsg-toc-form-margin'] || '0 auto';
+  // - component-list
+  v['$rsg-component-list-color'] = u['$rsg-component-list-color'] || v['$rsg-fuchsia'];
+  v['$rsg-component-list-font-size'] = u['$rsg-component-list-font-size'] || '14px';
+  v['$rsg-component-list-line-height'] = u['$rsg-component-list-line-height'] || '2.5';
+  v['$rsg-component-list-heading-button-outline'] = u['$rsg-component-list-heading-button-outline'] || 'none';
+  v['$rsg-component-list-heading-button-border'] = u['$rsg-component-list-heading-button-border'] || 'none';
+  v['$rsg-component-list-heading-button-cursor'] = u['$rsg-component-list-heading-button-cursor'] || 'pointer';
+  v['$rsg-component-list-heading-margin'] = u['$rsg-component-list-heading-margin'] || '15px 0 0 0';
+  v['$rsg-component-list-heading-border-bottom'] = u['$rsg-component-list-heading-border-bottom'] || `1px solid ${v['$rsg-gray-light']}`;
+  v['$rsg-component-list-heading-color'] = u['$rsg-component-list-heading-color'] || v['$rsg-fuchsia'];
+  v['$rsg-component-list-heading-hover-color'] = u['$rsg-component-list-heading-hover-color'] || v['$rsg-gray-light'];
+  v['$rsg-component-list-heading-font-size'] = u['$rsg-component-list-heading-font-size'] || '16px';
+  v['$rsg-component-list-heading-font-weight'] = u['$rsg-component-list-heading-font-weight'] || '500';
+  v['$rsg-component-list-icon-margin'] = u['$rsg-component-list-icon-margin'] || '15px 15px 0 0';
+  v['$rsg-component-list-icon-color'] = u['$rsg-component-list-icon-color'] || v['$rsg-component-list-heading-color'];
   // table
-  v['$rsg-table-width'] = u['$rsg-table-width'] || '100%';
+  v['$rsg-table-width'] = u['$rsg-table-width'] || '90%';
   v['$rsg-table-border-collapse'] = u['$rsg-table-border-collapse'] || 'collapse';
-  v['$rsg-table-margin'] = u['$rsg-table-margin'] || '24px';
+  v['$rsg-table-margin'] = u['$rsg-table-margin'] || '24px 0 0 0';
   v['$rsg-table-head-border-top'] = u['$rsg-table-head-border-top'] || '0';
   v['$rsg-table-head-border-bottom'] = u['$rsg-table-head-border-bottom'] || '1px #e8e8e8 solid';
   v['$rsg-table-cell-heading-color'] = u['$rsg-table-cell-heading-color'] || v['$rsg-gray-dark'];
@@ -275,23 +332,15 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-markdown-list-li-font-size'] = u['$rsg-markdown-list-li-font-size'] || 'inherit';
   v['$rsg-markdown-list-li-line-height'] = u['$rsg-markdown-list-li-line-height'] || '1.5';
   v['$rsg-markdown-list-li-style-type'] = u['$rsg-markdown-list-li-style-type'] || 'inherit';
-  // component-list
-  v['$rsg-component-list-color'] = u['$rsg-component-list-color'] || '#9e9e9e';
-  v['$rsg-component-list-font-size'] = u['$rsg-component-list-font-size'] || '14px';
-  v['$rsg-component-list-line-height'] = u['$rsg-component-list-line-height'] || '2.5';
-  v['$rsg-component-list-heading-button-outline'] = u['$rsg-component-list-heading-button-outline'] || 'none';
-  v['$rsg-component-list-heading-button-border'] = u['$rsg-component-list-heading-button-border'] || 'none';
-  v['$rsg-component-list-heading-button-cursor'] = u['$rsg-component-list-heading-button-cursor'] || 'pointer';
-  v['$rsg-component-list-heading-margin'] = u['$rsg-component-list-heading-margin'] || '15px 0 0 0';
-  v['$rsg-component-list-heading-border-bottom'] = u['$rsg-component-list-heading-border-bottom'] || '1px solid #d8d8d8';
-  v['$rsg-component-list-heading-color'] = u['$rsg-component-list-heading-color'] || '#d9534f';
-  v['$rsg-component-list-heading-hover-color'] = u['$rsg-component-list-heading-hover-color'] || '#9e9e9e';
-  v['$rsg-component-list-heading-font-size'] = u['$rsg-component-list-heading-font-size'] || '16px';
-  v['$rsg-component-list-heading-font-weight'] = u['$rsg-component-list-heading-font-weight'] || '600';
-  v['$rsg-component-list-icon-margin'] = u['$rsg-component-list-icon-margin'] || '15px 15px 0 0';
-  v['$rsg-component-list-icon-color'] = u['$rsg-component-list-icon-color'] || v['$rsg-component-list-heading-color'];
-
-
+  v['$rsg-markdown-table-margin'] = u['$rsg-markdown-table-margin'] || '0 0 8px 0';
+  v['$rsg-markdown-table-border-collapse'] = u['$rsg-markdown-table-border-collapse'] || 'collapse';
+  v['$rsg-markdown-table-cell-padding'] = u['$rsg-markdown-table-cell-padding'] || '4px 16px 4px 0';
+  v['$rsg-markdown-table-cell-font-family'] = u['$rsg-markdown-table-cell-font-family'] || v['$rsg-font-family-base'];
+  v['$rsg-markdown-table-cell-font-size'] = u['$rsg-markdown-table-cell-font-size'] || v['$rsg-font-size'].md;
+  v['$rsg-markdown-table-cell-color'] = u['$rsg-markdown-table-cell-color'] || v['$rsg-gray-dark'];
+  v['$rsg-markdown-table-cell-line-height'] = u['$rsg-markdown-table-cell-line-height'] || '1.5';
+  v['$rsg-markdown-table-cell-head-font-weight'] = u['$rsg-markdown-table-cell-head-font-weight'] || 'bold';
+  v['$rsg-markdown-table-head-border-bottom'] = u['$rsg-markdown-table-head-border-bottom'] || `1 ${v['$rsg-gray-light']} solid`;
   newTheme.styleguide = v;
   return { ...userTheme, ...newTheme };
 }
