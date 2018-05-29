@@ -36,6 +36,7 @@ export const jsonExtension = fs.existsSync(path.join(process.cwd(), 'styleguide/
   fs.existsSync(path.join(__dirname, '../styleguide/styleguide.ext.json')) ?
     require(path.join(__dirname, '../styleguide/styleguide.ext.json')) : {};
 
+
 export const config = {
   serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060, // eslint-disable-line radix
   ribbon: {
@@ -283,6 +284,12 @@ export const config = {
     EditorLoader: path.join(__dirname, '../lib/rsg-components/Editor/EditorLoader.js'),
     EditorLoaderRenderer: path.join(__dirname, '../lib/rsg-components/Editor/EditorLoaderRenderer.js'),
     Markdown: path.join(__dirname, '../lib/rsg-components/Markdown/Markdown.js'),
+    Blockquote: path.join(__dirname, '../lib/rsg-components/Markdown/Blockquote/BlockquoteRenderer.js'),
+    Checkbox: path.join(__dirname, '../lib/rsg-components/Markdown/Checkbox/CheckboxRenderer.js'),
+    Hr: path.join(__dirname, '../lib/rsg-components/Markdown/Hr/HrRenderer.js'),
+    List: path.join(__dirname, '../lib/rsg-components/Markdown/List/ListRenderer.js'),
+    MarkdownHeading: path.join(__dirname, '../lib/rsg-components/Markdown/MarkdownHeading/MarkdownHeadingRenderer.js'),
+    Pre: path.join(__dirname, '../lib/rsg-components/Markdown/Pre/PreRenderer.js'),
     PropsRenderer: path.join(__dirname, '../lib/rsg-components/Props/PropsRenderer.js'),
     Table: path.join(__dirname, '../lib/rsg-components/Table/TableRenderer.js'),
     TableRenderer: path.join(__dirname, '../lib/rsg-components/Table/TableRenderer.js'),
