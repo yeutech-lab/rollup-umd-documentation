@@ -51,22 +51,22 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
-  /** Items used to create component list such as table of content and section: */
-  items: PropTypes.arrayOf(
-    /** Item. Can be: */
-    PropTypes.shape({
-      name: PropTypes.string,
-      href: PropTypes.string,
-      filepath: PropTypes.string,
-      heading: PropTypes.bool,
-      level: PropTypes.number,
-      content: PropTypes.bool,
-      collapse: PropTypes.bool,
-      slug: PropTypes.string,
-      components: PropTypes.array,
-      sections: PropTypes.array,
-    }).isRequired
-  ).isRequired,
+  /** Items used to create component list such as table of content and section. Can be: */
+  items: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    href: PropTypes.string,
+    filepath: PropTypes.string,
+    heading: PropTypes.bool,
+    level: PropTypes.number,
+    content: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.bool,
+    ]),
+    collapse: PropTypes.bool,
+    slug: PropTypes.string,
+    components: PropTypes.array,
+    sections: PropTypes.array,
+  })).isRequired,
   /** Toggle use of isolated links. */
   useIsolatedLinks: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types, react/require-default-props
   /** Theme variables. Can be: */

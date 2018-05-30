@@ -2,7 +2,6 @@
 /**
  * Testing our EditorLoaderRenderer component
  */
-import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
 import { shallow } from 'enzyme';
 import React from 'react';
 import EditorLoaderRenderer from '../EditorLoaderRenderer';
