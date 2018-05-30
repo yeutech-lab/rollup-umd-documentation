@@ -18,9 +18,8 @@ export const defaultProps = {
   bottomLogoText: '',
   theme: {
     styleguide: {
-      '$rsg-footer-padding': '40px 50px 40px 0',
-      '$rsg-footer-position': 'absolute',
-      '$rsg-footer-right': '0px',
+      '$rsg-footer-margin': '40px 0 60px 0',
+      '$rsg-footer-float': 'right',
       '$rsg-footer-img-height': {
         xs: '35px',
         md: '43px',
@@ -41,10 +40,12 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
-      '$rsg-footer-padding': PropTypes.string,
-      '$rsg-footer-position': PropTypes.string,
-      '$rsg-footer-right': PropTypes.string,
-      '$rsg-footer-img-height': PropTypes.object,
+      '$rsg-footer-margin': PropTypes.string,
+      '$rsg-footer-float': PropTypes.string,
+      '$rsg-footer-img-height': PropTypes.shape({
+        xs: PropTypes.string,
+        md: PropTypes.string,
+      }),
     }),
   }),
   /**
@@ -95,9 +96,8 @@ FooterRendererUnstyled.propTypes = propTypes;
 export const FooterRenderer = styled(FooterRendererUnstyled)`
   ${(props) => `
     &.rsg-footer {
-      padding: ${props.theme.styleguide['$rsg-footer-padding']}; 
-      position: ${props.theme.styleguide['$rsg-footer-position']};
-      right: ${props.theme.styleguide['$rsg-footer-right']};
+      margin: ${props.theme.styleguide['$rsg-footer-margin']};
+      float: ${props.theme.styleguide['$rsg-footer-float']};
       & .rsg-footer-img {
   ${bp.up(
     'xs',
