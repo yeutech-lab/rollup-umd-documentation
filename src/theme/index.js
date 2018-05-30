@@ -18,9 +18,9 @@ const themeBsYeutech = makeThemeBs({
   '$font-size-h6': '1rem',
   '$headings-line-height': '2',
   '$headings-color': 'inherit',
-  '$link-color': '#b11255',
+  '$link-color': '#4D0377',
   '$link-decoration': 'none',
-  '$link-hover-color': '#4D0377',
+  '$link-hover-color': '#b11255',
   '$link-hover-decoration': 'none',
   '$code-color': '#333',
 });
