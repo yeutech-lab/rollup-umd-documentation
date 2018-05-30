@@ -3,10 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
 import theme from '../theme';
-import Main from './Main'
-import SideBar from './SideBar';
-import Ribbon from '../rsg-components/Ribbon';
-import FooterRenderer from '../components/FooterRenderer';
+import StyleGuideRenderer from '../rsg-components/StyleGuide/StyleGuideRenderer';
 import whiteLogo from './logo-white';
 import defaultLogo from './yeutech-badge';
 
@@ -17,27 +14,27 @@ import defaultLogo from './yeutech-badge';
  * @constructor
  */
 function LayoutRenderer({
-   theme, className, title, children, toc, hasSidebar, logo, logoHref
+   theme, className, title, children, toc, hasSidebar, logo, logoHref, bottomLogoHref
  }) {
   return (
     <BootstrapProvider theme={theme}>
-      {hasSidebar && (
-        <div>
-          <SideBar logo={{ logo: logo, href: logoHref}} title={title} items={toc} theme={theme} />
-        </div>
-      )}
-      <div>
-        <Main hasSidebar>
-          {children}
-          <FooterRenderer />
-        </Main>
-        <Ribbon />
-      </div>
+      <StyleGuideRenderer
+        className={className}
+        title={title}
+        homepageUrl={bottomLogoHref}
+        toc={toc}
+        hasSidebar={hasSidebar}
+        logo={logo}
+        logohref={logoHref}
+      >
+        {children}
+      </StyleGuideRenderer>
     </BootstrapProvider>
   );
 }
 
 LayoutRenderer.defaultProps = {
+  title: 'rollup-documentation',
   logo: whiteLogo,
   logoHref: null,
   bottomLogo: defaultLogo,
