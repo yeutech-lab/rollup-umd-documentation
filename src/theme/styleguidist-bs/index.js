@@ -205,6 +205,8 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-react-component-header-margin'] = u['$rsg-react-component-header-margin'] || '0 0 16px 0';
   v['$rsg-react-component-docs-color'] = u['$rsg-react-component-docs-color'] || v['$rsg-gray-dark'];
   v['$rsg-react-component-docs-font-size'] = u['$rsg-react-component-docs-font-size'] || '16px';
+  v['$rsg-react-component-tabs-overflow-x'] = u['$rsg-react-component-tabs-overflow-x'] || 'auto';
+  v['$rsg-react-component-tabs-overflow-y'] = u['$rsg-react-component-tabs-overflow-y'] || 'hidden';
   v['$rsg-react-component-tabs-margin'] = u['$rsg-react-component-tabs-margin'] || '0 0 16px 0';
   v['$rsg-react-component-tabs-button-margin'] = u['$rsg-react-component-tabs-button-margin'] || '0 0 8px 0';
   // ribbon

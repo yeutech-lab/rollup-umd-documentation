@@ -14,6 +14,8 @@ export const defaultProps = {
       '$rsg-react-component-header-margin': '0 0 16px 0',
       '$rsg-react-component-docs-color': '#333',
       '$rsg-react-component-docs-font-size': '16px',
+      '$rsg-react-component-tabs-overflow-x': 'auto',
+      '$rsg-react-component-tabs-overflow-y': 'hidden',
       '$rsg-react-component-tabs-margin': '0 0 16px 0',
       '$rsg-react-component-tabs-button-margin': '0 0 8px 0',
     },
@@ -52,6 +54,8 @@ export const propTypes = {
       '$rsg-react-component-header-margin': PropTypes.string,
       '$rsg-react-component-docs-color': PropTypes.string,
       '$rsg-react-component-docs-font-size': PropTypes.string,
+      '$rsg-react-component-tabs-overflow-x': PropTypes.string,
+      '$rsg-react-component-tabs-overflow-y': PropTypes.string,
       '$rsg-react-component-tabs-margin': PropTypes.string,
       '$rsg-react-component-tabs-button-margin': PropTypes.string,
     }),
@@ -122,6 +126,8 @@ const ReactComponentRenderer = styled(ReactComponentRendererUnstyled)`
         font-size: ${props.theme.styleguide['$rsg-react-component-docs-font-size']};
       }
       .rsg-react-component-tabs {
+        overflow-x: ${props.theme.styleguide['$rsg-react-component-tabs-overflow-x']};
+        overflow-y: ${props.theme.styleguide['$rsg-react-component-tabs-overflow-y']};
         margin: ${props.theme.styleguide['$rsg-react-component-tabs-margin']};
         .rsg-react-component-tab-buttons {
           margin: ${props.theme.styleguide['$rsg-react-component-tabs-button-margin']};

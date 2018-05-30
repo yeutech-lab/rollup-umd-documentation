@@ -3,14 +3,6 @@ import PropTypes from 'prop-types';
 import Props from '../Props';
 import Methods from '../Methods';
 
-export const defaultProps = {
-  theme: {
-    styleguide: {
-      '$rsg-usage': '',
-    },
-  },
-};
-
 export default function Usage({ props: { props, methods } }) {
   const propsNode = props && <Props props={props} />;
   const methodsNode = methods && methods.length > 0 && <Methods methods={methods} />;
