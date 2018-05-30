@@ -20,7 +20,7 @@ export const defaultProps = {
       },
       '$rsg-text-color': '#333',
       '$rsg-text-color-light': '#555556',
-      '$rsg-text-border-bottom': '1px dotted #9e9e9e',
+      '$rsg-text-border-bottom': '1px dotted #CCCCCC',
       '$rsg-text-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
     },
   },

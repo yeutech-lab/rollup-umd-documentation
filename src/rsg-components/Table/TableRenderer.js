@@ -15,6 +15,7 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
+      '$rsg-table-overflow': 'auto',
       '$rsg-table-width': '90%',
       '$rsg-table-border-collapse': 'collapse',
       '$rsg-table-margin': '24px 0 0 0',
@@ -57,6 +58,7 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-table-overflow': PropTypes.string,
       '$rsg-table-width': PropTypes.string,
       '$rsg-table-border-collapse': PropTypes.string,
       '$rsg-table-margin': PropTypes.string,
@@ -139,6 +141,7 @@ TableRendererUnstyled.propTypes = propTypes;
 const TableRenderer = styled(TableRendererUnstyled)`
   ${(props) => `
     &.rsg-table {
+      overflow: ${props.theme.styleguide['$rsg-table-overflow']};
       width: ${props.theme.styleguide['$rsg-table-width']};
       border-collapse: ${props.theme.styleguide['$rsg-table-border-collapse']} !important;
       margin: ${props.theme.styleguide['$rsg-table-margin']};

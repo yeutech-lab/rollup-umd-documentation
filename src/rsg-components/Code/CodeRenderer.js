@@ -12,7 +12,7 @@ export const defaultProps = {
     styleguide: {
       '$rsg-code-font-family': 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace',
       '$rsg-code-font-size': 'inherit',
-      '$rsg-code-color': 'inherit',
+      '$rsg-code-color': '#B31255',
       '$rsg-code-background': 'transparent',
       '$rsg-code-white-space': 'inherit',
     },

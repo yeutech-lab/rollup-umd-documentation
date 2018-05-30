@@ -11,7 +11,7 @@ import Markdown from '../Markdown';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-section-margin': '32px',
+      '$rsg-section-margin': '60px 0 0 0',
     },
   },
 };

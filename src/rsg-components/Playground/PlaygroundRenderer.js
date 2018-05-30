@@ -8,7 +8,7 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-playground-margin': '40px',
+      '$rsg-playground-margin': '0',
       '$rsg-playground-preview-padding': '16px',
       '$rsg-playground-preview-border': '1px #e8e8e8 solid',
       '$rsg-playground-preview-border-radius': '3px',

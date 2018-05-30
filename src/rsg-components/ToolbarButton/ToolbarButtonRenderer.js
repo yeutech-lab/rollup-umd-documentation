@@ -11,12 +11,12 @@ export const defaultProps = {
   theme: {
     styleguide: {
       '$rsg-toolbar-button-padding': '2px',
-      '$rsg-toolbar-button-color': '#B31255',
+      '$rsg-toolbar-button-color': '#292b2c',
       '$rsg-toolbar-button-background': 'transparent',
       '$rsg-toolbar-button-transition': 'color 750ms ease-out',
       '$rsg-toolbar-button-cursor': 'pointer',
       '$rsg-toolbar-button-hover-focus-isolation': 'false',
-      '$rsg-toolbar-button-hover-focus-color': '#292b2c',
+      '$rsg-toolbar-button-hover-focus-color': '#B31255',
       '$rsg-toolbar-button-hover-focus-transition': 'color 150ms ease-in',
       '$rsg-toolbar-button-focus-isolation': 'false',
       '$rsg-toolbar-button-focus-outline': '1 dotted #B31255',
@@ -24,7 +24,7 @@ export const defaultProps = {
       '$rsg-toolbar-button-children-margin-left': '8px',
       '$rsg-toolbar-button-svg-width': '24px',
       '$rsg-toolbar-button-svg-height': '24px',
-      '$rsg-toolbar-button-svg-color': '#9e9e9e',
+      '$rsg-toolbar-button-svg-color': '#CCCCCC',
       '$rsg-toolbar-button-svg-cursor': 'inherit',
       '$rsg-toolbar-button-small-width': '14px',
       '$rsg-toolbar-button-small-height': '14px',
@@ -89,7 +89,7 @@ const ToolbarButtonRendererUnstyled = (props) => {
     cn(
       className,
       'rsg-toolbar-button',
-      { [small]: 'small' }
+      (small && 'small')
     ), cssModule
   );
 
@@ -145,6 +145,7 @@ const ToolbarButtonRenderer = styled(ToolbarButtonRendererUnstyled)`
         margin-left: ${props.theme.styleguide['$rsg-toolbar-button-children-margin-left']};
       }
       &:i {
+        z-index: 1200;
         width: ${props.theme.styleguide['$rsg-toolbar-button-svg-width']};
         height: ${props.theme.styleguide['$rsg-toolbar-button-svg-height']};
         color: ${props.theme.styleguide['$rsg-toolbar-button-svg-color']};

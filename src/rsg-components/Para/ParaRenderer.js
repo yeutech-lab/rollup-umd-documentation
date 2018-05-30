@@ -12,7 +12,7 @@ export const defaultProps = {
       '$rsg-para-margin': '0 0 8px 0',
       '$rsg-para-color': '#333',
       '$rsg-para-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-      '$rsg-para-font-size': '16px',
+      '$rsg-para-font-size': 'inherit',
       '$rsg-para-line-height': '1.5',
     },
   },

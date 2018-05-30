@@ -15,7 +15,7 @@ export const defaultProps = {
   items: [], // eslint-disable-line react/default-props-match-prop-types
   theme: {
     styleguide: {
-      '$rsg-component-list-color': '#9e9e9e',
+      '$rsg-component-list-color': '#CCCCCC',
       '$rsg-component-list-font-size': '14px',
       '$rsg-component-list-line-height': '2.5',
       '$rsg-component-list-heading-button-outline': 'none',
@@ -23,12 +23,12 @@ export const defaultProps = {
       '$rsg-component-list-heading-button-cursor': 'pointer',
       '$rsg-component-list-heading-margin': '15px 0 0 0',
       '$rsg-component-list-heading-border-bottom': '1px solid #d8d8d8',
-      '$rsg-component-list-heading-color': '#d9534f',
-      '$rsg-component-list-heading-hover-color': '#9e9e9e',
+      '$rsg-component-list-heading-color': '#292b2c',
+      '$rsg-component-list-heading-hover-color': '#B31255',
       '$rsg-component-list-heading-font-size': '16px',
       '$rsg-component-list-heading-font-weight': '500',
       '$rsg-component-list-icon-margin': '15px 15px 0 0',
-      '$rsg-component-list-icon-color': '#d9534f',
+      '$rsg-component-list-icon-color': '#292b2c',
     },
   },
 };

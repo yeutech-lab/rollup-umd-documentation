@@ -23,7 +23,7 @@ const typoList = {
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-heading-margin': '20px 0 0 0',
+      '$rsg-heading-margin': '0 0 0 0',
       '$rsg-heading-color': '#333',
     },
   },

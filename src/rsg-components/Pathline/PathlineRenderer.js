@@ -12,12 +12,12 @@ import ToolbarButton from '../ToolbarButton';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-path-line-font-family': 'Consolas, "Liberation Mono", Menlo, monospace',
-      '$rsg-path-line-color': '#9e9e9e',
+      '$rsg-path-line-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      '$rsg-path-line-color': '#CCCCCC',
       '$rsg-path-line-font-size': '0.8em',
       '$rsg-path-line-margin': '0 0 0 4px',
       '$rsg-path-line-cursor': 'pointer',
-      '$rsg-path-line-icon-color': '#9e9e9e',
+      '$rsg-path-line-icon-color': '#CCCCCC',
       '$rsg-path-line-icon-font-size': '0.8em',
       '$rsg-path-line-icon-cursor': 'pointer',
       '$rsg-path-line-icon-position': 'relative',
