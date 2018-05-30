@@ -117,12 +117,20 @@ export const config = {
     <body>
     <div id="rsg-root">
       <style>
-        .loader {
-          position: absolute;
-          top: 50%;
-          left: 48%;
+        @media only screen and (min-width: 0px) and (max-width: 799px)  {
+          .loader {
+            position: absolute;
+            top: 50%;
+            left: 43%;
+          }
         }
-
+        @media only screen and (min-width: 799px)  {
+          .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+          }
+        }
         .line {
           animation: expand 1.5s ease-in-out infinite;
           border-radius: 10px;
@@ -132,45 +140,52 @@ export const config = {
           width: 1px;
           height: 25px;
         }
-
         .line:nth-child(1) {
-          background: #B21255;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(2) {
           animation-delay: 180ms;
-          background: #9F0F5B;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(3) {
           animation-delay: 360ms;
-          background: #910D60;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(4) {
           animation-delay: 540ms;
-          background: #7F0B66;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(5) {
           animation-delay: 540ms;
-          background: #7F0B66;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(6) {
           animation-delay: 360ms;
-          background: #910D60;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(7) {
           animation-delay: 180ms;
-          background: #9F0F5B;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(8) {
-          background: #B21255;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         @keyframes expand {
           0% {
             transform: scale(1);
