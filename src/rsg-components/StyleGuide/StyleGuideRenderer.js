@@ -24,31 +24,6 @@ export const defaultProps = {
       },
       '$rsg-styleguide-content-margin': '0 auto',
       '$rsg-styleguide-content-display': 'block',
-      '$rsg-styleguide-sidebar-background-color': '#f5f5f5',
-      '$rsg-styleguide-sidebar-border': '#e8e8e8 solid',
-      '$rsg-styleguide-sidebar-border-width': {
-        xs: '1px 0 0 0',
-        md: '0 1px 0 0',
-      },
-      '$rsg-styleguide-sidebar-position': {
-        xs: 'static',
-        md: 'fixed',
-      },
-      '$rsg-styleguide-sidebar-top': '0',
-      '$rsg-styleguide-sidebar-left': '0',
-      '$rsg-styleguide-sidebar-bottom': '0',
-      '$rsg-styleguide-sidebar-width': {
-        xs: 'auto',
-        md: '250px',
-      },
-      '$rsg-styleguide-sidebar-overflow': 'auto',
-      '$rsg-styleguide-sidebar-padding-bottom': '4px',
-      '$rsg-styleguide-logo-padding': '16px',
-      '$rsg-styleguide-logo-border-bottom': '1 #e8e8e8 solid',
-      '$rsg-styleguide-footer-display': 'block',
-      '$rsg-styleguide-footer-color': '#767676',
-      '$rsg-styleguide-footer-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-      '$rsg-styleguide-footer-font-size': '13px',
     },
   },
 };
@@ -68,9 +43,8 @@ export const propTypes = {
   toc: PropTypes.node.isRequired,
   /** Toggle sidebar style. */
   hasSidebar: PropTypes.bool, // eslint-disable-line react/require-default-props
-  /** Image used by `<SideBar />` component. */
+  /** Content element to be rendered. */
   logo: PropTypes.node,
-  /** Href image used by `<SideBar />` component. */
   logohref: PropTypes.string,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
@@ -87,31 +61,6 @@ export const propTypes = {
       }),
       '$rsg-styleguide-content-margin': PropTypes.string,
       '$rsg-styleguide-content-display': PropTypes.string,
-      '$rsg-styleguide-sidebar-background-color': PropTypes.string,
-      '$rsg-styleguide-sidebar-border': PropTypes.string,
-      '$rsg-styleguide-sidebar-border-width': PropTypes.shape({
-        xs: PropTypes.string,
-        md: PropTypes.string,
-      }),
-      '$rsg-styleguide-sidebar-position': PropTypes.shape({
-        xs: PropTypes.string,
-        md: PropTypes.string,
-      }),
-      '$rsg-styleguide-sidebar-top': PropTypes.string,
-      '$rsg-styleguide-sidebar-left': PropTypes.string,
-      '$rsg-styleguide-sidebar-bottom': PropTypes.string,
-      '$rsg-styleguide-sidebar-width': PropTypes.shape({
-        xs: PropTypes.string,
-        md: PropTypes.string,
-      }),
-      '$rsg-styleguide-sidebar-overflow': PropTypes.string,
-      '$rsg-styleguide-sidebar-padding-bottom': PropTypes.string,
-      '$rsg-styleguide-logo-padding': PropTypes.string,
-      '$rsg-styleguide-logo-border-bottom': PropTypes.string,
-      '$rsg-styleguide-footer-display': PropTypes.string,
-      '$rsg-styleguide-footer-color': PropTypes.string,
-      '$rsg-styleguide-footer-font-family': PropTypes.string,
-      '$rsg-styleguide-footer-font-size': PropTypes.string,
     }),
   }),
   /**
@@ -186,44 +135,6 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
       padding: ${props.theme.styleguide['$rsg-styleguide-content-padding'].md};
     `
   )}
-        .footer {
-          footer-display: ${props.theme.styleguide['$rsg-styleguide-footer-display']};
-          color: ${props.theme.styleguide['$rsg-styleguide-footer-color']};
-          font-family: ${props.theme.styleguide['$rsg-styleguide-footer-font-family']};
-          font-size: ${props.theme.styleguide['$rsg-styleguide-footer-font-size']};
-        }
-      }
-      .sidebar {
-        background-color: ${props.theme.styleguide['$rsg-styleguide-sidebar-background-color']};
-        border: ${props.theme.styleguide['$rsg-styleguide-sidebar-border']};
-        border-width: ${props.theme.styleguide['$rsg-styleguide-sidebar-border-width']};
-        top: ${props.theme.styleguide['$rsg-styleguide-sidebar-top']};
-        left: ${props.theme.styleguide['$rsg-styleguide-sidebar-left']};
-        bottom: ${props.theme.styleguide['$rsg-styleguide-sidebar-bottom']};
-        overflow: ${props.theme.styleguide['$rsg-styleguide-sidebar-overflow']};
-  ${bp.up(
-    'xs',
-    props.theme['$grid-breakpoints'],
-    `
-      position: ${props.theme.styleguide['$rsg-styleguide-sidebar-position'].xs};
-      width: ${props.theme.styleguide['$rsg-styleguide-sidebar-width'].xs};
-      border-width: ${props.theme.styleguide['$rsg-styleguide-sidebar-border-width'].xs};
-      padding-bottom: ${props.theme.styleguide['$rsg-styleguide-sidebar-padding-bottom']};
-    `
-  )}
-  ${bp.up(
-    'md',
-    props.theme['$grid-breakpoints'],
-    `
-      position: ${props.theme.styleguide['$rsg-styleguide-sidebar-position'].md};
-      width: ${props.theme.styleguide['$rsg-styleguide-sidebar-width'].md};
-      border-width: ${props.theme.styleguide['$rsg-styleguide-sidebar-border-width'].md};
-    `
-  )}
-        .logo {
-          padding: ${props.theme.styleguide['$rsg-styleguide-logo-padding']};
-          border-bottom: ${props.theme.styleguide['$rsg-styleguide-logo-border-bottom']};
-        }
       }
     }
     &.has-sidebar {
