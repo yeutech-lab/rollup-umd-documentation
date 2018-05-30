@@ -63,7 +63,7 @@ const CodeRendererUnstyled = (props) => {
   }
   return (
     <Code
-      className={mapToCssModules(cn(className, 'code-renderer'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-code'), cssModule)}
       {...attributes}
     >
       {children}
@@ -76,7 +76,7 @@ CodeRendererUnstyled.propTypes = propTypes;
 
 const CodeRenderer = styled(CodeRendererUnstyled)` 
   ${(props) => `
-    &.code-renderer {
+    &.rsg-code {
       font-family: ${props.theme.styleguide['$rsg-code-font-family']};
       font-size: ${props.theme.styleguide['$rsg-code-font-size']};
       color: ${props.theme.styleguide['$rsg-code-color']};

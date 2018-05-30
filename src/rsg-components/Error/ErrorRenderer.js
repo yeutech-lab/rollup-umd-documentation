@@ -69,11 +69,11 @@ const ErrorRendererUnstyled = (props) => {
       className={mapToCssModules(cn(className, 'rsg-error'), cssModule)}
       {...attributes}
     >
-      <Pre className="rsg-error-stack">
+      <Pre className="error-stack">
         {error.toString()}
         {info.componentStack.toString()}
       </Pre>
-      <div className="rsg-error-message">
+      <div className="error-message">
         <P>
           This may be due to an error in a component you are overriding, or a bug in React
           Styleguidist.
@@ -101,12 +101,12 @@ const ErrorRenderer = styled(ErrorRendererUnstyled)`
       margin: ${props.theme.styleguide['$rsg-error-margin']};
       line-height: ${props.theme.styleguide['$rsg-error-line-height']};
       font-size: ${props.theme.styleguide['$rsg-error-font-size']};
-      .rsg-error-stack {
+      .error-stack {
         color: ${props.theme.styleguide['$rsg-error-stack-color']};
         white-space: ${props.theme.styleguide['$rsg-error-stack-white-space']};
         font-family: ${props.theme.styleguide['$rsg-error-stack-font-family']};
       }
-      .rsg-error-message {
+      .error-message {
         color: ${props.theme.styleguide['$rsg-error-message-color']};
         font-family: ${props.theme.styleguide['$rsg-error-message-font-family']};
       }

@@ -66,7 +66,7 @@ const ListRendererUnstyled = (props) => { // eslint-disable-next-line no-shadow
 
   return (
     <Tag
-      className={mapToCssModules(cn(className, 'markdown-list', `list-${ordered ? 'ol' : 'ul'}`), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-markdown-list', `list-${ordered ? 'ol' : 'ul'}`), cssModule)}
       {...attributes}
     >
       {Children.map(children, (Li) => cloneElement(Li))}
@@ -79,15 +79,15 @@ ListRendererUnstyled.propTypes = propTypes;
 
 const ListRenderer = styled(ListRendererUnstyled)` 
   ${(props) => `
-    &.markdown-list {
+    &.rsg-markdown-list {
       font-size: ${props.theme.styleguide['$rsg-markdown-list-font-size']};
       margin: ${props.theme.styleguide['$rsg-markdown-list-margin']};
       padding: ${props.theme.styleguide['$rsg-markdown-list-padding']};
     }
-    &.markdown-list.list-ol {
+    &.rsg-markdown-list.list-ol {
       list-style-type: ${props.theme.styleguide['$rsg-markdown-list-ordered-style-type']} ;
     }
-    &.markdown-list.list-ul {
+    &.rsg-markdown-list.list-ul {
       font-family: ${props.theme.styleguide['$rsg-markdown-list-li-font-family']} ;
       font-size: ${props.theme.styleguide['$rsg-markdown-list-list-li-font-size']} !important;
       color: ${props.theme.styleguide['$rsg-markdown-list-li-color']} !important;

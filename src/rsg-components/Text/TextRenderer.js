@@ -75,7 +75,7 @@ const TextRendererUnstyled = (props) => {
         [`size-${size}`]: !!size,
         [`color-${color}`]: !!color,
         underlined: !!underlined,
-      }, 'text-renderer'), cssModule)}
+      }, 'rsg-text'), cssModule)}
       {...attributes}
     >
       {children}
@@ -88,28 +88,28 @@ TextRendererUnstyled.propTypes = propTypes;
 
 const TextRenderer = styled(TextRendererUnstyled)` 
   ${(props) => `
-    &.text-renderer {
+    &.rsg-text {
       font-family: ${props.theme.styleguide['$rsg-text-font-family']};
     }
-    &.text-renderer.size-inherit {
+    &.rsg-text.size-inherit {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].inherit};
     }
-    &.text-renderer.size-small {
+    &.rsg-text.size-small {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].sm};
     }
-    &.text-renderer.size-base {
+    &.rsg-text.size-base {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].base};
     }
-    &.text-renderer.size-text {
+    &.rsg-text.size-text {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].text};
     }
-    &.text-renderer.underlined {
+    &.rsg-text.underlined {
       border-bottom: ${props.theme.styleguide['$rsg-text-border-bottom']};
     }
-    &.text-renderer.color-base {
+    &.rsg-text.color-base {
       color: ${props.theme.styleguide['$rsg-text-color']};
     }
-    &.text-renderer.color-light {
+    &.rsg-text.color-light {
       color: ${props.theme.styleguide['$rsg-text-color-light']};
     }
  `}

@@ -57,7 +57,7 @@ const ParaRendererUnstyled = (props) => {
 
   return (
     <Tag
-      className={mapToCssModules(cn(className, 'para-renderer'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-para'), cssModule)}
       {...attributes}
     >
       {children}
@@ -70,7 +70,7 @@ ParaRendererUnstyled.propTypes = propTypes;
 
 const ParaRenderer = styled(ParaRendererUnstyled)` 
   ${(props) => `
-    &.para-renderer {
+    &.rsg-para {
       margin: ${props.theme.styleguide['$rsg-para-margin']};
       color: ${props.theme.styleguide['$rsg-para-color']};
       font-family: ${props.theme.styleguide['$rsg-para-font-family']};

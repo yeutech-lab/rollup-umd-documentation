@@ -56,7 +56,7 @@ const BlockquoteUnstyled = (props) => {
 
   return (
     <Blockquote
-      className={mapToCssModules(cn(className, 'markdown-blockquote'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-markdown-blockquote'), cssModule)}
       {...attributes}
     >
       {children}
@@ -69,7 +69,7 @@ BlockquoteUnstyled.propTypes = propTypes;
 
 const BlockquoteRsg = styled(BlockquoteUnstyled)` 
   ${(props) => `
-    &.markdown-blockquote {
+    &.rsg-markdown-blockquote {
       margin: ${props.theme.styleguide['$rsg-markdown-block-quote-margin']};
       padding: ${props.theme.styleguide['$rsg-markdown-block-quote-padding']};
       color: ${props.theme.styleguide['$rsg-markdown-block-quote-color']};

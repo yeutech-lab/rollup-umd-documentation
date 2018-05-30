@@ -45,7 +45,7 @@ const TypeRendererUnstyled = (props) => {
 
   return (
     <span
-      className={mapToCssModules(cn(className, 'type-renderer'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-type'), cssModule)}
       {...attributes}
     >
       <Code className="type-renderer-code">{children}</Code>
@@ -58,7 +58,7 @@ TypeRendererUnstyled.propTypes = propTypes;
 
 const TypeRenderer = styled(TypeRendererUnstyled)` 
   ${(props) => `
-    &.type-renderer {
+    &.rsg-type {
       .type-renderer-code {
         font-size: ${props.theme.styleguide['$rsg-type-font-size']} !important;
         color: ${props.theme.styleguide['$rsg-type-color']} !important;

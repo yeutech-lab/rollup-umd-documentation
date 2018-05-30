@@ -55,7 +55,7 @@ const NameRendererUnstyled = (props) => {
 
   return (
     <span
-      className={mapToCssModules(cn(className, 'name-renderer'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-name'), cssModule)}
       {...attributes}
     >
       <Code className={`name-renderer-code ${deprecated && 'deprecated'}`}>{children}</Code>
@@ -68,7 +68,7 @@ NameRendererUnstyled.propTypes = propTypes;
 
 const NameRenderer = styled(NameRendererUnstyled)` 
   ${(props) => `
-    &.name-renderer {
+    &.rsg-name {
       .name-renderer-code {
         font-size: ${props.theme.styleguide['$rsg-name-font-size']};
         color: ${props.theme.styleguide['$rsg-name-color']};
