@@ -93,7 +93,7 @@ const TabButtonRendererUnstyled = (props) => {
       className={mapToCssModules(cn(
         className,
         'rsg-tab-button',
-        { [active]: 'active' }
+        { active }
       ), cssModule)}
       {...attributes}
       name={name}

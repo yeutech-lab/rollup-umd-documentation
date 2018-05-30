@@ -54,13 +54,12 @@ const NameRendererUnstyled = (props) => {
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
-
   return (
     <span
       className={mapToCssModules(cn(className, 'rsg-name'), cssModule)}
       {...attributes}
     >
-      <Code className={`name-renderer-code ${deprecated && 'deprecated'}`}>{children}</Code>
+      <Code className={`name-renderer-code ${deprecated ? 'deprecated' : ''}`}>{children}</Code>
     </span>
   );
 };

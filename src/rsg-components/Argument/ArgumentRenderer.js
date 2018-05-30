@@ -62,7 +62,7 @@ const ArgumentRendererUnstyled = (props) => {
 
   return (
     <Group
-      className={mapToCssModules(cn(className, 'rsg-argument', (block && 'block')), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-argument', { block }), cssModule)}
       {...attributes}
     >
       {returns && 'Returns'}

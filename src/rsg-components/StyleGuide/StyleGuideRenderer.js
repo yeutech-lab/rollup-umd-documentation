@@ -92,7 +92,7 @@ const StyleGuideRendererUnstyled = (props) => {
       className={mapToCssModules(cn(
         className,
         'rsg-styleguide',
-        (hasSidebar && 'has-sidebar')
+        { 'has-sidebar': hasSidebar }
       ), cssModule)}
       {...attributes}
     >

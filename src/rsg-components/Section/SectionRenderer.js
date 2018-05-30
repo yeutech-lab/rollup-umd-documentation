@@ -71,7 +71,7 @@ const SectionRendererUnstyled = (props) => {
 
   return (
     <Section
-      className={mapToCssModules(cn(className, 'rsg-section', (isolated && 'isolated')), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-section', { isolated }), cssModule)}
       {...attributes}
     >
       {name && (
