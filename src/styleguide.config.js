@@ -134,41 +134,41 @@ export const config = {
         }
 
         .line:nth-child(1) {
-          background: #22d4e8;
+          background: #B21255;
         }
 
         .line:nth-child(2) {
           animation-delay: 180ms;
-          background: #4922e8;
+          background: #9F0F5B;
         }
 
         .line:nth-child(3) {
           animation-delay: 360ms;
-          background: #bd22e8;
+          background: #910D60;
         }
 
         .line:nth-child(4) {
           animation-delay: 540ms;
-          background: #e8226a;
+          background: #7F0B66;
         }
 
         .line:nth-child(5) {
           animation-delay: 540ms;
-          background: #e86a22;
+          background: #7F0B66;
         }
 
         .line:nth-child(6) {
           animation-delay: 360ms;
-          background: #e8de22;
+          background: #910D60;
         }
 
         .line:nth-child(7) {
           animation-delay: 180ms;
-          background: #8ee822;
+          background: #9F0F5B;
         }
 
         .line:nth-child(8) {
-          background: #22e853;
+          background: #B21255;
         }
 
         @keyframes expand {
@@ -289,6 +289,7 @@ export const config = {
     Hr: path.join(__dirname, '../lib/rsg-components/Markdown/Hr/HrRenderer.js'),
     List: path.join(__dirname, '../lib/rsg-components/Markdown/List/ListRenderer.js'),
     MarkdownHeading: path.join(__dirname, '../lib/rsg-components/Markdown/MarkdownHeading/MarkdownHeadingRenderer.js'),
+    MarkdownTable: path.join(__dirname, '../lib/rsg-components/Markdown/MarkdownTable/MarkdownTableRenderer.js'),
     Pre: path.join(__dirname, '../lib/rsg-components/Markdown/Pre/PreRenderer.js'),
     PropsRenderer: path.join(__dirname, '../lib/rsg-components/Props/PropsRenderer.js'),
     Table: path.join(__dirname, '../lib/rsg-components/Table/TableRenderer.js'),

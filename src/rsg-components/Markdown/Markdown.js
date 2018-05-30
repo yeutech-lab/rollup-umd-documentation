@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { compiler } from 'markdown-to-jsx';
-// todo: change css to have with bs (not use css file, css file to delete
+// todo: when styleguideRenderer is used it throw a babel error for loader/tomorrow.css
 import '!!style-loader!css-loader!../../../loaders/tomorrow.css'; // eslint-disable-line import/no-webpack-loader-syntax
 import Link from '../Link/LinkRenderer';
 import Text from '../Text/TextRenderer';
@@ -12,11 +12,11 @@ import Blockquote from './Blockquote/BlockquoteRenderer';
 import Pre from './Pre/PreRenderer';
 import Checkbox from './Checkbox/CheckboxRenderer';
 import Hr from './Hr/HrRenderer';
-import Table from './Table/TableRenderer';
-import TableHead from './Table/TableHeadRenderer';
-import TableBody from './Table/TableBodyRenderer';
-import TableRow from './Table/TableRowRenderer';
-import TableCell from './Table/TableCellRenderer';
+import MarkdownTable from './MarkdownTable/MarkdownTableRenderer';
+import TableHead from './MarkdownTable/TableHeadRenderer';
+import TableBody from './MarkdownTable/TableBodyRenderer';
+import TableRow from './MarkdownTable/TableRowRenderer';
+import TableCell from './MarkdownTable/TableCellRenderer';
 
 
 export const baseOverrides = {
@@ -102,7 +102,7 @@ export const baseOverrides = {
     component: Hr,
   },
   table: {
-    component: Table,
+    component: MarkdownTable,
   },
   thead: {
     component: TableHead,

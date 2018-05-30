@@ -10,7 +10,7 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-markdown-table-head-border-bottom': '1 #9e9e9e solid',
+      '$rsg-markdown-table-head-border-bottom': '1 #CCCCCC solid',
     },
   },
 };
