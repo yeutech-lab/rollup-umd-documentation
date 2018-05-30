@@ -106,7 +106,6 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
   state = {
     itemList: this.props.items.filter((item) => item.name),
   }
-
   componentWillMount() {
     const newState = {};
     this.state.itemList.map(({ heading, name, level }) => {
@@ -118,21 +117,28 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
       return null;
     });
   }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.items !== nextProps.items) {
+      this.updateItems();
+    }
+  }
   onClick = (name) => {
     this.setState({
       [`${name}-is-open`]: !this.state[`${name}-is-open`],
     });
   };
-
+  updateItems() {
+    this.setState({
+      itemList: this.props.items.filter((item) => item.name),
+    });
+  }
   render() {
     const {
       className,
       cssModule,
       ...attributes
     } = omit(this.props, ['theme']);
-    const {
-      itemList,
-    } = this.state;
+    const { itemList } = this.state;
     if (!itemList.length) {
       return null;
     }
