@@ -24,6 +24,7 @@ export const defaultProps = {
       },
       '$rsg-styleguide-content-margin': '0 auto',
       '$rsg-styleguide-content-display': 'block',
+
     },
   },
 };
@@ -96,9 +97,11 @@ const StyleGuideRendererUnstyled = (props) => {
       {...attributes}
     >
       {hasSidebar && (
-        <SideBar logo={{ logo, href: logohref }} title={title} items={toc} />
+        <div>
+          <SideBar logo={{ logo, href: logohref }} title={title} items={toc} />
+          <Ribbon />
+        </div>
       )}
-      <Ribbon />
       <main className="content">
         {children}
         {hasSidebar && (
