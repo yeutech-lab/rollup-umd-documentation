@@ -23,9 +23,10 @@ export const propTypes = {
   /**
    * @ignore
    */
-  classes: PropTypes.object,
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<ParaRenderer />` component. */
   children: PropTypes.node.isRequired,
+  /** Tag used for semantic. */
   semantic: PropTypes.oneOf(['p']),
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

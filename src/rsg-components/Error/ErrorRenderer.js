@@ -30,7 +30,9 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Error will be displayed as a string. */
   error: PropTypes.object.isRequired,
+  /** Info will be displayed as a string. */
   info: PropTypes.shape({
     componentStack: PropTypes.any.isRequired,
   }).isRequired,

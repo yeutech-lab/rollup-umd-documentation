@@ -23,10 +23,15 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Display argument name. */
   name: PropTypes.string,
+  /** Display argument type name. */
   type: PropTypes.object,
+  /** Display argument description. */
   description: PropTypes.string,
+  /** Toggle returns and display string "Returns". */
   returns: PropTypes.bool,
+  /** Toggle block style. */
   block: PropTypes.bool,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

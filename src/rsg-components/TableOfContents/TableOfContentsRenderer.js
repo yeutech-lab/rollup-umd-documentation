@@ -23,9 +23,15 @@ export const defaultProps = {
 };
 
 export const propTypes = {
+  /**
+   * @ignore
+   */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<TableOfContentsRenderer />` component. */
   children: PropTypes.node, // eslint-disable-line react/require-default-props
+  /** Display search term used in search `<Input />` component. */
   searchTerm: PropTypes.string.isRequired,
+  /** Set function passed to onchange input event. */
   onSearchTermChange: PropTypes.func.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

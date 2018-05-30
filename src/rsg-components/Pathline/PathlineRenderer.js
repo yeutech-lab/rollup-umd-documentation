@@ -32,6 +32,7 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<PathlineRenderer />` component. */
   children: PropTypes.node, // eslint-disable-line react/require-default-props
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

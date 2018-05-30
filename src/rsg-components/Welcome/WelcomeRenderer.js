@@ -28,6 +28,7 @@ Read more in the [locating components guide](${DOCS_COMPONENTS}).
 }
 
 WelcomeRenderer.propTypes = {
+  /** Set patterns used in welcome example. */
   patterns: PropTypes.array.isRequired,
 };
 

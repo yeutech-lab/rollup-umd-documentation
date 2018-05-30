@@ -22,14 +22,23 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Display heading section name. */
   name: PropTypes.string,
+  /** Display section description used in `<Markdown />` component. */
   description: PropTypes.string,
+  /** Display string containing special characters. */
   slug: PropTypes.string,
+  /** Display section filepath. */
   filepath: PropTypes.string,
+  /** Content element to be rendered. */
   content: PropTypes.node,
+  /** Components elements to be rendered. */
   components: PropTypes.node,
+  /** Sections elements to be rendered. */
   sections: PropTypes.node,
+  /** Toggle isolated style. */
   isolated: PropTypes.bool,
+  /** Depth used in `<HeadingSection />` component. */
   depth: PropTypes.number.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

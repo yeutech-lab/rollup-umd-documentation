@@ -37,10 +37,15 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Set href to `<A />` component. */
   href: PropTypes.string,
+  /** Set function passed to onclick button event. */
   onClick: PropTypes.func,
+  /** Set href to `<A />` or`<Button />` component. */
   title: PropTypes.string,
+  /** Toggle small style. */
   small: PropTypes.bool,
+  /** Specified node element will be passed as children of `<ToolbarButtonRenderer />` component. */
   children: PropTypes.node,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

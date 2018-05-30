@@ -137,7 +137,9 @@ function Markdown({ text, inline }) {
 }
 
 Markdown.propTypes = {
+  /** Text used to render markdown. */
   text: PropTypes.string.isRequired,
+  /** Toggle inline style. */
   inline: PropTypes.bool,
 };
 

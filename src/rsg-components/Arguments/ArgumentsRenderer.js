@@ -22,12 +22,15 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Arguments name, type and description passed to `<Argument />` component. Can be: */
   args: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     type: PropTypes.object,
     description: PropTypes.string,
   })).isRequired,
+  /** Toggle heading style. */
   heading: PropTypes.bool, // eslint-disable-line react/require-default-props  /** Theme variables. Can be: */
+  /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
       '$rsg-arguments-margin': PropTypes.string,

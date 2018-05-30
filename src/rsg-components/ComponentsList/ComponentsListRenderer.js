@@ -11,8 +11,21 @@ import cn from 'classnames';
 import omit from 'lodash.omit';
 import Link from '../Link';
 
-export const defaultProps = {
-  items: [], // eslint-disable-line react/default-props-match-prop-types
+export const defaultProps = { // eslint-disable-next-line react/default-props-match-prop-types
+  items: [
+    {
+      name: 'First component',
+      href: '/#first-component',
+      filepath: 'first-component.md',
+      heading: false,
+      level: 0,
+      content: false,
+      collapse: true,
+      slug: 'first-component',
+      components: [],
+      sections: [],
+    },
+  ],
   theme: {
     styleguide: {
       '$rsg-component-list-color': '#CCCCCC',
@@ -38,8 +51,25 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
-  items: PropTypes.array.isRequired,
+  /** Items used to create component list such as table of content and section: */
+  items: PropTypes.arrayOf(
+    /** Item. Can be: */
+    PropTypes.shape({
+      name: PropTypes.string,
+      href: PropTypes.string,
+      filepath: PropTypes.string,
+      heading: PropTypes.bool,
+      level: PropTypes.number,
+      content: PropTypes.bool,
+      collapse: PropTypes.bool,
+      slug: PropTypes.string,
+      components: PropTypes.array,
+      sections: PropTypes.array,
+    }).isRequired
+  ).isRequired,
+  /** Toggle use of isolated links. */
   useIsolatedLinks: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types, react/require-default-props
+  /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
       '$rsg-component-list-color': PropTypes.string,

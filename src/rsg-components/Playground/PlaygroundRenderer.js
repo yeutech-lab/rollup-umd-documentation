@@ -27,11 +27,17 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Name used in data-preview. */
   name: PropTypes.string.isRequired,
+  /** Preview element to be rendered. */
   preview: PropTypes.node.isRequired,
+  /** Preview properties to be rendered. */
   previewProps: PropTypes.object.isRequired,
+  /** Tab button to be rendered. */
   tabButtons: PropTypes.node.isRequired,
+  /** Tab body to be rendered. */
   tabBody: PropTypes.node.isRequired,
+  /** Toolbar to be rendered. */
   toolbar: PropTypes.node.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

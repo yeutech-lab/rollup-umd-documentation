@@ -59,12 +59,18 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Set title used in `<SideBar />` component. */
   title: PropTypes.string.isRequired,
   homepageUrl: PropTypes.string.isRequired,
+  /** Specified node element will be passed as children of `<StyleGuideRenderer />` component. */
   children: PropTypes.node.isRequired,
+  /** Table of content element to be rendered. */
   toc: PropTypes.node.isRequired,
+  /** Toggle sidebar style. */
   hasSidebar: PropTypes.bool, // eslint-disable-line react/require-default-props
+  /** Image used by `<SideBar />` component. */
   logo: PropTypes.node,
+  /** Href image used by `<SideBar />` component. */
   logohref: PropTypes.string,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

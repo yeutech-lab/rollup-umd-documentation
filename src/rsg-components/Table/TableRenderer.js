@@ -49,11 +49,14 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Columns to be rendered. */
   columns: PropTypes.arrayOf(PropTypes.shape({
     caption: PropTypes.string.isRequired,
     render: PropTypes.func.isRequired,
   })).isRequired,
+  /** Rows to be rendered. */
   rows: PropTypes.arrayOf(PropTypes.object).isRequired,
+  /** Set function passed to `<Tr />` component. */
   getRowKey: PropTypes.func.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

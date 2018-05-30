@@ -32,11 +32,17 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<SectionHeadingRenderer />` component. */
   children: PropTypes.node, // eslint-disable-line react/require-default-props
+  /** Toolbar element to be rendered. */
   toolbar: PropTypes.node, // eslint-disable-line react/require-default-props
+  /** Set id used by `<Heading />` component. */
   id: PropTypes.string.isRequired,
+  /** Set anchor link href used by `<A />` component. */
   href: PropTypes.string.isRequired,
+  /** Set level used in `<Heading />` component. */
   depth: PropTypes.number.isRequired,
+  /** Toggle deprecated style. */
   deprecated: PropTypes.bool, // eslint-disable-line react/require-default-props
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

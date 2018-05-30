@@ -37,9 +37,13 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Display button name. */
   name: PropTypes.string,
+  /** Set function passed to onclick button event. */
   onClick: PropTypes.func,
+  /** Toggle button active style. */
   active: PropTypes.bool,
+  /** Specified node element will be passed as children of `<TabButtonRenderer />` component. */
   children: PropTypes.node,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

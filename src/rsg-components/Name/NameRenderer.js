@@ -24,7 +24,9 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<NameRenderer />` component. */
   children: PropTypes.node.isRequired,
+  /** Toggle deprecated style. */
   deprecated: PropTypes.bool, // eslint-disable-line react/require-default-props
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

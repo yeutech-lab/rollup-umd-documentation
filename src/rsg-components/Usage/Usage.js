@@ -28,6 +28,7 @@ export default function Usage({ props: { props, methods } }) {
 }
 
 Usage.propTypes = {
+  /** Properties to be rendered in properties table. Can be: */
   props: PropTypes.shape({
     props: PropTypes.array,
     methods: PropTypes.array,

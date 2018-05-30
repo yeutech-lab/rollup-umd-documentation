@@ -32,10 +32,15 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Tags used for semantic. Can be: */
   semantic: PropTypes.oneOf(['em', 'strong']), // eslint-disable-line react/require-default-props
+  /** Semantic sizes. Can be: */
   size: PropTypes.oneOf(['inherit', 'small', 'base', 'text']),
+  /** Semantic colors. Can be: */
   color: PropTypes.oneOf(['base', 'light']),
+  /** Toggle underlined style. */
   underlined: PropTypes.bool,
+  /** Specified node element will be passed as children of `<TextRenderer />` component. */
   children: PropTypes.node.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

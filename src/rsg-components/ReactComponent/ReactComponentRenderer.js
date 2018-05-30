@@ -25,15 +25,25 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Name used in id. */
   name: PropTypes.string.isRequired,
+  /** Heading element to be rendered. */
   heading: PropTypes.node.isRequired,
+  /** Component directory file path. */
   filepath: PropTypes.string,
+  /** Component directory path line. */
   pathLine: PropTypes.string,
+  /** Tab buttons elements to be rendered. */
   tabButtons: PropTypes.node,
+  /** Tab body element to be rendered. */
   tabBody: PropTypes.node,
+  /** Description element to be rendered. */
   description: PropTypes.node,
+  /** Documentation element to be rendered. */
   docs: PropTypes.node,
+  /** Examples elements to be rendered. */
   examples: PropTypes.node,
+  /** Toggle isolated style. */
   isolated: PropTypes.bool,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

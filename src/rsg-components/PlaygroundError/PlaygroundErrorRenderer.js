@@ -26,6 +26,7 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** String passed as children to `<PlaygroundErrorRenderer />`. */
   message: PropTypes.string.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

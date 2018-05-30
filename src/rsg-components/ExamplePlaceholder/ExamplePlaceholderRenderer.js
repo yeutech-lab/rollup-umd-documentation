@@ -31,6 +31,7 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Component name used in example. */
   name: PropTypes.string, // eslint-disable-line react/require-default-props
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

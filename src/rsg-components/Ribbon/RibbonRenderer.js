@@ -44,7 +44,9 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Set link url. */
   url: PropTypes.string.isRequired,
+  /** Set message passed as child of `<A />` link component. */
   text: PropTypes.string,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
