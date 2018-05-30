@@ -307,7 +307,6 @@ export const config = {
     MarkdownTable: path.join(__dirname, '../lib/rsg-components/Markdown/MarkdownTable/MarkdownTableRenderer.js'),
     Pre: path.join(__dirname, '../lib/rsg-components/Markdown/Pre/PreRenderer.js'),
     PropsRenderer: path.join(__dirname, '../lib/rsg-components/Props/PropsRenderer.js'),
-    Table: path.join(__dirname, '../lib/rsg-components/Table/TableRenderer.js'),
     TableRenderer: path.join(__dirname, '../lib/rsg-components/Table/TableRenderer.js'),
     ParaRenderer: path.join(__dirname, '../lib/rsg-components/Para/ParaRenderer.js'),
     NameRenderer: path.join(__dirname, '../lib/rsg-components/Name/NameRenderer.js'),
