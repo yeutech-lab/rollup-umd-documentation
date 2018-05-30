@@ -96,6 +96,32 @@ const EditorLoaderRenderer = styled(EditorLoaderRendererUnstyled)`
       color: ${props.theme.styleguide['$rsg-editor-color']};
       background-color: ${props.theme.styleguide['$rsg-editor-background-color']} !important;
     }
+    @global {
+      .CodeMirror {
+        height: auto !important;
+      }
+      .CodeMirror.CodeMirror {
+        isolation: false;
+        font-family: Consolas, "Liberation Mono", Menlo, monospace;
+        height: auto !important;
+        padding: 8px 16px;
+        font-size: 13px;
+      }
+      .CodeMirror.CodeMirror pre {
+        isolation: false;
+        padding: 0;
+      }
+      .CodeMirror-scroll.CodeMirror-scroll {
+        isolation: false;
+        height: auto;
+        overflow-y: hidden;
+        overflow-x: auto !important;
+      }
+      .cm-error.cm-error {
+        isolation: false;
+        background: none;
+      }
+    }
  `}
 `;
 
