@@ -33,9 +33,13 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Logo element to be rendered. */
   logo: PropTypes.node,
+  /** Bottom logo element to be rendered. */
   bottomLogo: PropTypes.node,
+  /** Set href used by bottom logo. */
   bottomLogoHref: PropTypes.string,
+  /** Set text used by bottom logo. */
   bottomLogoText: PropTypes.string,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({

@@ -39,8 +39,11 @@ export const propTypes = {
    * See example <a href="https://www.npmjs.com/package/map-to-css-modules" target="_blank">here</a>.
    */
   cssModule: PropTypes.object, // eslint-disable-line react/require-default-props
+  /** Set logo image to be rendered. */
   logo: PropTypes.object, // eslint-disable-line react/require-default-props
+  /** Set title to be rendered. */
   title: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Table of content elements to be rendered. */
   items: PropTypes.node, // eslint-disable-line react/require-default-props
 };
 
