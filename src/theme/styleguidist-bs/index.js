@@ -343,6 +343,10 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-markdown-table-cell-line-height'] = u['$rsg-markdown-table-cell-line-height'] || '1.5';
   v['$rsg-markdown-table-cell-head-font-weight'] = u['$rsg-markdown-table-cell-head-font-weight'] || 'bold';
   v['$rsg-markdown-table-head-border-bottom'] = u['$rsg-markdown-table-head-border-bottom'] || `1 ${v['$rsg-gray-light']} solid`;
+  // welcome
+  v['$rsg-welcome-max-width'] = u['$rsg-welcome-max-width'] || '1000';
+  v['$rsg-welcome-margin'] = u['$rsg-welcome-margin'] || '0 auto';
+  v['$rsg-welcome-padding'] = u['$rsg-welcome-padding'] || '32px';
   newTheme.styleguide = v;
   return { ...userTheme, ...newTheme };
 }
