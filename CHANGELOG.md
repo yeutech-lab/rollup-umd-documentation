@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 ## [?NEXT?] - ????-??-??
+- Add `bootstrap-styled-mixins@^1.0.4`, `navigation-bar@^1.1.6` and `bootstrap-styled-theme@0.0.1` dependencies.
+- Add **bootstrap-styled** `rsg-components`.
+- Add new dependencies `react-group@^1.0.6`, `react-codemirror2@^5.0.1`, `navigation-bar@1.0.2`, `mini-html-webpack-plugin@^0.2.3`, `markdown-to-jsx@^6.6.3`, `javascript-stringify@^1.6.0`, `font-awesome@^4.7.0`, `buble@0.19.3` and `clipboard-copy@^2.0.0`.
+- Update `react-styleguidist@7.0.8` to `@7.0.12.`.
+- Added loader.
+
+## [v0.0.12] - 2018-05-07
 
 - Added `theme` props to `LayoutRenderer`.
 - Added some more props in `LayoutRenderer`.
