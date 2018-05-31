@@ -98,40 +98,43 @@ export const propTypes = {
 
 class ComponentsListRendererUnstyled extends React.Component { // eslint-disable-line react/prefer-stateless-function
   static defaultProps = defaultProps;
-
-  /* eslint-disable react/no-unused-prop-types */
   static propTypes = propTypes;
-  /* eslint-enable react/no-unused-prop-types */
 
   state = {
-    itemList: this.props.items.filter((item) => item.name),
+    itemList: [],
   }
+
   componentWillMount() {
-    const newState = {};
-    this.state.itemList.map(({ heading, name, level }) => {
-      if (heading) {
-        newState[`${name}-is-open`] = false;
-        newState[`${name}-index`] = level;
-        this.setState({ ...newState });
-      }
-      return null;
+    this.updateItems(this.props.items, () => {
+      const newState = {};
+      this.state.itemList.forEach(({ heading, name, level }) => {
+        if (heading) {
+          newState[`${name}-is-open`] = false;
+          newState[`${name}-index`] = level;
+        }
+      });
+      this.setState(newState);
     });
   }
+
   componentWillReceiveProps(nextProps) {
-    if (this.props.items !== nextProps.items) {
-      this.updateItems();
+    if (this.props.items.length !== nextProps.items.length) {
+      this.updateItems(nextProps.items);
     }
   }
+
   onClick = (name) => {
     this.setState({
       [`${name}-is-open`]: !this.state[`${name}-is-open`],
     });
-  };
-  updateItems() {
-    this.setState({
-      itemList: this.props.items.filter((item) => item.name),
-    });
   }
+
+  updateItems(items, cb) {
+    this.setState({
+      itemList: items.filter((item) => item.name),
+    }, cb);
+  }
+
   render() {
     const {
       className,
