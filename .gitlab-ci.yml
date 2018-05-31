@@ -23,7 +23,7 @@ before_script:
   - export SONAR_VERSION=${PACKAGE_VERSION}-b${CI_PIPELINE_ID}-${CI_COMMIT_REF_NAME}
   - export NODE_VERSION=$(node --version)
   - export NPM_VERSION=$(npm --version)
-  - export NPM_REGISTRY=$(node -p "require('./package.json').publishConfig.registry || 'https://registry.npmjs.org'")
+  - export NPM_REGISTRY=$(node -p "var { publishConfig } = require('./package.json'); publishConfig && publishConfig.registry || 'https://registry.npmjs.org'")
 
   # logging
   - npm --version
@@ -31,14 +31,9 @@ before_script:
   - echo "package version $PACKAGE_VERSION"
 
   # env
-  - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && echo KOPAXGROUP"
-  - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && [[ -v \"NPM_TOKEN_KOPAXGROUP\" ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
-
-  - echo $NPM_TOKEN
-  - echo $NPM_TOKEN_KOPAXGROUP
-  - echo npm set registry ${NPM_REGISTRY}
+  - "[[ $NPM_REGISTRY = https://npm.kopaxgroup.com* ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
+  - shopt -s extglob; echo "//${NPM_REGISTRY#http?(s)://}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
   - npm set registry ${NPM_REGISTRY}
-  - echo '//npm.kopaxgroup.com/:_authToken="tayykFkO2zuMQp9gunassA=="' >> ~/.npmrc
 
 stages:
   - build
@@ -50,7 +45,6 @@ stages:
 build:
   stage: build
   script:
-    - cat .npmrc || cat ~/.npmrc
     - npm install
     - npm run build
   cache:
