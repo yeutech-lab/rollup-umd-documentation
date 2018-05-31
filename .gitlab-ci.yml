@@ -31,8 +31,8 @@ before_script:
   - echo "package version $PACKAGE_VERSION"
 
   # env
-  - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && echo KOPAXGROUP"
   - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && [[ -v \"NPM_TOKEN_KOPAXGROUP\" ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
+  - '[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && echo "//npm.kopaxgroup.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc'
 
   - echo $NPM_TOKEN
   - echo $NPM_TOKEN_KOPAXGROUP
