@@ -31,7 +31,7 @@ before_script:
   - echo "package version $PACKAGE_VERSION"
 
   # env
-  - "[[ $NPM_REGISTRY = https://npm.kopaxgroup.com* ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
+  - "[[ $NPM_REGISTRY = https://npm.kopaxgroup.com* ]] && [[ -v \"NPM_TOKEN_KOPAXGROUP\" ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
   - shopt -s extglob; echo "//${NPM_REGISTRY#http?(s)://}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
   - npm set registry ${NPM_REGISTRY}
 
@@ -115,7 +115,7 @@ release:
     - 'JSON_RES=$(curl -f -sS -X POST -H "PRIVATE-TOKEN: ${GITLAB_TOKEN:-$GL_TOKEN}" -F description=ci-auto-created https://module.kopaxgroup.com/api/v4/projects/${CI_PROJECT_ID}/triggers)'
     - TRIGGER_TOKEN=$(echo $JSON_RES | jq -r '.token') && TRIGGER_ID=$(echo $JSON_RES | jq -r '.id')
     - sleep 3s
-    - 'curl -f -o /dev/null -S -X POST -F token=${TRIGGER_TOKEN} -F ref=${RELEASE_VERSION} https://module.kopaxgroup.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline'
+    - 'curl -f -o /dev/null -S -X POST -F token=${TRIGGER_TOKEN} -F ref=${RELEASE_VERSION} -F "variables[NPM_TOKEN]=${NPM_TOKEN}" https://module.kopaxgroup.com/api/v4/projects/${CI_PROJECT_ID}/trigger/pipeline'
     - 'curl -f -S -X DELETE -H "PRIVATE-TOKEN: ${GITLAB_TOKEN:-$GL_TOKEN}" "https://module.kopaxgroup.com/api/v4/projects/${CI_PROJECT_ID}/triggers/${TRIGGER_ID}"'
   dependencies:
     - build
