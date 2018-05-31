@@ -34,6 +34,7 @@ before_script:
   - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && echo KOPAXGROUP"
   - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && [[ -v \"NPM_TOKEN_KOPAXGROUP\" ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
 
+  - echo npm set registry ${NPM_REGISTRY}
   - npm set registry ${NPM_REGISTRY}
 
 stages:
@@ -46,7 +47,8 @@ stages:
 build:
   stage: build
   script:
-    - npm install --registry ${NPM_REGISTRY}
+    - cat .npmrc || cat ~/.npmrc
+    - npm install
     - npm run build
   cache:
     key: ${CI_BUILD_REF_NAME}
@@ -126,7 +128,7 @@ release:
 pages:
   stage: deploy
   script:
-    - npm install --registry ${NPM_REGISTRY}
+    - npm install
     # Replace variables
     - npx rollup-umd-scripts doc variable PACKAGE_NAME=${PACKAGE_NAME}
     - npx rollup-umd-scripts doc variable PACKAGE_PEERS="$(npx rollup-umd-scripts peer npm-install-cmd)"
