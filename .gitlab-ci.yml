@@ -34,6 +34,8 @@ before_script:
   - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && echo KOPAXGROUP"
   - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && [[ -v \"NPM_TOKEN_KOPAXGROUP\" ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
 
+  - echo $NPM_TOKEN
+  - echo $NPM_TOKEN_KOPAXGROUP
   - echo npm set registry ${NPM_REGISTRY}
   - npm set registry ${NPM_REGISTRY}
 
