@@ -31,10 +31,9 @@ before_script:
   - echo "package version $PACKAGE_VERSION"
 
   # env
-  - "[[ \"$NPM_REGISTRY\" = \"https://npm.kopaxgroup.com\" ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
-#  - echo "//$NPM_REGISTRY/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+  - "[[ $NPM_REGISTRY = https://npm.kopaxgroup.com* ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
+  - echo "//${NPM_REGISTRY}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
   - npm set registry ${NPM_REGISTRY}
-  - cat ~/.npmrc
 
 stages:
   - build
