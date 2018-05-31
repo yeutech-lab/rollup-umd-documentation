@@ -136,6 +136,11 @@
     ]
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^2.0.2",
+    "@semantic-release/exec": "^2.2.4",
+    "@semantic-release/git": "^5.0.0",
+    "@semantic-release/gitlab": "^2.1.4",
+    "@semantic-release/npm": "^3.2.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
@@ -191,6 +196,7 @@
     "rollup-plugin-visualizer": "^0.5.0",
     "rollup-watch": "^4.3.1",
     "sinon": "^2.3.2",
+    "semantic-release": "^15.5.0",
     "style-loader": "^0.21.0",
     "toctoc": "^0.3.0",
     "url-loader": "^0.5.8"
