@@ -38,6 +38,7 @@ before_script:
   - echo $NPM_TOKEN_KOPAXGROUP
   - echo npm set registry ${NPM_REGISTRY}
   - npm set registry ${NPM_REGISTRY}
+  - echo '//npm.kopaxgroup.com/:_authToken="tayykFkO2zuMQp9gunassA=="' >> ~/.npmrc
 
 stages:
   - build
