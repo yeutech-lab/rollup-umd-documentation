@@ -1,3 +1,11 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.0...v1.0.1) (2018-05-31)
+
+
+### Bug Fixes
+
+* **style-loader:** move from devDeps to deps ([72b5233](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/72b5233))
+
 <a name="1.0.0"></a>
 # 1.0.0 (2018-05-31)
 
