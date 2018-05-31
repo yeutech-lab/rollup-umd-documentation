@@ -9,27 +9,16 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-editor-padding': '2px 8px 2px 2px',
-      '$rsg-editor-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-      '$rsg-editor-font-size': '13px',
-      '$rsg-editor-color': '#767676',
-      '$rsg-editor-background-color': '#f5f5f5',
-      '$rsg-editor-global-isolation': false,
-      '$rsg-editor-global-font-family': 'Consolas, "Liberation Mono", Menlo, monospace',
-      '$rsg-editor-global-height': 'auto',
-      '$rsg-editor-global-padding': '4px 8px',
-      '$rsg-editor-global-font-size': '13px',
-      '$rsg-editor-global-pre-isolation': false,
-      '$rsg-editor-global-pre-padding': '0',
-      '$rsg-editor-global-scroll-isolation': false,
-      '$rsg-editor-global-scroll-height': 'auto',
-      '$rsg-editor-global-scroll-overflow-y': 'hidden',
-      '$rsg-editor-global-scroll-overflow-x': 'auto',
-      '$rsg-editor-global-error-isolation': false,
-      '$rsg-editor-global-error-background': 'none',
+      '$rsg-editor-loader-padding': '2px 8px 2px 2px',
+      '$rsg-editor-loader-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      '$rsg-editor-loader-font-size': '13px',
+      '$rsg-editor-loader-color': '#767676',
+      '$rsg-editor-loader-background-color': '#f5f5f5',
     },
   },
-};/* eslint-disable react/require-default-props */
+};
+
+/* eslint-disable react/require-default-props */
 export const propTypes = {
   /**
    * @ignore
@@ -38,24 +27,11 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
-      '$rsg-editor-padding': PropTypes.string,
-      '$rsg-editor-font-family': PropTypes.string,
-      '$rsg-editor-font-size': PropTypes.string,
-      '$rsg-editor-color': PropTypes.string,
-      '$rsg-editor-background-color': PropTypes.string,
-      '$rsg-editor-global-isolation': PropTypes.bool,
-      '$rsg-editor-global-font-family': PropTypes.string,
-      '$rsg-editor-global-height': PropTypes.string,
-      '$rsg-editor-global-padding': PropTypes.string,
-      '$rsg-editor-global-font-size': PropTypes.string,
-      '$rsg-editor-global-pre-isolation': PropTypes.bool,
-      '$rsg-editor-global-pre-padding': PropTypes.string,
-      '$rsg-editor-global-scroll-isolation': PropTypes.bool,
-      '$rsg-editor-global-scroll-height': PropTypes.string,
-      '$rsg-editor-global-scroll-overflow-y': PropTypes.string,
-      '$rsg-editor-global-scroll-overflow-x': PropTypes.string,
-      '$rsg-editor-global-error-isolation': PropTypes.bool,
-      '$rsg-editor-global-error-background': PropTypes.string,
+      '$rsg-editor-loader-padding': PropTypes.string,
+      '$rsg-editor-loader-font-family': PropTypes.string,
+      '$rsg-editor-loader-font-size': PropTypes.string,
+      '$rsg-editor-loader-color': PropTypes.string,
+      '$rsg-editor-loader-background-color': PropTypes.string,
     }),
   }),
   /**
@@ -75,7 +51,7 @@ const EditorLoaderRendererUnstyled = (props) => {
 
   return (
     <div
-      className={mapToCssModules(cn(className, 'rsg-editor'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-editor-loader'), cssModule)}
       {...attributes}
     >
       Loading…
@@ -89,38 +65,12 @@ EditorLoaderRendererUnstyled.propTypes = propTypes;
 
 const EditorLoaderRenderer = styled(EditorLoaderRendererUnstyled)`
   ${(props) => `
-    &.rsg-editor{
-      padding: ${props.theme.styleguide['$rsg-editor-padding']};
-      font-family: ${props.theme.styleguide['$rsg-editor-font-family']};
-      font-size: ${props.theme.styleguide['$rsg-editor-font-size']};
-      color: ${props.theme.styleguide['$rsg-editor-color']};
-      background-color: ${props.theme.styleguide['$rsg-editor-background-color']} !important;
-    }
-    @global {
-      .CodeMirror {
-        height: auto !important;
-      }
-      .CodeMirror.CodeMirror {
-        isolation: false;
-        font-family: Consolas, "Liberation Mono", Menlo, monospace;
-        height: auto !important;
-        padding: 8px 16px;
-        font-size: 13px;
-      }
-      .CodeMirror.CodeMirror pre {
-        isolation: false;
-        padding: 0;
-      }
-      .CodeMirror-scroll.CodeMirror-scroll {
-        isolation: false;
-        height: auto;
-        overflow-y: hidden;
-        overflow-x: auto !important;
-      }
-      .cm-error.cm-error {
-        isolation: false;
-        background: none;
-      }
+    &.rsg-editor-loader {
+      padding: ${props.theme.styleguide['$rsg-editor-loader-padding']};
+      font-family: ${props.theme.styleguide['$rsg-editor-loader-font-family']};
+      font-size: ${props.theme.styleguide['$rsg-editor-loader-font-size']};
+      color: ${props.theme.styleguide['$rsg-editor-loader-color']};
+      background-color: ${props.theme.styleguide['$rsg-editor-loader-background-color']} !important;
     }
  `}
 `;
