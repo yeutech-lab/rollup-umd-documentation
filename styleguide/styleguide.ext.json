@@ -6,7 +6,9 @@
     "**/*.d.ts",
     "**/components/logo.js",
     "**/components/logo-white.js",
-    "**/components/yeutech-badge.js"
+    "**/components/yeutech-badge.js",
+    "**/components/FooterRenderer.js",
+    "**/components/SideBar.js"
   ],
   "sections": [
     {
@@ -23,19 +25,18 @@
     },
     {
       "name": "Configuration",
-      "content": "docs/configuration.md"
+      "content": "docs/configuration.md",
+      "sections": [
+        {
+          "name": "Theming",
+          "content": "docs/theme.md"
+        }
+      ]
     },
     {
       "name": "General components",
       "content": "docs/general.md",
       "components": "src/components/**/*.js"
-    },
-    {
-      "name": "UI components",
-      "content": "docs/ui.md",
-      "components": [
-        "src/rsg-components/Text/TextRenderer.js"
-      ]
     },
     {
       "name": "FAQ",

@@ -4,13 +4,13 @@ Within projects, they are automatically used.
 
 ## `<LayoutRenderer />` 
 
-It is the react-styleguide layout.
+It is the **react-styleguidist** layout.
 
 ## `<Wrapper />`
 
-It is the react-styleguide javascript wrapper used for each test.
+It is the **react-styleguidist** javascript wrapper used for each example.
 
-It is automatically used when marking the highlight code in markdown as `js`: 
+It is automatically used when marking the highlight code in markdown as `js`. 
 
-If you wish not to compute the javascript but just display the highlight, just mark your highlight code as `js static`:
+*If you wish not to compute the javascript but just display the highlight, just mark your highlight code as `js static`.*
 
