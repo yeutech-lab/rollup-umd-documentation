@@ -1,6 +1,6 @@
 {
   "name": "@yeutech/rollup-documentation",
-  "version": "0.0.13",
+  "version": "1.0.0",
   "description": "rollup-documentation",
   "main": "lib/index.js",
   "jsnext:main": "dist/rollup-documentation.es.js",
