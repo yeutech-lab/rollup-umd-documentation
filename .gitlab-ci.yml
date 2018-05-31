@@ -35,7 +35,7 @@ before_script:
   - shopt -s extglob; echo "//${NPM_REGISTRY#http?(s)://}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
   - npm set registry ${NPM_REGISTRY}
 
-after_scripts:
+after_script:
   - cat /root/.npm/_logs/*
 
 stages:
