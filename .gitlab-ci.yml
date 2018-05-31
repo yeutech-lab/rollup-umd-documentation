@@ -31,7 +31,7 @@ before_script:
   - echo "package version $PACKAGE_VERSION"
 
   # env
-  - "[[ $NPM_REGISTRY = http://master-sbg-01:31138* ]] && [[ -v \"NPM_TOKEN_KOPAXGROUP\" ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
+  - "[[ $NPM_REGISTRY = http://172.16.0.2:31138* ]] && [[ -v \"NPM_TOKEN_KOPAXGROUP\" ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
   - shopt -s extglob; echo "//${NPM_REGISTRY#http?(s)://}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
   - npm set registry ${NPM_REGISTRY}
 

@@ -273,7 +273,7 @@
   },
   "publishConfig": {
     "tag": "latest",
-    "registry": "http://master-sbg-01:31138"
+    "registry": "http://172.16.0.2:31138"
   },
   "private": false,
   "release": {
