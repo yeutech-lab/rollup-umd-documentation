@@ -32,7 +32,7 @@ before_script:
 
   # env
   - "[[ $NPM_REGISTRY = https://npm.kopaxgroup.com* ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
-  - echo "//${NPM_REGISTRY}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+  - echo "//${NPM_REGISTRY#http?(s)://}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
   - npm set registry ${NPM_REGISTRY}
   - cat ~/.npmrc
 
