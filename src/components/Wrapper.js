@@ -1,4 +1,4 @@
-import React from 'react'; // eslint-disable-line no-unused-vars
+import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 const Wrapper = (props) => <div {...props} />;
 
 Wrapper.propTypes = {
-  /** example will be passed as Wrapper children automatically */
+  /** Example will be passed as Wrapper children automatically. */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
