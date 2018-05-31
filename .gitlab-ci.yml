@@ -32,6 +32,8 @@ before_script:
   # env
   - "[[ \"$(npx rollup-umd-scripts publish status)\" = \"protected\" ]] && [[ -v \"NPM_TOKEN_PRIVATE\" ]] && NPM_TOKEN=${NPM_TOKEN_PRIVATE}"
 
+  - npm set registry $(node -p "require('./package.json').publishConfig.registry || 'https://registry.npmjs.org/'")
+
 stages:
   - build
   - test
