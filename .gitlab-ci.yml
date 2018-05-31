@@ -23,7 +23,7 @@ before_script:
   - export SONAR_VERSION=${PACKAGE_VERSION}-b${CI_PIPELINE_ID}-${CI_COMMIT_REF_NAME}
   - export NODE_VERSION=$(node --version)
   - export NPM_VERSION=$(npm --version)
-  - export NPM_REGISTRY=$(node -p "const { publishConfig } = require('./package.json'); publishConfig && publishConfig.registry || 'https://registry.npmjs.org'")
+  - export NPM_REGISTRY=$(node -p "var { publishConfig } = require('./package.json'); publishConfig && publishConfig.registry || 'https://registry.npmjs.org'")
 
   # logging
   - npm --version
@@ -34,7 +34,6 @@ before_script:
   - "[[ $NPM_REGISTRY = https://npm.kopaxgroup.com* ]] && NPM_TOKEN=${NPM_TOKEN_KOPAXGROUP}"
   - shopt -s extglob; echo "//${NPM_REGISTRY#http?(s)://}/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
   - npm set registry ${NPM_REGISTRY}
-  - cat ~/.npmrc
 
 stages:
   - build
