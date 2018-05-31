@@ -97,7 +97,7 @@ const FooterRendererUnstyled = (props) => {
 FooterRendererUnstyled.defaultProps = defaultProps;
 FooterRendererUnstyled.propTypes = propTypes;
 
-export const FooterRenderer = styled(FooterRendererUnstyled)`
+const FooterRenderer = styled(FooterRendererUnstyled)`
   ${(props) => `
     &.rsg-footer {
       margin: ${props.theme.styleguide['$rsg-footer-margin']};
