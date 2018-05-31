@@ -1,16 +1,11 @@
 /* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import cn from 'classnames';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
-import Img from 'bootstrap-styled/lib/Img';
-import Footer from 'bootstrap-styled/lib/Footer';
-import A from 'bootstrap-styled/lib/A';
 import theme from '../theme';
-import yeutechBadge from './yeutech-badge';
+import StyleGuideRenderer from '../rsg-components/StyleGuide/StyleGuideRenderer';
 import whiteLogo from './logo-white';
-import Main from './Main'
-import SideBar from './SideBar';
+import defaultLogo from './yeutech-badge';
 
 /**
  * This is the main layout for the whole documentation.
@@ -19,44 +14,30 @@ import SideBar from './SideBar';
  * @constructor
  */
 function LayoutRenderer({
-   theme, className, title, children, toc, hasSidebar, logo, bottomLogo, bottomLogoText, logoHref, bottomLogoHref
+   theme, className, title, children, toc, hasSidebar, logo, logoHref, bottomLogoHref
  }) {
   return (
     <BootstrapProvider theme={theme}>
-      {hasSidebar && (
-        <div>
-          <SideBar logo={{ logo: logo, href: logoHref}} title={title} items={toc} theme={theme} />
-        </div>
-      )}
-      <div className={cn(className)}>
-        <Main>
-          {children}
-          <Footer>
-            <span>{bottomLogoText}</span>
-            <A
-              href={bottomLogoHref}
-              target="_blank"
-              alt="Yeutech Company Limited"
-              title="Yeutech Company Limited"
-            >
-              <Img
-                src={`data:image/png;base64,${bottomLogo}`}
-                height="43px"
-                alt={logo === yeutechBadge ? 'Yeutech Company Limited logo' : 'logo'}
-                title={logo === yeutechBadge ? 'Yeutech Company Limited' : 'Brand logo'}
-              />
-            </A>
-          </Footer>
-        </Main>
-      </div>
+      <StyleGuideRenderer
+        className={className}
+        title={title}
+        homepageUrl={bottomLogoHref}
+        toc={toc}
+        hasSidebar={hasSidebar}
+        logo={logo}
+        logohref={logoHref}
+      >
+        {children}
+      </StyleGuideRenderer>
     </BootstrapProvider>
   );
 }
 
 LayoutRenderer.defaultProps = {
+  title: 'rollup-documentation',
   logo: whiteLogo,
   logoHref: null,
-  bottomLogo: yeutechBadge,
+  bottomLogo: defaultLogo,
   bottomLogoHref: 'https://www.yeutech.vn',
   bottomLogoText: '',
   className: null,

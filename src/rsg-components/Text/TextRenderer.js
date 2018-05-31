@@ -18,9 +18,10 @@ export const defaultProps = {
         base: '1em',
         text: '1.2em',
       },
-      '$rsg-text-color': '#9e9e9e',
-      '$rsg-text-color-light': '#8eba89',
-      '$rsg-text-border-bottom': '1px dotted #9e9e9e',
+      '$rsg-text-color': '#333',
+      '$rsg-text-color-light': '#555556',
+      '$rsg-text-border-bottom': '1px dotted #CCCCCC',
+      '$rsg-text-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
     },
   },
 };
@@ -31,10 +32,15 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Tags used for semantic. Can be: */
   semantic: PropTypes.oneOf(['em', 'strong']), // eslint-disable-line react/require-default-props
+  /** Semantic sizes. Can be: */
   size: PropTypes.oneOf(['inherit', 'small', 'base', 'text']),
+  /** Semantic colors. Can be: */
   color: PropTypes.oneOf(['base', 'light']),
+  /** Toggle underlined style. */
   underlined: PropTypes.bool,
+  /** Specified node element will be passed as children of `<TextRenderer />` component. */
   children: PropTypes.node.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
@@ -43,6 +49,7 @@ export const propTypes = {
       '$rsg-text-color': PropTypes.string,
       '$rsg-text-color-light': PropTypes.string,
       '$rsg-text-border-bottom': PropTypes.string,
+      '$rsg-text-font-family': PropTypes.string,
     }),
   }),
   /**
@@ -73,7 +80,7 @@ const TextRendererUnstyled = (props) => {
         [`size-${size}`]: !!size,
         [`color-${color}`]: !!color,
         underlined: !!underlined,
-      }, 'text-renderer'), cssModule)}
+      }, 'rsg-text'), cssModule)}
       {...attributes}
     >
       {children}
@@ -86,26 +93,29 @@ TextRendererUnstyled.propTypes = propTypes;
 
 const TextRenderer = styled(TextRendererUnstyled)` 
   ${(props) => `
-    &.text-renderer.size-inherit {
+    &.rsg-text {
+      font-family: ${props.theme.styleguide['$rsg-text-font-family']};
+    }
+    &.rsg-text.size-inherit {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].inherit};
     }
-    &.text-renderer.size-small {
+    &.rsg-text.size-small {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].sm};
     }
-    &.text-renderer.size-base {
+    &.rsg-text.size-base {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].base};
     }
-    &.text-renderer.size-text {
+    &.rsg-text.size-text {
       font-size: ${props.theme.styleguide['$rsg-text-font-size'].text};
     }
-    &.text-renderer.underlined {
+    &.rsg-text.underlined {
       border-bottom: ${props.theme.styleguide['$rsg-text-border-bottom']};
     }
-    &.text-renderer.color-base {
+    &.rsg-text.color-base {
       color: ${props.theme.styleguide['$rsg-text-color']};
     }
-    &.text-renderer.color-light {
-      color: ${props.theme.styleguide['$rsg-text-color']};
+    &.rsg-text.color-light {
+      color: ${props.theme.styleguide['$rsg-text-color-light']};
     }
  `}
 `;

@@ -64,7 +64,7 @@ const PreRendererUnstyled = (props) => {
 
   return (
     <Pre
-      className={mapToCssModules(cn(className, 'markdown-pre'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-markdown-pre'), cssModule)}
       {...attributes}
     >
       {children}
@@ -78,7 +78,7 @@ PreRendererUnstyled.propTypes = propTypes;
 
 const PreRenderer = styled(PreRendererUnstyled)` 
   ${(props) => `
-    &.markdown-pre {
+    &.rsg-markdown-pre {
       font-family: ${props.theme.styleguide['$rsg-markdown-pre-font-family']};
       font-size: ${props.theme.styleguide['$rsg-markdown-pre-font-size']};
       line-height: ${props.theme.styleguide['$rsg-markdown-pre-line-height']};

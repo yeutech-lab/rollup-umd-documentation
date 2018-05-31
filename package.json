@@ -126,15 +126,19 @@
       "react/jsx-filename-extension": 0,
       "react/jsx-no-target-blank": 0,
       "react/require-extension": 0,
-      "react/self-closing-comp": 0
+      "react/self-closing-comp": 0,
+      "function-paren-newline": [
+        "error",
+        "consistent"
+      ]
     },
     "plugins": [
-      "react",
       "react"
     ]
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^22.4.1",
     "babel-loader": "^7.1.4",
@@ -166,6 +170,7 @@
     "eslint-plugin-react": "^7.8.2",
     "exports-loader": "^0.7.0",
     "file-loader": "^1.1.11",
+    "identity-obj-proxy": "^3.0.0",
     "istanbul-api": "1.2.2",
     "istanbul-reports": "1.1.4",
     "jest-cli": "^22.4.2",
@@ -188,6 +193,7 @@
     "rollup-plugin-visualizer": "^0.5.0",
     "rollup-watch": "^4.3.1",
     "sinon": "^2.3.2",
+    "style-loader": "^0.21.0",
     "toctoc": "^0.3.0",
     "url-loader": "^0.5.8"
   },
@@ -220,6 +226,7 @@
     "react-group": "^1.0.6",
     "react-styleguidist": "^7.0.12",
     "react-transition-group": "^2.2.1",
+    "style-loader": "^0.21.0",
     "styled-components": "^3.2.6",
     "webpack": "^4.6.0",
     "webpack-merge": "^4.1.2"
@@ -249,6 +256,10 @@
       "node_modules",
       "src"
     ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/internals/mocks/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
     "testRegex": "tests/.*\\.test\\.js$",
     "testResultsProcessor": "jest-sonar-reporter",
     "setupFiles": [

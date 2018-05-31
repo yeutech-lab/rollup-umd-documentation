@@ -12,9 +12,17 @@ import ToolbarButton from '../ToolbarButton';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-path-line-color': '#9e9e9e',
+      '$rsg-path-line-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      '$rsg-path-line-color': '#CCCCCC',
       '$rsg-path-line-font-size': '0.8em',
-      '$rsg-path-line-margin': '0 0 1.5em 0',
+      '$rsg-path-line-margin': '0 0 0 4px',
+      '$rsg-path-line-cursor': 'pointer',
+      '$rsg-path-line-icon-color': '#CCCCCC',
+      '$rsg-path-line-icon-font-size': '0.8em',
+      '$rsg-path-line-icon-cursor': 'pointer',
+      '$rsg-path-line-icon-position': 'relative',
+      '$rsg-path-line-icon-bottom': '3px',
+      '$rsg-path-line-icon-hover-color': '#B31255',
     },
   },
 };
@@ -24,13 +32,22 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<PathlineRenderer />` component. */
   children: PropTypes.node, // eslint-disable-line react/require-default-props
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-path-line-font-family': PropTypes.string,
       '$rsg-path-line-color': PropTypes.string,
       '$rsg-path-line-font-size': PropTypes.string,
       '$rsg-path-line-margin': PropTypes.string,
+      '$rsg-path-line-cursor': PropTypes.string,
+      '$rsg-path-line-icon-color': PropTypes.string,
+      '$rsg-path-line-icon-font-size': PropTypes.string,
+      '$rsg-path-line-icon-cursor': PropTypes.string,
+      '$rsg-path-line-icon-position': PropTypes.string,
+      '$rsg-path-line-icon-bottom': PropTypes.string,
+      '$rsg-path-line-icon-hover-color': PropTypes.string,
     }),
   }),
   /**
@@ -49,11 +66,12 @@ const PathlineRendererUnstyled = (props) => {
   } = omit(props, ['theme']);
   return (
     <div
-      className={mapToCssModules(cn(className, 'path-line d-flex justify-content-start'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-path-line d-flex justify-content-start'), cssModule)}
       {...attributes}
     >
       {children}
       <ToolbarButton
+        className="copy-button"
         onClick={() => copy(children)}
         title="Copy to clipboard"
       >
@@ -69,10 +87,23 @@ PathlineRendererUnstyled.propTypes = propTypes;
 
 const PathlineRenderer = styled(PathlineRendererUnstyled)` 
   ${(props) => `
-    &.path-line {
-      margin: ${props.theme.styleguide['$rsg-path-line-margin']};
+    &.rsg-path-line {
+      font-family: ${props.theme.styleguide['$rsg-path-font-family']};
       font-size: ${props.theme.styleguide['$rsg-path-line-font-size']};
       color: ${props.theme.styleguide['$rsg-path-line-color']};
+      .copy-button {
+        margin: ${props.theme.styleguide['$rsg-path-line-margin']};
+      }
+      & i {
+        color: ${props.theme.styleguide['$rsg-path-line-icon-color']};
+        font-size: ${props.theme.styleguide['$rsg-path-line-icon-font-size']};
+        cursor: ${props.theme.styleguide['$rsg-path-line-icon-cursor']};
+        position: ${props.theme.styleguide['$rsg-path-line-icon-position']};
+        bottom: ${props.theme.styleguide['$rsg-path-line-icon-bottom']};
+        &:hover {
+          color: ${props.theme.styleguide['$rsg-path-line-icon-hover-color']};
+        }    
+      }
     }
  `}
 `;

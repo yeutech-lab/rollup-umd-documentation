@@ -7,6 +7,7 @@ export function ExamplesRenderer({ children }) {
 }
 
 ExamplesRenderer.propTypes = {
+  /** Specified node element will be passed as children of `<ExamplesRenderer />` component. */
   children: PropTypes.node, // eslint-disable-line react/require-default-props
 };
 

@@ -6,23 +6,27 @@ import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 
+
 export const defaultProps = {
   theme: {
     styleguide: {
       '$rsg-name-font-size': '0.8em',
-      '$rsg-name-color': '#2eb71f',
+      '$rsg-name-color': '#b11255',
       '$rsg-name-deprecated-color': '#f47469',
       '$rsg-name-deprecated-decoration': 'line-through',
     },
   },
 };
+
 /* eslint-disable react/require-default-props */
 export const propTypes = {
   /**
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<NameRenderer />` component. */
   children: PropTypes.node.isRequired,
+  /** Toggle deprecated style. */
   deprecated: PropTypes.bool, // eslint-disable-line react/require-default-props
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
@@ -50,13 +54,12 @@ const NameRendererUnstyled = (props) => {
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
-
   return (
     <span
-      className={mapToCssModules(cn(className, 'name-renderer'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-name'), cssModule)}
       {...attributes}
     >
-      <Code className={`name-renderer-code ${deprecated && 'deprecated'}`}>{children}</Code>
+      <Code className={`name-renderer-code ${deprecated ? 'deprecated' : ''}`}>{children}</Code>
     </span>
   );
 };
@@ -66,7 +69,7 @@ NameRendererUnstyled.propTypes = propTypes;
 
 const NameRenderer = styled(NameRendererUnstyled)` 
   ${(props) => `
-    &.name-renderer {
+    &.rsg-name {
       .name-renderer-code {
         font-size: ${props.theme.styleguide['$rsg-name-font-size']};
         color: ${props.theme.styleguide['$rsg-name-color']};

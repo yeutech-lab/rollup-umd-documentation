@@ -13,12 +13,16 @@ export default class TableOfContents extends Component {
     searchTerm: '',
   };
 
-  renderLevel(sections, useIsolatedLinks = false) {
+  renderLevel(sections, useIsolatedLinks = false, level = 0) {
+    let levelIndex = 0;
+    levelIndex += level;
     const items = sections.map((section) => {
       const children = [...(section.sections || []), ...(section.components || [])];
       return Object.assign({}, section, {
         heading: !!section.name && children.length > 0,
-        content: children.length > 0 && this.renderLevel(children, useIsolatedLinks),
+        level: levelIndex,
+        collapse: true,
+        content: children.length > 0 && this.renderLevel(children, useIsolatedLinks, 1),
       });
     });
     return <ComponentsList items={items} useIsolatedLinks={useIsolatedLinks} />;

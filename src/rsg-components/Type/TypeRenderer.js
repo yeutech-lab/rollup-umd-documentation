@@ -9,8 +9,8 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-type-font-size': '0.9em',
-      '$rsg-type-color': '#c153ba',
+      '$rsg-type-font-size': '13px',
+      '$rsg-type-color': '#75096a',
     },
   },
 };
@@ -20,6 +20,7 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<TypeRenderer />` component. */
   children: PropTypes.node.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
@@ -45,7 +46,7 @@ const TypeRendererUnstyled = (props) => {
 
   return (
     <span
-      className={mapToCssModules(cn(className, 'type-renderer'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-type'), cssModule)}
       {...attributes}
     >
       <Code className="type-renderer-code">{children}</Code>
@@ -58,7 +59,7 @@ TypeRendererUnstyled.propTypes = propTypes;
 
 const TypeRenderer = styled(TypeRendererUnstyled)` 
   ${(props) => `
-    &.type-renderer {
+    &.rsg-type {
       .type-renderer-code {
         font-size: ${props.theme.styleguide['$rsg-type-font-size']} !important;
         color: ${props.theme.styleguide['$rsg-type-color']} !important;

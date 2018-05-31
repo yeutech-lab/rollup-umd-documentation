@@ -10,9 +10,9 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-code-font-family': 'SF Mono, Monaco, Inconsolata, Fira Code, Fira Mono, Droid Sans Mono, Consolas, Roboto Mono, Source Code Pro, monospace;',
+      '$rsg-code-font-family': 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace',
       '$rsg-code-font-size': 'inherit',
-      '$rsg-code-color': 'inherit',
+      '$rsg-code-color': '#B31255',
       '$rsg-code-background': 'transparent',
       '$rsg-code-white-space': 'inherit',
     },
@@ -24,6 +24,7 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<CodeRenderer />` component. */
   children: PropTypes.node.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
@@ -54,21 +55,20 @@ const CodeRendererUnstyled = (props) => {
 
   const isHighlighted = className && className.indexOf('lang-') !== -1;
 
-  return (
-    isHighlighted ? (
+  if (isHighlighted) {
+    return (
       <Code
-        className={mapToCssModules(cn(className, 'code-renderer'), cssModule)}
-        {...attributes}
+        className={className}
         dangerouslySetInnerHTML={{ __html: children }}
-      />
-    ) : (
-      <Code
-        className={mapToCssModules(cn(className, 'code-renderer'), cssModule)}
-        {...attributes}
-      >
-        {children}
-      </Code>
-    )
+      />);
+  }
+  return (
+    <Code
+      className={mapToCssModules(cn(className, 'rsg-code'), cssModule)}
+      {...attributes}
+    >
+      {children}
+    </Code>
   );
 };
 
@@ -77,7 +77,7 @@ CodeRendererUnstyled.propTypes = propTypes;
 
 const CodeRenderer = styled(CodeRendererUnstyled)` 
   ${(props) => `
-    &.code-renderer {
+    &.rsg-code {
       font-family: ${props.theme.styleguide['$rsg-code-font-family']};
       font-size: ${props.theme.styleguide['$rsg-code-font-size']};
       color: ${props.theme.styleguide['$rsg-code-color']};

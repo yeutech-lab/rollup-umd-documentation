@@ -36,6 +36,7 @@ export const jsonExtension = fs.existsSync(path.join(process.cwd(), 'styleguide/
   fs.existsSync(path.join(__dirname, '../styleguide/styleguide.ext.json')) ?
     require(path.join(__dirname, '../styleguide/styleguide.ext.json')) : {};
 
+
 export const config = {
   serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060, // eslint-disable-line radix
   ribbon: {
@@ -64,7 +65,9 @@ export const config = {
            v2.0 | 20110126
            License: none (public domain)
         */
-        
+        html, body {
+          height: 100%
+        }
         html, body, div, span, applet, object, iframe,
         h1, h2, h3, h4, h5, h6, p, blockquote, pre,
         a, abbr, acronym, address, big, cite, code,
@@ -108,40 +111,26 @@ export const config = {
           border-collapse: collapse;
           border-spacing: 0;
         }
-        /* Pre loader css style */
-        * {
-          padding: 0;
-          margin: 0;
-        }
-    
-        html, body {
-          height: 100%;
-        }
-    
-        .panel {
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        .pre-loader {
-          width: 4em;
-          height: 4em;  
-          fill: #d8452b; 
-          filter: drop-shadow(2px 2px 1px #cebebe);
-        }
       </style>
       ${generateCSSReferences(css, publicPath)}
     </head>
     <body>
     <div id="rsg-root">
       <style>
-        .loader {
-          position: absolute;
-          top: 50%;
-          left: 48%;
+        @media only screen and (min-width: 0px) and (max-width: 799px)  {
+          .loader {
+            position: absolute;
+            top: 50%;
+            left: 43%;
+          }
         }
-
+        @media only screen and (min-width: 799px)  {
+          .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+          }
+        }
         .line {
           animation: expand 1.5s ease-in-out infinite;
           border-radius: 10px;
@@ -151,45 +140,52 @@ export const config = {
           width: 1px;
           height: 25px;
         }
-
         .line:nth-child(1) {
-          background: #22d4e8;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(2) {
           animation-delay: 180ms;
-          background: #4922e8;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(3) {
           animation-delay: 360ms;
-          background: #bd22e8;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(4) {
           animation-delay: 540ms;
-          background: #e8226a;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(5) {
           animation-delay: 540ms;
-          background: #e86a22;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(6) {
           animation-delay: 360ms;
-          background: #e8de22;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(7) {
           animation-delay: 180ms;
-          background: #8ee822;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         .line:nth-child(8) {
-          background: #22e853;
+          background: linear-gradient(#B31255, #75096a);
+          /* Opera linear gradient support */
+          background: -o-linear-gradient(#B31255, #75096a);
         }
-
         @keyframes expand {
           0% {
             transform: scale(1);
@@ -272,7 +268,9 @@ export const config = {
     CodeRenderer: path.join(__dirname, '../lib/rsg-components/Code/CodeRenderer.js'),
     ErrorRenderer: path.join(__dirname, '../lib/rsg-components/Error/ErrorRenderer.js'),
     RibbonRenderer: path.join(__dirname, '../lib/rsg-components/Ribbon/RibbonRenderer.js'),
+    ComponentsList: path.join(__dirname, '../lib/rsg-components/ComponentsList/ComponentsList.js'),
     ComponentsListRenderer: path.join(__dirname, '../lib/rsg-components/ComponentsList/ComponentsListRenderer.js'),
+    TableOfContents: path.join(__dirname, '../lib/rsg-components/TableOfContents/TableOfContents.js'),
     TableOfContentsRenderer: path.join(__dirname, '../lib/rsg-components/TableOfContents/TableOfContentsRenderer.js'),
     ExamplesRenderer: path.join(__dirname, '../lib/rsg-components/Examples/ExamplesRenderer.js'),
     ExamplePlaceholderRenderer: path.join(__dirname, '../lib/rsg-components/ExamplePlaceholder/ExamplePlaceholderRenderer.js'),
@@ -301,8 +299,14 @@ export const config = {
     EditorLoader: path.join(__dirname, '../lib/rsg-components/Editor/EditorLoader.js'),
     EditorLoaderRenderer: path.join(__dirname, '../lib/rsg-components/Editor/EditorLoaderRenderer.js'),
     Markdown: path.join(__dirname, '../lib/rsg-components/Markdown/Markdown.js'),
+    Blockquote: path.join(__dirname, '../lib/rsg-components/Markdown/Blockquote/BlockquoteRenderer.js'),
+    Checkbox: path.join(__dirname, '../lib/rsg-components/Markdown/Checkbox/CheckboxRenderer.js'),
+    Hr: path.join(__dirname, '../lib/rsg-components/Markdown/Hr/HrRenderer.js'),
+    List: path.join(__dirname, '../lib/rsg-components/Markdown/List/ListRenderer.js'),
+    MarkdownHeading: path.join(__dirname, '../lib/rsg-components/Markdown/MarkdownHeading/MarkdownHeadingRenderer.js'),
+    MarkdownTable: path.join(__dirname, '../lib/rsg-components/Markdown/MarkdownTable/MarkdownTableRenderer.js'),
+    Pre: path.join(__dirname, '../lib/rsg-components/Markdown/Pre/PreRenderer.js'),
     PropsRenderer: path.join(__dirname, '../lib/rsg-components/Props/PropsRenderer.js'),
-    Table: path.join(__dirname, '../lib/rsg-components/Table/TableRenderer.js'),
     TableRenderer: path.join(__dirname, '../lib/rsg-components/Table/TableRenderer.js'),
     ParaRenderer: path.join(__dirname, '../lib/rsg-components/Para/ParaRenderer.js'),
     NameRenderer: path.join(__dirname, '../lib/rsg-components/Name/NameRenderer.js'),

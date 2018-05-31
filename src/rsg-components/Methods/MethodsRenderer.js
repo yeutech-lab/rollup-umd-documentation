@@ -38,6 +38,7 @@ export default function MethodsRenderer({ methods }) {
 }
 
 MethodsRenderer.propTypes = {
+  /** Methods (props) information. Can be: */
   methods: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string,

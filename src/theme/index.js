@@ -4,16 +4,31 @@ import { makeTheme as makeThemeNavigationStyleguide } from 'navigation-bar/lib/N
 import { makeTheme as makeThemeStyleguideBs } from './styleguidist-bs';
 
 const themeBsYeutech = makeThemeBs({
-  '$btn-primary-color': '#D85052',
+  '$btn-primary-color': '#b11255',
   '$btn-primary-bg': '#1C00ff00',
   '$btn-primary-border': '#1C00ff00',
   '$btn-box-shadow': '#1C00ff00 !important',
+  '$headings-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+  '$headings-font-weight': 'normal',
+  '$font-size-h1': '2.5rem',
+  '$font-size-h2': '2rem',
+  '$font-size-h3': '1.75rem',
+  '$font-size-h4': '1.5rem',
+  '$font-size-h5': '1.25rem',
+  '$font-size-h6': '1rem',
+  '$headings-line-height': '2',
+  '$headings-color': 'inherit',
+  '$link-color': '#4D0377',
+  '$link-decoration': 'none',
+  '$link-hover-color': '#b11255',
+  '$link-hover-decoration': 'none',
+  '$code-color': '#333',
 });
 
 const themeNavigationYeutech = makeThemeNavigationStyleguide({
   navigationStyleguide: {
-    '$nav-styleguide-color': '#fff !important',
-    '$nav-styleguide-hover-color': '#d9534f !important',
+    '$nav-styleguide-bg-color': 'white',
+    '$nav-styleguide-border': 'none',
   },
 });
 

@@ -9,9 +9,10 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-para-margin': '0 0 1.2em 0',
-      '$rsg-para-color': '#494949',
-      '$rsg-para-font-size': '1em',
+      '$rsg-para-margin': '0 0 8px 0',
+      '$rsg-para-color': '#333',
+      '$rsg-para-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+      '$rsg-para-font-size': 'inherit',
       '$rsg-para-line-height': '1.5',
     },
   },
@@ -22,15 +23,17 @@ export const propTypes = {
   /**
    * @ignore
    */
-  classes: PropTypes.object,
   className: PropTypes.string, // eslint-disable-line react/require-default-props
+  /** Specified node element will be passed as children of `<ParaRenderer />` component. */
   children: PropTypes.node.isRequired,
+  /** Tag used for semantic. */
   semantic: PropTypes.oneOf(['p']),
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
       '$rsg-para-margin': PropTypes.string,
       '$rsg-para-color': PropTypes.string,
+      '$rsg-para-font-family': PropTypes.string,
       '$rsg-para-font-size': PropTypes.string,
       '$rsg-para-line-height': PropTypes.string,
     }),
@@ -55,7 +58,7 @@ const ParaRendererUnstyled = (props) => {
 
   return (
     <Tag
-      className={mapToCssModules(cn(className, 'para-renderer'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-para'), cssModule)}
       {...attributes}
     >
       {children}
@@ -68,9 +71,10 @@ ParaRendererUnstyled.propTypes = propTypes;
 
 const ParaRenderer = styled(ParaRendererUnstyled)` 
   ${(props) => `
-    &.para-renderer {
+    &.rsg-para {
       margin: ${props.theme.styleguide['$rsg-para-margin']};
       color: ${props.theme.styleguide['$rsg-para-color']};
+      font-family: ${props.theme.styleguide['$rsg-para-font-family']};
       font-size: ${props.theme.styleguide['$rsg-para-font-size']};
       line-height: ${props.theme.styleguide['$rsg-para-line-height']};
     }

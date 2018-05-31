@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { HOMEPAGE, DisplayModes } from 'react-styleguidist/scripts/consts';
+import { HOMEPAGE } from 'react-styleguidist/scripts/consts';
+import { DisplayModes } from 'react-styleguidist/lib/consts';
 import StyleGuideRenderer from './StyleGuideRenderer';
 import TableOfContents from '../TableOfContents';
 import Sections from '../Sections';
