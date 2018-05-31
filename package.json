@@ -49,9 +49,9 @@
     "yeutech",
     "rollup-umd"
   ],
-  "authors": [
-    "Dimitri Kopriwa <dimitri.kopriwa@yeutech.com>",
-    "Yeutech Company Limited <contact@yeutech.com>"
+  "author": "Dimitri Kopriwa <dimitri.kopriwa@yeutech.com>",
+  "contributor": [
+    "Adrien Gadaud <adrien.gadaud@yeutech.com>"
   ],
   "license": "UNLICENSED",
   "eslintConfig": {
