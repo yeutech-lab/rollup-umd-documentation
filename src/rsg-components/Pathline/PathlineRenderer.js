@@ -14,7 +14,10 @@ export const defaultProps = {
       '$rsg-path-line-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
       '$rsg-path-line-color': '#CCCCCC',
       '$rsg-path-line-font-size': '0.8em',
-      '$rsg-path-line-margin': '0 0 0 4px',
+      '$rsg-path-line-copy-button-margin': '0 0 0 4px',
+      '$rsg-path-line-copy-button-border': 'none',
+      '$rsg-path-line-copy-button-outline': 'none',
+      '$rsg-path-line-copy-button-box-shadow': 'none',
       '$rsg-path-line-cursor': 'pointer',
       '$rsg-path-line-icon-color': '#CCCCCC',
       '$rsg-path-line-icon-font-size': '0.8em',
@@ -39,7 +42,10 @@ export const propTypes = {
       '$rsg-path-line-font-family': PropTypes.string,
       '$rsg-path-line-color': PropTypes.string,
       '$rsg-path-line-font-size': PropTypes.string,
-      '$rsg-path-line-margin': PropTypes.string,
+      '$rsg-path-line-copy-button-margin': PropTypes.string,
+      '$rsg-path-line-copy-button-border': PropTypes.string,
+      '$rsg-path-line-copy-button-outline': PropTypes.string,
+      '$rsg-path-line-copy-button-box-shadow': PropTypes.string,
       '$rsg-path-line-cursor': PropTypes.string,
       '$rsg-path-line-icon-color': PropTypes.string,
       '$rsg-path-line-icon-font-size': PropTypes.string,
@@ -91,7 +97,12 @@ const PathlineRenderer = styled(PathlineRendererUnstyled)`
       font-size: ${props.theme.styleguide['$rsg-path-line-font-size']};
       color: ${props.theme.styleguide['$rsg-path-line-color']};
       .copy-button {
-        margin: ${props.theme.styleguide['$rsg-path-line-margin']};
+        margin: ${props.theme.styleguide['$rsg-path-line-copy-button-margin']};
+        &:active, &:focus {
+          border: ${props.theme.styleguide['$rsg-path-line-copy-button-border']};
+          outline: ${props.theme.styleguide['$rsg-path-line-copy-button-outline']};
+          box-shadow: ${props.theme.styleguide['$rsg-path-line-copy-button-box-shadow']};
+        }
       }
       & i {
         color: ${props.theme.styleguide['$rsg-path-line-icon-color']};
@@ -101,7 +112,7 @@ const PathlineRenderer = styled(PathlineRendererUnstyled)`
         bottom: ${props.theme.styleguide['$rsg-path-line-icon-bottom']};
         &:hover {
           color: ${props.theme.styleguide['$rsg-path-line-icon-hover-color']};
-        }    
+        }
       }
     }
  `}

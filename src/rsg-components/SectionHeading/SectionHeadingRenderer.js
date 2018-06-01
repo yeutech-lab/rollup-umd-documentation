@@ -133,7 +133,7 @@ const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)`
           text-decoration: ${props.theme.styleguide['$rsg-section-heading-section-name-text-decoration']};
           cursor: ${props.theme.styleguide['$rsg-section-heading-section-name-cursor']};
           color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
-          .section-anchor {
+          .anchor {
             color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
           }
         }

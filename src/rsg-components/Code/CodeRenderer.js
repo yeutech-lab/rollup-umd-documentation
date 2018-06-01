@@ -14,9 +14,16 @@ export const defaultProps = {
       '$rsg-code-font-size': 'inherit',
       '$rsg-code-word-wrap': 'break-word',
       '$rsg-code-padding': '0',
-      '$rsg-code-color': 'inherit',
+      '$rsg-code-color': '#B31255',
       '$rsg-code-background': 'transparent',
       '$rsg-code-white-space': 'inherit',
+      '$rsg-code-highlight-font-family': 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace',
+      '$rsg-code-highlight-font-size': 'inherit',
+      '$rsg-code-highlight-word-wrap': 'break-word',
+      '$rsg-code-highlight-padding': '0',
+      '$rsg-code-highlight-color': 'inherit',
+      '$rsg-code-highlight-background': 'transparent',
+      '$rsg-code-highlight-white-space': 'inherit',
     },
   },
 };
@@ -38,6 +45,13 @@ export const propTypes = {
       '$rsg-code-color': PropTypes.string,
       '$rsg-code-background': PropTypes.string,
       '$rsg-code-white-space': PropTypes.string,
+      '$rsg-code-highlight-font-family': PropTypes.string,
+      '$rsg-code-highlight-font-size': PropTypes.string,
+      '$rsg-code-highlight-word-wrap': PropTypes.string,
+      '$rsg-code-highlight-padding': PropTypes.string,
+      '$rsg-code-highlight-color': PropTypes.string,
+      '$rsg-code-highlight-background': PropTypes.string,
+      '$rsg-code-highlight-white-space': PropTypes.string,
     }),
   }),
   /**
@@ -62,7 +76,7 @@ const CodeRendererUnstyled = (props) => {
   if (isHighlighted) {
     return (
       <Code
-        className={cn(className, 'rsg-code')}
+        className={cn(className, 'rsg-code-highlight')}
         dangerouslySetInnerHTML={{ __html: children }}
       />);
   }
@@ -89,6 +103,15 @@ const CodeRenderer = styled(CodeRendererUnstyled)`
       color: ${props.theme.styleguide['$rsg-code-color']};
       background: ${props.theme.styleguide['$rsg-code-background']};
       white-space: ${props.theme.styleguide['$rsg-code-white-space']};
+    }
+    &.rsg-code-highlight {
+      font-family: ${props.theme.styleguide['$rsg-code-highlight-font-family']};
+      word-wrap: ${props.theme.styleguide['$rsg-code-highlight-word-wrap']};
+      padding: ${props.theme.styleguide['$rsg-code-highlight-padding']};
+      font-size: ${props.theme.styleguide['$rsg-code-highlight-font-size']};
+      color: ${props.theme.styleguide['$rsg-code-highlight-color']};
+      background: ${props.theme.styleguide['$rsg-code-highlight-background']};
+      white-space: ${props.theme.styleguide['$rsg-code-highlight-white-space']};
     }
  `}
 `;
