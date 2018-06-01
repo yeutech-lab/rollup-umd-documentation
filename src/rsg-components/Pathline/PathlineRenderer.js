@@ -6,7 +6,6 @@ import cn from 'classnames';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
 import mapToCssModules from 'map-to-css-modules/lib';
-import '!!style-loader!css-loader!../../../node_modules/font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
 import ToolbarButton from '../ToolbarButton';
 
 export const defaultProps = {
