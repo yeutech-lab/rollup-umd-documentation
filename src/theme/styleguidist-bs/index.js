@@ -81,8 +81,24 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-styleguide-content-margin'] = u['$rsg-styleguide-content-margin'] || '0 auto';
   v['$rsg-styleguide-content-display'] = u['$rsg-styleguide-content-display'] || 'block';
   // heading
-  v['$rsg-heading-margin'] = u['$rsg-heading-margin'] || '0 0 0 0';
+  v['$rsg-heading-margin'] = u['$rsg-heading-margin'] || '0';
   v['$rsg-heading-color'] = u['$rsg-heading-color'] || v['$rsg-color-base'];
+  v['$rsg-heading-padding'] = u['$rsg-heading-padding'] || '20px 0 15px 0';
+  v['$rsg-heading-line-height'] = u['$rsg-heading-line-height'] || '1';
+  v['$rsg-heading-mobile-font-size'] = u['$rsg-heading-mobile-font-size-h1'] || {
+    h1: '30px',
+    h2: '24px',
+    h3: '20px',
+    h4: '18px',
+    h5: '16px',
+    h6: '15px',
+  };
+  v['$rsg-heading-font-size-h1'] = u['$rsg-heading-font-size-h1'] || '30px';
+  v['$rsg-heading-h2'] = u['$rsg-heading-h2'] || '30px';
+  v['$rsg-heading-h3'] = u['$rsg-heading-h3'] || '30px';
+  v['$rsg-heading-h4'] = u['$rsg-heading-h4'] || '30px';
+  v['$rsg-heading-h5'] = u['$rsg-heading-h5'] || '30px';
+  v['$rsg-heading-h6'] = u['$rsg-heading-h6'] || '30px';
   // toolbar
   v['$rsg-toolbar-button-padding'] = u['$rsg-toolbar-button-padding'] || '2px';
   v['$rsg-toolbar-button-color'] = u['$rsg-toolbar-button-color'] || v['$rsg-color-base'];
@@ -249,6 +265,10 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-react-component-tabs-margin'] = u['$rsg-react-component-tabs-margin'] || `0 0 ${v['$rsg-space'].md} 0`;
   v['$rsg-react-component-tabs-button-margin'] = u['$rsg-react-component-tabs-button-margin'] || `0 0 ${v['$rsg-space'].xs} 0`;
   // ribbon
+  v['$rsg-ribbon-bp-visibility'] = u['$rsg-ribbon-bp-visibility'] || {
+    xs: 'hidden',
+    md: 'visible',
+  };
   v['$rsg-ribbon-position'] = u['$rsg-ribbon-position'] || 'fixed';
   v['$rsg-ribbon-top'] = u['$rsg-ribbon-top'] || '0';
   v['$rsg-ribbon-right'] = u['$rsg-ribbon-right'] || '0';
@@ -272,7 +292,8 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-ribbon-link-transform'] = u['$rsg-ribbon-link-transform'] || 'rotate(45deg)';
   v['$rsg-ribbon-link-cursor'] = u['$rsg-ribbon-link-cursor'] || v['$rsg-cursor'];
   // section
-  v['$rsg-section-margin'] = u['$rsg-section-margin'] || '60px 0 0 0';
+  v['$rsg-section-margin'] = u['$rsg-section-margin'] || '40px 0 0 0';
+  v['$rsg-section-isolated-margin'] = u['$rsg-section-isolated-margin'] || '0';
   // section-heading
   v['$rsg-section-heading-display'] = u['$rsg-section-heading-display'] || 'flex';
   v['$rsg-section-heading-flex-direction'] = u['$rsg-section-heading-flex-direction'] || 'row';
@@ -282,6 +303,13 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-section-heading-section-name-text-decoration'] = u['$rsg-section-heading-section-name-text-decoration'] || 'none';
   v['$rsg-section-heading-section-name-cursor'] = u['$rsg-section-heading-section-name-cursor'] || 'pointer';
   v['$rsg-section-heading-section-name-color'] = u['$rsg-section-heading-section-name-color'] || v['$rsg-color-name'];
+  v['$rsg-section-heading-anchor-font-size'] = u['$rsg-section-heading-anchor-font-size'] || '15px';
+  v['$rsg-section-heading-anchor-font-weight'] = u['$rsg-section-heading-anchor-font-weight'] || 'normal';
+  v['$rsg-section-heading-anchor-transform'] = u['$rsg-section-heading-anchor-transform'] || 'rotate(-5deg)';
+  v['$rsg-section-heading-anchor-color'] = u['$rsg-section-heading-anchor-color'] || v['$rsg-gray-light'];
+  v['$rsg-section-heading-anchor-padding'] = u['$rsg-section-heading-anchor-padding'] || '6px 5px 0 0';
+  v['$rsg-section-heading-anchor-display'] = u['$rsg-section-heading-anchor-display'] || 'table-cell';
+  v['$rsg-section-heading-anchor-vertical-align'] = u['$rsg-section-heading-anchor-vertical-align'] || 'middle';
   v['$rsg-section-heading-deprecated-text-decoration'] = u['$rsg-section-heading-deprecated-text-decoration'] || 'line-through';
   v['$rsg-section-heading-deprecated-cursor'] = u['$rsg-section-heading-deprecated-cursor'] || v['$rsg-gray'];
   v['$rsg-section-heading-toolbar-margin-left'] = u['$rsg-section-heading-toolbar-margin-left'] || 'auto';
@@ -290,21 +318,27 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   // code
   v['$rsg-code-font-family'] = u['$rsg-code-font-family'] || v['$rsg-font-family-highlight'];
   v['$rsg-code-font-size'] = u['$rsg-code-font-size'] || 'inherit';
-  v['$rsg-code-color'] = u['$rsg-code-color'] || v['$rsg-color-primary'];
+  v['$rsg-code-word-wrap'] = u['$rsg-code-word-wrap'] || 'break-word';
+  v['$rsg-code-padding'] = u['$rsg-code-padding'] || '0';
+  v['$rsg-code-color'] = u['$rsg-code-color'] || 'inherit';
   v['$rsg-code-background'] = u['$rsg-code-background'] || 'transparent';
   v['$rsg-code-white-space'] = u['$rsg-code-white-space'] || 'inherit';
   // menu
   // - sidebar
   v['$rsg-sidebar-linear-gradient'] = u['$rsg-sidebar-linear-gradient'] || v['$rsg-color-sidebar-background'];
   v['$rsg-sidebar-box-shadow'] = u['$rsg-sidebar-box-shadow'] || `${v['$rsg-space'].xs} 0 5px -2px #e2e2e2`;
-  v['$rsg-sidebar-logo-padding'] = u['$rsg-sidebar-logo-padding'] || '30px 0 10px 0';
+  v['$rsg-sidebar-logo-padding'] = u['$rsg-sidebar-logo-padding'] || '30px 20px 0 20px';
   v['$rsg-sidebar-logo-align'] = u['$rsg-sidebar-logo-align'] || 'center';
+  v['$rsg-sidebar-logo-title-line-height'] = u['$rsg-sidebar-logo-title-line-height'] || '1';
+
   // - table of content
   v['$rsg-toc-display'] = u['$rsg-toc-display'] || 'block';
   v['$rsg-toc-padding'] = u['$rsg-toc-padding'] || '0';
+  v['$rsg-toc-background'] = u['$rsg-toc-background'] || v['$rsg-color-base-background'];
+  v['$rsg-toc-text-align'] = u['$rsg-toc-text-align'] || 'left';
   v['$rsg-toc-form-background'] = u['$rsg-toc-form-background'] || v['$rsg-color-primary'];
-  v['$rsg-toc-form-padding'] = u['$rsg-toc-form-padding'] || '20px 0 20px 0';
-  v['$rsg-toc-form-width'] = u['$rsg-toc-form-width'] || '80%';
+  v['$rsg-toc-form-padding'] = u['$rsg-toc-form-padding'] || '20px 14px';
+  v['$rsg-toc-form-width'] = u['$rsg-toc-form-width'] || '100%';
   v['$rsg-toc-form-margin'] = u['$rsg-toc-form-margin'] || '0 auto';
   // - component-list
   v['$rsg-component-list-color'] = u['$rsg-component-list-color'] || v['$rsg-color-primary'];
@@ -352,7 +386,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-markdown-block-quote-color'] = u['$rsg-markdown-block-quote-color'] || v['$rsg-color-base'];
   v['$rsg-markdown-block-quote-font-family'] = u['$rsg-markdown-block-quote-font-family'] || v['$rsg-font-family-base'];
   v['$rsg-markdown-block-quote-font-size'] = u['$rsg-markdown-block-quote-font-size'] || v['$rsg-font-size'].md;
-  v['$rsg-markdown-block-line-height'] = u['$rsg-markdown-block-line-height'] || '1.5';
+  v['$rsg-markdown-block-quote-line-height'] = u['$rsg-markdown-block-quote-line-height'] || '1.5';
   v['$rsg-markdown-block-quote-border'] = u['$rsg-markdown-block-quote-border'] || 'none';
   v['$rsg-markdown-pre-font-family'] = u['$rsg-markdown-pre-font-family'] || v['$rsg-font-family-base'];
   v['$rsg-markdown-pre-font-size'] = u['$rsg-markdown-pre-font-size'] || v['$rsg-font-size'].sm;
