@@ -1,5 +1,4 @@
 import React from 'react';
-import '!!style-loader!css-loader!../../../node_modules/font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
 import PropTypes from 'prop-types';
 import Fa from 'bootstrap-styled/lib/Fa';
 import getUrl from 'react-styleguidist/lib/utils/getUrl';

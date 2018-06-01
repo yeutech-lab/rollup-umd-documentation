@@ -4,7 +4,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
-import '!!style-loader!css-loader!../../../node_modules/font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
 import ComponentsListRenderer, { defaultProps } from '../ComponentsListRenderer';
 
 describe('<ComponentsListRenderer />', () => {

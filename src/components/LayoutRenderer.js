@@ -6,6 +6,7 @@ import theme from '../theme';
 import StyleGuideRenderer from '../rsg-components/StyleGuide/StyleGuideRenderer';
 import whiteLogo from './logo-white';
 import defaultLogo from './yeutech-badge';
+import '!!style-loader!css-loader!font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
 
 /**
  * This is the main layout for the whole documentation.
