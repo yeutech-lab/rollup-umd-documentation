@@ -1,3 +1,11 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.3...v1.0.4) (2018-06-01)
+
+
+### Bug Fixes
+
+* **build:** Moving file-loader to dependency ([72a88a7](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/72a88a7))
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.2...v1.0.3) (2018-06-01)
 
