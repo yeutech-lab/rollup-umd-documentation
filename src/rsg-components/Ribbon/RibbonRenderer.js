@@ -7,11 +7,13 @@ import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 
-
 export const defaultProps = {
-  text: 'Fork us on GitHub',
   theme: {
     styleguide: {
+      '$rsg-ribbon-bp-visibility': {
+        xs: 'hidden',
+        md: 'visible',
+      },
       '$rsg-ribbon-position': 'fixed',
       '$rsg-ribbon-top': '0',
       '$rsg-ribbon-right': '0',
@@ -47,10 +49,11 @@ export const propTypes = {
   /** Set link url. */
   url: PropTypes.string.isRequired,
   /** Set message passed as child of `<A />` link component. */
-  text: PropTypes.string,
+  text: PropTypes.string.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-ribbon-bp-visibility': PropTypes.object,
       '$rsg-ribbon-position': PropTypes.string,
       '$rsg-ribbon-top': PropTypes.string,
       '$rsg-ribbon-right': PropTypes.string,
@@ -117,14 +120,14 @@ const RibbonRenderer = styled(RibbonRendererUnstyled)`
     'xs',
     props.theme['$grid-breakpoints'],
     `
-          visibility: hidden;
+          visibility: ${props.theme.styleguide['$rsg-ribbon-bp-visibility'].xs};
         `
   )}
       ${bp.up(
     'md',
     props.theme['$grid-breakpoints'],
     `
-          visibility: visible;
+          visibility: ${props.theme.styleguide['$rsg-ribbon-bp-visibility'].md};
         `
   )}
       position: ${props.theme.styleguide['$rsg-ribbon-position']};

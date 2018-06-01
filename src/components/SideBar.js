@@ -14,8 +14,9 @@ export const defaultProps = {
     styleguide: {
       '$rsg-sidebar-box-shadow': '8px 0 5px -2px #e2e2e2',
       '$rsg-sidebar-linear-gradient': 'linear-gradient(#3A007D, #B31255)',
-      '$rsg-sidebar-logo-padding': '30px 0 10px 0',
+      '$rsg-sidebar-logo-padding': '30px 20px 0 20px',
       '$rsg-sidebar-logo-align': 'center',
+      '$rsg-sidebar-logo-title-line-height': '1',
     },
   },
 };
@@ -32,6 +33,7 @@ export const propTypes = {
       '$rsg-sidebar-linear-gradient': PropTypes.string,
       '$rsg-sidebar-logo-padding': PropTypes.string,
       '$rsg-sidebar-logo-align': PropTypes.string,
+      '$rsg-sidebar-logo-title-line-height': PropTypes.string,
     }),
   }),
   /**
@@ -103,7 +105,7 @@ const SideBar = styled(SideBarUnstyled)`
         padding: ${props.theme.styleguide['$rsg-sidebar-logo-padding']};
         text-align: ${props.theme.styleguide['$rsg-sidebar-logo-align']};
         .navigation-logo-title {
-          line-height: 1;
+          line-height: ${props.theme.styleguide['$rsg-sidebar-logo-title-line-height']};
         }
       }
     }

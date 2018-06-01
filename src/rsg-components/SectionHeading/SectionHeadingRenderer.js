@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import A from 'bootstrap-styled/lib/A';
+import Fa from 'bootstrap-styled/lib/Fa';
 import cn from 'classnames';
 import omit from 'lodash.omit';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -18,6 +19,13 @@ export const defaultProps = {
       '$rsg-section-heading-section-name-text-decoration': 'underline',
       '$rsg-section-heading-section-name-cursor': 'pointer',
       '$rsg-section-heading-section-name-color': '#B31255',
+      '$rsg-section-heading-anchor-font-size': '15px',
+      '$rsg-section-heading-anchor-font-weight': 'normal',
+      '$rsg-section-heading-anchor-transform': 'rotate(-5deg)',
+      '$rsg-section-heading-anchor-color': '#CCCCCC',
+      '$rsg-section-heading-anchor-padding': '6px 5px 0 0',
+      '$rsg-section-heading-anchor-display': 'table-cell',
+      '$rsg-section-heading-anchor-vertical-align': 'middle',
       '$rsg-section-heading-deprecated-text-decoration': 'line-through',
       '$rsg-section-heading-deprecated-cursor': '#767676',
       '$rsg-section-heading-toolbar-margin-left': 'auto',
@@ -55,6 +63,13 @@ export const propTypes = {
       '$rsg-section-heading-section-name-text-decoration': PropTypes.string,
       '$rsg-section-heading-section-name-cursor': PropTypes.string,
       '$rsg-section-heading-section-name-color': PropTypes.string,
+      '$rsg-section-heading-anchor-font-size': PropTypes.string,
+      '$rsg-section-heading-anchor-font-weight': PropTypes.string,
+      '$rsg-section-heading-anchor-transform': PropTypes.string,
+      '$rsg-section-heading-anchor-color': PropTypes.string,
+      '$rsg-section-heading-anchor-padding': PropTypes.string,
+      '$rsg-section-heading-anchor-display': PropTypes.string,
+      '$rsg-section-heading-anchor-vertical-align': PropTypes.string,
       '$rsg-section-heading-deprecated-text-decoration': PropTypes.string,
       '$rsg-section-heading-deprecated-cursor': PropTypes.string,
       '$rsg-section-heading-toolbar-margin-left': PropTypes.string,
@@ -89,7 +104,11 @@ const SectionHeadingRendererUnstyled = (props) => {
       {...attributes}
     >
       <Heading level={headingLevel} id={id}>
-        <A className={`section-name level-${headingLevel} ${deprecated ? 'deprecated' : ''}`} href={href}>
+        <A className={`section-name level-${headingLevel} ${deprecated ? 'deprecated' : ''} d-flex justify-content-between`} href={href}>
+          <Fa
+            className="anchor"
+            link
+          />
           {children}
         </A>
       </Heading>
@@ -114,7 +133,19 @@ const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)`
           text-decoration: ${props.theme.styleguide['$rsg-section-heading-section-name-text-decoration']};
           cursor: ${props.theme.styleguide['$rsg-section-heading-section-name-cursor']};
           color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
-        }        
+          .section-anchor {
+            color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
+          }
+        }
+        .anchor {
+          font-size: ${props.theme.styleguide['$rsg-section-heading-anchor-font-size']};
+          font-weight: ${props.theme.styleguide['$rsg-section-heading-anchor-font-weight']};
+          transform: ${props.theme.styleguide['$rsg-section-heading-anchor-transform']};
+          color: ${props.theme.styleguide['$rsg-section-heading-anchor-color']};
+          padding: ${props.theme.styleguide['$rsg-section-heading-anchor-padding']};
+          display: ${props.theme.styleguide['$rsg-section-heading-anchor-display']};
+          vertical-align: ${props.theme.styleguide['$rsg-section-heading-anchor-vertical-align']};
+        }
       }
       & .deprecated {
         text-decoration: ${props.theme.styleguide['$rsg-section-heading-deprecated-text-decoration']};

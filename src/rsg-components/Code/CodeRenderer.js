@@ -12,6 +12,8 @@ export const defaultProps = {
     styleguide: {
       '$rsg-code-font-family': 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace',
       '$rsg-code-font-size': 'inherit',
+      '$rsg-code-word-wrap': 'break-word',
+      '$rsg-code-padding': '0',
       '$rsg-code-color': 'inherit',
       '$rsg-code-background': 'transparent',
       '$rsg-code-white-space': 'inherit',
@@ -31,6 +33,8 @@ export const propTypes = {
     styleguide: PropTypes.shape({
       '$rsg-code-font-family': PropTypes.string,
       '$rsg-code-font-size': PropTypes.string,
+      '$rsg-code-word-wrap': PropTypes.string,
+      '$rsg-code-padding': PropTypes.string,
       '$rsg-code-color': PropTypes.string,
       '$rsg-code-background': PropTypes.string,
       '$rsg-code-white-space': PropTypes.string,
@@ -79,8 +83,8 @@ const CodeRenderer = styled(CodeRendererUnstyled)`
   ${(props) => `
     &.rsg-code {
       font-family: ${props.theme.styleguide['$rsg-code-font-family']};
-      word-wrap: break-word;
-      padding: 0;
+      word-wrap: ${props.theme.styleguide['$rsg-code-word-wrap']};
+      padding: ${props.theme.styleguide['$rsg-code-padding']};
       font-size: ${props.theme.styleguide['$rsg-code-font-size']};
       color: ${props.theme.styleguide['$rsg-code-color']};
       background: ${props.theme.styleguide['$rsg-code-background']};

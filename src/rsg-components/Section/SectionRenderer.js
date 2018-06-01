@@ -12,6 +12,7 @@ export const defaultProps = {
   theme: {
     styleguide: {
       '$rsg-section-margin': '60px 0 0 0',
+      '$rsg-section-isolated-margin': '0',
     },
   },
 };
@@ -44,6 +45,7 @@ export const propTypes = {
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
       '$rsg-section-margin': PropTypes.string,
+      '$rsg-section-isolated-margin': PropTypes.string,
     }),
   }),
   /**
@@ -97,7 +99,7 @@ const SectionRenderer = styled(SectionRendererUnstyled)`
       margin: ${props.theme.styleguide['$rsg-section-margin']};
     }
     &.rsg-section.isolated {
-      margin-left: 0 !important;
+      margin: ${props.theme.styleguide['$rsg-section-isolated-margin']} !important;
     }
  `}
 `;
