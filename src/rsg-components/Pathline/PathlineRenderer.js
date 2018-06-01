@@ -6,7 +6,6 @@ import cn from 'classnames';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
 import mapToCssModules from 'map-to-css-modules/lib';
-import '!!style-loader!css-loader!../../../node_modules/font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
 import ToolbarButton from '../ToolbarButton';
 
 export const defaultProps = {
@@ -88,7 +87,7 @@ PathlineRendererUnstyled.propTypes = propTypes;
 const PathlineRenderer = styled(PathlineRendererUnstyled)` 
   ${(props) => `
     &.rsg-path-line {
-      font-family: ${props.theme.styleguide['$rsg-path-font-family']};
+      font-family: ${props.theme.styleguide['$rsg-path-line-font-family']};
       font-size: ${props.theme.styleguide['$rsg-path-line-font-size']};
       color: ${props.theme.styleguide['$rsg-path-line-color']};
       .copy-button {
