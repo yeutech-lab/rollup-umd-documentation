@@ -27,6 +27,7 @@ It should contains :
 
 - [sections](https://react-styleguidist.js.org/docs/configuration.html#sections): The documentation menu.
 - [ignore](https://react-styleguidist.js.org/docs/configuration.html#ignore): File to be ignored by components scanning.
+- [ribbon](https://react-styleguidist.js.org/docs/configuration.html#ribbon): The documentation ribbon.
 
 You should edit those within the extension file from your rollup. You can still override the default by using `styleguide.config.js`, but you won't be able to configure those from [rollup-umd-scripts](http://dev-tools.yeutech.com/rollup-umd-scripts) after. 
 
