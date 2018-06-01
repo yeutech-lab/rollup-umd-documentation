@@ -1,3 +1,11 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.2...v1.0.3) (2018-06-01)
+
+
+### Bug Fixes
+
+* **build:** added missing dependency react-dom and using font-awesome node modules path ([283f5f2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/283f5f2))
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.1...v1.0.2) (2018-06-01)
 
