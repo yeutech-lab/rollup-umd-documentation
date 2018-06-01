@@ -39,9 +39,6 @@ export const jsonExtension = fs.existsSync(path.join(process.cwd(), 'styleguide/
 
 export const config = {
   serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060, // eslint-disable-line radix
-  ribbon: {
-    url: 'javascript:void(0)', // eslint-disable-line no-script-url
-  },
   styleguideDir: 'public',
   components: 'src/components/**/*.js',
   previewDelay: 500,
@@ -67,6 +64,7 @@ export const config = {
            License: none (public domain)
         */
         html, body {
+          width: 100%;
           height: 100%
         }
         html, body, div, span, applet, object, iframe,
@@ -211,7 +209,7 @@ export const config = {
     </body>
   </html>`,
   theme: {},
-  title: pkg.description || pkg.name,
+  title: pkg.name || 'Please add key name to your package.json',
   verbose: false,
   webpackConfig: {
     plugins: [
@@ -225,6 +223,7 @@ export const config = {
     resolve: {
       alias: {
         [pkg.name]: path.resolve(pkgBase),
+        styleguide: path.resolve(styleguideBase),
       },
     },
     module: {
