@@ -12,7 +12,7 @@ export const defaultProps = {
     styleguide: {
       '$rsg-code-font-family': 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace',
       '$rsg-code-font-size': 'inherit',
-      '$rsg-code-color': '#B31255',
+      '$rsg-code-color': 'inherit',
       '$rsg-code-background': 'transparent',
       '$rsg-code-white-space': 'inherit',
     },
@@ -58,7 +58,7 @@ const CodeRendererUnstyled = (props) => {
   if (isHighlighted) {
     return (
       <Code
-        className={className}
+        className={cn(className, 'rsg-code')}
         dangerouslySetInnerHTML={{ __html: children }}
       />);
   }
@@ -79,6 +79,8 @@ const CodeRenderer = styled(CodeRendererUnstyled)`
   ${(props) => `
     &.rsg-code {
       font-family: ${props.theme.styleguide['$rsg-code-font-family']};
+      word-wrap: break-word;
+      padding: 0;
       font-size: ${props.theme.styleguide['$rsg-code-font-size']};
       color: ${props.theme.styleguide['$rsg-code-color']};
       background: ${props.theme.styleguide['$rsg-code-background']};
