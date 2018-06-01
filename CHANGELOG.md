@@ -1,3 +1,11 @@
+<a name="1.0.5"></a>
+## [1.0.5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.4...v1.0.5) (2018-06-01)
+
+
+### Bug Fixes
+
+* **build:** added missing deps url-loader ([0534591](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/0534591))
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.3...v1.0.4) (2018-06-01)
 
