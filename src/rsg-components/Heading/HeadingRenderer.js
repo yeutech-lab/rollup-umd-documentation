@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import H1 from 'bootstrap-styled/lib/H1';
 import H2 from 'bootstrap-styled/lib/H2';
 import H3 from 'bootstrap-styled/lib/H3';
@@ -23,8 +24,8 @@ const typoList = {
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-heading-margin': '0 0 0 0',
-      '$rsg-heading-color': '#333',
+      '$rsg-heading-margin': '0',
+      '$rsg-heading-color': '#292b2c',
     },
   },
 };
@@ -67,7 +68,7 @@ const HeadingRendererUnstyled = (props) => {
   const Tag = typoList[`H${level}`] || H1;
   return (
     <Tag
-      className={mapToCssModules(cn(className, 'rsg-heading'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-heading', `h${level}`), cssModule)}
       {...attributes}
     >
       {children}
@@ -83,7 +84,35 @@ const HeadingRenderer = styled(HeadingRendererUnstyled)`
     &.rsg-heading {
       margin: ${props.theme.styleguide['$rsg-heading-margin']};
       color: ${props.theme.styleguide['$rsg-heading-color']};
+      padding: 20px 0 15px 0;
     }
+  ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+      &.rsg-heading {
+        line-height: 1;
+      }
+      &.rsg-heading.h1 {
+        font-size: 30px;
+      }
+      &.rsg-heading.h2 {
+        font-size: 24px;
+      }
+      &.rsg-heading.h3 {
+        font-size: 20px;
+      }
+      &.rsg-heading.h4 {
+        font-size: 18px;
+      }
+      &.rsg-heading.h5 {
+        font-size: 16px;
+      }
+      &.rsg-heading.h6 {
+        font-size: 15px;
+      }
+    `
+  )}
  `}
 `;
 
