@@ -1,3 +1,19 @@
+<a name="1.0.2"></a>
+## [1.0.2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.1...v1.0.2) (2018-06-01)
+
+
+### Bug Fixes
+
+* **build:** dependencies fix ([c62583d](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c62583d))
+* **build:** dependencies fix ([a5a7164](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/a5a7164))
+* **build:** remove package-lock.json ([0197537](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/0197537))
+* **ci:** Using ldap.kopaxgroup.com ([3bb05bc](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/3bb05bc))
+* **deps:** Added dev dependency rollup-umd-scripts ([cbad903](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/cbad903))
+* **publish:** restore url ([b24af04](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/b24af04))
+* **verdaccio:** using ip intra ([6edb7f8](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/6edb7f8))
+* **verdaccio:** using ip intra ([e0d46d8](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/e0d46d8))
+* **verdaccio:** using ip intra ([a20b381](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/a20b381))
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.0...v1.0.1) (2018-05-31)
 
