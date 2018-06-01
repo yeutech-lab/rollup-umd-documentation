@@ -273,7 +273,7 @@
   },
   "publishConfig": {
     "tag": "latest",
-    "registry": "http://172.16.0.2:31138"
+    "registry": "https://npm.kopaxgroup.com"
   },
   "private": false,
   "release": {
