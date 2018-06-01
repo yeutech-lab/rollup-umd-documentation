@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
+import '!!style-loader!css-loader!../../node_modules/font-awesome/css/font-awesome.css'; // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
 import StyleGuideRenderer from '../rsg-components/StyleGuide/StyleGuideRenderer';
 import whiteLogo from './logo-white';

@@ -137,16 +137,16 @@ const ToolbarButtonRenderer = styled(ToolbarButtonRendererUnstyled)`
       transition: ${props.theme.styleguide['$rsg-toolbar-button-transition']};
       cursor: ${props.theme.styleguide['$rsg-toolbar-button-cursor']};
       &:hover, &:focus {
-        isolation: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-isolate']};
+        isolation: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-isolation']};
         color: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-color']};
         transition: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-transition']};
       }
       &:focus {
-        isolation: ${props.theme.styleguide['$rsg-toolbar-button-focus-isolate']};
+        isolation: ${props.theme.styleguide['$rsg-toolbar-button-focus-isolation']};
         outline: ${props.theme.styleguide['$rsg-toolbar-button-focus-outline']};
       }
       & + & {
-        isolation: ${props.theme.styleguide['$rsg-toolbar-button-children-isolate']};
+        isolation: ${props.theme.styleguide['$rsg-toolbar-button-children-isolation']};
         margin-left: ${props.theme.styleguide['$rsg-toolbar-button-children-margin-left']};
       }
       &:i {
