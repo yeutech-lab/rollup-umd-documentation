@@ -1,3 +1,36 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.5...v2.0.0) (2018-06-02)
+
+
+### Bug Fixes
+
+* **ci:** fixing ci ([319ec89](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/319ec89))
+* **CodeRenderer component:** Fix padding left and code color in pre of example. ([5ff02ef](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/5ff02ef))
+* **components:** Change directory for image into static. ([c9b7dc3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c9b7dc3))
+* **components:** Update FooterRenderer SideBar and LayoutRenderer. ([94cf8f2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/94cf8f2))
+* **HeadingRenderer:** Add anchor link. ([c8de7b5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c8de7b5))
+* **ListRenderer, PathlineRenderer and IsolateButton components.:** Fix undefined style value and cor ([852d987](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/852d987))
+* **rsg-components:** Add new style variable to rsg-components. ([7f021f7](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/7f021f7))
+* **rsg-components:** Update CodeRenderer, PathlineRenderer, SectionHeadingRenderer, and StyleGuideRe ([789b450](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/789b450))
+* **styleguide-config.json:** Update template with correct viewport tag. ([856d963](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/856d963))
+* **theme:** Add correct value in theme and styleguide-bs theme. ([7220814](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/7220814))
+
+
+### Build System
+
+* **pull from dev:** Pull update .gitlab-ci.yml, package-lock.json, package.json, and components Si ([202c469](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/202c469))
+
+
+### Performance Improvements
+
+* **styleguide.config.json:** Update configuration with correctreset css and configuration. ([6dfbdc4](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/6dfbdc4))
+* **styleguide.ext.json:** Add ribbon configuration. ([16bb6ea](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/16bb6ea))
+
+
+### BREAKING CHANGES
+
+* **pull from dev:** Whitout this xcommit application will be unable to build.
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.4...v1.0.5) (2018-06-01)
 
