@@ -1,3 +1,11 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.0...v2.0.1) (2018-06-02)
+
+
+### Bug Fixes
+
+* **README.md:** remove useless links ([2a28b3e](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/2a28b3e))
+
 <a name="2.0.0"></a>
 # [2.0.0](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.5...v2.0.0) (2018-06-02)
 
