@@ -72,7 +72,7 @@ const TextRendererUnstyled = (props) => {
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
-  const Tag = (semantic && semantic === 'strong' ? Strong : 'em') || 'span';
+  const Tag = (semantic && semantic === 'strong' ? Strong : (semantic === 'em' ? 'em' : 'span')); // eslint-disable-line no-nested-ternary
 
   return (
     <Tag

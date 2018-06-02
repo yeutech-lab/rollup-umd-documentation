@@ -8,14 +8,16 @@ import styled from 'styled-components';
 import omit from 'lodash.omit';
 import cn from 'classnames';
 import mapToCssModules from 'map-to-css-modules/lib';
-import defaultLogo from './yeutech-badge';
-import whiteLogo from './logo-white';
+import defaultLogo from '../static/badge-yeutech';
 
 export const defaultProps = {
-  logo: whiteLogo,
-  bottomLogo: defaultLogo,
-  bottomLogoHref: 'https://www.yeutech.vn',
-  bottomLogoText: '',
+  logo: {
+    logo: defaultLogo,
+    height: '43px',
+    href: 'https://www.yeutech.vn',
+    target: '_blank',
+    alt: 'Yeutech Company Limited logo',
+  },
   theme: {
     styleguide: {
       '$rsg-footer-margin': '40px 0 60px 0',
@@ -33,14 +35,18 @@ export const propTypes = {
    * @ignore
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
-  /** Logo element to be rendered. */
-  logo: PropTypes.node,
-  /** Bottom logo element to be rendered. */
-  bottomLogo: PropTypes.node,
-  /** Set href used by bottom logo. */
-  bottomLogoHref: PropTypes.string,
-  /** Set text used by bottom logo. */
-  bottomLogoText: PropTypes.string,
+  /** Logo attributes in order to render logo. */
+  logo: PropTypes.shape({
+    logo: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]),
+    height: PropTypes.string,
+    href: PropTypes.string,
+    target: PropTypes.string,
+    text: PropTypes.string,
+    alt: PropTypes.string,
+  }),
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
@@ -63,9 +69,6 @@ const FooterRendererUnstyled = (props) => {
   const {
     className,
     logo,
-    bottomLogo,
-    bottomLogoHref,
-    bottomLogoText,
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
@@ -75,21 +78,33 @@ const FooterRendererUnstyled = (props) => {
       className={mapToCssModules(cn(className, 'rsg-footer', cssModule))}
       {...attributes}
     >
-      <span>{bottomLogoText}</span>
-      <A
-        href={bottomLogoHref}
-        target="_blank"
-        alt="Yeutech Company Limited"
-        title="Yeutech Company Limited"
-      >
-        <Img
-          className="rsg-footer-img"
-          src={`data:image/png;base64,${bottomLogo}`}
-          height="43px"
-          alt={logo === defaultLogo ? 'Yeutech Company Limited logo' : 'logo'}
-          title={logo === defaultLogo ? 'Yeutech Company Limited' : 'Brand logo'}
-        />
-      </A>
+      {typeof logo.logo === 'string' ? (
+        <div>
+          {logo.text && (
+            <span>{logo.text}</span>
+          )}
+          <A
+            href={logo.href || 'Add href to your logo'}
+            target={logo.target || 'Add target to your logo'}
+            alt={logo.alt || 'Add alt description'}
+          >
+            <Img
+              className="rsg-footer-img"
+              src={`data:image/png;base64,${logo.logo}`}
+              height={logo.height || ''}
+              alt={logo.text || 'logo'}
+            />
+          </A>
+        </div>
+      ) : (
+        <A
+          href={logo.href || 'Add href to your logo'}
+          target={logo.target || 'Add target to your logo'}
+          alt={logo.alt || 'Add alt description'}
+        >
+          {logo.logo}
+        </A>
+      )}
     </Footer>
   );
 };
