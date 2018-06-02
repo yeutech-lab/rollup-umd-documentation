@@ -15,19 +15,13 @@ rollup-documentation contains the default [react-styleguide](https://react-style
 
 ## Table of Contents
 
-  - [Changelog](#changelog)
   - [Documentation](#documentation)
   - [License](#license)
 
 ---
 
-## Changelog
-
-  - View [Changelog](CHANGELOG.md)
-  
 ## Documentation
 
-  - View [Markdown documentation](docs)
   - View rollup-documentation [HTML documentation](https://dev-tools.yeutech.com/rollup-documentation) *(require access)*
   - View rollup-umd [HTML documentation](https://dev-tools.yeutech.com/rollup-umd) *(require access)*
 
