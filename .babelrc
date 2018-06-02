@@ -15,7 +15,8 @@
   ],
   "plugins": [
     "array-includes",
-    "transform-class-properties"
+    "transform-class-properties",
+    "inline-react-svg"
   ],
   "env": {
     "production": {

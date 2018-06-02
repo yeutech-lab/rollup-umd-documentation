@@ -10,6 +10,10 @@
     "**/components/FooterRenderer.js",
     "**/components/SideBar.js"
   ],
+  "ribbon": {
+    "url": "javascript:void(0)",
+    "text": "Fork us on GitHub"
+  },
   "sections": [
     {
       "name": "Introduction",

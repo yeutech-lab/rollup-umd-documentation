@@ -89,7 +89,7 @@ const ListRenderer = styled(ListRendererUnstyled)`
     }
     &.rsg-markdown-list.list-ul {
       font-family: ${props.theme.styleguide['$rsg-markdown-list-li-font-family']} ;
-      font-size: ${props.theme.styleguide['$rsg-markdown-list-list-li-font-size']} !important;
+      font-size: ${props.theme.styleguide['$rsg-markdown-list-li-font-size']} !important;
       color: ${props.theme.styleguide['$rsg-markdown-list-li-color']} !important;
       line-height: ${props.theme.styleguide['$rsg-markdown-list-li-line-height']} ;
       list-style-type: ${props.theme.styleguide['$rsg-markdown-list-li-style-type']} ;

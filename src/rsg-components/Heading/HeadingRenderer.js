@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import H1 from 'bootstrap-styled/lib/H1';
 import H2 from 'bootstrap-styled/lib/H2';
 import H3 from 'bootstrap-styled/lib/H3';
@@ -23,8 +24,18 @@ const typoList = {
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-heading-margin': '0 0 0 0',
-      '$rsg-heading-color': '#333',
+      '$rsg-heading-margin': '0',
+      '$rsg-heading-color': '#292b2c',
+      '$rsg-heading-padding': '20px 0 15px 0',
+      '$rsg-heading-mobile-line-height': '1',
+      '$rsg-heading-mobile-font-size': {
+        h1: '30px',
+        h2: '24px',
+        h3: '20px',
+        h4: '18px',
+        h5: '16px',
+        h6: '15px',
+      },
     },
   },
 };
@@ -44,6 +55,16 @@ export const propTypes = {
     styleguide: PropTypes.shape({
       '$rsg-heading-margin': PropTypes.string,
       '$rsg-heading-color': PropTypes.string,
+      '$rsg-heading-padding': PropTypes.string,
+      '$rsg-heading-mobile-line-height': PropTypes.string,
+      '$rsg-heading-mobile-font-size': PropTypes.shape({
+        h1: PropTypes.string,
+        h2: PropTypes.string,
+        h3: PropTypes.string,
+        h4: PropTypes.string,
+        h5: PropTypes.string,
+        h6: PropTypes.string,
+      }),
     }),
   }),
   /**
@@ -67,7 +88,7 @@ const HeadingRendererUnstyled = (props) => {
   const Tag = typoList[`H${level}`] || H1;
   return (
     <Tag
-      className={mapToCssModules(cn(className, 'rsg-heading'), cssModule)}
+      className={mapToCssModules(cn(className, 'rsg-heading', `h${level}`), cssModule)}
       {...attributes}
     >
       {children}
@@ -83,7 +104,35 @@ const HeadingRenderer = styled(HeadingRendererUnstyled)`
     &.rsg-heading {
       margin: ${props.theme.styleguide['$rsg-heading-margin']};
       color: ${props.theme.styleguide['$rsg-heading-color']};
+      padding: ${props.theme.styleguide['$rsg-heading-padding']};
     }
+  ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+      &.rsg-heading {
+        line-height: ${props.theme.styleguide['$rsg-heading-line-height']};
+      }
+      &.rsg-heading.h1 {
+        font-size: ${props.theme.styleguide['$rsg-heading-mobile-font-size'].h1};
+      }
+      &.rsg-heading.h2 {
+        font-size: ${props.theme.styleguide['$rsg-heading-mobile-font-size'].h2};
+      }
+      &.rsg-heading.h3 {
+        font-size: ${props.theme.styleguide['$rsg-heading-mobile-font-size'].h3};
+      }
+      &.rsg-heading.h4 {
+        font-size: ${props.theme.styleguide['$rsg-heading-mobile-font-size'].h4};
+      }
+      &.rsg-heading.h5 {
+        font-size: ${props.theme.styleguide['$rsg-heading-mobile-font-size'].h5};
+      }
+      &.rsg-heading.h6 {
+        font-size: ${props.theme.styleguide['$rsg-heading-mobile-font-size'].h6};
+      }
+    `
+  )}
  `}
 `;
 

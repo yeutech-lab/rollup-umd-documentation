@@ -10,6 +10,7 @@ import FooterRenderer from '../../components/FooterRenderer';
 import Ribbon from '../Ribbon';
 
 export const defaultProps = {
+  hasSidebar: true,
   theme: {
     styleguide: {
       '$rsg-styleguide-background-color': '#fff',
@@ -43,10 +44,31 @@ export const propTypes = {
   /** Table of content element to be rendered. */
   toc: PropTypes.node.isRequired,
   /** Toggle sidebar style. */
-  hasSidebar: PropTypes.bool, // eslint-disable-line react/require-default-props
-  /** Content element to be rendered. */
-  logo: PropTypes.node,
-  logohref: PropTypes.string,
+  hasSidebar: PropTypes.bool,
+  /** Logo attributes in order to render menu logo. */
+  logoMenu: PropTypes.shape({
+    logo: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]).isRequired,
+    height: PropTypes.string,
+    href: PropTypes.string,
+    target: PropTypes.string,
+    text: PropTypes.string,
+    alt: PropTypes.string,
+  }),
+  /** Logo attributes in order to render footer logo. */
+  logoFooter: PropTypes.shape({
+    logo: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object,
+    ]).isRequired,
+    height: PropTypes.string,
+    href: PropTypes.string,
+    target: PropTypes.string,
+    text: PropTypes.string,
+    alt: PropTypes.string,
+  }),
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
@@ -77,15 +99,14 @@ const StyleGuideRendererUnstyled = (props) => {
   const {
     className,
     title,
-    homepageUrl,
     children,
     toc,
     hasSidebar,
-    logo,
-    logohref,
+    logoMenu,
+    logoFooter,
     cssModule,
     ...attributes
-  } = omit(props, ['theme']);
+  } = omit(props, ['theme', 'homepageUrl']);
 
   return (
     <div
@@ -98,17 +119,18 @@ const StyleGuideRendererUnstyled = (props) => {
     >
       {hasSidebar && (
         <div>
-          <SideBar logo={{ logo, href: logohref }} title={title} items={toc} />
+          <SideBar logo={logoMenu} title={title} items={toc} />
           <Ribbon />
         </div>
       )}
       <main className="content">
         {children}
         {hasSidebar && (
-          <FooterRenderer />
+          <div>
+            <FooterRenderer logo={logoFooter} />
+          </div>
         )}
       </main>
-
     </div>
   );
 };
