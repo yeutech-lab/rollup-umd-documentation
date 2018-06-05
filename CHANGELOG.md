@@ -1,3 +1,11 @@
+<a name="2.1.2"></a>
+## [2.1.2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.1...v2.1.2) (2018-06-05)
+
+
+### Bug Fixes
+
+* **dependencies:** move reactIntl, reactRedux and redux in optionalDependencies ([5ec2605](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/5ec2605))
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.0...v2.1.1) (2018-06-05)
 
