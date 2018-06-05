@@ -1,3 +1,11 @@
+<a name="2.1.3"></a>
+## [2.1.3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.2...v2.1.3) (2018-06-05)
+
+
+### Bug Fixes
+
+* **autoconfig:** now need to get props passed ([6b2225f](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/6b2225f))
+
 <a name="2.1.2"></a>
 ## [2.1.2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.1...v2.1.2) (2018-06-05)
 
