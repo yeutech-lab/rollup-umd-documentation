@@ -15,7 +15,7 @@ For examples, you can override the Wrapper to plug a redux store or/and your int
 ```js static
 import React from 'react';
 import { combineReducers } from 'redux';
-import Wrapper from '../../src/components/Wrapper';
+import Wrapper from '$PACKAGE_NAME/lib/components/Wrapper';
 
 const messages = {
   en: {
