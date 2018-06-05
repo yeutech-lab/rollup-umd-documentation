@@ -1,3 +1,16 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.3...v2.1.0) (2018-06-05)
+
+
+### Bug Fixes
+
+* **doc:** Using variable for import name ([3b2ee64](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/3b2ee64))
+
+
+### Features
+
+* **Wrapper:** Wrapper accept a reducer and messages props to autoconfigure ([1513841](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/1513841))
+
 <a name="2.0.3"></a>
 ## [2.0.3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.2...v2.0.3) (2018-06-05)
 
