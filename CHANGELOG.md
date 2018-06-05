@@ -1,3 +1,11 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.0...v2.1.1) (2018-06-05)
+
+
+### Bug Fixes
+
+* **build:** moving devDeps that should be deps: react-redux and redux ([4fef170](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/4fef170))
+
 <a name="2.1.0"></a>
 # [2.1.0](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.3...v2.1.0) (2018-06-05)
 
