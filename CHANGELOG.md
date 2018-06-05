@@ -1,3 +1,11 @@
+<a name="2.0.2"></a>
+## [2.0.2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.1...v2.0.2) (2018-06-05)
+
+
+### Bug Fixes
+
+* **ci:** fix ([e58fae8](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/e58fae8))
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.0...v2.0.1) (2018-06-02)
 
