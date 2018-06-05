@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withRedux from './Wrappers/withRedux';
-import withIntl from './Wrappers/withIntl';
+const withRedux = require('./Wrappers/withRedux');
+const withIntl = require('./Wrappers/withIntl');
 
 const propTypes = {
   /** If passed, redux will be configured */
   reducer: PropTypes.func,
-  /** If passed, react-intl will be configured */
+  /** If passed, react-intl.js will be configured */
   messages: PropTypes.object,
   /** Example will be passed as Wrapper children automatically. */
   children: PropTypes.oneOfType([
@@ -36,11 +36,11 @@ export default class Wrapper extends React.PureComponent {
     }
     if (messages) {
       if (!reducer) {
-        throw new Error('Wrapper: react-intl can\'t work with a reducer.');
+        throw new Error('Wrapper: react-intl.js can\'t work with a reducer.');
       }
       const { locale } = reducer();
       if (!locale) {
-        throw new Error('Wrapper: react-intl must have a locale set in redux store.');
+        throw new Error('Wrapper: react-intl.js must have a locale set in redux store.');
       }
       hocList.push(withIntl(locale, messages));
     }

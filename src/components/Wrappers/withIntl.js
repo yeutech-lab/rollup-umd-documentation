@@ -1,10 +1,15 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
+const reactIntl = require('../../optionalDependencies/react-intl');
 
-const withIntl = (locale, messages) => (Component) => (props) => (
-  <IntlProvider locale={locale} messages={messages}>
-    <Component {...props} />
-  </IntlProvider>
-);
+let HoC = () => () => (props) => props.children;
 
-export default withIntl;
+if (reactIntl) {
+  const { IntlProvider } = reactIntl;
+  HoC = (locale, messages) => (Component) => (props) => (
+    <IntlProvider locale={locale} messages={messages}>
+      <Component {...props} />
+    </IntlProvider>
+  );
+}
+
+module.exports = HoC;
