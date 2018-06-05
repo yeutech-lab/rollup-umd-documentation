@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "jsnext:main": "dist/rollup-documentation.es.js",
   "module": "dist/rollup-documentation.es.js",
+  "homepage": "https://dev-tools.yeutech.com/rollup-documentation",
   "browserslist": [
     "IE >= 9",
     "last 2 versions"
@@ -242,9 +243,9 @@
     "webpack-merge": "^4.1.2"
   },
   "optionalDependencies": {
-    "redux": "^4.0.0",
+    "react-intl": "^2.4.0",
     "react-redux": "^5.0.7",
-    "react-intl": "^2.4.0"
+    "redux": "^4.0.0"
   },
   "peerDependencies": {},
   "jest": {
