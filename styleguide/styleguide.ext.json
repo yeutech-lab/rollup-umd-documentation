@@ -4,11 +4,7 @@
     "**/*.test.{js,jsx,ts,tsx}",
     "**/*.spec.{js,jsx,ts,tsx}",
     "**/*.d.ts",
-    "**/components/logo.js",
-    "**/components/logo-white.js",
-    "**/components/yeutech-badge.js",
-    "**/components/FooterRenderer.js",
-    "**/components/SideBar.js"
+    "**/{sagas,selectors,actions,constants,reducer,theme}.{js,jsx,ts,tsx}"
   ],
   "ribbon": {
     "url": "javascript:void(0)",
@@ -38,9 +34,9 @@
       ]
     },
     {
-      "name": "General components",
+      "name": "Components",
       "content": "docs/general.md",
-      "components": "src/components/**/*.js"
+      "components": "src/components/**/{Wrapper,LayoutRenderer}.js"
     },
     {
       "name": "FAQ",
