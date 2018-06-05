@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import withRedux from './Wrappers/withRedux';
+import withIntl from './Wrappers/withIntl';
 
-/**
- * This is just a div, but you can wrap your example with everything you need in the scope. For example, if you want a particular store for every test,
- * You could add redux Provider or styled-components ThemeProvider to have an example scope for each tests.
- * Note that if you want a global scope for all your examples, you should use the LayoutRenderer.
- * @param props
- */
-const Wrapper = (props) => <div {...props} />;
-
-Wrapper.propTypes = {
+const propTypes = {
+  /** If passed, redux will be configured */
+  reducer: PropTypes.func,
+  /** If passed, react-intl will be configured */
+  messages: PropTypes.object,
   /** Example will be passed as Wrapper children automatically. */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -17,4 +15,52 @@ Wrapper.propTypes = {
   ]).isRequired,
 };
 
-export default Wrapper;
+const defaultProps = {
+  reducer: null,
+  messages: null,
+};
+
+export default class Wrapper extends React.PureComponent {
+  static propTypes = propTypes;
+  static defaultProps = defaultProps;
+
+  state = {
+    hocList: [],
+  };
+
+  componentWillMount() {
+    const { reducer, messages } = this.props;
+    const hocList = [];
+    if (reducer) {
+      hocList.push(withRedux(reducer));
+    }
+    if (messages) {
+      if (!reducer) {
+        throw new Error('Wrapper: react-intl can\'t work with a reducer.');
+      }
+      const { locale } = reducer();
+      if (!locale) {
+        throw new Error('Wrapper: react-intl must have a locale set in redux store.');
+      }
+      hocList.push(withIntl(locale, messages));
+    }
+    this.setState({
+      hocList,
+    });
+  }
+
+  render() {
+    const { children } = this.props;
+    if (this.state.hocList.length === 0) {
+      return <div>{children}</div>;
+    }
+    let Component = null;
+    let cursor;
+    // eslint-disable-next-line no-cond-assign
+    while (cursor = this.state.hocList.shift()) {
+      Component = cursor(Component || 'div');
+    }
+    return <Component>{children}</Component>;
+  }
+}
+

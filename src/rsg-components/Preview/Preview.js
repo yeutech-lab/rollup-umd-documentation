@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import splitExampleCode from 'react-styleguidist/lib/utils/splitExampleCode';
 import { transform } from 'buble';
 import PlaygroundError from '../PlaygroundError';
-import Wrapper from '../Wrapper';
+import Wrapper from 'rsg-components/Wrapper';
 
 /* eslint-disable no-invalid-this, react/no-multi-comp */
 
