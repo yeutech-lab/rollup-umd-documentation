@@ -344,6 +344,16 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-sidebar-logo-svg-height'] = u['$rsg-sidebar-logo-svg-height'] || '35px';
   v['$rsg-sidebar-logo-svg-margin'] = u['$rsg-sidebar-logo-svg-margin'] || '0 0 0 -8px';
   // - table of content
+  v['$rsg-toc-collapse-button-cursor'] = u['$rsg-toc-collapse-button-cursor'] || 'pointer';
+  v['$rsg-toc-collapse-button-color'] = u['$rsg-toc-collapse-button-color'] || 'gray';
+  v['$rsg-toc-collapse-button-background'] = u['$rsg-toc-collapse-button-background'] || '#e5dede';
+  v['$rsg-toc-collapse-button-width'] = u['$rsg-toc-collapse-button-width'] || '100%';
+  v['$rsg-toc-collapse-button-height'] = u['$rsg-toc-collapse-button-height'] || '45px';
+  v['$rsg-toc-collapse-button-border-radius'] = u['$rsg-toc-collapse-button-border-radius'] || '0';
+  v['$rsg-toc-collapse-button-active-box-shadow'] = u['$rsg-toc-collapse-button-active-box-shadow'] || 'none';
+  v['$rsg-toc-collapse-button-content-text-align'] = u['$rsg-toc-collapse-button-content-text-align'] || 'right';
+  v['$rsg-toc-collapse-button-content-icon-padding'] = u['$rsg-toc-collapse-button-content-icon-padding'] || '0 0 0 10px';
+  // - table of content renderer
   v['$rsg-toc-display'] = u['$rsg-toc-display'] || 'block';
   v['$rsg-toc-padding'] = u['$rsg-toc-padding'] || '0';
   v['$rsg-toc-background'] = u['$rsg-toc-background'] || v['$rsg-color-base-background'];
