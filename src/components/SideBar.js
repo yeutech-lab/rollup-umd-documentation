@@ -6,7 +6,7 @@ import NavigationStyleguide from '@yeutech/navigation-bar/lib/NavigationStylegui
 import Img from 'bootstrap-styled/lib/Img';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
-import Logo from '../rsg-components/Logo';
+import Logo from '../rsg-bs-components/Logo';
 import LogoYeutech from '../static/logo-yeutech.svg';
 
 export const defaultProps = {
