@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
-import Provider from 'react-redux/lib/components/Provider';
 import PropTypes from 'prop-types';
-import { createStore, applyMiddleware, compose } from 'redux';
+// import Provider from 'react-redux/lib/components/Provider';
+// import { createStore, applyMiddleware, compose } from 'redux';
 
-const withRedux = (reducer) => (Component) => {
+const withRedux = ({ redux, 'react-redux': reactRedux }, reducer) => (Component) => {
   class WrapperRedux extends PureComponent {
     static propTypes = {
       children: PropTypes.node.isRequired,
@@ -15,6 +15,7 @@ const withRedux = (reducer) => (Component) => {
 
     /* eslint-disable no-underscore-dangle, function-paren-newline */
     componentWillMount() {
+      const { applyMiddleware, createStore, compose } = redux;
       const middleware = [];
       const composeEnhancers =
         typeof window === 'object' &&
@@ -35,6 +36,7 @@ const withRedux = (reducer) => (Component) => {
     /* eslint-enable no-underscore-dangle, function-paren-newline */
 
     render() {
+      const { Provider } = reactRedux;
       return (
         <Provider store={this.state.store}>
           <Component {...this.props} />

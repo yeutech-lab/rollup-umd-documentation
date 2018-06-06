@@ -1,10 +1,9 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
 
-const withIntl = (locale, messages) => (Component) => (props) => (
-  <IntlProvider locale={locale} messages={messages}>
+const withIntl = ({ 'react-intl': reactIntl }, locale, messages) => (Component) => (props) => (
+  <reactIntl.IntlProvider locale={locale} messages={messages}>
     <Component {...props} />
-  </IntlProvider>
+  </reactIntl.IntlProvider>
 );
 
 export default withIntl;
