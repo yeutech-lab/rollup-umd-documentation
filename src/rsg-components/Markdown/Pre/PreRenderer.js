@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 
-
 export const defaultProps = {
   theme: {
     styleguide: {
@@ -74,7 +73,6 @@ const PreRendererUnstyled = (props) => {
 
 PreRendererUnstyled.defaultProps = defaultProps;
 PreRendererUnstyled.propTypes = propTypes;
-
 
 const PreRenderer = styled(PreRendererUnstyled)` 
   ${(props) => `

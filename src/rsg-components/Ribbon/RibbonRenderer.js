@@ -116,19 +116,19 @@ RibbonRendererUnstyled.propTypes = propTypes;
 const RibbonRenderer = styled(RibbonRendererUnstyled)` 
   ${(props) => `
     &.rsg-ribbon {
-      ${bp.up(
+  ${bp.up(
     'xs',
     props.theme['$grid-breakpoints'],
     `
-          visibility: ${props.theme.styleguide['$rsg-ribbon-bp-visibility'].xs};
-        `
+      visibility: ${props.theme.styleguide['$rsg-ribbon-bp-visibility'].xs};
+    `
   )}
-      ${bp.up(
+  ${bp.up(
     'md',
     props.theme['$grid-breakpoints'],
     `
-          visibility: ${props.theme.styleguide['$rsg-ribbon-bp-visibility'].md};
-        `
+      visibility: ${props.theme.styleguide['$rsg-ribbon-bp-visibility'].md};
+    `
   )}
       position: ${props.theme.styleguide['$rsg-ribbon-position']};
       top: ${props.theme.styleguide['$rsg-ribbon-top']};

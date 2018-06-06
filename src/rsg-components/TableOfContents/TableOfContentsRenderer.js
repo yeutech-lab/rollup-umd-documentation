@@ -8,7 +8,6 @@ import Nav from 'bootstrap-styled/lib/Nav';
 import Form from 'bootstrap-styled/lib/Form';
 import Input from 'bootstrap-styled/lib/Input';
 
-
 export const defaultProps = {
   theme: {
     styleguide: {

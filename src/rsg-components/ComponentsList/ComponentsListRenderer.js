@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 import omit from 'lodash.omit';
-import Link from '../Link';
+import Link from 'rsg-components/Link';
 
 export const defaultProps = { // eslint-disable-next-line react/default-props-match-prop-types
   items: [

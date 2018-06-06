@@ -1,1 +1,1 @@
-export { default } from './PreRenderer';
+export { default } from 'rsg-components/Markdown/Pre/PreRenderer';
