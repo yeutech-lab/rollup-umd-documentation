@@ -12,7 +12,6 @@ import LogoYeutech from '../static/logo-yeutech.svg';
 export const defaultProps = {
   logo: {
     logo: <LogoYeutech />,
-    height: '43px',
     href: 'https://www.yeutech.vn',
     target: '_blank',
     text: 'Yeutech Company Limited',
@@ -25,6 +24,8 @@ export const defaultProps = {
       '$rsg-sidebar-logo-padding': '30px 20px 0 20px',
       '$rsg-sidebar-logo-align': 'center',
       '$rsg-sidebar-logo-title-line-height': '1',
+      '$rsg-sidebar-logo-svg-height': '35px',
+      '$rsg-sidebar-logo-svg-margin': '0 0 0 -8px',
     },
   },
 };
@@ -42,6 +43,8 @@ export const propTypes = {
       '$rsg-sidebar-logo-padding': PropTypes.string,
       '$rsg-sidebar-logo-align': PropTypes.string,
       '$rsg-sidebar-logo-title-line-height': PropTypes.string,
+      '$rsg-sidebar-logo-svg-height': PropTypes.string,
+      '$rsg-sidebar-logo-svg-margin': PropTypes.string,
     }),
   }),
   /**
@@ -55,7 +58,6 @@ export const propTypes = {
       PropTypes.string,
       PropTypes.object,
     ]),
-    height: PropTypes.string,
     href: PropTypes.string,
     target: PropTypes.string,
     text: PropTypes.string,
@@ -82,16 +84,17 @@ const SideBarUnstyled = (props) => {
       {...attributes}
     >
       <div className="navigation-logo">
-        {typeof logo.logo === 'string' ? (
-          <Img
-            className="rsg-footer-img"
-            src={`data:image/png;base64,${logo.logo}`}
-            height={logo.height || ''}
-            alt={logo.text || 'logo'}
-          />
-        ) : (
-          logo.logo
-        )}
+        <div className="logo-img">
+          {typeof logo.logo === 'string' ? (
+            <Img
+              className="logo-img"
+              src={`data:image/png;base64,${logo.logo}`}
+              alt={logo.text || 'logo'}
+            />
+          ) : (
+            logo.logo
+          )}
+        </div>
         <Logo className="navigation-logo-title">{title}</Logo>
       </div>
       {items}
@@ -110,6 +113,12 @@ const SideBar = styled(SideBarUnstyled)`
         background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
         padding: ${props.theme.styleguide['$rsg-sidebar-logo-padding']};
         text-align: ${props.theme.styleguide['$rsg-sidebar-logo-align']};
+        .logo-img {
+          & svg {
+            height: ${props.theme.styleguide['$rsg-sidebar-logo-svg-height']};
+            margin: ${props.theme.styleguide['$rsg-sidebar-logo-svg-margin']};
+          }
+        }
         .navigation-logo-title {
           line-height: ${props.theme.styleguide['$rsg-sidebar-logo-title-line-height']};
         }
