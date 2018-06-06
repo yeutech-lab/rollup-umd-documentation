@@ -68,6 +68,8 @@ export const propTypes = {
   })).isRequired,
   /** Toggle use of isolated links. */
   useIsolatedLinks: PropTypes.bool, // eslint-disable-line react/no-unused-prop-types, react/require-default-props
+  /** Toggle menu collapse. */
+  isOpenCollapse: PropTypes.bool.isRequired,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
@@ -106,9 +108,14 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
   componentWillMount() {
     this.updateItems(this.props.items, () => {
       const newState = {};
-      this.state.itemList.forEach(({ heading, name, level }) => {
+      this.state.itemList.forEach(({
+        heading,
+        name,
+        level,
+        collapse,
+      }) => {
         if (heading) {
-          newState[`${name}-is-open`] = false;
+          newState[`${name}-is-open`] = collapse;
           newState[`${name}-index`] = level;
         }
       });
@@ -119,6 +126,9 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
   componentWillReceiveProps(nextProps) {
     if (this.props.items.length !== nextProps.items.length) {
       this.updateItems(nextProps.items);
+    }
+    if (this.props.isOpenCollapse !== nextProps.isOpenCollapse) {
+      this.updateCollapseItems(nextProps.isOpenCollapse);
     }
   }
 
@@ -133,13 +143,22 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
       itemList: items.filter((item) => item.name),
     }, cb);
   }
+  updateCollapseItems(isCollapse) {
+    const newState = {};
+    this.state.itemList.forEach(({ heading, name }) => {
+      if (heading) {
+        newState[`${name}-is-open`] = isCollapse;
+      }
+    });
+    this.setState(newState);
+  }
 
   render() {
     const {
       className,
       cssModule,
       ...attributes
-    } = omit(this.props, ['theme']);
+    } = omit(this.props, ['theme', 'isOpenCollapse']);
     const { itemList } = this.state;
     if (!itemList.length) {
       return null;
@@ -155,7 +174,6 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
           href,
           content,
           level,
-          collapse,
         }) => (
           <Li
             key={href}
@@ -197,13 +215,9 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
                 {name}
               </Link>
             )}
-            {collapse ? (
-              <Collapse isOpen={this.state[`${name}-is-open`]}>
-                {content}
-              </Collapse>
-            ) : (
-              content
-            )}
+            <Collapse isOpen={this.state[`${name}-is-open`]}>
+              {content}
+            </Collapse>
           </Li>
         ))}
       </Ul>

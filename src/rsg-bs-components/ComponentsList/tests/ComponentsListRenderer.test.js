@@ -26,6 +26,7 @@ describe('<ComponentsListRenderer />', () => {
           sections: [],
         },
       ],
+      isOpenCollapse: false,
     });
   });
 
@@ -99,92 +100,6 @@ describe('<ComponentsListRenderer />', () => {
       </BootstrapProvider>
     );
     expect(renderedComponent.contains('Collapse')).toBe(false);
-  });
-  it('should render an ComponentsListRenderer with an onClick event that triggers collapse', () => {
-    const newProps = {
-      theme,
-      items: [
-        {
-          name: 'First component',
-          href: '/#first-component',
-          filepath: 'first-component.md',
-          heading: true,
-          level: 0,
-          content: false,
-          collapse: true,
-          slug: 'first-component',
-          components: [],
-          sections: [
-            {
-              name: 'Sub component',
-              href: '/#sub-component',
-              filepath: 'sub-component.md',
-              heading: false,
-              level: 0,
-              content: false,
-              collapse: true,
-              slug: 'sub-component',
-              components: [],
-              sections: [],
-            },
-          ],
-        },
-      ],
-    };
-    const renderedComponent = mount(
-      <BootstrapProvider theme={theme} injectGlobal={false}>
-        <ComponentsListRenderer
-          {...newProps}
-        />
-      </BootstrapProvider>
-    );
-    const divButton = renderedComponent.find('div.list-button');
-    expect(renderedComponent.find('Collapse').props().isOpen).toBe(false);
-    divButton.simulate('click');
-    expect(renderedComponent.find('Collapse').props().isOpen).toBe(true);
-  });
-  it('should render an ComponentsListRenderer with an onKeyPress event that triggers collapse', () => {
-    const newProps = {
-      theme,
-      items: [
-        {
-          name: 'First component',
-          href: '/#first-component',
-          filepath: 'first-component.md',
-          heading: true,
-          level: 0,
-          content: false,
-          collapse: true,
-          slug: 'first-component',
-          components: [],
-          sections: [
-            {
-              name: 'Sub component',
-              href: '/#sub-component',
-              filepath: 'sub-component.md',
-              heading: false,
-              level: 0,
-              content: false,
-              collapse: true,
-              slug: 'sub-component',
-              components: [],
-              sections: [],
-            },
-          ],
-        },
-      ],
-    };
-    const renderedComponent = mount(
-      <BootstrapProvider theme={theme} injectGlobal={false}>
-        <ComponentsListRenderer
-          {...newProps}
-        />
-      </BootstrapProvider>
-    );
-    const divButton = renderedComponent.find('div.list-button');
-    expect(renderedComponent.find('Collapse').props().isOpen).toBe(false);
-    divButton.simulate('keyPress', { keyCode: 40 });
-    expect(renderedComponent.find('Collapse').props().isOpen).toBe(true);
   });
   it('should not render any children', () => {
     const newProps = {

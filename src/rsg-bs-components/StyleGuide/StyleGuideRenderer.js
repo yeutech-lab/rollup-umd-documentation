@@ -25,7 +25,6 @@ export const defaultProps = {
       },
       '$rsg-styleguide-content-margin': '0 auto',
       '$rsg-styleguide-content-display': 'block',
-
     },
   },
 };
