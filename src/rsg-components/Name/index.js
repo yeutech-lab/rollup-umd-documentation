@@ -1,1 +1,1 @@
-export { default } from './NameRenderer';
+export { default } from 'rsg-components/Name/NameRenderer';

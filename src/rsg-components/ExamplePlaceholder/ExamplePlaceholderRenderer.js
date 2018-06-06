@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 import { DOCS_DOCUMENTING } from 'react-styleguidist/scripts/consts';
-import Markdown from '../Markdown';
+import Markdown from 'rsg-components/Markdown';
 
 export const defaultProps = {
   theme: {

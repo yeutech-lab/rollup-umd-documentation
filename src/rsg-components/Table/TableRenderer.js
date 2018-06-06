@@ -7,6 +7,7 @@ import Th from 'bootstrap-styled/lib/Table/Th';
 import Tbody from 'bootstrap-styled/lib/Table/Tbody';
 import Td from 'bootstrap-styled/lib/Table/Td';
 import Strong from 'bootstrap-styled/lib/Strong';
+import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -16,7 +17,7 @@ export const defaultProps = {
   theme: {
     styleguide: {
       '$rsg-table-overflow': 'auto',
-      '$rsg-table-width': '90%',
+      '$rsg-table-width': '100%',
       '$rsg-table-border-collapse': 'collapse',
       '$rsg-table-margin': '24px 0 0 0',
       '$rsg-table-head-border-top': '0',
@@ -30,7 +31,10 @@ export const defaultProps = {
       '$rsg-table-cell-heading-white-space': 'nowrap',
       '$rsg-table-cell-border-top': '0',
       '$rsg-table-cell-color': '#333',
-      '$rsg-table-cell-padding': '4px 8px 4px 0',
+      '$rsg-table-cell-padding': {
+        xs: '4px 8px 4px 0',
+        md: '4px 56px 4px 0',
+      },
       '$rsg-table-cell-vertical-align': 'top',
       '$rsg-table-cell-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
       '$rsg-table-cell-font-size': '13px',
@@ -76,7 +80,10 @@ export const propTypes = {
       '$rsg-table-cell-heading-white-space': PropTypes.string,
       '$rsg-table-cell-border-top': PropTypes.string,
       '$rsg-table-cell-color': PropTypes.string,
-      '$rsg-table-cell-padding': PropTypes.string,
+      '$rsg-table-cell-padding': PropTypes.shape({
+        xs: PropTypes.string,
+        md: PropTypes.string,
+      }),
       '$rsg-table-cell-vertical-align': PropTypes.string,
       '$rsg-table-cell-font-family': PropTypes.string,
       '$rsg-table-cell-font-size': PropTypes.string,
@@ -108,7 +115,6 @@ const TableRendererUnstyled = (props) => {
   /* eslint-disable react/no-array-index-key */
   return (
     <Table
-      size="sm"
       className={mapToCssModules(cn(className, 'rsg-table'), cssModule)}
       {...attributes}
     >
@@ -164,7 +170,21 @@ const TableRenderer = styled(TableRendererUnstyled)`
       & .rsg-table-cell {
         border-top: ${props.theme.styleguide['$rsg-table-cell-border-top']};
         color: ${props.theme.styleguide['$rsg-table-cell-color']};
-        padding: ${props.theme.styleguide['$rsg-table-cell-padding']};
+        
+  ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+      padding: ${props.theme.styleguide['$rsg-table-cell-padding'].xs};
+    `
+  )}
+  ${bp.up(
+    'md',
+    props.theme['$grid-breakpoints'],
+    `
+      padding: ${props.theme.styleguide['$rsg-table-cell-padding'].md};
+    `
+  )}
         vertical-align: ${props.theme.styleguide['$rsg-table-cell-vertical-align']};
         font-family: ${props.theme.styleguide['$rsg-table-cell-font-family']};
         font-size: ${props.theme.styleguide['$rsg-table-cell-font-size']};

@@ -4,8 +4,8 @@ import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
-import Argument from '../Argument';
-import Heading from '../Heading';
+import Argument from 'rsg-components/Argument';
+import Heading from 'rsg-components/Heading';
 
 export const defaultProps = {
   theme: {

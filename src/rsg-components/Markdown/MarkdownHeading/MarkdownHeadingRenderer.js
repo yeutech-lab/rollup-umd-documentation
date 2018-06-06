@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Heading from '../../Heading';
+import Heading from 'rsg-components/Heading';
 
 function MarkdownHeadingRenderer({ level, children }) {
   return (

@@ -6,7 +6,7 @@ import cn from 'classnames';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
 import mapToCssModules from 'map-to-css-modules/lib';
-import ToolbarButton from '../ToolbarButton';
+import ToolbarButton from 'rsg-components/ToolbarButton';
 
 export const defaultProps = {
   theme: {

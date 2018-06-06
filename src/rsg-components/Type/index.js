@@ -1,1 +1,1 @@
-export { default } from './TypeRenderer';
+export { default } from 'rsg-components/Type/TypeRenderer';

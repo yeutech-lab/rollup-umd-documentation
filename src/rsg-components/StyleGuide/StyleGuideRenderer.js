@@ -5,9 +5,9 @@ import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
+import Ribbon from 'rsg-components/Ribbon';
 import SideBar from '../../components/SideBar';
 import FooterRenderer from '../../components/FooterRenderer';
-import Ribbon from '../Ribbon';
 
 export const defaultProps = {
   hasSidebar: true,
@@ -51,7 +51,6 @@ export const propTypes = {
       PropTypes.string,
       PropTypes.object,
     ]).isRequired,
-    height: PropTypes.string,
     href: PropTypes.string,
     target: PropTypes.string,
     text: PropTypes.string,

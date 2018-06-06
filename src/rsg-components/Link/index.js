@@ -1,1 +1,1 @@
-export { default } from './LinkRenderer';
+export { default } from 'rsg-components/Link/LinkRenderer';

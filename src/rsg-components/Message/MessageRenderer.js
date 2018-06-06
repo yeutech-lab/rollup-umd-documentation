@@ -4,8 +4,7 @@ import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
-
-import Markdown from '../Markdown';
+import Markdown from 'rsg-components/Markdown';
 
 export const defaultProps = {
   theme: {

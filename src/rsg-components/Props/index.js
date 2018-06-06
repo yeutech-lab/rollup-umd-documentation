@@ -1,1 +1,1 @@
-export { default } from './PropsRenderer';
+export { default } from 'rsg-components/Props/PropsRenderer';

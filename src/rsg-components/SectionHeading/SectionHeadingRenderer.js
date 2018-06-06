@@ -6,7 +6,7 @@ import Fa from 'bootstrap-styled/lib/Fa';
 import cn from 'classnames';
 import omit from 'lodash.omit';
 import mapToCssModules from 'map-to-css-modules/lib';
-import Heading from '../Heading';
+import Heading from 'rsg-components/Heading';
 
 export const defaultProps = {
   theme: {

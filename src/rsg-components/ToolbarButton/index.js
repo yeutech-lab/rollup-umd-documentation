@@ -1,1 +1,1 @@
-export { default } from './ToolbarButtonRenderer';
+export { default } from 'rsg-components/ToolbarButton/ToolbarButtonRenderer';

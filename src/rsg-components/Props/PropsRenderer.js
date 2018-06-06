@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import objectToString from 'javascript-stringify';
-import Arguments from '../Arguments';
-import Argument from '../Argument';
-import Code from '../Code';
-import JsDoc from '../JsDoc';
-import Markdown from '../Markdown';
-import Name from '../Name';
-import Type from '../Type';
-import Text from '../Text';
-import Table from '../Table';
-import { unquote, getType, showSpaces } from './util';
-import Description from './Description';
+import { unquote, getType, showSpaces } from 'react-styleguidist/lib/rsg-components/Props/util';
+import Arguments from 'rsg-components/Arguments';
+import Argument from 'rsg-components/Argument';
+import Code from 'rsg-components/Code';
+import JsDoc from 'rsg-components/JsDoc';
+import Markdown from 'rsg-components/Markdown';
+import Name from 'rsg-components/Name';
+import Type from 'rsg-components/Type';
+import Text from 'rsg-components/Text';
+import Table from 'rsg-components/Table';
+import Para from 'rsg-components/Para';
 
 function renderType(type) {
   if (!type) {
@@ -166,13 +166,13 @@ function renderDescription(prop) {
   const returnDocumentation = (tags.return && tags.return[0]) || (tags.returns && tags.returns[0]);
 
   return (
-    <Description>
+    <div>
       {description && <Markdown text={description} />}
-      {extra && <Description>{extra}</Description>}
+      {extra && <Para>{extra}</Para>}
       <JsDoc {...tags} />
       {args.length > 0 && <Arguments args={args} heading />}
       {returnDocumentation && <Argument {...returnDocumentation} returns />}
-    </Description>
+    </div>
   );
 }
 

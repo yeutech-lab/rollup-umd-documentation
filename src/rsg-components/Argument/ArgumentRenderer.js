@@ -1,3 +1,4 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Group from 'react-group';
@@ -5,9 +6,9 @@ import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
-import Markdown from '../Markdown';
-import Name from '../Name';
-import Type from '../Type';
+import Markdown from 'rsg-components/Markdown';
+import Name from 'rsg-components/Name';
+import Type from 'rsg-components/Type';
 
 export const defaultProps = {
   theme: {

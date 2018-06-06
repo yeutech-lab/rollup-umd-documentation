@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Markdown from '../Markdown';
-import Argument from '../Argument';
-import Arguments from '../Arguments';
-import Name from '../Name';
-import JsDoc from '../JsDoc';
-import Table from '../Table';
+import Markdown from 'rsg-components/Markdown';
+import Argument from 'rsg-components/Argument';
+import Arguments from 'rsg-components/Arguments';
+import Name from 'rsg-components/Name';
+import JsDoc from 'rsg-components/JsDoc';
+import Table from 'rsg-components/Table';
 
 const getRowKey = (row) => row.name;
 

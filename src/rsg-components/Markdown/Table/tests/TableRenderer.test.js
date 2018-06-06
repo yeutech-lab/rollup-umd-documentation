@@ -1,21 +1,21 @@
 /* eslint-disable */
 /**
- * Testing our MarkdownTableRenderer component
+ * Testing our TableRenderer component
  */
 import { shallow } from 'enzyme';
 import React from 'react';
-import MarkdownTableRenderer from '../MarkdownTableRenderer';
+import TableRenderer from '../TableRenderer';
 
 const children = <h1>Test children</h1>;
 
 const renderComponent = (props = {}) => shallow(
-  <MarkdownTableRenderer {...props}>
+  <TableRenderer {...props}>
     {children}
-  </MarkdownTableRenderer>
+  </TableRenderer>
 );
 
-describe('<MarkdownTableRenderer />', () => {
-  it('should render an MarkdownTableRenderer', () => {
+describe('<TableRenderer />', () => {
+  it('should render an TableRenderer', () => {
     const renderedComponent = renderComponent();
     expect(renderedComponent.length).toBe(1);
   });

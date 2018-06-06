@@ -1,1 +1,1 @@
-export { default } from './ParaRenderer';
+export { default } from 'rsg-components/Para/ParaRenderer';

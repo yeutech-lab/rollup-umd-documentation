@@ -1,1 +1,1 @@
-export { default } from './CodeRenderer';
+export { default } from 'rsg-components/Code/CodeRenderer';

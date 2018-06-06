@@ -5,7 +5,7 @@ import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
-import Pathline from '../Pathline';
+import Pathline from 'rsg-components/Pathline';
 
 export const defaultProps = {
   theme: {
