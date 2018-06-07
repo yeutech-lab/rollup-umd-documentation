@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash.debounce';
 import { DisplayModes } from 'react-styleguidist/lib/consts';
 import Preview from '../Preview';
 import Para from '../Para';

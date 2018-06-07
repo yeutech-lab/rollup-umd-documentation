@@ -228,8 +228,10 @@
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "font-awesome": "^4.7.0",
-    "immutable": "^3.8.1",
     "javascript-stringify": "^1.6.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.map": "^4.6.0",
+    "lodash.omit": "^4.5.0",
     "markdown-to-jsx": "^6.6.3",
     "mini-html-webpack-plugin": "^0.2.3",
     "prop-types": "^15.6.1",
@@ -239,12 +241,16 @@
     "react-group": "^1.0.6",
     "react-styleguidist": "^7.0.12",
     "react-transition-group": "^2.2.1",
-    "redux-immutable": "^3.0.8",
     "style-loader": "^0.21.0",
     "styled-components": "^3.3.0",
     "url-loader": "^0.5.8",
     "webpack": "^4.6.0",
     "webpack-merge": "^4.1.2"
+  },
+  "optionalDependencies": {
+    "react-intl": "^2.4.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
   },
   "peerDependencies": {},
   "jest": {

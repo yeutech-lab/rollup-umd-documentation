@@ -10,35 +10,33 @@ You can use your own `<Wrapper />` within every projects that use $PACKAGE_NAME.
 
 If you create one in your project under `styleguide/components/Wrapper.js`, it will be automatically picked instead of ours by our configuration.
 
-For examples, you can override the Wrapper to include a new redux store for each test:
+For example, you can do the following to override the Wrapper and to plug a redux store and your internationalization:
 
 ```js static
 import React from 'react';
-import Provider from 'react-redux/lib/components/Provider';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { combineReducers } from 'redux';
+import Wrapper from '$PACKAGE_NAME/lib/components/Wrapper';
 
-// Import your reducer
-import reducer from './reducer';
+const messages = {
+  en: {
+    'dev-tools.rollup-umd.test': 'This is a dummy test string.',
+  },
+};
 
-const history = createHistory();
-const middleware = routerMiddleware(history);
-
-const composeEnhancers =
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-      // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-    }) : compose;
-
-const enhancer = composeEnhancers(applyMiddleware(...middleware),
-  // other store enhancers if any
+/* eslint-disable global-require */
+export default (props) => (
+  <Wrapper
+    redux={require('redux')}
+    react-redux={require('react-redux')}
+    reducer={combineReducers({
+      locale: () => 'en',
+    })}
+    react-intl={require('react-intl')}
+    messages={messages.en}
+    {...props}
+  />
 );
 
-const store = createStore(reducer, enhancer);
-
-const Wrapper = (props) => <Provider store={store}>{props.children}</Provider>;
-
-export default Wrapper;
 ```
 
 > This will wrap every JS example with the Provider and a new store,If you want to have a single store, you should use the Provider inside the LayoutRenderer.  
