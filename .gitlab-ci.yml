@@ -60,6 +60,9 @@ build:
       - .
   tags:
     - docker
+  only:
+    - dev
+    - master
 
 # Job: Test
 test:
