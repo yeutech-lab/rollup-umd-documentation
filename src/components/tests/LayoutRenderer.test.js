@@ -22,11 +22,4 @@ describe('<LayoutRenderer />', () => {
     });
     expect(renderedComponent.length).toBe(1);
   });
-  it('should render an LayoutRenderer with children', () => {
-    const renderedComponent = renderComponent({
-      title: 'Title test',
-      toc: <a>Table of content link</a>,
-    });
-    expect(renderedComponent.contains(children)).toEqual(true);
-  });
 });
