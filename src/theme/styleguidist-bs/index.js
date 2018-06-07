@@ -19,7 +19,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   };
   // font
   // - font-family
-  v['$rsg-font-family-base'] = u['$rsg-font-family-base'] || '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+  v['$rsg-font-family-base'] = u['$rsg-font-family-base'] || '"Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
   v['$rsg-font-family-monospace'] = u['$rsg-font-family-monospace'] || 'Consolas, "Liberation Mono", Menlo, monospace';
   v['$rsg-font-family-highlight'] = u['$rsg-font-family-highlight'] || 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace';
   // - font-size
