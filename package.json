@@ -40,12 +40,6 @@
   "bugs": {
     "url": "https://module.kopaxgroup.com/dev-tools/rollup-documentation/issues"
   },
-  "files": [
-    "LICENSE.md",
-    "loaders",
-    "lib",
-    "dist"
-  ],
   "keywords": [
     "yeutech",
     "rollup-umd"
