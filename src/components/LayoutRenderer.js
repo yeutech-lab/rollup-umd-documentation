@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
 import Provider from 'react-redux/lib/components/Provider';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import createHashHistory from 'history/createHashHistory';
+import createHistory from 'history/createBrowserHistory'
 import { Route, Switch, hashHistory } from 'react-router';
-import { HashRouter } from 'react-router-dom';
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 require('!!../../loaders/style-loader!../../loaders/css-loader!../../node_modules/font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
 import StyleGuideRenderer from '../rsg-components/StyleGuide/StyleGuideRenderer';
@@ -16,7 +15,7 @@ import whiteLogo from '../static/badge-yeutech';
 import defaultLogo from '../static/badge-yeutech';
 
 // Router
-const history = createHashHistory();
+const history = createHistory();
 const middleware = routerMiddleware(history);
 const composeEnhancers =
   typeof window === 'object' &&
@@ -48,7 +47,7 @@ function LayoutRenderer({
   return (
     <BootstrapProvider theme={theme}>
       <Provider store={store}>
-        <HashRouter history={history}>
+        <ConnectedRouter history={history}>
           <div>
             <div
               style={{
@@ -60,56 +59,54 @@ function LayoutRenderer({
                 <li><Link to="/documentation">/toto</Link></li>
               </ul>
             </div>
-            <Switch>
-              <Route exact path="/" component={() => (
-                <div
+            <Route exact path="/" component={() => (
+              <div
+                style={{
+                  marginLeft: '250px',
+                }}
+              >
+                <div>home</div>
+                <StyleGuideRenderer
                   style={{
-                    marginLeft: '250px',
+                    marginTop: '50px',
                   }}
+                  className={className}
+                  title={title}
+                  homepageUrl={bottomLogoHref}
+                  toc={toc}
+                  hasSidebar={hasSidebar}
+                  logo={logo}
+                  logohref={logoHref}
                 >
-                  <div>home</div>
-                  <StyleGuideRenderer
-                    style={{
-                      marginTop: '50px',
-                    }}
-                    className={className}
-                    title={title}
-                    homepageUrl={bottomLogoHref}
-                    toc={toc}
-                    hasSidebar={hasSidebar}
-                    logo={logo}
-                    logohref={logoHref}
-                  >
-                    {children}
-                  </StyleGuideRenderer>
-                </div>
-              )}/>
-              <Route exact path="/documentation" component={() => (
-                <div
+                  {children}
+                </StyleGuideRenderer>
+              </div>
+            )}/>
+            <Route exact path="/documentation" component={() => (
+              <div
+                style={{
+                  marginLeft: '250px',
+                }}
+              >
+                <div>documentation</div>
+                <StyleGuideRenderer
                   style={{
-                    marginLeft: '250px',
+                    marginTop: '50px',
                   }}
+                  className={className}
+                  title={title}
+                  homepageUrl={bottomLogoHref}
+                  toc={toc}
+                  hasSidebar={hasSidebar}
+                  logo={logo}
+                  logohref={logoHref}
                 >
-                  <div>documentation</div>
-                  <StyleGuideRenderer
-                    style={{
-                      marginTop: '50px',
-                    }}
-                    className={className}
-                    title={title}
-                    homepageUrl={bottomLogoHref}
-                    toc={toc}
-                    hasSidebar={hasSidebar}
-                    logo={logo}
-                    logohref={logoHref}
-                  >
-                    {children}
-                  </StyleGuideRenderer>
-                </div>
-              )}/>
-            </Switch>
+                  {children}
+                </StyleGuideRenderer>
+              </div>
+            )}/>
           </div>
-        </HashRouter>
+        </ConnectedRouter>
       </Provider>
     </BootstrapProvider>
   );
