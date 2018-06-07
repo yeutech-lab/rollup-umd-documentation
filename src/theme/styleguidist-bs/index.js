@@ -15,10 +15,11 @@ export function makeTheme(userTheme = { styleguide: {} }) {
     lg: `${v['$rsg-space-factor'] * 4}${v['$rsg-space-factor-unit']}`, // 32px
     xl: `${v['$rsg-space-factor'] * 5}${v['$rsg-space-factor-unit']}`, // 40px
     xxl: `${v['$rsg-space-factor'] * 6}${v['$rsg-space-factor-unit']}`, // 48px
+    xxxl: `${v['$rsg-space-factor'] * 7}${v['$rsg-space-factor-unit']}`, // 56px
   };
   // font
   // - font-family
-  v['$rsg-font-family-base'] = u['$rsg-font-family-base'] || '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+  v['$rsg-font-family-base'] = u['$rsg-font-family-base'] || '"Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
   v['$rsg-font-family-monospace'] = u['$rsg-font-family-monospace'] || 'Consolas, "Liberation Mono", Menlo, monospace';
   v['$rsg-font-family-highlight'] = u['$rsg-font-family-highlight'] || 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace';
   // - font-size
@@ -340,8 +341,19 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-sidebar-logo-padding'] = u['$rsg-sidebar-logo-padding'] || '30px 20px 0 20px';
   v['$rsg-sidebar-logo-align'] = u['$rsg-sidebar-logo-align'] || 'center';
   v['$rsg-sidebar-logo-title-line-height'] = u['$rsg-sidebar-logo-title-line-height'] || '1';
-
+  v['$rsg-sidebar-logo-svg-height'] = u['$rsg-sidebar-logo-svg-height'] || '35px';
+  v['$rsg-sidebar-logo-svg-margin'] = u['$rsg-sidebar-logo-svg-margin'] || '0 0 0 -8px';
   // - table of content
+  v['$rsg-toc-collapse-button-cursor'] = u['$rsg-toc-collapse-button-cursor'] || 'pointer';
+  v['$rsg-toc-collapse-button-color'] = u['$rsg-toc-collapse-button-color'] || 'gray';
+  v['$rsg-toc-collapse-button-background'] = u['$rsg-toc-collapse-button-background'] || '#e5dede';
+  v['$rsg-toc-collapse-button-width'] = u['$rsg-toc-collapse-button-width'] || '100%';
+  v['$rsg-toc-collapse-button-height'] = u['$rsg-toc-collapse-button-height'] || '45px';
+  v['$rsg-toc-collapse-button-border-radius'] = u['$rsg-toc-collapse-button-border-radius'] || '0';
+  v['$rsg-toc-collapse-button-active-box-shadow'] = u['$rsg-toc-collapse-button-active-box-shadow'] || 'none';
+  v['$rsg-toc-collapse-button-content-text-align'] = u['$rsg-toc-collapse-button-content-text-align'] || 'right';
+  v['$rsg-toc-collapse-button-content-icon-padding'] = u['$rsg-toc-collapse-button-content-icon-padding'] || '0 0 0 10px';
+  // - table of content renderer
   v['$rsg-toc-display'] = u['$rsg-toc-display'] || 'block';
   v['$rsg-toc-padding'] = u['$rsg-toc-padding'] || '0';
   v['$rsg-toc-background'] = u['$rsg-toc-background'] || v['$rsg-color-base-background'];
@@ -354,7 +366,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-component-list-color'] = u['$rsg-component-list-color'] || v['$rsg-color-primary'];
   v['$rsg-component-list-font-size'] = u['$rsg-component-list-font-size'] || v['$rsg-font-size'].md;
   v['$rsg-component-list-line-height'] = u['$rsg-component-list-line-height'] || '2.5';
-  v['$rsg-component-list-heading-button-outline'] = u['$rsg-component-list-heading-button-outline'] || 'none';
+  v['$rsg-component-list-heading-button-outline'] = u['$rsg-component-list-heading-button-outline'] || '0';
   v['$rsg-component-list-heading-button-border'] = u['$rsg-component-list-heading-button-border'] || 'none';
   v['$rsg-component-list-heading-button-cursor'] = u['$rsg-component-list-heading-button-cursor'] || 'pointer';
   v['$rsg-component-list-heading-margin'] = u['$rsg-component-list-heading-margin'] || '15px 0 0 0';
@@ -367,7 +379,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-component-list-icon-color'] = u['$rsg-component-list-icon-color'] || v['$rsg-component-list-heading-color'];
   // table
   v['$rsg-table-overflow'] = u['$rsg-table-overflow'] || 'auto';
-  v['$rsg-table-width'] = u['$rsg-table-width'] || '90%';
+  v['$rsg-table-width'] = u['$rsg-table-width'] || '100%';
   v['$rsg-table-border-collapse'] = u['$rsg-table-border-collapse'] || 'collapse';
   v['$rsg-table-margin'] = u['$rsg-table-margin'] || `${v['$rsg-space'].md} 0 0 0`;
   v['$rsg-table-head-border-top'] = u['$rsg-table-head-border-top'] || '0';
@@ -381,7 +393,10 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-table-cell-heading-white-space'] = u['$rsg-table-cell-heading-white-space'] || 'nowrap';
   v['$rsg-table-cell-border-top'] = u['$rsg-table-cell-border-top'] || '0';
   v['$rsg-table-cell-color'] = u['$rsg-table-cell-color'] || v['$rsg-color-base'];
-  v['$rsg-table-cell-padding'] = u['$rsg-table-cell-padding'] || `${v['$rsg-space'].xxs} ${v['$rsg-space'].xs} ${v['$rsg-space'].xxs} 0`;
+  v['$rsg-table-cell-padding'] = u['$rsg-table-cell-padding'] || {
+    xs: `${v['$rsg-space'].xs} ${v['$rsg-space'].lg} ${v['$rsg-space'].xs} 0`,
+    md: `${v['$rsg-space'].xs} ${v['$rsg-space'].xxxl} ${v['$rsg-space'].xs} 0`,
+  };
   v['$rsg-table-cell-vertical-align'] = u['$rsg-table-cell-vertical-align'] || 'top';
   v['$rsg-table-cell-font-family'] = u['$rsg-table-cell-font-family'] || v['$rsg-font-family-base'];
   v['$rsg-table-cell-font-size'] = u['$rsg-table-cell-font-size'] || v['$rsg-font-size'].sm;
