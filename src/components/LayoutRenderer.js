@@ -9,7 +9,7 @@ import { Route, Switch, hashHistory } from 'react-router';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
 require('!!../../loaders/style-loader!../../loaders/css-loader!../../node_modules/font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
-import StyleGuideRenderer from '../rsg-components/StyleGuide/StyleGuideRenderer';
+import StyleGuideRenderer from '../rsg-bs-components/StyleGuide/StyleGuideRenderer';
 import NavigationStyleguide from './NavigationStyleguide';
 import Link from './Link';
 import whiteLogo from '../static/badge-yeutech';
