@@ -10,9 +10,11 @@ import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-r
 require('!!../../loaders/style-loader!../../loaders/css-loader!../../node_modules/font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
 import StyleGuideRenderer from '../rsg-components/StyleGuide/StyleGuideRenderer';
+import NavigationStyleguide from './NavigationStyleguide';
 import Link from './Link';
 import whiteLogo from '../static/badge-yeutech';
 import defaultLogo from '../static/badge-yeutech';
+// import { jsonExtension } from '../styleguide.config.js'
 
 // Router
 const history = createHistory();
@@ -35,6 +37,9 @@ const store = createStore(
   enhancer
 );
 
+// navigation rollup
+
+// console.log(jsonExtension);
 /**
  * This is the main layout for the whole documentation.
  * It doesn't provide react-router but you could add it here.
@@ -49,61 +54,27 @@ function LayoutRenderer({
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <div>
-            <div
-              style={{
-                marginLeft: '250px',
-              }}
-            >
+            <NavigationStyleguide>
               <ul>
-                <li><Link to="/">/</Link></li>
-                <li><Link to="/documentation">/toto</Link></li>
+                <li><Link to="/">home</Link></li>
+                <li><Link to="/documentation">/documentation</Link></li>
               </ul>
-            </div>
+            </NavigationStyleguide>
             <Route exact path="/" component={() => (
-              <div
-                style={{
-                  marginLeft: '250px',
-                }}
-              >
-                <div>home</div>
-                <StyleGuideRenderer
-                  style={{
-                    marginTop: '50px',
-                  }}
-                  className={className}
-                  title={title}
-                  homepageUrl={bottomLogoHref}
-                  toc={toc}
-                  hasSidebar={hasSidebar}
-                  logo={logo}
-                  logohref={logoHref}
-                >
-                  {children}
-                </StyleGuideRenderer>
-              </div>
+              <div>home</div>
             )}/>
             <Route exact path="/documentation" component={() => (
-              <div
-                style={{
-                  marginLeft: '250px',
-                }}
+              <StyleGuideRenderer
+                className={className}
+                title={title}
+                homepageUrl={bottomLogoHref}
+                toc={toc}
+                hasSidebar={hasSidebar}
+                logo={logo}
+                logohref={logoHref}
               >
-                <div>documentation</div>
-                <StyleGuideRenderer
-                  style={{
-                    marginTop: '50px',
-                  }}
-                  className={className}
-                  title={title}
-                  homepageUrl={bottomLogoHref}
-                  toc={toc}
-                  hasSidebar={hasSidebar}
-                  logo={logo}
-                  logohref={logoHref}
-                >
-                  {children}
-                </StyleGuideRenderer>
-              </div>
+                {children}
+              </StyleGuideRenderer>
             )}/>
           </div>
         </ConnectedRouter>
