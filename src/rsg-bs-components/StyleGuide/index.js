@@ -1,1 +1,1 @@
-export { default } from 'rsg-components/StyleGuide/StyleGuideRenderer';
+export { default } from 'rsg-components/StyleGuide';
