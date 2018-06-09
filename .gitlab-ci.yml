@@ -76,6 +76,9 @@ test:
     - build
   tags:
     - docker
+  only:
+    - dev
+    - master
 
 .node:8:
   image: node:8
