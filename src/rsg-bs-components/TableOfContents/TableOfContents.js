@@ -66,7 +66,7 @@ class TableOfContentsUnstyled extends Component {
   };
 
   shouldComponentUpdate(nextProps, nextState) {
-    return (this.state.isOpenCollapse !== nextState.isOpenCollapse);
+    return (this.state.isOpenCollapse !== nextState.isOpenCollapse || this.state.searchTerm !== nextState.searchTerm);
   }
 
   onChangeCollapse() {

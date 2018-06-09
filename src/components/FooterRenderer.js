@@ -13,7 +13,7 @@ import defaultLogo from '../static/badge-yeutech';
 export const defaultProps = {
   logo: {
     logo: defaultLogo,
-    height: '43px',
+    height: '25px',
     href: 'https://www.yeutech.vn',
     target: '_blank',
     alt: 'Yeutech Company Limited logo',
@@ -84,15 +84,15 @@ const FooterRendererUnstyled = (props) => {
             <span>{logo.text}</span>
           )}
           <A
-            href={logo.href || 'Add href to your logo'}
-            target={logo.target || 'Add target to your logo'}
-            alt={logo.alt || 'Add alt description'}
+            href={logo.href}
+            target={logo.target}
+            alt={logo.alt}
           >
             <Img
               className="rsg-footer-img"
               src={`data:image/png;base64,${logo.logo}`}
-              height={logo.height || ''}
-              alt={logo.text || 'logo'}
+              height={logo.height}
+              alt={logo.text}
             />
           </A>
         </div>
