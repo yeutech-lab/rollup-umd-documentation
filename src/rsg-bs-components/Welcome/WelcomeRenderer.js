@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 import Markdown from 'rsg-components/Markdown';
-import { pkg } from '../../styleguide.config';
 
 export const defaultProps = {
   theme: {
@@ -58,7 +57,7 @@ const WelcomeRendererUnstyled = (props) => {
     >
       <Markdown
         text={`
-# Welcome to ${pkg.name}!
+# Welcome to Rollup-documentation!
 
 **We couldn’t find any components** using these patterns:
 
