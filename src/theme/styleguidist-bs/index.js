@@ -63,7 +63,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   // - max width
   v['$rsg-max-width'] = u['$rsg-max-width'] || '1000px';
   // - sidebar
-  v['$rsg-sidebar-width'] = u['$rsg-sidebar-width'] || '250px';
+  v['$rsg-sidebar-width'] = u['$rsg-sidebar-width'] || '240px';
   // cursor
   v['$rsg-cursor'] = u['$rsg-cursor'] || 'pointer';
 
@@ -229,8 +229,8 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-footer-margin'] = u['$rsg-footer-margin'] || `${v['$rsg-space'].md} 0 60px 0`;
   v['$rsg-footer-float'] = u['$rsg-footer-float'] || 'right';
   v['$rsg-footer-img-height'] = u['$rsg-footer-img-height'] || {
-    xs: '35px',
-    md: '43px',
+    xs: '25px',
+    md: '30px',
   };
   // link
   v['$rsg-link-hover-isolate'] = u['$rsg-link-hover-isolate'] || 'false';

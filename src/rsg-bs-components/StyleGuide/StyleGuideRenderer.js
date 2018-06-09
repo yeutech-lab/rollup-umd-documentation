@@ -16,7 +16,7 @@ export const defaultProps = {
       '$rsg-styleguide-background-color': '#fff',
       '$rsg-styleguide-has-sidebar-padding-left': {
         xs: '0',
-        md: '250px',
+        md: '300px',
       },
       '$rsg-styleguide-content-max-width': '1000px',
       '$rsg-styleguide-content-padding': {
@@ -115,16 +115,18 @@ const StyleGuideRendererUnstyled = (props) => {
       ), cssModule)}
       {...attributes}
     >
-      <main className="content" >
-        {children}
-      </main>
       {hasSidebar && (
         <div>
           <SideBar logo={logoMenu} title={title} items={toc} />
           <Ribbon />
-          <FooterRenderer logo={logoFooter} />
         </div>
       )}
+      <main className="content" >
+        {children}
+        {hasSidebar && (
+          <FooterRenderer logo={logoFooter} />
+        )}
+      </main>
     </div>
   );
 };

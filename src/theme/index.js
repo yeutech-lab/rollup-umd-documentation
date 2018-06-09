@@ -29,6 +29,10 @@ const themeNavigationYeutech = makeThemeNavigationStyleguide({
   navigationStyleguide: {
     '$nav-styleguide-bg-color': 'white',
     '$nav-styleguide-border': 'none',
+    '$nav-styleguide-width': {
+      sm: '100%',
+      md: '250px',
+    },
   },
 });
 

@@ -94,8 +94,8 @@ const SideBarUnstyled = (props) => {
           ) : (
             logo.logo
           )}
+          <Logo className="navigation-logo-title">{title}</Logo>
         </div>
-        <Logo className="navigation-logo-title">{title}</Logo>
       </div>
       {items}
     </NavigationStyleguide>
@@ -121,6 +121,7 @@ const SideBar = styled(SideBarUnstyled)`
         }
         .navigation-logo-title {
           line-height: ${props.theme.styleguide['$rsg-sidebar-logo-title-line-height']};
+          word-wrap: break-word;
         }
       }
     }
