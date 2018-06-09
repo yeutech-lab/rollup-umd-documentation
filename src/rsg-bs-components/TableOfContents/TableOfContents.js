@@ -57,8 +57,9 @@ export const propTypes = {
 };
 
 class TableOfContentsUnstyled extends Component {
-  static defaultProps = defaultProps;
   static propTypes = propTypes;
+  static defaultProps = defaultProps;
+
   state = {
     searchTerm: '',
     isOpenCollapse: false,

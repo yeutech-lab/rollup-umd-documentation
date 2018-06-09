@@ -74,10 +74,10 @@ export const propTypes = {
 
 class EditorUnstyled extends Component {
   static propTypes = propTypes;
-  static defaultProps = defaultProps;
   static contextTypes = {
     config: PropTypes.object.isRequired,
   };
+  static defaultProps = defaultProps;
 
   constructor() {
     super();

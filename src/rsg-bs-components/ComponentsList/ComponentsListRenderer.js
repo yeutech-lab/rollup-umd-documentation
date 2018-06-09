@@ -10,40 +10,6 @@ import cn from 'classnames';
 import omit from 'lodash.omit';
 import Link from 'rsg-components/Link';
 
-export const defaultProps = { // eslint-disable-next-line react/default-props-match-prop-types
-  items: [
-    {
-      name: 'First component',
-      href: '/#first-component',
-      filepath: 'first-component.md',
-      heading: false,
-      level: 0,
-      content: false,
-      collapse: true,
-      slug: 'first-component',
-      components: [],
-      sections: [],
-    },
-  ],
-  theme: {
-    styleguide: {
-      '$rsg-component-list-color': '#CCCCCC',
-      '$rsg-component-list-font-size': '14px',
-      '$rsg-component-list-line-height': '2.5',
-      '$rsg-component-list-heading-button-outline': 'none',
-      '$rsg-component-list-heading-button-border': 'none',
-      '$rsg-component-list-heading-button-cursor': 'pointer',
-      '$rsg-component-list-heading-margin': '15px 0 0 0',
-      '$rsg-component-list-heading-border-bottom': '1px solid #d8d8d8',
-      '$rsg-component-list-heading-color': '#292b2c',
-      '$rsg-component-list-heading-hover-color': '#B31255',
-      '$rsg-component-list-heading-font-size': '16px',
-      '$rsg-component-list-heading-font-weight': '500',
-      '$rsg-component-list-icon-margin': '15px 15px 0 0',
-      '$rsg-component-list-icon-color': '#292b2c',
-    },
-  },
-};
 
 export const propTypes = {
   /**
@@ -97,9 +63,44 @@ export const propTypes = {
   cssModule: PropTypes.object, // eslint-disable-line react/require-default-props
 };
 
+export const defaultProps = { // eslint-disable-next-line react/default-props-match-prop-types
+  items: [
+    {
+      name: 'First component',
+      href: '/#first-component',
+      filepath: 'first-component.md',
+      heading: false,
+      level: 0,
+      content: false,
+      collapse: true,
+      slug: 'first-component',
+      components: [],
+      sections: [],
+    },
+  ],
+  theme: {
+    styleguide: {
+      '$rsg-component-list-color': '#CCCCCC',
+      '$rsg-component-list-font-size': '14px',
+      '$rsg-component-list-line-height': '2.5',
+      '$rsg-component-list-heading-button-outline': 'none',
+      '$rsg-component-list-heading-button-border': 'none',
+      '$rsg-component-list-heading-button-cursor': 'pointer',
+      '$rsg-component-list-heading-margin': '15px 0 0 0',
+      '$rsg-component-list-heading-border-bottom': '1px solid #d8d8d8',
+      '$rsg-component-list-heading-color': '#292b2c',
+      '$rsg-component-list-heading-hover-color': '#B31255',
+      '$rsg-component-list-heading-font-size': '16px',
+      '$rsg-component-list-heading-font-weight': '500',
+      '$rsg-component-list-icon-margin': '15px 15px 0 0',
+      '$rsg-component-list-icon-color': '#292b2c',
+    },
+  },
+};
+
 class ComponentsListRendererUnstyled extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  static defaultProps = defaultProps;
   static propTypes = propTypes;
+  static defaultProps = defaultProps;
 
   state = {
     itemList: [],
@@ -256,7 +257,7 @@ const ComponentsListRenderer = styled(ComponentsListRendererUnstyled)`
  `}
 `;
 
-ComponentsListRenderer.defaultProps = defaultProps;
 ComponentsListRenderer.propTypes = propTypes;
+ComponentsListRenderer.defaultProps = defaultProps;
 
 export default ComponentsListRenderer;

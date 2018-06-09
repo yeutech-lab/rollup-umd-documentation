@@ -59,8 +59,8 @@ export const propTypes = {
 
 
 export class ExamplePlaceholderRendererUnstyled extends Component {
-  static defaultProps = defaultProps;
   static propTypes = propTypes;
+  static defaultProps = defaultProps;
 
   constructor() {
     super();

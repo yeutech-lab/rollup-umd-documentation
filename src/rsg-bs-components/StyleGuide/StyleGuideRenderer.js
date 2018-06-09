@@ -115,20 +115,16 @@ const StyleGuideRendererUnstyled = (props) => {
       ), cssModule)}
       {...attributes}
     >
+      <main className="content" >
+        {children}
+      </main>
       {hasSidebar && (
         <div>
           <SideBar logo={logoMenu} title={title} items={toc} />
           <Ribbon />
+          <FooterRenderer logo={logoFooter} />
         </div>
       )}
-      <main className="content">
-        {children}
-        {hasSidebar && (
-          <div>
-            <FooterRenderer logo={logoFooter} />
-          </div>
-        )}
-      </main>
     </div>
   );
 };
