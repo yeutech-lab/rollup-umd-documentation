@@ -18,7 +18,7 @@ const themeBsYeutech = makeThemeBs({
   '$font-size-h6': '16px',
   '$headings-line-height': '2',
   '$headings-color': 'inherit',
-  '$link-color': '#4D0377',
+  '$link-color': '#3C007C',
   '$link-decoration': 'none',
   '$link-hover-color': '#b11255',
   '$link-hover-decoration': 'none',
@@ -29,6 +29,10 @@ const themeNavigationYeutech = makeThemeNavigationStyleguide({
   navigationStyleguide: {
     '$nav-styleguide-bg-color': 'white',
     '$nav-styleguide-border': 'none',
+    '$nav-styleguide-width': {
+      sm: '100%',
+      md: '250px',
+    },
   },
 });
 
