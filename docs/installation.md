@@ -2,6 +2,7 @@ Install `$PACKAGE_NAME` into your `dev` dependencies:
 
 ```bash static
 $ npm install $PACKAGE_NAME --save-dev --registry=$NPM_REGISTRY
+
 ```
 
 In order to use **$PACKAGE_NAME**, you will need to install the following dependencies:
@@ -18,4 +19,5 @@ Use `npm` to automatically add these dependencies to your `package.json`:
 
 ```bash static
 $ npm install --save-dev font-awesome@^4.7.0 url-loader@^0.5.8 file-loader@^1.1.11 webpack@^4.6.0 react@^16.3.2 react-dom@^16.4.0 react-styleguidist@^7.0.12
+
 ```
