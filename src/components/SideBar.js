@@ -14,7 +14,6 @@ export const defaultProps = {
     logo: <LogoYeutech />,
     href: 'https://www.yeutech.vn',
     target: '_blank',
-    text: 'Yeutech Company Limited',
     alt: 'Yeutech Company Limited logo',
   },
   theme: {
@@ -60,7 +59,6 @@ export const propTypes = {
     ]),
     href: PropTypes.string,
     target: PropTypes.string,
-    text: PropTypes.string,
     alt: PropTypes.string,
   }),
   /** Set title to be rendered. */
@@ -89,7 +87,7 @@ const SideBarUnstyled = (props) => {
             <Img
               className="logo-img"
               src={`data:image/png;base64,${logo.logo}`}
-              alt={logo.text || 'logo'}
+              alt={logo.alt}
             />
           ) : (
             logo.logo
