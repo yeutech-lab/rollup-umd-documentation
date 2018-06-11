@@ -1,3 +1,97 @@
+<a name="2.1.3"></a>
+## [2.1.3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.2...v2.1.3) (2018-06-05)
+
+
+### Bug Fixes
+
+* **autoconfig:** now need to get props passed ([6b2225f](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/6b2225f))
+
+<a name="2.1.2"></a>
+## [2.1.2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.1...v2.1.2) (2018-06-05)
+
+
+### Bug Fixes
+
+* **dependencies:** move reactIntl, reactRedux and redux in optionalDependencies ([5ec2605](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/5ec2605))
+
+<a name="2.1.1"></a>
+## [2.1.1](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.0...v2.1.1) (2018-06-05)
+
+
+### Bug Fixes
+
+* **build:** moving devDeps that should be deps: react-redux and redux ([4fef170](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/4fef170))
+
+<a name="2.1.0"></a>
+# [2.1.0](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.3...v2.1.0) (2018-06-05)
+
+
+### Bug Fixes
+
+* **doc:** Using variable for import name ([3b2ee64](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/3b2ee64))
+
+
+### Features
+
+* **Wrapper:** Wrapper accept a reducer and messages props to autoconfigure ([1513841](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/1513841))
+
+<a name="2.0.3"></a>
+## [2.0.3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.2...v2.0.3) (2018-06-05)
+
+
+### Bug Fixes
+
+* **dependencies:** installing map-to-css-modules, lodash.map, lodash.debounce, lodash.omit ([52a2754](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/52a2754))
+
+<a name="2.0.2"></a>
+## [2.0.2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.1...v2.0.2) (2018-06-05)
+
+
+### Bug Fixes
+
+* **ci:** fix ([e58fae8](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/e58fae8))
+
+<a name="2.0.1"></a>
+## [2.0.1](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.0.0...v2.0.1) (2018-06-02)
+
+
+### Bug Fixes
+
+* **README.md:** remove useless links ([2a28b3e](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/2a28b3e))
+
+<a name="2.0.0"></a>
+# [2.0.0](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.5...v2.0.0) (2018-06-02)
+
+
+### Bug Fixes
+
+* **ci:** fixing ci ([319ec89](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/319ec89))
+* **CodeRenderer component:** Fix padding left and code color in pre of example. ([5ff02ef](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/5ff02ef))
+* **components:** Change directory for image into static. ([c9b7dc3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c9b7dc3))
+* **components:** Update FooterRenderer SideBar and LayoutRenderer. ([94cf8f2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/94cf8f2))
+* **HeadingRenderer:** Add anchor link. ([c8de7b5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c8de7b5))
+* **ListRenderer, PathlineRenderer and IsolateButton components.:** Fix undefined style value and cor ([852d987](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/852d987))
+* **rsg-components:** Add new style variable to rsg-components. ([7f021f7](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/7f021f7))
+* **rsg-components:** Update CodeRenderer, PathlineRenderer, SectionHeadingRenderer, and StyleGuideRe ([789b450](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/789b450))
+* **styleguide-config.json:** Update template with correct viewport tag. ([856d963](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/856d963))
+* **theme:** Add correct value in theme and styleguide-bs theme. ([7220814](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/7220814))
+
+
+### Build System
+
+* **pull from dev:** Pull update .gitlab-ci.yml, package-lock.json, package.json, and components Si ([202c469](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/202c469))
+
+
+### Performance Improvements
+
+* **styleguide.config.json:** Update configuration with correctreset css and configuration. ([6dfbdc4](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/6dfbdc4))
+* **styleguide.ext.json:** Add ribbon configuration. ([16bb6ea](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/16bb6ea))
+
+
+### BREAKING CHANGES
+
+* **pull from dev:** Whitout this xcommit application will be unable to build.
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v1.0.4...v1.0.5) (2018-06-01)
 
