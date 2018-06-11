@@ -4,7 +4,7 @@ You can override any style variables thanks to **modular theme** standards.
 
 You can find more information about **modular theme** and discover how to create your own on the first project using **modular theme standards**: [bootstrap-styled](https://bootstrap-styled.yeutech.com/).
 
-> You can also check direclty any variable in projects:
+> You can also check directly any variable in projects:
 >    * bootstrap-styled variables: `bootstrap-styled/lib/theme/makeTheme.js`.
 >    * styleguide variables: `$PACKAGE_NAME/lib/theme/styleguidist-bs/index.js`.
 
@@ -144,6 +144,7 @@ const { config } = require('@yeutech/rollup-documentation/lib/styleguide.config.
 module.exports = {
   ...config,
   styleguideComponents: {
+    ...config.styleguideComponents,
     StyleGuideRenderer: 'path-to-your/NewLayoutRenderer',
   }
 };
