@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Button from 'bootstrap-styled/lib/Button';
 import P from 'bootstrap-styled/lib/P';
 import Fa from 'bootstrap-styled/lib/Fa';
+import debounce from 'lodash.debounce';
 import filterSectionsByName from 'react-styleguidist/lib/utils/filterSectionsByName';
 import ComponentsList from 'rsg-components/ComponentsList';
 import styled from 'styled-components';
@@ -11,12 +12,14 @@ import cn from 'classnames';
 import omit from 'lodash.omit';
 import TableOfContentsRenderer from './TableOfContentsRenderer';
 
+const UPDATE_DELAY = 240;
+
 export const defaultProps = { // eslint-disable-next-line react/default-props-match-prop-types
   theme: {
     styleguide: {
       '$rsg-toc-collapse-button-cursor': 'pointer',
-      '$rsg-toc-collapse-button-color': 'gray',
-      '$rsg-toc-collapse-button-background': '#e5dede',
+      '$rsg-toc-collapse-button-color': '#767676',
+      '$rsg-toc-collapse-button-background': '#f4e2e1',
       '$rsg-toc-collapse-button-width': '100%',
       '$rsg-toc-collapse-button-height': '45px',
       '$rsg-toc-collapse-button-border-radius': '0',
@@ -129,7 +132,7 @@ class TableOfContentsUnstyled extends Component {
         onSearchTermChange={(searchTerm) => this.setState({ searchTerm })} // eslint-disable-line no-shadow
       >
         {hasCollapse && (
-          <Button className="collapse-button" onClick={() => this.onChangeCollapse()}>
+          <Button className="collapse-button" onClick={debounce(() => this.onChangeCollapse(), UPDATE_DELAY)}>
             <div className="collapse-button-content">
               {isOpenCollapse ?
                 (

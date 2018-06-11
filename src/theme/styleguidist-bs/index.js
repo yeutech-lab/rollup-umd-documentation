@@ -345,8 +345,8 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-sidebar-logo-svg-margin'] = u['$rsg-sidebar-logo-svg-margin'] || '0 0 0 -8px';
   // - table of content
   v['$rsg-toc-collapse-button-cursor'] = u['$rsg-toc-collapse-button-cursor'] || 'pointer';
-  v['$rsg-toc-collapse-button-color'] = u['$rsg-toc-collapse-button-color'] || 'gray';
-  v['$rsg-toc-collapse-button-background'] = u['$rsg-toc-collapse-button-background'] || '#e5dede';
+  v['$rsg-toc-collapse-button-color'] = u['$rsg-toc-collapse-button-color'] || v['$rsg-gray'];
+  v['$rsg-toc-collapse-button-background'] = u['$rsg-toc-collapse-button-background'] || '#f4e2e1';
   v['$rsg-toc-collapse-button-width'] = u['$rsg-toc-collapse-button-width'] || '100%';
   v['$rsg-toc-collapse-button-height'] = u['$rsg-toc-collapse-button-height'] || '45px';
   v['$rsg-toc-collapse-button-border-radius'] = u['$rsg-toc-collapse-button-border-radius'] || '0';
