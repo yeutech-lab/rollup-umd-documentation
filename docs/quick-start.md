@@ -7,7 +7,7 @@ $ npm install $PACKAGE_NAME --save-dev --registry=$NPM_REGISTRY font-awesome@^4.
 ### 2. Create `styleguide.config.js` in root of your project.
 
 ```js static
-const { config } = require('@yeutech/rollup-documentation/lib/styleguide.config.js');
+const { config } = require('$PACKAGE_NAME/lib/styleguide.config.js');
 
 module.exports = config;
 
