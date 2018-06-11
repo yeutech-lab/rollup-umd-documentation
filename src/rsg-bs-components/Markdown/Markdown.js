@@ -15,7 +15,7 @@ import { Table, TableHead, TableBody, TableRow, TableCell } from 'rsg-components
 // We’re explicitly specifying Webpack loaders here so we could skip specifying them in Webpack configuration.
 // That way we could avoid clashes between our loaders and user loaders.
 // eslint-disable-next-line import/no-unresolved, import/no-webpack-loader-syntax
-require('!!../../../loaders/style-loader!../../../loaders/css-loader!highlight.js/styles/tomorrow.css');
+require('!!../../../loaders/style-loader!../../../loaders/css-loader!../../../loaders/tomorrow.css');
 
 export const baseOverrides = {
   a: {

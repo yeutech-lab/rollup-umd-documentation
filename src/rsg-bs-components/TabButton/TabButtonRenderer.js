@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'bootstrap-styled/lib/Button';
+import { hoverFocus } from 'bootstrap-styled-mixins/lib/hover';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -121,12 +122,14 @@ const TabButtonRenderer = styled(TabButtonRendererUnstyled)`
       border: ${props.theme.styleguide['$rsg-tab-button-border']};
       cursor: ${props.theme.styleguide['$rsg-tab-button-cursor']};
       box-shadow: ${props.theme.styleguide['$rsg-tab-button-box-shadow']} !important;
-      &:hover &:focus {
-        isolation: ${props.theme.styleguide['$rsg-tab-button-hover-focus-isolate']};
-        outline: ${props.theme.styleguide['$rsg-tab-button-hover-focus-outline']};
-        color: ${props.theme.styleguide['$rsg-tab-button-hover-focus-color']};
-        transition: ${props.theme.styleguide['$rsg-tab-button-hover-focus-transition']};
-      }    
+  ${hoverFocus(props.theme['$enable-hover-media-query'],
+    `
+      isolation: ${props.theme.styleguide['$rsg-tab-button-hover-focus-isolate']};
+      outline: ${props.theme.styleguide['$rsg-tab-button-hover-focus-outline']};
+      color: ${props.theme.styleguide['$rsg-tab-button-hover-focus-color']};
+      transition: ${props.theme.styleguide['$rsg-tab-button-hover-focus-transition']};
+
+    `)} 
       &:focus:not($active) {
         isolation: ${props.theme.styleguide['$rsg-tab-button-focus-not-active-isolate']};
         outline: ${props.theme.styleguide['$rsg-tab-button-focus-not-active-outline']};

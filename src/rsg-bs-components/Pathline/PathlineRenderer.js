@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import copy from 'clipboard-copy';
 import Fa from 'bootstrap-styled/lib/Fa';
+import { hover } from 'bootstrap-styled-mixins/lib/hover';
 import cn from 'classnames';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
@@ -110,9 +111,12 @@ const PathlineRenderer = styled(PathlineRendererUnstyled)`
         cursor: ${props.theme.styleguide['$rsg-path-line-icon-cursor']};
         position: ${props.theme.styleguide['$rsg-path-line-icon-position']};
         bottom: ${props.theme.styleguide['$rsg-path-line-icon-bottom']};
-        &:hover {
-          color: ${props.theme.styleguide['$rsg-path-line-icon-hover-color']};
-        }
+  ${hover(
+    `
+      color: ${props.theme.styleguide['$rsg-path-line-icon-hover-color']};
+
+    `
+  )}
       }
     }
  `}

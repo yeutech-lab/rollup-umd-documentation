@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'bootstrap-styled/lib/Button';
+import { hover } from 'bootstrap-styled-mixins/lib/hover';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -128,7 +129,13 @@ const ExamplePlaceholderRenderer = styled(ExamplePlaceholderRendererUnstyled)`
       border: ${props.theme.styleguide['$rsg-example-placeholder-border']};
       cursor: ${props.theme.styleguide['$rsg-example-placeholder-cursor']};
       background: ${props.theme.styleguide['$rsg-example-placeholder-background']};
-      &:hover, &:active {
+   ${hover(
+    `
+      isolation: ${props.theme.styleguide['$rsg-example-placeholder-hover-isolate']};
+      color: ${props.theme.styleguide['$rsg-example-placeholder-hover-color']};
+    `
+  )}
+      &:active {
         isolation: ${props.theme.styleguide['$rsg-example-placeholder-hover-isolate']};
         color: ${props.theme.styleguide['$rsg-example-placeholder-hover-color']};
       }

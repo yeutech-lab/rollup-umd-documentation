@@ -38,11 +38,11 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-fuchsia'] = u['$rsg-fuchsia'] || '#B31255';
   v['$rsg-ocher'] = u['$rsg-ocher'] || '#fc971b';
   v['$rsg-salmon'] = u['$rsg-salmon'] || '#f47469';
-  v['$rsg-purple'] = u['$rsg-purple'] || '#75096a';
+  v['$rsg-purple'] = u['$rsg-purple'] || '#3A007D';
   // main color styleguide
   v['$rsg-color-primary'] = u['$rsg-color-primary'] || v['$rsg-fuchsia'];
   v['$rsg-color-secondary'] = u['$rsg-color-secondary'] || v['$rsg-purple'];
-  v['$rsg-color-gradient'] = u['$rsg-color-gradient'] || 'linear-gradient(#3A007D, #B31255)';
+  v['$rsg-color-gradient'] = u['$rsg-color-gradient'] || `linear-gradient(${v['$rsg-purple']}, ${v['$rsg-fuchsia']})`;
   v['$rsg-color-base'] = u['$rsg-color-base'] || v['$rsg-gray-dark'];
   v['$rsg-color-light'] = u['$rsg-color-light'] || v['$rsg-gray'];
   v['$rsg-color-lightest'] = u['$rsg-color-lightest'] || v['$rsg-gray-light'];

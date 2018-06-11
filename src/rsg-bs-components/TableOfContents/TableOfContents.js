@@ -62,8 +62,20 @@ class TableOfContentsUnstyled extends Component {
 
   state = {
     searchTerm: '',
+    hasCollapse: false,
     isOpenCollapse: false,
   };
+
+  componentWillMount() {
+    this.props.sections.map((section) => {
+      const children = [...(section.sections || []), ...(section.components || [])];
+      this.setState({
+        hasCollapse: children.length > 0,
+      });
+      return null;
+    });
+  }
+
 
   shouldComponentUpdate(nextProps, nextState) {
     return (this.state.isOpenCollapse !== nextState.isOpenCollapse || this.state.searchTerm !== nextState.searchTerm);
@@ -98,16 +110,17 @@ class TableOfContentsUnstyled extends Component {
     // In this case the name of the section won't be rendered and it won't get left padding
     const firstLevel = sections.length === 1 ? sections[0].components : sections;
     const filtered = filterSectionsByName(firstLevel, searchTerm);
-
     return this.renderLevel(filtered, useIsolatedLinks);
   }
+
   render() {
     const {
       className,
       cssModule,
+      sections,
       ...attributes
-    } = omit(this.props, ['theme', 'sections', 'useIsolatedLinks']);
-    const { searchTerm, isOpenCollapse } = this.state;
+    } = omit(this.props, ['theme', 'useIsolatedLinks']);
+    const { searchTerm, hasCollapse, isOpenCollapse } = this.state;
     return (
       <TableOfContentsRenderer
         className={mapToCssModules(cn(className, 'rsg-toc'), cssModule)}
@@ -115,32 +128,34 @@ class TableOfContentsUnstyled extends Component {
         searchTerm={searchTerm}
         onSearchTermChange={(searchTerm) => this.setState({ searchTerm })} // eslint-disable-line no-shadow
       >
-        <Button className="collapse-button" onClick={() => this.onChangeCollapse()}>
-          <div className="collapse-button-content">
-            {isOpenCollapse ?
-              (
-                <P>
-                  Collapse all
-                  <Fa
-                    className="collapse-button-content-icon"
-                    size="lg"
-                    angle-up
-                  />
-                </P>
-              ) :
-              (
-                <P>
-                  Expand all
-                  <Fa
-                    className="collapse-button-content-icon"
-                    size="lg"
-                    angle-down
-                  />
-                </P>
-              )
-            }
-          </div>
-        </Button>
+        {hasCollapse && (
+          <Button className="collapse-button" onClick={() => this.onChangeCollapse()}>
+            <div className="collapse-button-content">
+              {isOpenCollapse ?
+                (
+                  <P>
+                    Collapse all
+                    <Fa
+                      className="collapse-button-content-icon"
+                      size="lg"
+                      angle-up
+                    />
+                  </P>
+                ) :
+                (
+                  <P>
+                    Expand all
+                    <Fa
+                      className="collapse-button-content-icon"
+                      size="lg"
+                      angle-down
+                    />
+                  </P>
+                )
+              }
+            </div>
+          </Button>
+        )}
         {this.renderSections()}
       </TableOfContentsRenderer>
     );

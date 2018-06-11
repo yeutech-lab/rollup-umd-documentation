@@ -1,4 +1,4 @@
-This package does only provide the default configuration, we use it within all our rollup-umd for it's documentation.
+This package does only provide the default configuration, we use it within all our `rollup-umd` for it's documentation.
 
 Your [react-styleguide](https://react-styleguidist.js.org/) configuration is fully prepared for you in this package.
 
@@ -9,7 +9,7 @@ All you need to care is:
 This is how you generally use it: 
 
 ```js static
-const { config } = require('rollup-documentation/lib/styleguide.config');
+const { config } = require('$PACKAGE_NAME/lib/styleguide.config');
 module.exports = config;
 ```
 
@@ -79,4 +79,3 @@ module.exports = {
   webpackConfig: myWebpackConfig,
 }
 ``` 
-

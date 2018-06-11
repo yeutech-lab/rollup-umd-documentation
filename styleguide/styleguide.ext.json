@@ -28,7 +28,11 @@
       "content": "docs/configuration.md",
       "sections": [
         {
-          "name": "Theming",
+          "name": "Quick start",
+          "content": "docs/quick-start.md"
+        },
+        {
+          "name": "Customize theme",
           "content": "docs/theme.md"
         }
       ]
