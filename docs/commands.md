@@ -39,3 +39,9 @@ Build documentation in `/public` directory:
 ```bash
 $ npm run styleguide:build
 ```
+
+Build documentation `/lib` only:
+
+```bash
+$ npm run prestyleguide:build
+```

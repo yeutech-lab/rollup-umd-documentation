@@ -4,11 +4,11 @@ import { makeTheme as makeThemeNavigationStyleguide } from '@yeutech/navigation-
 import { makeTheme as makeThemeStyleguideBs } from './styleguidist-bs';
 
 const themeBsYeutech = makeThemeBs({
-  '$btn-primary-color': '#b11255',
+  '$btn-primary-color': '#B31255',
   '$btn-primary-bg': '#1C00ff00',
   '$btn-primary-border': '#1C00ff00',
   '$btn-box-shadow': '#1C00ff00 !important',
-  '$headings-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+  '$headings-font-family': '"Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
   '$headings-font-weight': 'normal',
   '$font-size-h1': '36px',
   '$font-size-h2': '30px',
@@ -18,9 +18,9 @@ const themeBsYeutech = makeThemeBs({
   '$font-size-h6': '16px',
   '$headings-line-height': '2',
   '$headings-color': 'inherit',
-  '$link-color': '#4D0377',
+  '$link-color': '#3A007D',
   '$link-decoration': 'none',
-  '$link-hover-color': '#b11255',
+  '$link-hover-color': '#B31255',
   '$link-hover-decoration': 'none',
   '$code-color': '#333',
 });
@@ -29,6 +29,10 @@ const themeNavigationYeutech = makeThemeNavigationStyleguide({
   navigationStyleguide: {
     '$nav-styleguide-bg-color': 'white',
     '$nav-styleguide-border': 'none',
+    '$nav-styleguide-width': {
+      sm: '100%',
+      md: '250px',
+    },
   },
 });
 

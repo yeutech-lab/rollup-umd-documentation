@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
 require('!!../../loaders/style-loader!../../loaders/css-loader!font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
-import StyleGuideRenderer from '../rsg-components/StyleGuide/StyleGuideRenderer';
-import whiteLogo from '../static/badge-yeutech';
-import defaultLogo from '../static/badge-yeutech';
+import StyleGuideRenderer from '../rsg-bs-components/StyleGuide/StyleGuideRenderer';
+import badgeYeutech from '../static/badge-yeutech';
+import LogoYeutech from '../static/logo-yeutech.svg';
 
 /**
  * This is the main layout for the whole documentation.
@@ -15,18 +15,17 @@ import defaultLogo from '../static/badge-yeutech';
  * @constructor
  */
 function LayoutRenderer({
-   theme, className, title, children, toc, hasSidebar, logo, logoHref, bottomLogoHref
+   theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter
  }) {
   return (
     <BootstrapProvider theme={theme}>
       <StyleGuideRenderer
         className={className}
         title={title}
-        homepageUrl={bottomLogoHref}
+        logoMenu={logoMenu}
+        logoFooter={logoFooter}
         toc={toc}
         hasSidebar={hasSidebar}
-        logo={logo}
-        logohref={logoHref}
       >
         {children}
       </StyleGuideRenderer>
@@ -36,13 +35,19 @@ function LayoutRenderer({
 
 LayoutRenderer.defaultProps = {
   title: 'rollup-documentation',
-  logo: whiteLogo,
-  logoHref: null,
-  bottomLogo: defaultLogo,
-  bottomLogoHref: 'https://www.yeutech.vn',
-  bottomLogoText: '',
   className: null,
   theme,
+  logoMenu: {
+    logo: <LogoYeutech />,
+    href: null,
+    alt: 'Yeutech Company Limited logo',
+  },
+  logoFooter: {
+    logo: badgeYeutech,
+    href: 'https://www.yeutech.vn',
+    target: '_blank',
+    alt: 'Yeutech Company Limited logo',
+  }
 };
 
 LayoutRenderer.propTypes = {
@@ -55,19 +60,13 @@ LayoutRenderer.propTypes = {
   /** TBD */
   toc: PropTypes.node.isRequired,
   /** theme to be used by BootstrapProvider */
-  theme : PropTypes.object,
+  theme: PropTypes.object,
   /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
-  /** define the logo used by the layout */
-  logo: PropTypes.string,
-  /** logo link */
-  logoHref: PropTypes.string,
-  /** define the bottom logo used by the layout */
-  bottomLogo: PropTypes.string,
-  /** bottom logo link */
-  bottomLogoHref: PropTypes.string,
-  /** text prefix of bottom logo */
-  bottomLogoText: PropTypes.string,
+  /** Logo to use in sidebar menu */
+  logoMenu: PropTypes.object,
+  /** Logo to use in footer */
+  logoFooter: PropTypes.object,
 };
 
 export default LayoutRenderer;
