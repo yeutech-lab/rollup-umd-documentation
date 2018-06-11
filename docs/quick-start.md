@@ -1,4 +1,10 @@
-### 1. Create `styleguide.config.js` in root of your project.
+### 1. Install `$PACKAGE_NAME` and it dependencies:
+       
+```bash static
+$ npm install $PACKAGE_NAME --save-dev --registry=$NPM_REGISTRY font-awesome@^4.7.0 url-loader@^0.5.8 file-loader@^1.1.11 webpack@^4.6.0 react@^16.3.2 react-dom@^16.4.0 react-styleguidist@^7.0.12
+```
+
+### 2. Create `styleguide.config.js` in root of your project.
 
 Add `webPackConfig` as:
 
@@ -32,7 +38,7 @@ module.exports = {
 
 ```
 
-### 2. Create documentations in `docs/` and add `.md` files
+### 3. Create documentations in `docs/` and add `.md` files
 
 Documentation folder example:
 ```bash static
@@ -49,7 +55,7 @@ root/
 > `introduction.md` / `installation.md` / `upgrading.md` / `configuration.md` / `general.md` / `faq.md` / `contribute.md` / `commands.md` / `branch.md` and `release.md`.
 
 
-### 3. Create `styleguide/styleguide.ext.json` in root of your project.
+### 4. Create `styleguide/styleguide.ext.json` in root of your project.
 
 Example:
 
@@ -78,7 +84,7 @@ Example:
 
 ```
 
-### 4. Add `styleguide` scripts into `package.json`:
+### 5. Add `styleguide` scripts into `package.json`:
 
 ```json static
 {
@@ -90,7 +96,7 @@ Example:
 }
 ```
 
-### 5. Run your documentation on `localhost:6060`:
+### 6. Run your documentation on `localhost:6060`:
 
 ```bash static
 npm run styleguide
