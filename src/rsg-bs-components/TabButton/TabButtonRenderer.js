@@ -122,15 +122,14 @@ const TabButtonRenderer = styled(TabButtonRendererUnstyled)`
       border: ${props.theme.styleguide['$rsg-tab-button-border']};
       cursor: ${props.theme.styleguide['$rsg-tab-button-cursor']};
       box-shadow: ${props.theme.styleguide['$rsg-tab-button-box-shadow']} !important;
-  ${hoverFocus(
+  ${hoverFocus(props.theme['$enable-hover-media-query'],
     `
       isolation: ${props.theme.styleguide['$rsg-tab-button-hover-focus-isolate']};
       outline: ${props.theme.styleguide['$rsg-tab-button-hover-focus-outline']};
       color: ${props.theme.styleguide['$rsg-tab-button-hover-focus-color']};
       transition: ${props.theme.styleguide['$rsg-tab-button-hover-focus-transition']};
 
-    `
-  )} 
+    `)} 
       &:focus:not($active) {
         isolation: ${props.theme.styleguide['$rsg-tab-button-focus-not-active-isolate']};
         outline: ${props.theme.styleguide['$rsg-tab-button-focus-not-active-outline']};

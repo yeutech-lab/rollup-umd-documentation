@@ -129,7 +129,7 @@ const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)`
       align-items: ${props.theme.styleguide['$rsg-section-heading-align-items']};
       margin-bottom: ${props.theme.styleguide['$rsg-section-heading-margin-bottom']};
       & .section-name {
-  ${hoverFocusActive(
+  ${hoverFocusActive(props.theme['$enable-hover-media-query'],
     `
       isolation: ${props.theme.styleguide['$rsg-section-heading-section-name-isolation']};
       text-decoration: ${props.theme.styleguide['$rsg-section-heading-section-name-text-decoration']};
@@ -138,8 +138,7 @@ const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)`
       .anchor {
         color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
       }
-    `
-  )}
+    `)}
         .anchor {
           font-size: ${props.theme.styleguide['$rsg-section-heading-anchor-font-size']};
           font-weight: ${props.theme.styleguide['$rsg-section-heading-anchor-font-weight']};
