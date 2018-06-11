@@ -15,24 +15,15 @@ import LogoYeutech from '../static/logo-yeutech.svg';
  * @constructor
  */
 function LayoutRenderer({
-   theme, className, title, children, toc, hasSidebar
+   theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter
  }) {
   return (
     <BootstrapProvider theme={theme}>
       <StyleGuideRenderer
         className={className}
         title={title}
-        logoMenu={{
-          logo: <LogoYeutech />,
-          href: null,
-          alt: 'Yeutech Company Limited logo',
-        }}
-        logoFooter={{
-          logo: badgeYeutech,
-          href: 'https://www.yeutech.vn',
-          target: '_blank',
-          alt: 'Yeutech Company Limited logo',
-        }}
+        logoMenu={logoMenu}
+        logoFooter={logoFooter}
         toc={toc}
         hasSidebar={hasSidebar}
       >
@@ -46,6 +37,17 @@ LayoutRenderer.defaultProps = {
   title: 'rollup-documentation',
   className: null,
   theme,
+  logoMenu: {
+    logo: <LogoYeutech />,
+    href: null,
+    alt: 'Yeutech Company Limited logo',
+  },
+  logoFooter: {
+    logo: badgeYeutech,
+    href: 'https://www.yeutech.vn',
+    target: '_blank',
+    alt: 'Yeutech Company Limited logo',
+  }
 };
 
 LayoutRenderer.propTypes = {
@@ -58,9 +60,13 @@ LayoutRenderer.propTypes = {
   /** TBD */
   toc: PropTypes.node.isRequired,
   /** theme to be used by BootstrapProvider */
-  theme : PropTypes.object,
+  theme: PropTypes.object,
   /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
+  /** Logo to use in sidebar menu */
+  logoMenu: PropTypes.object,
+  /** Logo to use in footer */
+  logoFooter: PropTypes.object,
 };
 
 export default LayoutRenderer;
