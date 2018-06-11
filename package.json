@@ -1,7 +1,7 @@
 {
   "name": "@yeutech/rollup-documentation",
   "version": "0.0.0-development",
-  "description": "Quickly build awesome documentation for your rollup project.",
+  "description": "Quick build awesome documentation for your rollup-umd project.",
   "main": "lib/index.js",
   "jsnext:main": "dist/rollup-documentation.es.js",
   "module": "dist/rollup-documentation.es.js",
@@ -228,6 +228,7 @@
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "font-awesome": "^4.7.0",
+    "glogg": "^1.0.1",
     "javascript-stringify": "^1.6.0",
     "lodash.debounce": "^4.0.8",
     "lodash.map": "^4.6.0",
