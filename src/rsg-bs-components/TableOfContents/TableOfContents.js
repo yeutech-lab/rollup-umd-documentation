@@ -12,11 +12,10 @@ import cn from 'classnames';
 import omit from 'lodash.omit';
 import TableOfContentsRenderer from './TableOfContentsRenderer';
 
-const UPDATE_DELAY = 240;
-
 export const defaultProps = { // eslint-disable-next-line react/default-props-match-prop-types
   theme: {
     styleguide: {
+      '$rsg-toc-collapse-button-delay': '350',
       '$rsg-toc-collapse-button-cursor': 'pointer',
       '$rsg-toc-collapse-button-color': '#767676',
       '$rsg-toc-collapse-button-background': '#f4e2e1',
@@ -41,6 +40,7 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-toc-collapse-button-delay': PropTypes.string,
       '$rsg-toc-collapse-button-cursor': PropTypes.string,
       '$rsg-toc-collapse-button-color': PropTypes.string,
       '$rsg-toc-collapse-button-background': PropTypes.string,
@@ -120,9 +120,9 @@ class TableOfContentsUnstyled extends Component {
     const {
       className,
       cssModule,
-      sections,
+      theme,
       ...attributes
-    } = omit(this.props, ['theme', 'useIsolatedLinks']);
+    } = omit(this.props, ['useIsolatedLinks']);
     const { searchTerm, hasCollapse, isOpenCollapse } = this.state;
     return (
       <TableOfContentsRenderer
@@ -132,7 +132,7 @@ class TableOfContentsUnstyled extends Component {
         onSearchTermChange={(searchTerm) => this.setState({ searchTerm })} // eslint-disable-line no-shadow
       >
         {hasCollapse && (
-          <Button className="collapse-button" onClick={debounce(() => this.onChangeCollapse(), UPDATE_DELAY)}>
+          <Button className="collapse-button" onClick={debounce(() => this.onChangeCollapse(), theme.styleguide['$rsg-toc-collapse-button-delay'])}>
             <div className="collapse-button-content">
               {isOpenCollapse ?
                 (

@@ -344,6 +344,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-sidebar-logo-svg-height'] = u['$rsg-sidebar-logo-svg-height'] || '35px';
   v['$rsg-sidebar-logo-svg-margin'] = u['$rsg-sidebar-logo-svg-margin'] || '0 0 0 -8px';
   // - table of content
+  v['$rsg-toc-collapse-button-delay'] = u['$rsg-toc-collapse-button-delay'] || '350';
   v['$rsg-toc-collapse-button-cursor'] = u['$rsg-toc-collapse-button-cursor'] || 'pointer';
   v['$rsg-toc-collapse-button-color'] = u['$rsg-toc-collapse-button-color'] || v['$rsg-gray'];
   v['$rsg-toc-collapse-button-background'] = u['$rsg-toc-collapse-button-background'] || '#f4e2e1';
