@@ -249,11 +249,6 @@
     "webpack": "^4.6.0",
     "webpack-merge": "^4.1.2"
   },
-  "optionalDependencies": {
-    "react-intl": "^2.4.0",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
-  },
   "peerDependencies": {},
   "jest": {
     "roots": [
