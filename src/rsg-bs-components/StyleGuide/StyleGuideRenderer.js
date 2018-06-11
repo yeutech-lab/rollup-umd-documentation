@@ -37,7 +37,6 @@ export const propTypes = {
   className: PropTypes.string, // eslint-disable-line react/require-default-props
   /** Set title used in `<SideBar />` component. */
   title: PropTypes.string.isRequired,
-  homepageUrl: PropTypes.string.isRequired,
   /** Specified node element will be passed as children of `<StyleGuideRenderer />` component. */
   children: PropTypes.node.isRequired,
   /** Table of content element to be rendered. */
@@ -104,7 +103,7 @@ const StyleGuideRendererUnstyled = (props) => {
     logoFooter,
     cssModule,
     ...attributes
-  } = omit(props, ['theme', 'homepageUrl']);
+  } = omit(props, ['theme']);
 
   return (
     <div

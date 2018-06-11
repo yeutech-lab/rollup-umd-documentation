@@ -42,7 +42,7 @@ export const propTypes = {
 /* eslint-enable react/require-default-props */
 
 
-const WelcomeRendererUnstyled = (props) => {
+const WelcomeRendererUnstyled = (props, { config }) => {
   const {
     className,
     patterns,
@@ -57,7 +57,7 @@ const WelcomeRendererUnstyled = (props) => {
     >
       <Markdown
         text={`
-# Welcome to Rollup-documentation!
+# Welcome to ${config.title}!
 
 **We couldn’t find any components** using these patterns:
 
@@ -78,6 +78,9 @@ Read more in the [locating components guide](${DOCS_COMPONENTS}).
 
 WelcomeRendererUnstyled.defaultProps = defaultProps;
 WelcomeRendererUnstyled.propTypes = propTypes;
+WelcomeRendererUnstyled.contextTypes = {
+  config: PropTypes.object,
+};
 
 const WelcomeRenderer = styled(WelcomeRendererUnstyled)` 
   ${(props) => `
@@ -91,5 +94,7 @@ const WelcomeRenderer = styled(WelcomeRendererUnstyled)`
 
 WelcomeRenderer.defaultProps = defaultProps;
 WelcomeRenderer.propTypes = propTypes;
-
+WelcomeRendererUnstyled.contextTypes = {
+  config: PropTypes.object,
+};
 export default WelcomeRenderer;

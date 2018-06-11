@@ -4,6 +4,7 @@ import Collapse from 'bootstrap-styled/lib/Collapse';
 import Ul from 'bootstrap-styled/lib/Ul';
 import Li from 'bootstrap-styled/lib/Li';
 import Fa from 'bootstrap-styled/lib/Fa';
+import { hover } from 'bootstrap-styled-mixins/lib/hover';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
@@ -243,9 +244,12 @@ const ComponentsListRenderer = styled(ComponentsListRendererUnstyled)`
         }
       & .level-0 {
         color: ${props.theme.styleguide['$rsg-component-list-heading-color']} !important;
-        &:hover {
-          color: ${props.theme.styleguide['$rsg-component-list-heading-hover-color']} !important;
-        }
+  ${hover(
+    `
+      color: ${props.theme.styleguide['$rsg-component-list-heading-hover-color']} !important;
+
+    `
+  )}
         font-size: ${props.theme.styleguide['$rsg-component-list-heading-font-size']} !important;
         font-weight: ${props.theme.styleguide['$rsg-component-list-heading-font-weight']} !important;
       }

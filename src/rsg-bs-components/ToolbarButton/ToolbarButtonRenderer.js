@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'bootstrap-styled/lib/Button';
 import A from 'bootstrap-styled/lib/A';
+import { hoverFocus } from 'bootstrap-styled-mixins/lib/hover';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -136,11 +137,13 @@ const ToolbarButtonRenderer = styled(ToolbarButtonRendererUnstyled)`
       background: ${props.theme.styleguide['$rsg-toolbar-button-background']};
       transition: ${props.theme.styleguide['$rsg-toolbar-button-transition']};
       cursor: ${props.theme.styleguide['$rsg-toolbar-button-cursor']};
-      &:hover, &:focus {
-        isolation: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-isolation']};
-        color: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-color']};
-        transition: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-transition']};
-      }
+  ${hoverFocus(
+    `
+      isolation: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-isolation']};
+      color: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-color']};
+      transition: ${props.theme.styleguide['$rsg-toolbar-button-hover-focus-transition']};
+    `
+  )}
       &:focus {
         isolation: ${props.theme.styleguide['$rsg-toolbar-button-focus-isolation']};
         outline: ${props.theme.styleguide['$rsg-toolbar-button-focus-outline']};

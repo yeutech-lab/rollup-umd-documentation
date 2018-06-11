@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import A from 'bootstrap-styled/lib/A';
+import { hover } from 'bootstrap-styled-mixins/lib/hover';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -55,7 +56,12 @@ LinkRendererUnstyled.propTypes = propTypes;
 const LinkRenderer = styled(LinkRendererUnstyled)` 
   ${(props) => `
     &.rsg-link {
-      &:hover, &:active {
+  ${hover(
+    `
+      isolation: ${props.theme.styleguide['$rsg-link-hover-isolate']};
+    `
+  )}
+      &:active {
         isolation: ${props.theme.styleguide['$rsg-link-hover-isolate']};
       }
     }

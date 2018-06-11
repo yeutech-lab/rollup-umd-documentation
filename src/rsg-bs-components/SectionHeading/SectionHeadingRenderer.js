@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import A from 'bootstrap-styled/lib/A';
 import Fa from 'bootstrap-styled/lib/Fa';
+import { hoverFocusActive } from 'bootstrap-styled-mixins/lib/hover';
 import cn from 'classnames';
 import omit from 'lodash.omit';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -128,15 +129,17 @@ const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)`
       align-items: ${props.theme.styleguide['$rsg-section-heading-align-items']};
       margin-bottom: ${props.theme.styleguide['$rsg-section-heading-margin-bottom']};
       & .section-name {
-        &:hover, &:active {
-          isolation: ${props.theme.styleguide['$rsg-section-heading-section-name-isolation']};
-          text-decoration: ${props.theme.styleguide['$rsg-section-heading-section-name-text-decoration']};
-          cursor: ${props.theme.styleguide['$rsg-section-heading-section-name-cursor']};
-          color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
-          .anchor {
-            color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
-          }
-        }
+  ${hoverFocusActive(
+    `
+      isolation: ${props.theme.styleguide['$rsg-section-heading-section-name-isolation']};
+      text-decoration: ${props.theme.styleguide['$rsg-section-heading-section-name-text-decoration']};
+      cursor: ${props.theme.styleguide['$rsg-section-heading-section-name-cursor']};
+      color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
+      .anchor {
+        color: ${props.theme.styleguide['$rsg-section-heading-section-name-color']};
+      }
+    `
+  )}
         .anchor {
           font-size: ${props.theme.styleguide['$rsg-section-heading-anchor-font-size']};
           font-weight: ${props.theme.styleguide['$rsg-section-heading-anchor-font-weight']};
