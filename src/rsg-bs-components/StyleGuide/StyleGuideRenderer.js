@@ -27,30 +27,32 @@ export const defaultProps = {
         xs: '16px',
         md: '16px 95px 16px 32px',
       },
-      '$rsg-styleguide-content-sidebar-open-padding': PropTypes.shape({
+      '$rsg-styleguide-content-sidebar-open-transition': 'transform ease-out 500ms',
+      '$rsg-styleguide-content-sidebar-open-padding': {
         xs: '20px 30px 0 30px',
         md: '20px 20px 0 250px',
         lg: '20px 70px 0 70px',
-      }),
-      '$rsg-styleguide-content-sidebar-close-padding': PropTypes.shape({
+      },
+      '$rsg-styleguide-content-sidebar-close-transition': 'transform ease-out 500ms',
+      '$rsg-styleguide-content-sidebar-close-padding': {
         xs: '0',
         md: '20px 50px 0 50px',
         lg: '20px 70px 0 70px',
-      }),
+      },
       '$rsg-styleguide-content-margin': '0 auto',
       '$rsg-styleguide-content-display': 'block',
       '$rsg-styleguide-sidebar-z-index': '4000',
       '$rsg-styleguide-sidebar-transform': 'translateX(0)',
       '$rsg-styleguide-sidebar-open-transition': 'transform ease-out 500ms',
-      '$rsg-styleguide-sidebar-open-transform': PropTypes.shape({
+      '$rsg-styleguide-sidebar-open-transform': {
         md: 'translateX(0px)',
         lg: 'translateX(0px)',
-      }),
+      },
       '$rsg-styleguide-sidebar-close-transition': 'transform ease-out 500ms',
-      '$rsg-styleguide-sidebar-close-transform': PropTypes.shape({
+      '$rsg-styleguide-sidebar-close-transform': {
         md: 'translateX(-250px)',
         lg: 'translateX(0px)',
-      }),
+      },
       '$rsg-styleguide-sidebar-button-transform': 'rotate(0deg)',
       '$rsg-styleguide-sidebar-button-padding': '10px 0 0 0',
       '$rsg-styleguide-sidebar-button-color': '#B31255',
@@ -59,20 +61,20 @@ export const defaultProps = {
       '$rsg-styleguide-sidebar-button-transition': 'all 500ms',
       '$rsg-styleguide-sidebar-button-hover-color': '#3A007D',
       '$rsg-styleguide-sidebar-button-outline': '0',
-      '$rsg-styleguide-sidebar-button-visibility': PropTypes.shape({
+      '$rsg-styleguide-sidebar-button-visibility': {
         xs: 'hidden',
         md: 'visible',
         lg: 'hidden',
-      }),
+      },
       '$rsg-styleguide-sidebar-open-button-transition': 'transform 500ms',
       '$rsg-styleguide-sidebar-open-button-transform': 'translateX(230px) rotate(90deg)',
       '$rsg-styleguide-sidebar-close-button-transition': 'transform 500ms',
       '$rsg-styleguide-sidebar-close-button-z-index': '-500',
-      '$rsg-styleguide-sidebar-close-button-transform': PropTypes.shape({
+      '$rsg-styleguide-sidebar-close-button-transform': {
         sm: 'translateX(-20px)',
         md: 'translateX(0px)',
         lg: 'ranslateX(-10px)',
-      }),
+      },
     },
   },
 };
@@ -129,10 +131,17 @@ export const propTypes = {
         xs: PropTypes.string,
         md: PropTypes.string,
       }),
+      '$rsg-styleguide-content-sidebar-open-transition': PropTypes.string,
       '$rsg-styleguide-content-sidebar-open-padding': PropTypes.shape({
         xs: PropTypes.string,
         md: PropTypes.string,
         lg: PropTypes.string,
+      }),
+      '$rsg-styleguide-content-sidebar-close-transition': PropTypes.string,
+      '$rsg-styleguide-content-sidebar-close-padding': PropTypes.shape({
+        xs: PropTypes.string,
+        sm: PropTypes.string,
+        md: PropTypes.string,
       }),
       '$rsg-styleguide-content-margin': PropTypes.string,
       '$rsg-styleguide-content-display': PropTypes.string,
@@ -253,6 +262,11 @@ class StyleGuideRendererUnstyled extends Component {
 const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)` 
   ${(props) => `
     &.rsg-styleguide {
+      @media print{
+         .no-print {
+             display: none;
+         }
+      }
       background-color: ${props.theme.styleguide['$rsg-styleguide-background-color']};
       .content {
         max-width: ${props.theme.styleguide['$rsg-styleguide-content-max-width']};
@@ -261,6 +275,7 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
       }
     }
     .content.sidebar-open {
+    /* transition: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-transition']}; */
   ${bp.up(
     'xs',
     props.theme['$grid-breakpoints'],
@@ -284,6 +299,7 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
   )}
     }
     .content.sidebar-close {
+      /* transition: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-transition']}; */
   ${bp.up(
     'xs',
     props.theme['$grid-breakpoints'],

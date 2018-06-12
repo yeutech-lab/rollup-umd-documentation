@@ -71,7 +71,7 @@ const TableOfContentsRendererUnstyled = (props) => {
     >
       <Form className="rsg-toc-form">
         <Input
-          className="rsg-toc-form-input"
+          className="rsg-toc-form-input no-print"
           size="sm"
           value={searchTerm}
           placeholder="Filter by name"

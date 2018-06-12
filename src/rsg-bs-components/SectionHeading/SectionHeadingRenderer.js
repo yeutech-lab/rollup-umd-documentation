@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import A from 'bootstrap-styled/lib/A';
 import Fa from 'bootstrap-styled/lib/Fa';
-import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import { hoverFocusActive } from 'bootstrap-styled-mixins/lib/hover';
 import styled from 'styled-components';
 import cn from 'classnames';
@@ -17,10 +16,6 @@ export const defaultProps = {
       '$rsg-section-heading-flex-direction': 'row',
       '$rsg-section-heading-align-items': 'center',
       '$rsg-section-heading-margin-bottom': '8px',
-      '$rsg-section-heading-padding': {
-        xs: '0 10px 0 10px',
-        md: '0',
-      },
       '$rsg-section-heading-section-name-isolation': 'false',
       '$rsg-section-heading-section-name-text-decoration': 'underline',
       '$rsg-section-heading-section-name-cursor': 'pointer',
@@ -65,7 +60,6 @@ export const propTypes = {
       '$rsg-section-heading-flex-direction': PropTypes.string,
       '$rsg-section-heading-align-items': PropTypes.string,
       '$rsg-section-heading-margin-bottom': PropTypes.string,
-      '$rsg-section-heading-padding': PropTypes.object,
       '$rsg-section-heading-section-name-isolation': PropTypes.string,
       '$rsg-section-heading-section-name-text-decoration': PropTypes.string,
       '$rsg-section-heading-section-name-cursor': PropTypes.string,
@@ -112,10 +106,12 @@ const SectionHeadingRendererUnstyled = (props) => {
     >
       <Heading level={headingLevel} id={id}>
         <A className={`section-name level-${headingLevel} ${deprecated ? 'deprecated' : ''} d-flex justify-content-between`} href={href}>
-          <Fa
-            className="anchor"
-            link
-          />
+          <div className="no-print">
+            <Fa
+              className="anchor"
+              link
+            />
+          </div>
           {children}
         </A>
       </Heading>
@@ -134,20 +130,6 @@ const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)`
       flex-direction: ${props.theme.styleguide['$rsg-section-heading-flex-direction']};
       align-items: ${props.theme.styleguide['$rsg-section-heading-align-items']};
       margin-bottom: ${props.theme.styleguide['$rsg-section-heading-margin-bottom']};
-  ${bp.up(
-    'xs',
-    props.theme['$grid-breakpoints'],
-    `
-      padding: ${props.theme.styleguide['$rsg-section-heading-padding'].xs};
-    `
-  )}
-  ${bp.up(
-    'md',
-    props.theme['$grid-breakpoints'],
-    `
-      padding: ${props.theme.styleguide['$rsg-section-heading-padding'].md};
-    `
-  )}
       & .section-name {
   ${hoverFocusActive(props.theme['$enable-hover-media-query'],
     `

@@ -145,7 +145,7 @@ class TableOfContentsUnstyled extends Component {
         onSearchTermChange={(searchTerm) => this.setState({ searchTerm })} // eslint-disable-line no-shadow
       >
         {hasCollapse && (
-          <Button className="collapse-button" onClick={() => this.onChangeCollapse()}>
+          <Button className="collapse-button no-print" onClick={() => this.onChangeCollapse()}>
             <div className="collapse-button-content">
               <P>
                 {isOpenCollapse ? 'Collapse all' : 'Expand all'}
