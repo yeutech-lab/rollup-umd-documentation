@@ -44,8 +44,7 @@ LayoutRenderer.defaultProps = {
   },
   logoFooter: {
     logo: badgeYeutech,
-    href: 'https://www.yeutech.vn',
-    target: '_blank',
+    href: null,
     alt: 'Yeutech Company Limited logo',
   }
 };

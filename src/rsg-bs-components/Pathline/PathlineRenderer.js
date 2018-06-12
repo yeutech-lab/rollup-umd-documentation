@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import copy from 'clipboard-copy';
 import Fa from 'bootstrap-styled/lib/Fa';
 import { hover } from 'bootstrap-styled-mixins/lib/hover';
+import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import cn from 'classnames';
 import styled from 'styled-components';
 import omit from 'lodash.omit';
@@ -23,7 +24,6 @@ export const defaultProps = {
       '$rsg-path-line-icon-color': '#CCCCCC',
       '$rsg-path-line-icon-font-size': '0.8em',
       '$rsg-path-line-icon-cursor': 'pointer',
-      '$rsg-path-line-icon-position': 'relative',
       '$rsg-path-line-icon-bottom': '3px',
       '$rsg-path-line-icon-hover-color': '#B31255',
     },
@@ -51,7 +51,6 @@ export const propTypes = {
       '$rsg-path-line-icon-color': PropTypes.string,
       '$rsg-path-line-icon-font-size': PropTypes.string,
       '$rsg-path-line-icon-cursor': PropTypes.string,
-      '$rsg-path-line-icon-position': PropTypes.string,
       '$rsg-path-line-icon-bottom': PropTypes.string,
       '$rsg-path-line-icon-hover-color': PropTypes.string,
     }),
@@ -95,7 +94,20 @@ const PathlineRenderer = styled(PathlineRendererUnstyled)`
   ${(props) => `
     &.rsg-path-line {
       font-family: ${props.theme.styleguide['$rsg-path-line-font-family']};
+  ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+      font-size: 75%;
+    `
+  )}
+  ${bp.up(
+    'sm',
+    props.theme['$grid-breakpoints'],
+    `
       font-size: ${props.theme.styleguide['$rsg-path-line-font-size']};
+    `
+  )}
       color: ${props.theme.styleguide['$rsg-path-line-color']};
       .copy-button {
         margin: ${props.theme.styleguide['$rsg-path-line-copy-button-margin']};
@@ -109,7 +121,6 @@ const PathlineRenderer = styled(PathlineRendererUnstyled)`
         color: ${props.theme.styleguide['$rsg-path-line-icon-color']};
         font-size: ${props.theme.styleguide['$rsg-path-line-icon-font-size']};
         cursor: ${props.theme.styleguide['$rsg-path-line-icon-cursor']};
-        position: ${props.theme.styleguide['$rsg-path-line-icon-position']};
         bottom: ${props.theme.styleguide['$rsg-path-line-icon-bottom']};
   ${hover(
     `
