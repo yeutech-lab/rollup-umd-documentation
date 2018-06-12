@@ -54,6 +54,8 @@ export const propTypes = {
       '$rsg-component-list-heading-font-weight': PropTypes.string,
       '$rsg-component-list-icon-margin': PropTypes.string,
       '$rsg-component-list-icon-color': PropTypes.string,
+      '$rsg-component-list-icon-transition': PropTypes.string,
+      '$rsg-component-list-icon-transform': PropTypes.string,
 
     }),
   }),
@@ -95,6 +97,8 @@ export const defaultProps = { // eslint-disable-next-line react/default-props-ma
       '$rsg-component-list-heading-font-weight': '500',
       '$rsg-component-list-icon-margin': '15px 15px 0 0',
       '$rsg-component-list-icon-color': '#292b2c',
+      '$rsg-component-list-icon-transition': 'transform 1s',
+      '$rsg-component-list-icon-transform': 'translateY(-10px) rotateX(180deg)',
     },
   },
 };
@@ -195,19 +199,11 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
                 >
                   {name}
                 </Link>
-                {this.state[`${name}-is-open`] ? (
-                  <Fa
-                    className="rsg-component-list-icon"
-                    size="lg"
-                    angle-up
-                  />
-                ) : (
-                  <Fa
-                    className="rsg-component-list-icon"
-                    size="lg"
-                    angle-down
-                  />
-                )}
+                <Fa
+                  className={`rsg-component-list-icon ${!this.state[`${name}-is-open`] ? 'no-collapse' : ''}`}
+                  size="lg"
+                  angle-up
+                />
               </div>
             ) : (
               <Link
@@ -256,6 +252,10 @@ const ComponentsListRenderer = styled(ComponentsListRendererUnstyled)`
       & .rsg-component-list-icon {
         margin: ${props.theme.styleguide['$rsg-component-list-icon-margin']};
         color: ${props.theme.styleguide['$rsg-component-list-icon-color']} !important;
+        transition: ${props.theme.styleguide['$rsg-component-list-icon-transition']};
+      }
+      & .rsg-component-list-icon.no-collapse {
+        transform: ${props.theme.styleguide['$rsg-component-list-icon-transform']};
       }
     }
  `}
