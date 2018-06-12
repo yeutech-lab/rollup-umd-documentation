@@ -84,7 +84,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
     lg: '40px',
     xl: '50px',
   };
-  v['$rsg-styleguide-content-margin'] = u['$rsg-styleguide-content-margin'] || '0';
+  v['$rsg-styleguide-content-margin'] = u['$rsg-styleguide-content-margin'] || '0 auto';
   v['$rsg-styleguide-content-display'] = u['$rsg-styleguide-content-display'] || 'block';
   v['$rsg-styleguide-content-sidebar-open-transition'] = u['$rsg-styleguide-content-sidebar-open-transition'] || 'padding ease-out 500ms';
 

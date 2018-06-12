@@ -272,55 +272,40 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
         max-width: ${props.theme.styleguide['$rsg-styleguide-content-max-width']};
         margin: ${props.theme.styleguide['$rsg-styleguide-content-margin']};
         display: ${props.theme.styleguide['$rsg-styleguide-content-display']};
-      }
-    }
-    .content.sidebar-open {
-    /* transition: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-transition']}; */
-  ${bp.up(
-    'xs',
-    props.theme['$grid-breakpoints'],
-    `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-padding'].xs};
-    `
-  )}
+        transition: transform ease-out 500ms;
   ${bp.up(
     'md',
     props.theme['$grid-breakpoints'],
     `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-padding'].md};
+      width: 60%;
+    `
+  )}
+      }
+    }
+    .content.sidebar-open {
+  ${bp.up(
+    'md',
+    props.theme['$grid-breakpoints'],
+    `
+      transform: translateX(120px);
     `
   )}
   ${bp.up(
     'lg',
     props.theme['$grid-breakpoints'],
     `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-padding'].lg};
+      transform: translateX(0);
     `
   )}
     }
     .content.sidebar-close {
-      /* transition: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-transition']}; */
-  ${bp.up(
-    'xs',
-    props.theme['$grid-breakpoints'],
-    `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-padding'].xs};
-    `
-  )}
-  ${bp.up(
-    'sm',
-    props.theme['$grid-breakpoints'],
-    `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-padding'].sm};
-    `
-  )}
   ${bp.up(
     'md',
     props.theme['$grid-breakpoints'],
     `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-padding'].md};
+      transform: translateX(0px);
     `
-  )}
+  )} 
   }
     &.has-sidebar {
   ${bp.up(
