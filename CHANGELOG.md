@@ -1,3 +1,21 @@
+## [2.1.5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.4...v2.1.5) (2018-06-12)
+
+
+### Bug Fixes
+
+* **LayoutRenderer:** Remove link for bottom badge. ([24b66e2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/24b66e2))
+* **menu-collapse:** Fix navigation UX for responsive. ([517152d](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/517152d))
+* **package.json:** remove peerDependencies. ([9f1bc2e](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/9f1bc2e))
+* **rsg-components:** Update general padding and remove body animation from collapse menu effect. ([753db92](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/753db92))
+* **styleguide.ext.json:** Update ribbon data. ([629304e](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/629304e))
+* **TableOfContent component:** Add debounce to collapse button. ([6609957](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/6609957))
+* **themes:** Update theme/index.js and theme/styleguidist-bs/index.js with correct variables. ([c44b2d8](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c44b2d8))
+
+
+### Performance Improvements
+
+* **TableOfContent component:** Add delay debounce variable into theme. ([73d5bc3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/73d5bc3))
+
 ## [2.1.4](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.3...v2.1.4) (2018-06-11)
 
 
