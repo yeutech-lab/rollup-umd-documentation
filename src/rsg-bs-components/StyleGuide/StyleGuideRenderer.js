@@ -274,10 +274,25 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
         display: ${props.theme.styleguide['$rsg-styleguide-content-display']};
         transition: transform ease-out 500ms;
   ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+      padding: 0 10px;
+    `
+  )}
+  ${bp.up(
     'md',
     props.theme['$grid-breakpoints'],
     `
       width: 60%;
+    `
+  )}
+  ${bp.up(
+    'lg',
+    props.theme['$grid-breakpoints'],
+    `
+      width: 100%;
+      padding: 0 60px 0 60px;
     `
   )}
       }
