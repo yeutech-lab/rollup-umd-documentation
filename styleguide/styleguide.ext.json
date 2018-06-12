@@ -7,8 +7,8 @@
     "**/{sagas,selectors,actions,constants,reducer,theme}.{js,jsx,ts,tsx}"
   ],
   "ribbon": {
-    "url": "javascript:void(0)",
-    "text": "Fork us on GitHub"
+    "url": "https://module.kopaxgroup.com/dev-tools/rollup-documentation",
+    "text": "Fork us on GitLab"
   },
   "sections": [
     {
@@ -30,10 +30,6 @@
         {
           "name": "Quick start",
           "content": "docs/quick-start.md"
-        },
-        {
-          "name": "Customize theme",
-          "content": "docs/theme.md"
         }
       ]
     },

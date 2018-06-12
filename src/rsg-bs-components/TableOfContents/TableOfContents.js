@@ -14,15 +14,18 @@ import TableOfContentsRenderer from './TableOfContentsRenderer';
 export const defaultProps = { // eslint-disable-next-line react/default-props-match-prop-types
   theme: {
     styleguide: {
+      '$rsg-toc-collapse-button-delay': '500',
       '$rsg-toc-collapse-button-cursor': 'pointer',
-      '$rsg-toc-collapse-button-color': 'gray',
-      '$rsg-toc-collapse-button-background': '#e5dede',
+      '$rsg-toc-collapse-button-color': '#767676',
+      '$rsg-toc-collapse-button-background': '#f4e2e1',
       '$rsg-toc-collapse-button-width': '100%',
       '$rsg-toc-collapse-button-height': '45px',
       '$rsg-toc-collapse-button-border-radius': '0',
       '$rsg-toc-collapse-button-active-box-shadow': 'none',
       '$rsg-toc-collapse-button-content-text-align': 'right',
       '$rsg-toc-collapse-button-content-icon-padding': '0 0 0 10px',
+      '$rsg-toc-collapse-button-content-icon-transition': 'transform 1s',
+      '$rsg-toc-collapse-button-content-icon-transform': 'translateY(2px) rotateX(180deg)',
     },
   },
   useIsolatedLinks: false,
@@ -38,6 +41,7 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
+      '$rsg-toc-collapse-button-delay': PropTypes.string,
       '$rsg-toc-collapse-button-cursor': PropTypes.string,
       '$rsg-toc-collapse-button-color': PropTypes.string,
       '$rsg-toc-collapse-button-background': PropTypes.string,
@@ -47,6 +51,8 @@ export const propTypes = {
       '$rsg-toc-collapse-button-active-box-shadow': PropTypes.string,
       '$rsg-toc-collapse-button-content-text-align': PropTypes.string,
       '$rsg-toc-collapse-button-content-icon-padding': PropTypes.string,
+      '$rsg-toc-collapse-button-content-icon-transition': PropTypes.string,
+      '$rsg-toc-collapse-button-content-icon-transform': PropTypes.string,
     }),
   }),
   /**
@@ -55,6 +61,8 @@ export const propTypes = {
    */
   cssModule: PropTypes.object, // eslint-disable-line react/require-default-props
 };
+
+let isCollapseTransitioning = false;
 
 class TableOfContentsUnstyled extends Component {
   static propTypes = propTypes;
@@ -76,15 +84,20 @@ class TableOfContentsUnstyled extends Component {
     });
   }
 
-
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextState) {
     return (this.state.isOpenCollapse !== nextState.isOpenCollapse || this.state.searchTerm !== nextState.searchTerm);
   }
 
   onChangeCollapse() {
-    this.setState({
-      isOpenCollapse: !this.state.isOpenCollapse,
-    });
+    if (!isCollapseTransitioning) {
+      isCollapseTransitioning = true;
+      this.setState({
+        isOpenCollapse: !this.state.isOpenCollapse,
+      });
+      setTimeout(() => {
+        isCollapseTransitioning = false;
+      }, this.props.theme.styleguide['$rsg-toc-collapse-button-delay']);
+    }
   }
 
   renderLevel(sections, useIsolatedLinks = false, level = 0) {
@@ -117,10 +130,13 @@ class TableOfContentsUnstyled extends Component {
     const {
       className,
       cssModule,
-      sections,
       ...attributes
     } = omit(this.props, ['theme', 'useIsolatedLinks']);
-    const { searchTerm, hasCollapse, isOpenCollapse } = this.state;
+    const {
+      searchTerm,
+      hasCollapse,
+      isOpenCollapse,
+    } = this.state;
     return (
       <TableOfContentsRenderer
         className={mapToCssModules(cn(className, 'rsg-toc'), cssModule)}
@@ -129,30 +145,16 @@ class TableOfContentsUnstyled extends Component {
         onSearchTermChange={(searchTerm) => this.setState({ searchTerm })} // eslint-disable-line no-shadow
       >
         {hasCollapse && (
-          <Button className="collapse-button" onClick={() => this.onChangeCollapse()}>
+          <Button className="collapse-button no-print" onClick={() => this.onChangeCollapse()}>
             <div className="collapse-button-content">
-              {isOpenCollapse ?
-                (
-                  <P>
-                    Collapse all
-                    <Fa
-                      className="collapse-button-content-icon"
-                      size="lg"
-                      angle-up
-                    />
-                  </P>
-                ) :
-                (
-                  <P>
-                    Expand all
-                    <Fa
-                      className="collapse-button-content-icon"
-                      size="lg"
-                      angle-down
-                    />
-                  </P>
-                )
-              }
+              <P>
+                {isOpenCollapse ? 'Collapse all' : 'Expand all'}
+                <Fa
+                  className={`collapse-button-content-icon ${!isOpenCollapse ? 'no-collapse' : ''}`}
+                  size="lg"
+                  angle-up
+                />
+              </P>
             </div>
           </Button>
         )}
@@ -180,6 +182,10 @@ const TableOfContents = styled(TableOfContentsUnstyled)`
           text-align: ${props.theme.styleguide['$rsg-toc-collapse-button-content-text-align']};
           .collapse-button-content-icon {
             padding: ${props.theme.styleguide['$rsg-toc-collapse-button-content-icon-padding']};
+            transition: ${props.theme.styleguide['$rsg-toc-collapse-button-content-icon-transition']};
+          }
+          .collapse-button-content-icon.no-collapse {
+            transform: ${props.theme.styleguide['$rsg-toc-collapse-button-content-icon-transform']};
           }
         }
       }

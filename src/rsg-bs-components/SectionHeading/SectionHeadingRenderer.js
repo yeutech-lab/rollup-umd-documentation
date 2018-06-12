@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import A from 'bootstrap-styled/lib/A';
 import Fa from 'bootstrap-styled/lib/Fa';
 import { hoverFocusActive } from 'bootstrap-styled-mixins/lib/hover';
+import styled from 'styled-components';
 import cn from 'classnames';
 import omit from 'lodash.omit';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -106,10 +106,12 @@ const SectionHeadingRendererUnstyled = (props) => {
     >
       <Heading level={headingLevel} id={id}>
         <A className={`section-name level-${headingLevel} ${deprecated ? 'deprecated' : ''} d-flex justify-content-between`} href={href}>
-          <Fa
-            className="anchor"
-            link
-          />
+          <div className="no-print">
+            <Fa
+              className="anchor"
+              link
+            />
+          </div>
           {children}
         </A>
       </Heading>

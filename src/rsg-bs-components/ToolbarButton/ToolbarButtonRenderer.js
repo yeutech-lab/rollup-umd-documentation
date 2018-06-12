@@ -94,7 +94,7 @@ const ToolbarButtonRendererUnstyled = (props) => {
   const classNames = mapToCssModules(
     cn(
       className,
-      'rsg-toolbar-button',
+      'rsg-toolbar-button no-print',
       (small && 'small')
     ), cssModule
   );

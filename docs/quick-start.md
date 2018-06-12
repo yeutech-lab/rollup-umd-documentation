@@ -1,7 +1,7 @@
 ### 1. Install `$PACKAGE_NAME` and it dependencies:
        
 ```bash static
-$ npm install $PACKAGE_NAME --save-dev --registry=$NPM_REGISTRY font-awesome@^4.7.0 url-loader@^0.5.8 file-loader@^1.1.11 webpack@^4.6.0 react@^16.3.2 react-dom@^16.4.0 react-styleguidist@^7.0.12
+$ npm install $PACKAGE_NAME --save-dev --registry=$NPM_REGISTRY
 ```
 
 ### 2. Create `styleguide.config.js` in root of your project.
@@ -23,12 +23,7 @@ root/
       └── general.md
 ```
 
-> In order to provide enough information regarding to your modular and shareable module. Any **rollup-umd** project should have following documentations:
->
-> `introduction.md` / `installation.md` / `upgrading.md` / `configuration.md` / `general.md` / `faq.md` / `contribute.md` / `commands.md` / `branch.md` and `release.md`.
-
-
-### 4. Create `styleguide/styleguide.ext.json` in root of your project.
+### 4. Create `styleguide.ext.json` in `styleguide/` folder.
 
 Example:
 
@@ -55,7 +50,6 @@ Example:
 {
   "scripts": {
     "styleguide": "styleguidist server",
-    "prestyleguide:build": "npm run build:lib",
     "styleguide:build": "styleguidist build"
   }
 }

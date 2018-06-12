@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash.omit';
-import styled from 'styled-components';
+import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import NavigationStyleguide from '@yeutech/navigation-bar/lib/NavigationStyleguide/NavigationStyleguide';
 import Img from 'bootstrap-styled/lib/Img';
+import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 import Logo from '../rsg-bs-components/Logo';
@@ -18,11 +19,15 @@ export const defaultProps = {
   },
   theme: {
     styleguide: {
-      '$rsg-sidebar-box-shadow': '8px 0 5px -2px #e2e2e2',
+      '$rsg-sidebar-box-shadow': {
+        xs: 'none',
+        md: '8px 0 5px -2px #e2e2e2',
+      },
       '$rsg-sidebar-linear-gradient': 'linear-gradient(#3A007D, #B31255)',
       '$rsg-sidebar-logo-padding': '30px 20px 0 20px',
       '$rsg-sidebar-logo-align': 'center',
       '$rsg-sidebar-logo-title-line-height': '1',
+      '$rsg-sidebar-logo-title-word-wrap': 'break-word',
       '$rsg-sidebar-logo-svg-height': '35px',
       '$rsg-sidebar-logo-svg-margin': '0 0 0 -8px',
     },
@@ -37,18 +42,20 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
-      '$rsg-sidebar-box-shadow': PropTypes.string,
+      '$rsg-sidebar-box-shadow': PropTypes.object,
       '$rsg-sidebar-linear-gradient': PropTypes.string,
       '$rsg-sidebar-logo-padding': PropTypes.string,
       '$rsg-sidebar-logo-align': PropTypes.string,
       '$rsg-sidebar-logo-title-line-height': PropTypes.string,
+      '$rsg-sidebar-logo-title-word-wrap': PropTypes.string,
       '$rsg-sidebar-logo-svg-height': PropTypes.string,
       '$rsg-sidebar-logo-svg-margin': PropTypes.string,
     }),
   }),
   /**
    * Replace or remove a className from the component.
-   * See example <a href="https://www.npmjs.com/package/map-to-css-modules" target="_blank">here</a>.
+   * See example <a href="https://www.npmjs.com/package/map-import styled from 'styled-components';
+to-css-modules" target="_blank">here</a>.
    */
   cssModule: PropTypes.object, // eslint-disable-line react/require-default-props
   /** Logo attributes in order to render logo. */
@@ -106,7 +113,20 @@ SideBarUnstyled.propTypes = propTypes;
 const SideBar = styled(SideBarUnstyled)` 
   ${(props) => `
     &.navigation {
-      box-shadow: ${props.theme.styleguide['$rsg-sidebar-box-shadow']};
+  ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+      box-shadow: ${props.theme.styleguide['$rsg-sidebar-box-shadow'].xs};
+    `
+  )}
+  ${bp.up(
+    'sm',
+    props.theme['$grid-breakpoints'],
+    `
+      box-shadow: ${props.theme.styleguide['$rsg-sidebar-box-shadow'].sm};
+    `
+  )}
       .navigation-logo {
         background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
         padding: ${props.theme.styleguide['$rsg-sidebar-logo-padding']};
@@ -119,7 +139,7 @@ const SideBar = styled(SideBarUnstyled)`
         }
         .navigation-logo-title {
           line-height: ${props.theme.styleguide['$rsg-sidebar-logo-title-line-height']};
-          word-wrap: break-word;
+          word-wrap: ${props.theme.styleguide['$rsg-sidebar-logo-title-word-wrap']};
         }
       }
     }
