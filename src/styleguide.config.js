@@ -287,6 +287,7 @@ export const config = {
     CheckboxRenderer: path.join(__dirname, '../lib/rsg-bs-components/Markdown/Checkbox/CheckboxRenderer.js'),
     Hr: path.join(__dirname, '../lib/rsg-bs-components/Markdown/Hr'),
     HrRenderer: path.join(__dirname, '../lib/rsg-bs-components/Markdown/Hr/HrRenderer.js'),
+    JsDoc: path.join(__dirname, '../lib/rsg-bs-components/JsDoc'),
     List: path.join(__dirname, '../lib/rsg-bs-components/Markdown/List'),
     ListRenderer: path.join(__dirname, '../lib/rsg-bs-components/Markdown/List/ListRenderer.js'),
     MarkdownHeading: path.join(__dirname, '../lib/rsg-bs-components/Markdown/MarkdownHeading'),
