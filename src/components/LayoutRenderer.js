@@ -1,4 +1,9 @@
 /* eslint-disable */
+/*
+ *
+ * LayoutRenderer
+ *
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
@@ -63,9 +68,17 @@ LayoutRenderer.propTypes = {
   /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
   /** Logo to use in sidebar menu */
-  logoMenu: PropTypes.object,
+  logoMenu: PropTypes.shape({
+    logo: PropTypes.node,
+    href: PropTypes.string,
+    alt: PropTypes.string,
+  }),
   /** Logo to use in footer */
-  logoFooter: PropTypes.object,
+  logoFooter: PropTypes.shape({
+    logo: PropTypes.node,
+    href: PropTypes.string,
+    alt: PropTypes.string,
+  }),
 };
 
 export default LayoutRenderer;
