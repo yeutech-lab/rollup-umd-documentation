@@ -23,24 +23,22 @@ export const defaultProps = {
         lg: '240px',
       },
       '$rsg-styleguide-content-max-width': '1000px',
-      '$rsg-styleguide-content-padding': {
-        xs: '16px',
-        md: '16px 95px 16px 32px',
-      },
-      '$rsg-styleguide-content-sidebar-open-transition': 'transform ease-out 500ms',
-      '$rsg-styleguide-content-sidebar-open-padding': {
-        xs: '20px 30px 0 30px',
-        md: '20px 20px 0 250px',
-        lg: '20px 70px 0 70px',
-      },
-      '$rsg-styleguide-content-sidebar-close-transition': 'transform ease-out 500ms',
-      '$rsg-styleguide-content-sidebar-close-padding': {
-        xs: '0',
-        md: '20px 50px 0 50px',
-        lg: '20px 70px 0 70px',
-      },
       '$rsg-styleguide-content-margin': '0 auto',
       '$rsg-styleguide-content-display': 'block',
+      '$rsg-styleguide-no-print-display': 'none',
+      '$rsg-styleguide-content-transition': 'transform ease-out 500ms',
+      '$rsg-styleguide-content-padding': {
+        xs: '0 10px',
+        lg: '0 60px',
+      },
+      '$rsg-styleguide-content-width': {
+        md: '60%',
+        lg: '90%',
+      },
+      '$rsg-styleguide-content-sidebar-open-transform': {
+        md: 'translateX(120px)',
+        lg: 'translateX(0)',
+      },
       '$rsg-styleguide-sidebar-z-index': '4000',
       '$rsg-styleguide-sidebar-transform': 'translateX(0)',
       '$rsg-styleguide-sidebar-open-transition': 'transform ease-out 500ms',
@@ -127,25 +125,22 @@ export const propTypes = {
         lg: PropTypes.string,
       }),
       '$rsg-styleguide-content-max-width': PropTypes.string,
+      '$rsg-styleguide-content-margin': PropTypes.string,
+      '$rsg-styleguide-content-display': PropTypes.string,
+      '$rsg-styleguide-no-print-display': PropTypes.string,
+      '$rsg-styleguide-content-transition': PropTypes.string,
       '$rsg-styleguide-content-padding': PropTypes.shape({
         xs: PropTypes.string,
-        md: PropTypes.string,
+        lg: PropTypes.string,
       }),
-      '$rsg-styleguide-content-sidebar-open-transition': PropTypes.string,
-      '$rsg-styleguide-content-sidebar-open-padding': PropTypes.shape({
-        xs: PropTypes.string,
+      '$rsg-styleguide-content-width': PropTypes.shape({
         md: PropTypes.string,
         lg: PropTypes.string,
       }),
-      '$rsg-styleguide-content-sidebar-close-transition': PropTypes.string,
-      '$rsg-styleguide-content-sidebar-close-padding': PropTypes.shape({
-        xs: PropTypes.string,
-        sm: PropTypes.string,
+      '$rsg-styleguide-content-sidebar-open-transform': PropTypes.shape({
         md: PropTypes.string,
+        lg: PropTypes.string,
       }),
-      '$rsg-styleguide-content-margin': PropTypes.string,
-      '$rsg-styleguide-content-display': PropTypes.string,
-
       '$rsg-styleguide-sidebar-z-index': PropTypes.string,
       '$rsg-styleguide-sidebar-transform': PropTypes.string,
       '$rsg-styleguide-sidebar-open-transition': PropTypes.string,
@@ -264,7 +259,7 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
     &.rsg-styleguide {
       @media print{
          .no-print {
-             display: none;
+             display: ${props.theme.styleguide['$rsg-styleguide-no-print-display']};
          }
       }
       background-color: ${props.theme.styleguide['$rsg-styleguide-background-color']};
@@ -272,55 +267,55 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
         max-width: ${props.theme.styleguide['$rsg-styleguide-content-max-width']};
         margin: ${props.theme.styleguide['$rsg-styleguide-content-margin']};
         display: ${props.theme.styleguide['$rsg-styleguide-content-display']};
-      }
-    }
-    .content.sidebar-open {
-    /* transition: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-transition']}; */
+        transition: ${props.theme.styleguide['$rsg-styleguide-content-transition']};
   ${bp.up(
     'xs',
     props.theme['$grid-breakpoints'],
     `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-padding'].xs};
+      padding: ${props.theme.styleguide['$rsg-styleguide-content-padding'].xs};
     `
   )}
   ${bp.up(
     'md',
     props.theme['$grid-breakpoints'],
     `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-padding'].md};
+      width: ${props.theme.styleguide['$rsg-styleguide-content-width'].md};
     `
   )}
   ${bp.up(
     'lg',
     props.theme['$grid-breakpoints'],
     `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-padding'].lg};
+      width: ${props.theme.styleguide['$rsg-styleguide-content-width'].lg};
+      padding: ${props.theme.styleguide['$rsg-styleguide-content-padding'].lg};
     `
   )}
+      }
     }
-    .content.sidebar-close {
-      /* transition: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-transition']}; */
-  ${bp.up(
-    'xs',
-    props.theme['$grid-breakpoints'],
-    `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-padding'].xs};
-    `
-  )}
-  ${bp.up(
-    'sm',
-    props.theme['$grid-breakpoints'],
-    `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-padding'].sm};
-    `
-  )}
+    .content.sidebar-open {
   ${bp.up(
     'md',
     props.theme['$grid-breakpoints'],
     `
-      padding: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-padding'].md};
+      transform: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-transform'].md};
     `
   )}
+  ${bp.up(
+    'lg',
+    props.theme['$grid-breakpoints'],
+    `
+      transform: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-transform'].lg};
+    `
+  )}
+    }
+    .content.sidebar-close {
+  ${bp.up(
+    'md',
+    props.theme['$grid-breakpoints'],
+    `
+      transform: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-close-transform']}
+    `
+  )} 
   }
     &.has-sidebar {
   ${bp.up(
