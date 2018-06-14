@@ -77,17 +77,23 @@ export function makeTheme(userTheme = { styleguide: {} }) {
     lg: v['$rsg-sidebar-width'],
   };
   v['$rsg-styleguide-content-max-width'] = u['$rsg-styleguide-content-max-width'] || v['$rsg-max-width'];
-  v['$rsg-styleguide-content-padding'] = u['$rsg-styleguide-content-padding'] || {
-    xs: '10px',
-    sm: '20px',
-    md: '30px',
-    lg: '40px',
-    xl: '50px',
-  };
   v['$rsg-styleguide-content-margin'] = u['$rsg-styleguide-content-margin'] || '0 auto';
   v['$rsg-styleguide-content-display'] = u['$rsg-styleguide-content-display'] || 'block';
-  v['$rsg-styleguide-content-sidebar-open-transition'] = u['$rsg-styleguide-content-sidebar-open-transition'] || 'padding ease-out 500ms';
-  v['$rsg-styleguide-content-sidebar-close-transition'] = u['$rsg-styleguide-content-sidebar-close-transition'] || 'padding ease-out 500ms';
+  v['$rsg-styleguide-no-print-display'] = u['$rsg-styleguide-no-print-display'] || 'none';
+  v['$rsg-styleguide-content-transition'] = u['$rsg-styleguide-content-transition'] || 'transform ease-out 500ms';
+  v['$rsg-styleguide-content-padding'] = u['$rsg-styleguide-content-padding'] || {
+    xs: '0 10px',
+    lg: '0 60px',
+  };
+  v['$rsg-styleguide-content-width'] = u['$rsg-styleguide-content-width'] || {
+    md: '60%',
+    lg: '90%',
+  };
+  v['$rsg-styleguide-content-sidebar-open-transform'] = u['$rsg-styleguide-content-sidebar-open-transform'] || {
+    md: 'translateX(120px)',
+    lg: 'translateX(0)',
+  };
+  v['$rsg-styleguide-content-sidebar-close-transform'] = u['$rsg-styleguide-content-sidebar-close-transform'] || 'translateX(0px)';
   v['$rsg-styleguide-sidebar-z-index'] = u['$rsg-styleguide-sidebar-z-index'] || '4000';
   v['$rsg-styleguide-sidebar-transform'] = u['$rsg-styleguide-sidebar-transform'] || 'translateX(0)';
   v['$rsg-styleguide-sidebar-open-transition'] = u['$rsg-styleguide-sidebar-open-transition'] || 'transform ease-out 500ms';
