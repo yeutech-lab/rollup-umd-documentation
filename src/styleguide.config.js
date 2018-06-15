@@ -56,7 +56,7 @@ const preloaders = {
  * export webpack merge util
  * @type {merge}
  */
-export const webpackMerge = (...args) => merge(config.webpackConfig, ...args);
+export const webpackMerge = merge;
 
 const defaultOptions = {
   preloader: 'yeutech',
@@ -65,7 +65,11 @@ const defaultOptions = {
 export const config = createConfig();
 
 export default function createConfig(userConfig = {}, options = {}) {
-  const { require: userRequire, ...restUserConfig } = userConfig;
+  const {
+    require: userRequire,
+    webpackConfig: userWepackConfig,
+    ...restUserConfig
+  } = userConfig;
   const opts = { ...defaultOptions, ...options };
   return {
     serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060, // eslint-disable-line radix
@@ -108,7 +112,7 @@ export default function createConfig(userConfig = {}, options = {}) {
     theme: {},
     title: pkg.name,
     verbose: false,
-    webpackConfig: {
+    webpackConfig: webpackMerge({
       plugins: [
         new webpack.SourceMapDevToolPlugin({
           filename: '[file].map',
@@ -156,7 +160,7 @@ export default function createConfig(userConfig = {}, options = {}) {
           },
         ],
       },
-    },
+    }, userWepackConfig),
     styleguideComponents: {
       // components
       StyleGuideRenderer: layoutRendererBase,

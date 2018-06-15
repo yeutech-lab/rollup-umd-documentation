@@ -2,7 +2,7 @@
 /**
  * Testing our CodeRenderer component
  */
-import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
+import { BootstrapProvider } from 'bootstrap-styled-provider';
 import { mount } from 'enzyme';
 import React from 'react';
 import CodeRenderer, { defaultProps } from '../CodeRenderer';

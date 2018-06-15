@@ -1,7 +1,7 @@
 {
   "globals": {
     "react": "react",
-    "styled-components": "styled-components",
+    "styled-components": "styledComponents",
     "react-dom": "ReactDom"
   },
   "external": [
