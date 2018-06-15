@@ -3,8 +3,8 @@
   "version": "0.0.0-development",
   "description": "Quick build awesome documentation for your rollup-umd project.",
   "main": "lib/index.js",
-  "jsnext:main": "dist/rollup-documentation.es.js",
-  "module": "dist/rollup-documentation.es.js",
+  "jsnext:main": "@yeutech/rollup-documentation.es.mjs",
+  "module": "@yeutech/rollup-documentation.es.mjs",
   "homepage": "https://dev-tools.yeutech.com/rollup-documentation",
   "browserslist": [
     "IE >= 9",
@@ -75,6 +75,10 @@
         2,
         "always-multiline"
       ],
+      "import/extensions": ["error", "always", {
+        "js": "never",
+        "mjs": "never"
+      }],
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-dynamic-require": 0,
@@ -128,6 +132,9 @@
     },
     "settings": {
       "import/resolver": {
+        "node": {
+          "extensions": [".js", ".mjs"]
+        },
         "alias": [
           [
             "rsg-components",
