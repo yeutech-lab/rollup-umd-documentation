@@ -1,3 +1,114 @@
+## [2.3.1](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.0...v2.3.1) (2018-06-15)
+
+
+### Bug Fixes
+
+* **build:** update bootstrap-styled-provider ([2abc652](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/2abc652))
+* **dependencies:** BootstrapProvider now imported from bootstrap-styled-provider ([4b86044](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/4b86044))
+* **rollup:** was not producing expted esm ([180ed75](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/180ed75))
+
+# [2.3.0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.2.0...v2.3.0) (2018-06-15)
+
+
+### Bug Fixes
+
+* **rsg-components:** Fix lodash import lodash/ into lodash. ([646a123](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/646a123))
+* **rsg-components:** Fix view for table props. ([1623a5d](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/1623a5d))
+
+
+### Features
+
+* **bs:** Added all bs to global scope ([cacf293](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/cacf293))
+
+# [2.2.0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.7...v2.2.0) (2018-06-15)
+
+
+### Bug Fixes
+
+* **deps:** remove lodash ([d2b7e86](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/d2b7e86))
+* **ga:** using custom components will waiting for configuration ([73c7ff0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/73c7ff0))
+* **template:** added meta tags ([2949b12](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/2949b12))
+* **template:** added meta tags ([d1856f2](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/d1856f2))
+
+
+### Features
+
+* **ga:** added google analytics ([9e394c3](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/9e394c3))
+
+## [2.1.7](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.6...v2.1.7) (2018-06-15)
+
+
+### Bug Fixes
+
+* **ci:** Added prepare.sh ([84e8113](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/84e8113))
+* **dependencies:** upgrade rollup-umd-scripts to 0.12.7 ([106986b](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/106986b))
+
+## [2.1.6](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.5...v2.1.6) (2018-06-15)
+
+
+### Bug Fixes
+
+* **ci:** using https url in repository.url ([861b959](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/861b959))
+* **collapse-menu:** Add animation on body when menu is collapsing. ([1e93a4e](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/1e93a4e))
+* **collapse-menu:** Animation for body when menu collapse. ([ff1792a](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/ff1792a))
+* **collapse-menu:** Update StyleguideRenderer and theme with new animation variables. ([4bee5f7](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/4bee5f7))
+* **dependencies:** upgrade rollup-umd-scripts to 0.12.16 ([ac3d31d](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/ac3d31d))
+* **dependencies:** upgrade rollup-umd-scripts to 0.12.6 ([2c833f5](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/2c833f5))
+* **rsg-bs-components:** Add JsDoc usefull for PropsRenderer. ([7f96bfc](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/7f96bfc))
+* **rsg-components:** Add JsDoc (finally usefull for props renderer table). ([cc8cc67](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/cc8cc67))
+* **rsg-components:** Fix JsDoc component import. ([f626f76](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/f626f76))
+* **styleguide.config.json + components:** Fix propType.shape error when rendering props in table. ([97ee685](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/97ee685))
+
+## [2.1.5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.4...v2.1.5) (2018-06-12)
+
+
+### Bug Fixes
+
+* **LayoutRenderer:** Remove link for bottom badge. ([24b66e2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/24b66e2))
+* **menu-collapse:** Fix navigation UX for responsive. ([517152d](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/517152d))
+* **package.json:** remove peerDependencies. ([9f1bc2e](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/9f1bc2e))
+* **rsg-components:** Update general padding and remove body animation from collapse menu effect. ([753db92](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/753db92))
+* **styleguide.ext.json:** Update ribbon data. ([629304e](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/629304e))
+* **TableOfContent component:** Add debounce to collapse button. ([6609957](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/6609957))
+* **themes:** Update theme/index.js and theme/styleguidist-bs/index.js with correct variables. ([c44b2d8](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c44b2d8))
+
+
+### Performance Improvements
+
+* **TableOfContent component:** Add delay debounce variable into theme. ([73d5bc3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/73d5bc3))
+
+## [2.1.4](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.3...v2.1.4) (2018-06-11)
+
+
+### Bug Fixes
+
+* **collapse-menu:** Update TableOfContents by adding condition hasCollapse for collapse button. ([9d9eb50](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/9d9eb50))
+* **components:** Correct import of Logo into ../rsg-components/Logo. ([3f756fd](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/3f756fd))
+* **components:** FIx hover into SectionHeadingRenderer, TabButtonRenderer and ToolbarButtonRenderer ([9797178](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/9797178))
+* **components:** Fix ribbon and add correct content variable in them. ([c2b6937](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c2b6937))
+* **components:** Update footer image size and Table of content rendering for filter serach. ([89ce85c](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/89ce85c))
+* **components:** Update import of components from rsg-bs-components. ([efac6f5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/efac6f5))
+* **components:** Update LayoutRenderer, SideBar and FooterRenderer components, fix image props. ([e607178](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/e607178))
+* **Markdown component:** Fix css import in Markdown component. ([850c55d](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/850c55d))
+* **rsg-components:** Correct import and resolve override to use in styleguide.config.js. ([1443e67](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/1443e67))
+* **rsg-components:** Correct import in order to keep react-styleguide override functionality. ([870202f](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/870202f))
+* **rsg-components:** Rename rsg-components into rsg-bs-components. ([7f20c00](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/7f20c00)), closes [#13](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/issues/13)
+* **rsg-components:** Update hover style into hover from bootstrap-styled-mixins. ([81741d4](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/81741d4))
+* **Styleguide component:** Correct export of Styleguide component. ([833b2e3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/833b2e3))
+* **styleguide.config.js:** Correct alias of rsg-components in styleguideComponents. ([87c4cf5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/87c4cf5))
+* **test:** Add eslint-import-resolver-alias@^1.1.0 to devDependencies. ([e8a56e2](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/e8a56e2))
+* **test rsg-bs-components:** Update .babelrc configuration with module-resolver added to make alias ([d7d2631](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/d7d2631))
+* **theme:** Add new variable from TableOfContent components in theme. ([62e666e](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/62e666e))
+* **theme:** Add QuickSand font to theme, and add import in template layout in styleguide.config.js ([182ced0](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/182ced0))
+* **theme:** Update theme and correct variable in order to fit designer template. ([e22e3bb](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/e22e3bb))
+* **WelcomeRenderer:** FIx error du to pkg import. ([9ec9a06](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/9ec9a06))
+* **WelcomeRenderer component:** Update message with package name. ([c3a5849](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/c3a5849))
+
+
+### Performance Improvements
+
+* **package.json:** Remove files key. ([87ec0d0](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/commit/87ec0d0))
+
 <a name="2.1.3"></a>
 ## [2.1.3](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.2...v2.1.3) (2018-06-05)
 
