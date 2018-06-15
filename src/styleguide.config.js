@@ -4,15 +4,30 @@ import path from 'path';
 import webpack from 'webpack';
 import { generateCSSReferences, generateJSReferences } from 'mini-html-webpack-plugin';
 import merge from 'webpack-merge';
+import parse from 'parse-author';
 
 /** we decide either to use the package.json from react or the one from the current working dir
  * this will make the configured both, within project and when imported
  */
+
+
 export const pkgBase = fs.existsSync(path.join(process.cwd(), 'package.json')) ?
   path.join(process.cwd()) :
   path.join(__dirname, '..');
 
+export const pkgDoc = require(path.join(__dirname, '../package.json'));
 export const pkg = require(path.join(pkgBase, 'package.json'));
+
+export const licenseBase = fs.existsSync(path.join(process.cwd(), 'LICENSE.md')) ?
+  path.join(process.cwd(), 'LICENSE.md') :
+  path.join(__dirname, '../LICENSEmd');
+
+let license = pkgBase.license; // eslint-disable-line prefer-destructuring
+if (fs.existsSync(licenseBase)) {
+  license = fs.readFileSync(licenseBase, { encoding: 'utf8' }).split('\n')[0]; // eslint-disable-line prefer-destructuring
+} else {
+  console.error('LICENSE.md is missing');
+}
 
 export const styleguideBase = fs.existsSync(path.join(process.cwd(), 'styleguide')) ?
   path.join(process.cwd(), 'styleguide') :
@@ -36,7 +51,6 @@ export const jsonExtension = fs.existsSync(path.join(process.cwd(), 'styleguide/
   fs.existsSync(path.join(__dirname, '../styleguide/styleguide.ext.json')) ?
     require(path.join(__dirname, '../styleguide/styleguide.ext.json')) : {};
 
-
 export const config = {
   serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060, // eslint-disable-line radix
   styleguideDir: 'public',
@@ -57,6 +71,14 @@ export const config = {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="${pkg.description}">
+      ${pkg.keywords && pkg.keywords.length > 0 ? `<meta name="keywords" content="${pkg.keywords.join(',')}">` : ''}
+      <meta name="author" content="${parse(pkg.author).name}">
+      <meta name="copyright" content="${license}" />
+      ${pkg.contributor && pkg.contributor.length > 0 ? `<meta name="contributor" content="${pkg.contributor.map((c) => parse(c).name).join(',')}"> ̈́` : ''}
+      ${pkg.private === undefined ? '<meta name="robots" content="index,follow"/>' : ''/* undefined means the package is public */}
+      ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : '<meta name="robots" content="noindex, nofollow"/>'/* false means release in private, true means never released */}
+      ${pkg.name !== pkgDoc.name ? `<meta name="rollup-documentation-version" content="${pkgDoc.version}">\n<meta name="version" content="${pkg.version}">` : `<meta name="version" content="${pkg.version}">`}
       <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
       <title>${title}</title>
       <style>
