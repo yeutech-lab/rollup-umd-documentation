@@ -4,8 +4,10 @@
  * LayoutRenderer
  *
  */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
+
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
 require('!!../../loaders/style-loader!../../loaders/css-loader!font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
@@ -19,29 +21,40 @@ import LogoYeutech from '../static/logo-yeutech.svg';
  * @returns {XML}
  * @constructor
  */
-function LayoutRenderer({
-   theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter
- }) {
-  return (
-    <BootstrapProvider theme={theme}>
-      <StyleGuideRenderer
-        className={className}
-        title={title}
-        logoMenu={logoMenu}
-        logoFooter={logoFooter}
-        toc={toc}
-        hasSidebar={hasSidebar}
-      >
-        {children}
-      </StyleGuideRenderer>
-    </BootstrapProvider>
-  );
+class LayoutRenderer extends PureComponent {
+  componentWillMount() {
+    // NOTE: we can't use componentWillMount if later we use react-router!
+    if (this.props.ga.id) {
+      ReactGA.initialize(this.props.ga.id, { debug: process.env.NODE_ENV === 'development' });
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
+  }
+  render() {
+    const { theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter } = this.props;
+    return (
+      <BootstrapProvider theme={theme}>
+        <StyleGuideRenderer
+          className={className}
+          title={title}
+          logoMenu={logoMenu}
+          logoFooter={logoFooter}
+          toc={toc}
+          hasSidebar={hasSidebar}
+        >
+          {children}
+        </StyleGuideRenderer>
+      </BootstrapProvider>
+    );
+  }
 }
 
 LayoutRenderer.defaultProps = {
   title: 'rollup-documentation',
   className: null,
   theme,
+  ga: {
+    id: null,
+  },
   logoMenu: {
     logo: <LogoYeutech />,
     href: null,
@@ -65,6 +78,9 @@ LayoutRenderer.propTypes = {
   toc: PropTypes.node.isRequired,
   /** theme to be used by BootstrapProvider */
   theme: PropTypes.object,
+  ga: PropTypes.shape({
+    id: PropTypes.string,
+  }),
   /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
   /** Logo to use in sidebar menu */
