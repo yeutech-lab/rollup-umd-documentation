@@ -15,10 +15,6 @@ import StyleGuideRenderer from '../rsg-bs-components/StyleGuide/StyleGuideRender
 import badgeYeutech from '../static/badge-yeutech';
 import LogoYeutech from '../static/logo-yeutech.svg';
 
-// can't go into componentWillMount if we use react-router later
-// TODO: move this value to config and update schema configuration
-ReactGA.initialize('UA-120906117-1', { debug: process.env.NODE_ENV === 'development' });
-
 /**
  * This is the main layout for the whole documentation.
  * It doesn't provide react-router but you could add it here.
@@ -27,7 +23,11 @@ ReactGA.initialize('UA-120906117-1', { debug: process.env.NODE_ENV === 'developm
  */
 class LayoutRenderer extends PureComponent {
   componentWillMount() {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    // NOTE: we can't use componentWillMount if later we use react-router!
+    if (this.props.ga.id) {
+      ReactGA.initialize(this.props.ga.id, { debug: process.env.NODE_ENV === 'development' });
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
   }
   render() {
     const { theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter } = this.props;
@@ -52,6 +52,9 @@ LayoutRenderer.defaultProps = {
   title: 'rollup-documentation',
   className: null,
   theme,
+  ga: {
+    id: null,
+  },
   logoMenu: {
     logo: <LogoYeutech />,
     href: null,
@@ -75,6 +78,9 @@ LayoutRenderer.propTypes = {
   toc: PropTypes.node.isRequired,
   /** theme to be used by BootstrapProvider */
   theme: PropTypes.object,
+  ga: PropTypes.shape({
+    id: PropTypes.string,
+  }),
   /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
   /** Logo to use in sidebar menu */

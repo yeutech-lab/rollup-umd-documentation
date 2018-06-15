@@ -39,7 +39,8 @@ export const srcBase = fs.existsSync(path.join(process.cwd(), 'src')) ?
 
 export const layoutRendererBase = fs.existsSync(path.join(process.cwd(), 'styleguide/components/LayoutRenderer.js')) ?
   path.join(process.cwd(), 'styleguide/components/LayoutRenderer.js') :
-  path.join(__dirname, '../lib/components/LayoutRenderer.js');
+  path.join(__dirname, '../lib/components/LayoutRendererGaFix.js'); // TODO: allow configuration of Google Analytics them remove this
+  // path.join(__dirname, '../lib/components/LayoutRenderer.js');
 
 export const wrapperBase = fs.existsSync(path.join(process.cwd(), 'styleguide/components/Wrapper.js')) ?
   path.join(process.cwd(), 'styleguide/components/Wrapper.js') :
