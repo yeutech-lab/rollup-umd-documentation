@@ -1,3 +1,11 @@
+## [2.1.7](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.6...v2.1.7) (2018-06-15)
+
+
+### Bug Fixes
+
+* **ci:** Added prepare.sh ([84e8113](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/84e8113))
+* **dependencies:** upgrade rollup-umd-scripts to 0.12.7 ([106986b](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/106986b))
+
 ## [2.1.6](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.5...v2.1.6) (2018-06-15)
 
 
