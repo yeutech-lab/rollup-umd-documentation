@@ -13,3 +13,5 @@ dist
 /public
 /docs/cli
 /docs/declinations
+.git-credentials
+.npmrc
