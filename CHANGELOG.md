@@ -1,3 +1,19 @@
+## [2.1.6](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.5...v2.1.6) (2018-06-15)
+
+
+### Bug Fixes
+
+* **ci:** using https url in repository.url ([861b959](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/861b959))
+* **collapse-menu:** Add animation on body when menu is collapsing. ([1e93a4e](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/1e93a4e))
+* **collapse-menu:** Animation for body when menu collapse. ([ff1792a](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/ff1792a))
+* **collapse-menu:** Update StyleguideRenderer and theme with new animation variables. ([4bee5f7](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/4bee5f7))
+* **dependencies:** upgrade rollup-umd-scripts to 0.12.16 ([ac3d31d](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/ac3d31d))
+* **dependencies:** upgrade rollup-umd-scripts to 0.12.6 ([2c833f5](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/2c833f5))
+* **rsg-bs-components:** Add JsDoc usefull for PropsRenderer. ([7f96bfc](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/7f96bfc))
+* **rsg-components:** Add JsDoc (finally usefull for props renderer table). ([cc8cc67](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/cc8cc67))
+* **rsg-components:** Fix JsDoc component import. ([f626f76](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/f626f76))
+* **styleguide.config.json + components:** Fix propType.shape error when rendering props in table. ([97ee685](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/97ee685))
+
 ## [2.1.5](https://module.kopaxgroup.com:20024/dev-tools/rollup-documentation/compare/v2.1.4...v2.1.5) (2018-06-12)
 
 
