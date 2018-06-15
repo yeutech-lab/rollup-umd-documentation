@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@module.kopaxgroup.com:20024/dev-tools/rollup-documentation.git"
+    "url": "https://module.kopaxgroup.com/dev-tools/rollup-documentation.git"
   },
   "bugs": {
     "url": "https://module.kopaxgroup.com/dev-tools/rollup-documentation/issues"
