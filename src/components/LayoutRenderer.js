@@ -32,7 +32,11 @@ class LayoutRenderer extends PureComponent {
   render() {
     const { theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter } = this.props;
     return (
-      <BootstrapProvider theme={theme}>
+      <BootstrapProvider
+        reset={true}
+        injectGlobal={true}
+        theme={theme}
+      >
         <StyleGuideRenderer
           className={className}
           title={title}

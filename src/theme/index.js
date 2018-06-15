@@ -23,6 +23,8 @@ const themeBsYeutech = makeThemeBs({
   '$link-hover-color': '#B31255',
   '$link-hover-decoration': 'none',
   '$code-color': '#333',
+  '$table-cell-padding': '0',
+  '$table-border-width': '0',
 });
 
 const themeNavigationYeutech = makeThemeNavigationStyleguide({
