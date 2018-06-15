@@ -24,6 +24,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-font-family-highlight'] = u['$rsg-font-family-highlight'] || 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace';
   // - font-size
   v['$rsg-font-size'] = u['$rsg-font-size'] || {
+    xs: '12px',
     sm: '13px',
     md: '15px',
     lg: '16px',
@@ -201,7 +202,11 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-tab-button-children-margin-left'] = u['$rsg-tab-button-children-margin-left'] || '0';
   v['$rsg-tab-button-border-bottom'] = u['$rsg-tab-button-border-bottom'] || '2 #f28a25 solid';
   // Props table
-  v['$rsg-name-font-size'] = u['$rsg-name-font-size'] || v['$rsg-font-size'].sm;
+  v['$rsg-name-word-wrap'] = u['$rsg-name-word-wrap'] || 'break-word';
+  v['$rsg-name-font-size'] = u['$rsg-name-font-size'] || {
+    xs: v['$rsg-font-size'].xs,
+    sm: '15px',
+  };
   v['$rsg-name-color'] = u['$rsg-name-color'] || v['$rsg-color-name'];
   v['$rsg-name-deprecated-color'] = u['$rsg-name-deprecated-color'] || v['$rsg-salmon'];
   v['$rsg-name-deprecated-decoration'] = u['$rsg-name-deprecated-decoration'] || 'line-through';
@@ -216,7 +221,10 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-text-border-top'] = u['$rsg-text-border-top'] || '0';
   v['$rsg-text-border-bottom'] = u['$rsg-text-border-bottom'] || `1px dotted ${v['$rsg-gray-light']}`;
   v['$rsg-text-font-family'] = u['$rsg-text-font-family'] || v['$rsg-font-family-base'];
-  v['$rsg-type-font-size'] = u['$rsg-type-font-size'] || v['$rsg-font-size'].sm;
+  v['$rsg-type-font-size'] = u['$rsg-type-font-size'] || {
+    xs: v['$rsg-font-size'].xs,
+    sm: '15px',
+  };
   v['$rsg-type-color'] = u['$rsg-type-color'] || v['$rsg-color-type'];
   v['$rsg-para-margin'] = u['$rsg-para-margin'] || `0 0 ${v['$rsg-space'].xs} 0`;
   v['$rsg-para-color'] = u['$rsg-para-color'] || v['$rsg-color-base'];
@@ -436,33 +444,68 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-component-list-icon-color'] = u['$rsg-component-list-icon-color'] || v['$rsg-component-list-heading-color'];
   v['$rsg-component-list-icon-transition'] = u['$rsg-component-list-icon-transition'] || 'transform 1s';
   v['$rsg-component-list-icon-transform'] = u['$rsg-component-list-icon-transform'] || 'translateY(-10px) rotateX(180deg)';
-
   // table
+  v['$rsg-table-border'] = u['$rsg-table-border'] || 'none';
+  v['$rsg-table-layout'] = u['$rsg-table-layout'] || {
+    xs: 'fixed',
+    md: 'fixed',
+    xxl: 'auto',
+  };
+  v['$rsg-table-width'] = u['$rsg-table-width'] || {
+    xs: '100%',
+    md: 'fixed',
+    xxl: '1000px',
+  };
+  v['$rsg-table-th-width'] = u['$rsg-table-th-width'] || {
+    xs: '21.6666666667%;',
+    md: '18.3333333333%',
+    xxl: '81.48148148px',
+  };
+  v['$rsg-table-th-last-width'] = u['$rsg-table-th-last-width'] || {
+    xs: '35%',
+    md: '45%',
+    xxl: '200px',
+  };
+  v['$rsg-table-td-width'] = u['$rsg-table-td-width'] || {
+    xs: '21.6666666667%',
+    md: '18.3333333333%',
+    xxl: '81.48148148px',
+  };
+  v['$rsg-table-td-last-width'] = u['$rsg-table-td-last-width'] || {
+    xs: '35%',
+    md: '45%',
+    xxl: '200px',
+  };
+  v['$rsg-table-cell-heading-vertical-align'] = u['$rsg-table-cell-heading-vertical-align'] || 'text-top';
+  v['$rsg-table-cell-heading-first-child-white-space'] = u['$rsg-table-cell-heading-first-child-white-space'] || 'pre-wrap';
+  v['$rsg-table-cell-heading-font-size'] = u['$rsg-table-cell-heading-font-size'] || {
+    xs: v['$rsg-font-size'].xs,
+    sm: '15px',
+  };
+  v['$rsg-table-cell-padding'] = u['$rsg-table-cell-padding'] || '5px 5px 7px 0';
+  v['$rsg-table-cell-font-size'] = u['$rsg-table-cell-font-size'] || {
+    xs: v['$rsg-font-size'].xs,
+    sm: '15px',
+  };
+  v['$rsg-table-cell-span-font-size'] = u['$rsg-table-cell-span-font-size'] || {
+    xs: '12px',
+    sm: '15px',
+  };
   v['$rsg-table-overflow'] = u['$rsg-table-overflow'] || 'auto';
-  v['$rsg-table-width'] = u['$rsg-table-width'] || '100%';
   v['$rsg-table-border-collapse'] = u['$rsg-table-border-collapse'] || 'collapse';
   v['$rsg-table-margin'] = u['$rsg-table-margin'] || `${v['$rsg-space'].md} 0 0 0`;
-  v['$rsg-table-head-border-top'] = u['$rsg-table-head-border-top'] || '0';
   v['$rsg-table-head-border-bottom'] = u['$rsg-table-head-border-bottom'] || '1px #e8e8e8 solid';
   v['$rsg-table-cell-heading-color'] = u['$rsg-table-cell-heading-color'] || v['$rsg-color-base'];
-  v['$rsg-table-cell-heading-padding'] = u['$rsg-table-cell-heading-padding'] || `0 ${v['$rsg-space'].xs} ${v['$rsg-space'].xxs} 0`;
+  v['$rsg-table-cell-heading-padding'] = u['$rsg-table-cell-heading-padding'] || `0 ${v['$rsg-space'].md} ${v['$rsg-space'].xxs} 0`;
   v['$rsg-table-cell-heading-text-align'] = u['$rsg-table-cell-heading-text-align'] || 'left';
   v['$rsg-table-cell-heading-font-family'] = u['$rsg-table-cell-heading-font-family'] || v['$rsg-font-family-base'];
   v['$rsg-table-cell-heading-font-weight'] = u['$rsg-table-cell-heading-font-weight'] || 'bold';
-  v['$rsg-table-cell-heading-font-size'] = u['$rsg-table-cell-heading-font-size'] || v['$rsg-font-size'].sm;
   v['$rsg-table-cell-heading-white-space'] = u['$rsg-table-cell-heading-white-space'] || 'nowrap';
   v['$rsg-table-cell-border-top'] = u['$rsg-table-cell-border-top'] || '0';
   v['$rsg-table-cell-color'] = u['$rsg-table-cell-color'] || v['$rsg-color-base'];
-  v['$rsg-table-cell-padding'] = u['$rsg-table-cell-padding'] || {
-    xs: `${v['$rsg-space'].xs} ${v['$rsg-space'].lg} ${v['$rsg-space'].xs} 0`,
-    md: `${v['$rsg-space'].xs} ${v['$rsg-space'].xxxl} ${v['$rsg-space'].xs} 0`,
-  };
   v['$rsg-table-cell-vertical-align'] = u['$rsg-table-cell-vertical-align'] || 'top';
   v['$rsg-table-cell-font-family'] = u['$rsg-table-cell-font-family'] || v['$rsg-font-family-base'];
-  v['$rsg-table-cell-font-size'] = u['$rsg-table-cell-font-size'] || v['$rsg-font-size'].sm;
   v['$rsg-table-cell-child-isolation'] = u['$rsg-table-cell-child-isolation'] || 'false';
-  v['$rsg-table-cell-child-width'] = u['$rsg-table-cell-child-width'] || '99%';
-  v['$rsg-table-cell-child-padding'] = u['$rsg-table-cell-child-padding'] || '0 0 0 0';
   v['$rsg-table-cell-child-p-isolation'] = u['$rsg-table-cell-child-p-isolation'] || 'false';
   v['$rsg-table-cell-child-p-margin'] = u['$rsg-table-cell-child-p-margin'] || '0 0 0 0';
   // markdown

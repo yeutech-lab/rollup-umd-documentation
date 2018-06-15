@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Code from 'bootstrap-styled/lib/Code';
+import bp from 'bootstrap-styled-mixins/lib/breakpoints';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
@@ -10,7 +11,11 @@ import cn from 'classnames';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-name-font-size': '0.8em',
+      '$rsg-name-word-wrap': 'break-word',
+      '$rsg-name-font-size': {
+        xs: '12px',
+        sm: '15px',
+      },
       '$rsg-name-color': '#b11255',
       '$rsg-name-deprecated-color': '#f47469',
       '$rsg-name-deprecated-decoration': 'line-through',
@@ -31,7 +36,11 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
-      '$rsg-name-font-size': PropTypes.string,
+      '$rsg-name-word-wrap': PropTypes.string,
+      '$rsg-name-font-size': PropTypes.shape({
+        xs: PropTypes.string,
+        sm: PropTypes.string,
+      }),
       '$rsg-name-color': PropTypes.string,
       '$rsg-name-deprecated-color': PropTypes.string,
       '$rsg-name-deprecated-decoration': PropTypes.string,
@@ -71,7 +80,21 @@ const NameRenderer = styled(NameRendererUnstyled)`
   ${(props) => `
     &.rsg-name {
       .name-renderer-code {
-        font-size: ${props.theme.styleguide['$rsg-name-font-size']};
+        word-wrap: ${props.theme.styleguide['$rsg-name-word-wrap']};
+  ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+      font-size: ${props.theme.styleguide['$rsg-name-font-size'].xs};
+    `
+  )}
+  ${bp.up(
+    'sm',
+    props.theme['$grid-breakpoints'],
+    `
+     font-size: ${props.theme.styleguide['$rsg-name-font-size'].sm};
+    `
+  )}
         color: ${props.theme.styleguide['$rsg-name-color']};
       }
       .name-renderer-code.deprecated {
