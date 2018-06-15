@@ -254,6 +254,7 @@
     "parse-author": "^2.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "react-codemirror2": "^5.0.1",
     "react-ga": "^2.5.3",
     "react-group": "^1.0.6",
