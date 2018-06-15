@@ -1,3 +1,12 @@
+## [2.3.1](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.0...v2.3.1) (2018-06-15)
+
+
+### Bug Fixes
+
+* **build:** update bootstrap-styled-provider ([2abc652](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/2abc652))
+* **dependencies:** BootstrapProvider now imported from bootstrap-styled-provider ([4b86044](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/4b86044))
+* **rollup:** was not producing expted esm ([180ed75](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/180ed75))
+
 # [2.3.0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.2.0...v2.3.0) (2018-06-15)
 
 

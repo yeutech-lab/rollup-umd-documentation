@@ -1,6 +1,6 @@
 {
   "name": "@yeutech/rollup-documentation",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Quick build awesome documentation for your rollup-umd project.",
   "main": "lib/index.js",
   "jsnext:main": "@yeutech/rollup-documentation.es.mjs",
@@ -75,10 +75,14 @@
         2,
         "always-multiline"
       ],
-      "import/extensions": ["error", "always", {
-        "js": "never",
-        "mjs": "never"
-      }],
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "js": "never",
+          "mjs": "never"
+        }
+      ],
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-dynamic-require": 0,
@@ -133,7 +137,10 @@
     "settings": {
       "import/resolver": {
         "node": {
-          "extensions": [".js", ".mjs"]
+          "extensions": [
+            ".js",
+            ".mjs"
+          ]
         },
         "alias": [
           [
