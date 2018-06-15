@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash.omit';
-import styled from 'styled-components';
 import NavigationStyleguide from '@yeutech/navigation-bar/lib/NavigationStyleguide/NavigationStyleguide';
 import Img from 'bootstrap-styled/lib/Img';
+import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
 import Logo from '../rsg-bs-components/Logo';
 import LogoYeutech from '../static/logo-yeutech.svg';
+import config from '../../styleguide/config';
 
 export const defaultProps = {
+  className: null,
   logo: {
     logo: <LogoYeutech />,
     href: 'https://www.yeutech.vn',
@@ -30,11 +32,12 @@ export const defaultProps = {
   },
 };
 
+/* eslint-disable react/no-unused-prop-types */
 export const propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string, // eslint-disable-line react/require-default-props
+  className: PropTypes.string,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
@@ -64,11 +67,11 @@ export const propTypes = {
     alt: PropTypes.string,
   }),
   /** Set title to be rendered. */
-  title: PropTypes.string, // eslint-disable-line react/require-default-props
+  title: PropTypes.string.isRequired,
   /** Table of content elements to be rendered. */
-  items: PropTypes.node, // eslint-disable-line react/require-default-props
+  items: PropTypes.node.isRequired,
 };
-
+/* eslint-enable react/no-unused-prop-types */
 const SideBarUnstyled = (props) => {
   const {
     className,
@@ -78,12 +81,13 @@ const SideBarUnstyled = (props) => {
     items,
     ...attributes
   } = omit(props, ['theme']);
-  return (
-    <NavigationStyleguide
-      className={mapToCssModules(cn(className, 'navigation'), cssModule)}
-      {...attributes}
-    >
-      <div className="navigation-logo">
+
+  const hasLayoutDefault = config.layout === 'default';
+  const hasLayoutRouter = config.layout === 'router';
+
+  const SidebarHeader = () => (
+    <div className="navigation-logo">
+      {hasLayoutDefault && (
         <div className="logo-img">
           {typeof logo.logo === 'string' ? (
             <Img
@@ -95,11 +99,39 @@ const SideBarUnstyled = (props) => {
             logo.logo
           )}
         </div>
-        <Logo className="navigation-logo-title">{title}</Logo>
-      </div>
+      )}
+      <Logo className="navigation-logo-title">{title}</Logo>
+    </div>
+  );
+
+  const SidebarDefault = () => (
+    <NavigationStyleguide
+      className={mapToCssModules(cn(
+        className,
+        'navigation',
+        { 'layout-default': hasLayoutDefault },
+      ), cssModule)}
+      {...attributes}
+    >
+      <SidebarHeader />
       {items}
     </NavigationStyleguide>
   );
+
+  const SidebarRouter = () => (
+    <div
+      className={mapToCssModules(cn(
+        className,
+        'navigation',
+        { 'layout-routeur': hasLayoutRouter },
+      ), cssModule)}
+      {...attributes}
+    >
+      <SidebarHeader />
+      {items}
+    </div>
+  );
+  return hasLayoutDefault ? <SidebarDefault /> : <SidebarRouter />;
 };
 
 SideBarUnstyled.defaultProps = defaultProps;
@@ -110,6 +142,25 @@ const SideBar = styled(SideBarUnstyled)`
     &.navigation {
       box-shadow: ${props.theme.styleguide['$rsg-sidebar-box-shadow']};
       .navigation-logo {
+        background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
+        padding: ${props.theme.styleguide['$rsg-sidebar-logo-padding']};
+        text-align: ${props.theme.styleguide['$rsg-sidebar-logo-align']};
+        .logo-img {
+          & svg {
+            height: ${props.theme.styleguide['$rsg-sidebar-logo-svg-height']};
+            margin: ${props.theme.styleguide['$rsg-sidebar-logo-svg-margin']};
+          }
+        }
+        .navigation-logo-title {
+          line-height: ${props.theme.styleguide['$rsg-sidebar-logo-title-line-height']};
+        }
+      }
+    }
+    &.navigation.layout-routeur {
+      .navigation-logo {
+        position: relative;
+        width: 100%;
+        height: 100px;
         background: ${props.theme.styleguide['$rsg-sidebar-linear-gradient']} !important;
         padding: ${props.theme.styleguide['$rsg-sidebar-logo-padding']};
         text-align: ${props.theme.styleguide['$rsg-sidebar-logo-align']};

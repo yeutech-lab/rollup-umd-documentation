@@ -1,5 +1,5 @@
 import createMakeTheme, { toMakeTheme } from 'bootstrap-styled-theme/lib';
-import { makeTheme as makeThemeBs } from 'bootstrap-styled/lib/theme/makeTheme'; // todo: fix error build when using import 'bootstrap-styled/lib/theme'
+import { makeTheme as makeThemeBs } from 'bootstrap-styled/lib/theme/makeTheme';
 import { makeTheme as makeThemeNavigationStyleguide } from '@yeutech/navigation-bar/lib/NavigationStyleguide/theme';
 import { makeTheme as makeThemeStyleguideBs } from './styleguidist-bs';
 

@@ -8,6 +8,8 @@ import cn from 'classnames';
 import Ribbon from 'rsg-components/Ribbon';
 import SideBar from '../../components/SideBar';
 import FooterRenderer from '../../components/FooterRenderer';
+import config from '../../../styleguide/config';
+
 
 export const defaultProps = {
   hasSidebar: true,
@@ -34,37 +36,28 @@ export const propTypes = {
   /**
    * @ignore
    */
-  className: PropTypes.string, // eslint-disable-line react/require-default-props
-  /** Set title used in `<SideBar />` component. */
-  title: PropTypes.string.isRequired,
-  homepageUrl: PropTypes.string.isRequired,
-  /** Specified node element will be passed as children of `<StyleGuideRenderer />` component. */
+  /** @ignore */
+  className: PropTypes.string,
+  /** @ignore */
   children: PropTypes.node.isRequired,
-  /** Table of content element to be rendered. */
+  /** The documentation title */
+  title: PropTypes.string.isRequired,
+  /** TBD */
   toc: PropTypes.node.isRequired,
-  /** Toggle sidebar style. */
+  /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
-  /** Logo attributes in order to render menu logo. */
+  /** Logo to use in sidebar menu */
+  /** @ignore */
   logoMenu: PropTypes.shape({
-    logo: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-    ]).isRequired,
+    logo: PropTypes.node,
     href: PropTypes.string,
-    target: PropTypes.string,
-    text: PropTypes.string,
     alt: PropTypes.string,
   }),
-  /** Logo attributes in order to render footer logo. */
+  /** Logo to use in footer */
+  /** @ignore */
   logoFooter: PropTypes.shape({
-    logo: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object,
-    ]).isRequired,
-    height: PropTypes.string,
+    logo: PropTypes.node,
     href: PropTypes.string,
-    target: PropTypes.string,
-    text: PropTypes.string,
     alt: PropTypes.string,
   }),
   /** Theme variables. Can be: */
@@ -106,19 +99,26 @@ const StyleGuideRendererUnstyled = (props) => {
     ...attributes
   } = omit(props, ['theme', 'homepageUrl']);
 
+  const hasLayoutDefault = config.layout === 'default';
+  const hasLayoutRouter = config.layout === 'router';
+
   return (
     <div
       className={mapToCssModules(cn(
         className,
         'rsg-styleguide',
-        { 'has-sidebar': hasSidebar }
+        { 'has-sidebar': hasSidebar },
+        { 'layout-default': hasLayoutDefault },
+        { 'layout-router': hasLayoutRouter },
       ), cssModule)}
       {...attributes}
     >
       {hasSidebar && (
         <div>
           <SideBar logo={logoMenu} title={title} items={toc} />
-          <Ribbon />
+          {hasLayoutDefault && (
+            <Ribbon />
+          )}
         </div>
       )}
       <main className="content">
@@ -160,7 +160,7 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
   )}
       }
     }
-    &.has-sidebar {
+    &.has-sidebar.layout-default {
   ${bp.up(
     'xs',
     props.theme['$grid-breakpoints'],
@@ -175,6 +175,20 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
       padding-left: ${props.theme.styleguide['$rsg-styleguide-has-sidebar-padding-left'].md};
     `
   )}
+    }
+    &.has-sidebar.layout-router {
+  ${bp.up(
+    'xs',
+    props.theme['$grid-breakpoints'],
+    `
+      padding-left: 0;
+    `
+  )}
+    }
+    &.layout-router {
+      .content {
+        padding-left: 250px;
+      }
     }
  `}
 `;

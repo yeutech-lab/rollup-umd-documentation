@@ -7,7 +7,7 @@ import mapToCssModules from 'map-to-css-modules/lib';
 import Nav from 'bootstrap-styled/lib/Nav';
 import Form from 'bootstrap-styled/lib/Form';
 import Input from 'bootstrap-styled/lib/Input';
-
+import config from '../../../styleguide/config';
 
 export const defaultProps = {
   theme: {
@@ -64,14 +64,23 @@ const TableOfContentsRendererUnstyled = (props) => {
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
+
+  const hasLayoutDefault = config.layout === 'default';
+  const hasLayoutRouter = config.layout === 'router';
+
   return (
     <div
-      className={mapToCssModules(cn(className, 'rsg-toc'), cssModule)}
+      className={mapToCssModules(cn(
+        className,
+        'rsg-toc',
+        { 'layout-default': hasLayoutDefault },
+        { 'layout-routeur': hasLayoutRouter },
+      ), cssModule)}
       {...attributes}
     >
-      <Form className="rsg-toc-form">
+      <Form className={`rsg-toc-form ${hasLayoutRouter && 'router'}`}>
         <Input
-          className="rsg-toc-form-input"
+          className={`rsg-toc-form-input ${hasLayoutRouter && 'router'}`}
           size="sm"
           value={searchTerm}
           placeholder="Filter by name"
@@ -79,7 +88,7 @@ const TableOfContentsRendererUnstyled = (props) => {
           onChange={(event) => onSearchTermChange(event.target.value)}
         />
       </Form>
-      <Nav className="rsg-toc-nav">
+      <Nav className={`rsg-toc-nav ${hasLayoutRouter && 'router'}`}>
         {children}
       </Nav>
     </div>
@@ -91,7 +100,7 @@ TableOfContentsRendererUnstyled.propTypes = propTypes;
 
 const TableOfContentsRenderer = styled(TableOfContentsRendererUnstyled)`
   ${(props) => `
-    &.rsg-toc {
+    &.rsg-toc.layout-default {
       .rsg-toc-form {
         background: ${props.theme.styleguide['$rsg-toc-form-background']};
         padding: ${props.theme.styleguide['$rsg-toc-form-padding']};
@@ -106,6 +115,27 @@ const TableOfContentsRenderer = styled(TableOfContentsRendererUnstyled)`
         display: ${props.theme.styleguide['$rsg-toc-display']};
         padding: ${props.theme.styleguide['$rsg-toc-padding']};
       }
+    }
+    &.rsg-toc.layout-router {
+      width: 100%;
+    }
+    .rsg-toc-form.router {
+      width: 100%;
+      height: 50px !important;
+      background: #B31255;
+      
+      .rsg-toc-form-input.router {
+        width: 40%;
+        margin: ${props.theme.styleguide['$rsg-toc-form-margin']};
+      }
+    }
+    .rsg-toc-nav.router {
+      width: 200px;
+      position: fixed;
+      background: ${props.theme.styleguide['$rsg-toc-background']};
+      text-align: ${props.theme.styleguide['$rsg-toc-text-align']};
+      display: ${props.theme.styleguide['$rsg-toc-display']};
+      padding: ${props.theme.styleguide['$rsg-toc-padding']};
     }
   `}
 `;
