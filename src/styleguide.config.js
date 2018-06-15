@@ -20,7 +20,7 @@ export const pkg = require(path.join(pkgBase, 'package.json'));
 
 export const licenseBase = fs.existsSync(path.join(process.cwd(), 'LICENSE.md')) ?
   path.join(process.cwd(), 'LICENSE.md') :
-  path.join(__dirname, '../LICENSEmd');
+  path.join(__dirname, '../LICENSE.md');
 
 let license = pkgBase.license; // eslint-disable-line prefer-destructuring
 if (fs.existsSync(licenseBase)) {
