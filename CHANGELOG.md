@@ -1,3 +1,16 @@
+# [2.3.0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.2.0...v2.3.0) (2018-06-15)
+
+
+### Bug Fixes
+
+* **rsg-components:** Fix lodash import lodash/ into lodash. ([646a123](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/646a123))
+* **rsg-components:** Fix view for table props. ([1623a5d](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/1623a5d))
+
+
+### Features
+
+* **bs:** Added all bs to global scope ([cacf293](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/cacf293))
+
 # [2.2.0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.7...v2.2.0) (2018-06-15)
 
 
