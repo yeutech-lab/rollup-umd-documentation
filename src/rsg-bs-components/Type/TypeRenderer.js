@@ -79,7 +79,7 @@ const TypeRenderer = styled(TypeRendererUnstyled)`
     'sm',
     props.theme['$grid-breakpoints'],
     `
-     font-size: ${props.theme.styleguide['$rsg-type-font-size'].xs} !important;
+     font-size: ${props.theme.styleguide['$rsg-type-font-size'].sm} !important;
     `
   )}
         color: ${props.theme.styleguide['$rsg-type-color']} !important;
