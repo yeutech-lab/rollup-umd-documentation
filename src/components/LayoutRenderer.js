@@ -1,45 +1,21 @@
 /* eslint-disable */
+/*
+ *
+ * LayoutRenderer
+ *
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
-import Provider from 'react-redux/lib/components/Provider';
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import createHistory from 'history/createBrowserHistory'
-import { Route, Switch, hashHistory } from 'react-router';
-import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
-require('!!../../loaders/style-loader!../../loaders/css-loader!../../node_modules/font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
+require('!!../../loaders/style-loader!../../loaders/css-loader!font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
-import StyleGuideRenderer from '../rsg-bs-components/StyleGuide/StyleGuideRenderer';
-import NavigationStyleguide from './NavigationStyleguide';
-import Link from './Link';
-import whiteLogo from '../static/badge-yeutech';
-import defaultLogo from '../static/badge-yeutech';
-// import { jsonExtension } from '../styleguide.config.js'
+import badgeYeutech from '../static/badge-yeutech';
+import LogoYeutech from '../static/logo-yeutech.svg';
+import LogoYeutechColored from '../static/logo-yeutech-colored.svg';
+import LayoutDefault from './Layouts/LayoutDefault';
+import LayoutRouter from './Layouts/LayoutRouter';
+import config from '../../styleguide/config';
 
-// Router
-const history = createHistory();
-const middleware = routerMiddleware(history);
-const composeEnhancers =
-  typeof window === 'object' &&
-  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-      // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-    }) : compose;
-
-const enhancer = composeEnhancers(applyMiddleware(...middleware),
-  // other store enhancers if any
-);
-
-const store = createStore(
-  combineReducers({
-    router: routerReducer
-  }),
-  enhancer
-);
-
-// navigation rollup
-
-// console.log(jsonExtension);
 /**
  * This is the main layout for the whole documentation.
  * It doesn't provide react-router but you could add it here.
@@ -47,53 +23,60 @@ const store = createStore(
  * @constructor
  */
 function LayoutRenderer({
-   theme, className, title, children, toc, hasSidebar, logo, logoHref, bottomLogoHref
- }) {
+  theme,
+  className,
+  title,
+  children,
+  toc,
+  hasSidebar,
+  logoMenu,
+  logoFooter,
+}) {
+  const layoutDefault = () => (
+    <LayoutDefault
+      className={className}
+      title={title}
+      logoMenu={logoMenu}
+      logoFooter={logoFooter}
+      toc={toc}
+      hasSidebar={hasSidebar}
+      children={children}
+    />
+  );
+  const layoutRouter= () => (
+    <LayoutRouter
+      social={config.socialLinks}
+      routes={config.routes}
+      className={className}
+      title={title}
+      logo={logoMenu}
+      toc={toc}
+      hasSidebar={hasSidebar}
+      children={children}
+    />
+  );
   return (
     <BootstrapProvider theme={theme}>
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <div>
-            <NavigationStyleguide>
-              <ul>
-                <li><Link to="/">home</Link></li>
-                <li><Link to="/documentation">/documentation</Link></li>
-              </ul>
-            </NavigationStyleguide>
-            <Route exact path="/" component={() => (
-              <div>home</div>
-            )}/>
-            <Route exact path="/documentation" component={() => (
-              <StyleGuideRenderer
-                className={className}
-                title={title}
-                homepageUrl={bottomLogoHref}
-                toc={toc}
-                hasSidebar={hasSidebar}
-                logo={logo}
-                logohref={logoHref}
-              >
-                {children}
-              </StyleGuideRenderer>
-            )}/>
-          </div>
-        </ConnectedRouter>
-      </Provider>
+      {config.layout === 'default' && layoutDefault()}
+      {config.layout === 'router' && layoutRouter()}
     </BootstrapProvider>
   );
 }
 
 LayoutRenderer.defaultProps = {
   title: 'rollup-documentation',
-  logo: whiteLogo,
-  logoHref: null,
-  bottomLogo: defaultLogo,
-  bottomLogoHref: 'https://www.yeutech.vn',
-  bottomLogoText: '',
   className: null,
-  children: <div>Children Example</div>,
-  toc: <div>Table of contents Example</div>,
   theme,
+  logoMenu: {
+    logo: config.layout === 'default' ? <LogoYeutech /> : <LogoYeutechColored />,
+    href: null,
+    alt: 'Yeutech Company Limited logo',
+  },
+  logoFooter: {
+    logo: badgeYeutech,
+    href: null,
+    alt: 'Yeutech Company Limited logo',
+  }
 };
 
 LayoutRenderer.propTypes = {
@@ -106,20 +89,23 @@ LayoutRenderer.propTypes = {
   /** TBD */
   toc: PropTypes.node.isRequired,
   /** theme to be used by BootstrapProvider */
-  theme : PropTypes.object,
+  theme: PropTypes.object,
   /** define if the sidebar should be displayed */
   hasSidebar: PropTypes.bool,
-  /** define the logo used by the layout */
-  logo: PropTypes.string,
-  /** logo link */
-  logoHref: PropTypes.string,
-  /** define the bottom logo used by the layout */
-  bottomLogo: PropTypes.string,
-  /** bottom logo link */
-  bottomLogoHref: PropTypes.string,
-  /** text prefix of bottom logo */
-  bottomLogoText: PropTypes.string,
+  /** Logo to use in sidebar menu */
+  /** @ignore */
+  logoMenu: PropTypes.shape({
+    logo: PropTypes.node,
+    href: PropTypes.string,
+    alt: PropTypes.string,
+  }),
+  /** Logo to use in footer */
+  /** @ignore */
+  logoFooter: PropTypes.shape({
+    logo: PropTypes.node,
+    href: PropTypes.string,
+    alt: PropTypes.string,
+  }),
 };
 
 export default LayoutRenderer;
-
