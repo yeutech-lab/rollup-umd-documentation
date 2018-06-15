@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { mount } from 'enzyme';
-import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
+import { BootstrapProvider } from 'bootstrap-styled-provider';
 import ComponentsListRenderer, { defaultProps } from '../ComponentsListRenderer';
 
 describe('<ComponentsListRenderer />', () => {
