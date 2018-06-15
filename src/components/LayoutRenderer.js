@@ -4,8 +4,10 @@
  * LayoutRenderer
  *
  */
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
+
 import BootstrapProvider from 'bootstrap-styled/lib/BootstrapProvider';
 require('!!../../loaders/style-loader!../../loaders/css-loader!font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
@@ -13,29 +15,37 @@ import StyleGuideRenderer from '../rsg-bs-components/StyleGuide/StyleGuideRender
 import badgeYeutech from '../static/badge-yeutech';
 import LogoYeutech from '../static/logo-yeutech.svg';
 
+// can't go into componentWillMount if we use react-router later
+// TODO: move this value to config and update schema configuration
+ReactGA.initialize('UA-120906117-1', { debug: process.env.NODE_ENV === 'development' });
+
 /**
  * This is the main layout for the whole documentation.
  * It doesn't provide react-router but you could add it here.
  * @returns {XML}
  * @constructor
  */
-function LayoutRenderer({
-   theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter
- }) {
-  return (
-    <BootstrapProvider theme={theme}>
-      <StyleGuideRenderer
-        className={className}
-        title={title}
-        logoMenu={logoMenu}
-        logoFooter={logoFooter}
-        toc={toc}
-        hasSidebar={hasSidebar}
-      >
-        {children}
-      </StyleGuideRenderer>
-    </BootstrapProvider>
-  );
+class LayoutRenderer extends PureComponent {
+  componentWillMount() {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
+  render() {
+    const { theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter } = this.props;
+    return (
+      <BootstrapProvider theme={theme}>
+        <StyleGuideRenderer
+          className={className}
+          title={title}
+          logoMenu={logoMenu}
+          logoFooter={logoFooter}
+          toc={toc}
+          hasSidebar={hasSidebar}
+        >
+          {children}
+        </StyleGuideRenderer>
+      </BootstrapProvider>
+    );
+  }
 }
 
 LayoutRenderer.defaultProps = {

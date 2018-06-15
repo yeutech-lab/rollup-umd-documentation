@@ -241,6 +241,7 @@
     "react": "^16.3.2",
     "react-codemirror2": "^5.0.1",
     "react-dom": "^16.4.0",
+    "react-ga": "^2.5.3",
     "react-group": "^1.0.6",
     "react-styleguidist": "^7.0.12",
     "react-transition-group": "^2.2.1",
