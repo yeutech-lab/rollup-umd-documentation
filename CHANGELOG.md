@@ -1,3 +1,18 @@
+# [2.2.0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.7...v2.2.0) (2018-06-15)
+
+
+### Bug Fixes
+
+* **deps:** remove lodash ([d2b7e86](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/d2b7e86))
+* **ga:** using custom components will waiting for configuration ([73c7ff0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/73c7ff0))
+* **template:** added meta tags ([2949b12](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/2949b12))
+* **template:** added meta tags ([d1856f2](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/d1856f2))
+
+
+### Features
+
+* **ga:** added google analytics ([9e394c3](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/9e394c3))
+
 ## [2.1.7](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.1.6...v2.1.7) (2018-06-15)
 
 
