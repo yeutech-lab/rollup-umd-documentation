@@ -3,8 +3,8 @@
   "version": "0.0.0-development",
   "description": "Quick build awesome documentation for your rollup-umd project.",
   "main": "lib/index.js",
-  "jsnext:main": "@yeutech/rollup-documentation.es.mjs",
-  "module": "@yeutech/rollup-documentation.es.mjs",
+  "jsnext:main": "@yeutech/rollup-documentation.esm.js",
+  "module": "@yeutech/rollup-documentation.esm.js",
   "homepage": "https://dev-tools.yeutech.com/rollup-documentation",
   "browserslist": [
     "IE >= 9",
@@ -75,10 +75,6 @@
         2,
         "always-multiline"
       ],
-      "import/extensions": ["error", "always", {
-        "js": "never",
-        "mjs": "never"
-      }],
       "import/imports-first": 0,
       "import/newline-after-import": 0,
       "import/no-dynamic-require": 0,
@@ -112,6 +108,14 @@
           ]
         }
       ],
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "js": "never",
+          "mjs": "never"
+        }
+      ],
       "jsx-a11y/label-has-for": 2,
       "jsx-a11y/mouse-events-have-key-events": 2,
       "jsx-a11y/role-has-required-aria-props": 2,
@@ -133,7 +137,10 @@
     "settings": {
       "import/resolver": {
         "node": {
-          "extensions": [".js", ".mjs"]
+          "extensions": [
+            ".js",
+            ".mjs"
+          ]
         },
         "alias": [
           [
@@ -182,7 +189,6 @@
     "eslint": "^4.18.2",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-alias": "^1.1.0",
-    "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.8.2",
     "exports-loader": "^0.7.0",
@@ -228,12 +234,13 @@
     "@yeutech/navigation-bar": "^1.3.1",
     "bootstrap-styled": "^1.6.5",
     "bootstrap-styled-mixins": "^1.0.4",
-    "bootstrap-styled-provider": "^1.1.3",
+    "bootstrap-styled-provider": "^1.1.5",
     "bootstrap-styled-theme": "0.0.1",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
     "clipboard-copy": "^2.0.0",
     "css-loader": "^0.28.11",
+    "eslint-plugin-import": "^2.12.0",
     "file-loader": "^1.1.11",
     "font-awesome": "^4.7.0",
     "glogg": "^1.0.1",
