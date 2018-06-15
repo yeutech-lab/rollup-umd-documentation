@@ -78,7 +78,7 @@ LayoutRenderer.propTypes = {
   children: PropTypes.node.isRequired,
   /** The documentation title */
   title: PropTypes.string.isRequired,
-  /** TBD */
+  /** An instance of TableOfContentsRenderer */
   toc: PropTypes.node.isRequired,
   /** theme to be used by BootstrapProvider */
   theme: PropTypes.object,
