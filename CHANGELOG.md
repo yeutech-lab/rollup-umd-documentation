@@ -1,3 +1,12 @@
+## [2.3.4](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.3...v2.3.4) (2018-06-16)
+
+
+### Bug Fixes
+
+* **menu-collapse:** Fix medium view for content centered in extended/isolated mode. ([f5a53cf](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/f5a53cf))
+* **pre-loader:** Fix margin of centered loader. ([847576e](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/847576e))
+* **rsg-components:** Fix TypeRenderer with correct font-size value. ([492d54f](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/492d54f))
+
 ## [2.3.3](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.2...v2.3.3) (2018-06-15)
 
 
