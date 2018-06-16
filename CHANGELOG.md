@@ -1,3 +1,10 @@
+## [2.3.5](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.4...v2.3.5) (2018-06-16)
+
+
+### Bug Fixes
+
+* **build:** prepare new version ([0740ef4](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/0740ef4))
+
 ## [2.3.4](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.3...v2.3.4) (2018-06-16)
 
 
