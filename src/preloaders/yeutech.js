@@ -4,7 +4,8 @@ export default `
   .loader {
     position: absolute;
     top: 50%;
-    left: 43%;
+    left: 50%;
+    margin-left: -42px;
   }
 }
 @media only screen and (min-width: 799px)  {
