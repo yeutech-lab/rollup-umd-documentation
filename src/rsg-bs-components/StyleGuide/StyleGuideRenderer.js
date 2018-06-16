@@ -243,7 +243,7 @@ class StyleGuideRendererUnstyled extends Component {
             <Ribbon />
           </div>
         )}
-        <main className={`content ${isOpenSidebar ? 'sidebar-open' : 'sidebar-close'}`} >
+        <main className={`content ${isOpenSidebar && hasSidebar ? 'sidebar-open' : 'sidebar-close'}`} >
           {children}
           {hasSidebar && (
             <FooterRenderer logo={logoFooter} />
