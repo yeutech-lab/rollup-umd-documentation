@@ -66,14 +66,12 @@ export const config = createConfig();
 
 export default function createConfig(userConfig = {}, options = {}) {
   const {
-    require: userRequire,
     webpackConfig: userWepackConfig,
     ...restUserConfig
   } = userConfig;
   const opts = { ...defaultOptions, ...options };
   return {
     serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060, // eslint-disable-line radix
-    require: userRequire instanceof Array ? [path.resolve(__dirname, 'setup.js'), ...userRequire] : [path.resolve(__dirname, 'setup.js')],
     styleguideDir: 'public',
     components: 'src/components/**/[A-Z]*.js',
     previewDelay: 500,
