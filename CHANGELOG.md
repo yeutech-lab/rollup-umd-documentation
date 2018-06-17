@@ -1,3 +1,10 @@
+## [2.3.6](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.5...v2.3.6) (2018-06-17)
+
+
+### Bug Fixes
+
+* **page:** ci page needed to have build and test stage ([511bef0](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/511bef0))
+
 ## [2.3.5](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.4...v2.3.5) (2018-06-16)
 
 
