@@ -1,3 +1,10 @@
+## [2.3.7](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.6...v2.3.7) (2018-06-22)
+
+
+### Bug Fixes
+
+* **github:** deploy to github ([e501fd8](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/e501fd8))
+
 ## [2.3.6](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.5...v2.3.6) (2018-06-17)
 
 
