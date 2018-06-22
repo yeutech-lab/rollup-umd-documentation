@@ -312,6 +312,10 @@
     "fail": false,
     "npmPublish": true,
     "verifyConditions": [
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "npx -p rollup-umd-scripts scripts-ci transitive verify"
+      },
       "@semantic-release/changelog",
       "@semantic-release/npm",
       "@semantic-release/git",
@@ -321,6 +325,10 @@
       }
     ],
     "prepare": [
+      {
+        "path": "@semantic-release/exec",
+        "cmd": "npx -p rollup-umd-scripts scripts-ci transitive prepare"
+      },
       "@semantic-release/changelog",
       "@semantic-release/npm",
       {
@@ -336,11 +344,11 @@
       }
     ],
     "publish": [
-      "@semantic-release/npm",
       {
         "path": "@semantic-release/exec",
-        "cmd": "echo ${nextRelease.version} > ~/release_version"
+        "cmd": "npx -p rollup-umd-scripts scripts-ci transitive publish ${nextRelease.version}"
       },
+      "@semantic-release/npm",
       {
         "path": "@semantic-release/gitlab",
         "gitlabUrl": "https://module.kopaxgroup.com"
