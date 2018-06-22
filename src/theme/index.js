@@ -1,6 +1,6 @@
 import createMakeTheme, { toMakeTheme } from 'bootstrap-styled-theme/lib';
 import { makeTheme as makeThemeBs } from 'bootstrap-styled/lib/theme/makeTheme';
-import { makeTheme as makeThemeNavigationStyleguide } from '@yeutech/navigation-bar/lib/NavigationStyleguide/theme';
+import { makeTheme as makeThemeNavigationStyleguide } from '@bootstrap-styled/navigation-bar/lib/NavigationStyleguide/theme';
 import { makeTheme as makeThemeStyleguideBs } from './styleguidist-bs';
 
 const themeBsYeutech = makeThemeBs({

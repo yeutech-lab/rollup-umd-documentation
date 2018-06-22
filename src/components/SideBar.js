@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash.omit';
 import bp from 'bootstrap-styled-mixins/lib/breakpoints';
-import NavigationStyleguide from '@yeutech/navigation-bar/lib/NavigationStyleguide/NavigationStyleguide';
+import NavigationStyleguide from '@bootstrap-styled/navigation-bar/lib/NavigationStyleguide/NavigationStyleguide';
 import Img from 'bootstrap-styled/lib/Img';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
