@@ -1,3 +1,10 @@
+## [2.3.8](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.7...v2.3.8) (2018-06-22)
+
+
+### Bug Fixes
+
+* **ci:** added exec for transitive state ([294bb7c](https://module.kopaxgroup.com/dev-tools/rollup-documentation/commit/294bb7c))
+
 ## [2.3.7](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.6...v2.3.7) (2018-06-22)
 
 
