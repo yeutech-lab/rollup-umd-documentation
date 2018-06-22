@@ -7,8 +7,8 @@
     "**/{sagas,selectors,actions,constants,reducer,theme}.{js,jsx,ts,tsx}"
   ],
   "ribbon": {
-    "url": "https://module.kopaxgroup.com/dev-tools/rollup-documentation",
-    "text": "Fork us on GitLab"
+    "url": "https://github.com/yeutech-lab/rollup-umd-documentation",
+    "text": "Fork us on GitHub"
   },
   "sections": [
     {
