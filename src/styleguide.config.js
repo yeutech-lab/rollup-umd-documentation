@@ -6,15 +6,21 @@ import { generateCSSReferences, generateJSReferences } from 'mini-html-webpack-p
 import merge from 'webpack-merge';
 import parse from 'parse-author';
 
-export const pkgBase = fs.existsSync(path.join(process.cwd(), 'package.json')) ?
-  path.join(process.cwd()) :
+const cwd = process.cwd();
+export const pkgBase = fs.existsSync(path.join(cwd, 'package.json')) ?
+  path.join(cwd) :
   path.join(__dirname, '..');
 
-export const pkgDoc = require(path.join(__dirname, '../package.json'));
+let pkgDoc = {};
+const pkgDocSupposedPath = path.join(__dirname, '../package.json');
+if (fs.existsSync(pkgDocSupposedPath)) {
+  pkgDoc = require(pkgDocSupposedPath);
+}
+
 export const pkg = require(path.join(pkgBase, 'package.json'));
 
-export const licenseBase = fs.existsSync(path.join(process.cwd(), 'LICENSE.md')) ?
-  path.join(process.cwd(), 'LICENSE.md') :
+export const licenseBase = fs.existsSync(path.join(cwd, 'LICENSE.md')) ?
+  path.join(cwd, 'LICENSE.md') :
   path.join(__dirname, '../LICENSE.md');
 
 let license = pkgBase.license; // eslint-disable-line prefer-destructuring
@@ -24,25 +30,25 @@ if (fs.existsSync(licenseBase)) {
   console.error('LICENSE.md is missing');
 }
 
-export const styleguideBase = fs.existsSync(path.join(process.cwd(), 'styleguide')) ?
-  path.join(process.cwd(), 'styleguide') :
+export const styleguideBase = fs.existsSync(path.join(cwd, 'styleguide')) ?
+  path.join(cwd, 'styleguide') :
   path.join(__dirname);
 
-export const srcBase = fs.existsSync(path.join(process.cwd(), 'src')) ?
-  path.join(process.cwd(), 'src') :
+export const srcBase = fs.existsSync(path.join(cwd, 'src')) ?
+  path.join(cwd, 'src') :
   path.join(__dirname, '../lib');
 
-export const layoutRendererBase = fs.existsSync(path.join(process.cwd(), 'styleguide/components/LayoutRenderer.js')) ?
-  path.join(process.cwd(), 'styleguide/components/LayoutRenderer.js') :
+export const layoutRendererBase = fs.existsSync(path.join(cwd, 'styleguide/components/LayoutRenderer.js')) ?
+  path.join(cwd, 'styleguide/components/LayoutRenderer.js') :
   path.join(__dirname, '../lib/components/LayoutRenderer.js');
 
-export const wrapperBase = fs.existsSync(path.join(process.cwd(), 'styleguide/components/Wrapper.js')) ?
-  path.join(process.cwd(), 'styleguide/components/Wrapper.js') :
+export const wrapperBase = fs.existsSync(path.join(cwd, 'styleguide/components/Wrapper.js')) ?
+  path.join(cwd, 'styleguide/components/Wrapper.js') :
   path.join(__dirname, '../lib/components/Wrapper.js');
 
 /* eslint-disable no-nested-ternary */
-export const jsonExtension = fs.existsSync(path.join(process.cwd(), 'styleguide/styleguide.ext.json')) ?
-  require(path.join(process.cwd(), 'styleguide/styleguide.ext.json')) :
+export const jsonExtension = fs.existsSync(path.join(cwd, 'styleguide/styleguide.ext.json')) ?
+  require(path.join(cwd, 'styleguide/styleguide.ext.json')) :
   fs.existsSync(path.join(__dirname, '../styleguide/styleguide.ext.json')) ?
     require(path.join(__dirname, '../styleguide/styleguide.ext.json')) : {};
 
@@ -72,7 +78,7 @@ export default function createConfig(userConfig = {}, options = {}) {
   } = userConfig;
   const opts = { ...defaultOptions, ...options };
   return {
-    serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT) : 6060, // eslint-disable-line radix
+    serverPort: process.env.NODE_PORT ? parseInt(process.env.NODE_PORT, 10) : 6060, // eslint-disable-line radix
     styleguideDir: 'public',
     components: 'src/components/**/[A-Z]*.js',
     previewDelay: 500,
@@ -94,7 +100,7 @@ export default function createConfig(userConfig = {}, options = {}) {
         <meta name="description" content="${pkg.description}">
         ${pkg.keywords && pkg.keywords.length > 0 && `<meta name="keywords" content="${pkg.keywords.join(',')}">`}
         <meta name="author" content="${parse(pkg.author).name}">
-        <meta name="copyright" content="${license}" />
+        ${license && `<meta name="copyright" content="${license}" />`}
         ${pkg.contributor && pkg.contributor.length > 0 && `<meta name="contributor" content="${pkg.contributor.map((c) => parse(c).name).join(',')}"> ̈́`}
         ${pkg.private === undefined && '<meta name="robots" content="index,follow"/>'/* undefined means the package is public */}
         ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : '<meta name="robots" content="noindex, nofollow"/>'/* false means release in private, true means never released */}
