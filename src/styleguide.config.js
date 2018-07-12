@@ -58,7 +58,9 @@ const preloaders = {
 export const webpackMerge = merge;
 
 const defaultOptions = {
+  lang: 'en',
   preloader: 'yeutech',
+  favicon: null,
 };
 
 export const config = createConfig();
@@ -85,18 +87,19 @@ export default function createConfig(userConfig = {}, options = {}) {
       title,
       publicPath,
     }) => `<!DOCTYPE html>
-    <html>
+    <html${opts.lang && ` lang="${opts.lang}"`}>
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${pkg.description}">
-        ${pkg.keywords && pkg.keywords.length > 0 ? `<meta name="keywords" content="${pkg.keywords.join(',')}">` : ''}
+        ${pkg.keywords && pkg.keywords.length > 0 && `<meta name="keywords" content="${pkg.keywords.join(',')}">`}
         <meta name="author" content="${parse(pkg.author).name}">
         <meta name="copyright" content="${license}" />
-        ${pkg.contributor && pkg.contributor.length > 0 ? `<meta name="contributor" content="${pkg.contributor.map((c) => parse(c).name).join(',')}"> ̈́` : ''}
-        ${pkg.private === undefined ? '<meta name="robots" content="index,follow"/>' : ''/* undefined means the package is public */}
+        ${pkg.contributor && pkg.contributor.length > 0 && `<meta name="contributor" content="${pkg.contributor.map((c) => parse(c).name).join(',')}"> ̈́`}
+        ${pkg.private === undefined && '<meta name="robots" content="index,follow"/>'/* undefined means the package is public */}
         ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : '<meta name="robots" content="noindex, nofollow"/>'/* false means release in private, true means never released */}
         ${pkg.name !== pkgDoc.name ? `<meta name="rollup-documentation-version" content="${pkgDoc.version}">\n<meta name="version" content="${pkg.version}">` : `<meta name="version" content="${pkg.version}">`}
+        ${opts.favicon && `<link rel="icon" type="image/x-icon" href="${opts.favicon}">`}
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
         <title>${title}</title>
         ${generateCSSReferences(css, publicPath)}

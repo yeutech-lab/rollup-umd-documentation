@@ -1,6 +1,6 @@
 {
   "name": "@yeutech-lab/rollup-umd-documentation",
-  "version": "2.3.8",
+  "version": "0.0.0-development",
   "description": "Quickly build awesome documentation for your rollup-umd project.",
   "main": "lib/index.js",
   "jsnext:main": "@yeutech-lab/rollup-umd-documentation.esm.js",
@@ -311,20 +311,12 @@
     "branch": "master",
     "npmPublish": true,
     "verifyConditions": [
-      {
-        "path": "@semantic-release/exec",
-        "cmd": "npx -p rollup-umd-scripts scripts-ci transitive verify"
-      },
       "@semantic-release/changelog",
       "@semantic-release/npm",
       "@semantic-release/git",
       "@semantic-release/github"
     ],
     "prepare": [
-      {
-        "path": "@semantic-release/exec",
-        "cmd": "npx -p rollup-umd-scripts scripts-ci transitive prepare"
-      },
       "@semantic-release/changelog",
       "@semantic-release/npm",
       {
@@ -340,10 +332,6 @@
       }
     ],
     "publish": [
-      {
-        "path": "@semantic-release/exec",
-        "cmd": "npx -p rollup-umd-scripts scripts-ci transitive publish ${nextRelease.version}"
-      },
       "@semantic-release/npm",
       {
         "path": "@semantic-release/github",
