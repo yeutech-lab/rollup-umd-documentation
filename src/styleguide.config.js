@@ -10,7 +10,12 @@ export const pkgBase = fs.existsSync(path.join(process.cwd(), 'package.json')) ?
   path.join(process.cwd()) :
   path.join(__dirname, '..');
 
-export const pkgDoc = require(path.join(__dirname, '../package.json'));
+let pkgDoc = {};
+let pkgDocSupposedPath = path.join(__dirname, '../package.json');
+if (fs.existsSync(pkgDocSupposedPath)) {
+  pkgDoc = require(pkgDocSupposedPath);
+}
+
 export const pkg = require(path.join(pkgBase, 'package.json'));
 
 export const licenseBase = fs.existsSync(path.join(process.cwd(), 'LICENSE.md')) ?
@@ -94,7 +99,7 @@ export default function createConfig(userConfig = {}, options = {}) {
         <meta name="description" content="${pkg.description}">
         ${pkg.keywords && pkg.keywords.length > 0 && `<meta name="keywords" content="${pkg.keywords.join(',')}">`}
         <meta name="author" content="${parse(pkg.author).name}">
-        <meta name="copyright" content="${license}" />
+        ${license && `<meta name="copyright" content="${license}" />`}
         ${pkg.contributor && pkg.contributor.length > 0 && `<meta name="contributor" content="${pkg.contributor.map((c) => parse(c).name).join(',')}"> ̈́`}
         ${pkg.private === undefined && '<meta name="robots" content="index,follow"/>'/* undefined means the package is public */}
         ${pkg.private === false ? '<meta name="robots" content="nofollow"/>' : '<meta name="robots" content="noindex, nofollow"/>'/* false means release in private, true means never released */}
