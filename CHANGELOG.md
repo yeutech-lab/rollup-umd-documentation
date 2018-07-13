@@ -1,3 +1,12 @@
+## [2.3.9](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.8...v2.3.9) (2018-07-13)
+
+
+### Bug Fixes
+
+* **babel-plugin-inline-react-svg:** Downgrade to 0.5.1 ([cd77a04](https://github.com/yeutech-lab/rollup-umd-documentation/commit/cd77a04))
+* **ci:** build ([343282c](https://github.com/yeutech-lab/rollup-umd-documentation/commit/343282c))
+* **config:** Fix error when requiring documentation package.json file ([dcdad32](https://github.com/yeutech-lab/rollup-umd-documentation/commit/dcdad32))
+
 ## [2.3.8](https://module.kopaxgroup.com/dev-tools/rollup-documentation/compare/v2.3.7...v2.3.8) (2018-06-22)
 
 
