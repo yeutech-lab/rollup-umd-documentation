@@ -1,3 +1,10 @@
+## [2.3.10](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.9...v2.3.10) (2018-07-13)
+
+
+### Bug Fixes
+
+* **babel-plugin-inline-react-svg:** due to issue https://github.com/airbnb/babel-plugin-inline-react-svg/issues/47 ([42538e2](https://github.com/yeutech-lab/rollup-umd-documentation/commit/42538e2))
+
 ## [2.3.9](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.8...v2.3.9) (2018-07-13)
 
 
