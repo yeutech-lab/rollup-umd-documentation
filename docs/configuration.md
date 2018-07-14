@@ -23,7 +23,7 @@ It is used by scripts as a fresh format for edit/save.
 
 The extension file is located in `styleguide/styleguide.ext.json`.
 
-It should contains :
+It should contains:
 
 - [sections](https://react-styleguidist.js.org/docs/configuration.html#sections): The documentation menu.
 - [ignore](https://react-styleguidist.js.org/docs/configuration.html#ignore): File to be ignored by components scanning.
