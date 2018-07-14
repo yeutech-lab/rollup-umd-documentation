@@ -1,3 +1,14 @@
+## [2.3.13](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.12...v2.3.13) (2018-07-14)
+
+
+### Bug Fixes
+
+* **doc:** chmod +x on styleguide/prepare.sh ([4124226](https://github.com/yeutech-lab/rollup-umd-documentation/commit/4124226))
+* **doc:** Update documentation ([88a9695](https://github.com/yeutech-lab/rollup-umd-documentation/commit/88a9695))
+* **documentation:** meta tags were failing the design ([c897e5f](https://github.com/yeutech-lab/rollup-umd-documentation/commit/c897e5f))
+* **meta:** fix meta in head ([5760bdb](https://github.com/yeutech-lab/rollup-umd-documentation/commit/5760bdb))
+* **README:** Added missing CONTRIBUTING.md generating broken link and updated CODE_OF_CONDUCT.md with general mail ([f9b0e2d](https://github.com/yeutech-lab/rollup-umd-documentation/commit/f9b0e2d))
+
 ## [2.3.12](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.11...v2.3.12) (2018-07-14)
 
 
