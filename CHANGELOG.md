@@ -1,3 +1,10 @@
+## [2.3.14](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.13...v2.3.14) (2018-07-14)
+
+
+### Bug Fixes
+
+* **favicon:** added favicon to config ([6af5bd3](https://github.com/yeutech-lab/rollup-umd-documentation/commit/6af5bd3))
+
 ## [2.3.13](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.12...v2.3.13) (2018-07-14)
 
 
