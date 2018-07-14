@@ -1,3 +1,10 @@
+## [2.3.11](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.10...v2.3.11) (2018-07-14)
+
+
+### Bug Fixes
+
+* **doc:** Typo fix and deploy doc to GitHub page ([95a3791](https://github.com/yeutech-lab/rollup-umd-documentation/commit/95a3791))
+
 ## [2.3.10](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.9...v2.3.10) (2018-07-13)
 
 
