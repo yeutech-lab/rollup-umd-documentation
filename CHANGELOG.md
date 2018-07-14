@@ -1,3 +1,10 @@
+## [2.3.12](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.11...v2.3.12) (2018-07-14)
+
+
+### Bug Fixes
+
+* **doc:** fix permissions for deployment ([72e1a7b](https://github.com/yeutech-lab/rollup-umd-documentation/commit/72e1a7b))
+
 ## [2.3.11](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.10...v2.3.11) (2018-07-14)
 
 
