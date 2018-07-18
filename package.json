@@ -155,11 +155,11 @@
     ]
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^2.0.2",
-    "@semantic-release/exec": "^2.2.4",
-    "@semantic-release/git": "^5.0.0",
-    "@semantic-release/github": "^4.2.17",
-    "@semantic-release/npm": "^3.2.5",
+    "@semantic-release/changelog": "^3.0.0",
+    "@semantic-release/exec": "^2.3.0",
+    "@semantic-release/git": "^7.0.0",
+    "@semantic-release/gitlab": "^2.1.4",
+    "@semantic-release/npm": "^4.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
@@ -213,7 +213,7 @@
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-plugin-visualizer": "^0.5.0",
     "rollup-watch": "^4.3.1",
-    "semantic-release": "^15.7.1",
+    "semantic-release": "^15.8.0",
     "sinon": "^2.3.2",
     "toctoc": "^0.3.0"
   },
@@ -230,7 +230,7 @@
   ],
   "dependencies": {
     "@bootstrap-styled/navigation-bar": "^1.8.1",
-    "bootstrap-styled": "^1.7.0",
+    "bootstrap-styled": "^1.7.1",
     "bootstrap-styled-mixins": "^1.0.4",
     "bootstrap-styled-provider": "^1.1.6",
     "bootstrap-styled-theme": "0.0.1",
