@@ -1,3 +1,11 @@
+## [2.3.15](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.14...v2.3.15) (2018-07-18)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade bootstrap-styled to 1.7.1 and upgrade semantic-release ([b6c1ff9](https://github.com/yeutech-lab/rollup-umd-documentation/commit/b6c1ff9))
+* **release:** fix release having wrong assets ([de62f73](https://github.com/yeutech-lab/rollup-umd-documentation/commit/de62f73))
+
 ## [2.3.14](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.13...v2.3.14) (2018-07-14)
 
 
