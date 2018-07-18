@@ -1,3 +1,10 @@
+## [2.3.16](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.15...v2.3.16) (2018-07-18)
+
+
+### Bug Fixes
+
+* **dependencies:** upgrade styleguide ([7ed3d73](https://github.com/yeutech-lab/rollup-umd-documentation/commit/7ed3d73))
+
 ## [2.3.15](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.14...v2.3.15) (2018-07-18)
 
 
