@@ -83,8 +83,8 @@ export default function createConfig(userConfig = {}, options = {}) {
     components: 'src/components/**/[A-Z]*.js',
     previewDelay: 500,
     skipComponentsWithoutExample: false,
-    showCode: false,
-    showUsage: true,
+    exampleMode: 'collapse',
+    usageMode: 'expand',
     showSidebar: true,
     styles: {},
     template: ({
