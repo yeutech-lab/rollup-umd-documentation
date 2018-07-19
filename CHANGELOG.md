@@ -1,3 +1,10 @@
+## [2.3.18](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.17...v2.3.18) (2018-07-19)
+
+
+### Bug Fixes
+
+* **doc:** config change due to deprecation of showCode and showUsage ([cb5ea9c](https://github.com/yeutech-lab/rollup-umd-documentation/commit/cb5ea9c))
+
 ## [2.3.17](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.16...v2.3.17) (2018-07-19)
 
 
