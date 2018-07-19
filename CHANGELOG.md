@@ -1,3 +1,10 @@
+## [2.3.17](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.16...v2.3.17) (2018-07-19)
+
+
+### Bug Fixes
+
+* **warnings:** Restore showCode and showUsage ([3b45db3](https://github.com/yeutech-lab/rollup-umd-documentation/commit/3b45db3))
+
 ## [2.3.16](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.15...v2.3.16) (2018-07-18)
 
 
