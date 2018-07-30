@@ -1,3 +1,11 @@
+## [2.3.19](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.18...v2.3.19) (2018-07-30)
+
+
+### Bug Fixes
+
+* **alias:** Added $PACKAGE_NAME as a valid alias for the current base dir ([c88d2e4](https://github.com/yeutech-lab/rollup-umd-documentation/commit/c88d2e4))
+* **dependencies:** Upgrade babel-plugin-inline-react-svg to 0.5.4 (fix https://github.com/airbnb/babel-plugin-inline-react-svg/issues/47)) ([b4b03c8](https://github.com/yeutech-lab/rollup-umd-documentation/commit/b4b03c8))
+
 ## [2.3.18](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.17...v2.3.18) (2018-07-19)
 
 
