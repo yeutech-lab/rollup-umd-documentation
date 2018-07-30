@@ -129,6 +129,7 @@ export default function createConfig(userConfig = {}, options = {}) {
       ],
       resolve: {
         alias: {
+          $PACKAGE_NAME: path.resolve(pkgBase),
           [pkg.name]: path.resolve(pkgBase),
           styleguide: path.resolve(styleguideBase),
         },
