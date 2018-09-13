@@ -1,3 +1,11 @@
+## [2.3.20](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.19...v2.3.20) (2018-09-13)
+
+
+### Bug Fixes
+
+* **dependencies:** Upgrade react react-dom styled-components and bootstrap-styled to latest ([79944a5](https://github.com/yeutech-lab/rollup-umd-documentation/commit/79944a5))
+* **react-styleguidist:** fixing version to 7.1.1 ([3543993](https://github.com/yeutech-lab/rollup-umd-documentation/commit/3543993))
+
 ## [2.3.19](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.18...v2.3.19) (2018-07-30)
 
 
