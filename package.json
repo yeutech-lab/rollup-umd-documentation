@@ -145,7 +145,7 @@
         "alias": [
           [
             "rsg-components",
-            "../node_modules/react-styleguidist/lib/rsg-components"
+            "./node_modules/react-styleguidist/lib/rsg-components"
           ]
         ]
       }
@@ -266,6 +266,7 @@
   },
   "peerDependencies": {},
   "jest": {
+    "testURL": "http://localhost",
     "roots": [
       "<rootDir>/src/"
     ],
