@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Code from 'bootstrap-styled/lib/Code';
+import Code from '@bootstrap-styled/v4/lib/Code';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';

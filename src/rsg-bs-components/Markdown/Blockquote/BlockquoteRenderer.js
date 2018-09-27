@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Blockquote from 'bootstrap-styled/lib/Blockquote';
+import Blockquote from '@bootstrap-styled/v4/lib/Blockquote';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import omit from 'lodash.omit';
-import bp from 'bootstrap-styled-mixins/lib/breakpoints';
-import Fa from 'bootstrap-styled/lib/Fa';
-import { hover } from 'bootstrap-styled-mixins/lib/hover';
+import bp from '@bootstrap-styled/css-mixins/lib/breakpoints';
+import Fa from '@bootstrap-styled/v4/lib/Fa';
+import { hover } from '@bootstrap-styled/css-mixins/lib/hover';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';

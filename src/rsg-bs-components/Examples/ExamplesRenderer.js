@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Article from 'bootstrap-styled/lib/Article';
+import Article from '@bootstrap-styled/v4/lib/Article';
 import styled from 'styled-components';
 import cn from 'classnames';
 import omit from 'lodash.omit';

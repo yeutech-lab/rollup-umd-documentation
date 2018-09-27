@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Thead from 'bootstrap-styled/lib/Table/Thead';
+import Thead from '@bootstrap-styled/v4/lib/Table/Thead';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';

@@ -4,7 +4,7 @@ import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';
-import Strong from 'bootstrap-styled/lib/Strong';
+import Strong from '@bootstrap-styled/v4/lib/Strong';
 
 export const defaultProps = {
   size: 'inherit',

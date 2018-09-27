@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tr from 'bootstrap-styled/lib/Table/Tr';
+import Tr from '@bootstrap-styled/v4/lib/Table/Tr';
 
 export function TableRowRenderer({ children }) {
   return <Tr>{children}</Tr>;

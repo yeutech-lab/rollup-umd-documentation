@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tbody from 'bootstrap-styled/lib/Table/Tbody';
+import Tbody from '@bootstrap-styled/v4/lib/Table/Tbody';
 
 export function TableBodyRenderer({ children }) {
   return <Tbody>{children}</Tbody>;

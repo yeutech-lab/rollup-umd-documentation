@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import cn from 'classnames';
 import omit from 'lodash.omit';
 import mapToCssModules from 'map-to-css-modules/lib';
-import Nav from 'bootstrap-styled/lib/Nav';
-import Form from 'bootstrap-styled/lib/Form';
-import Input from 'bootstrap-styled/lib/Input';
+import Nav from '@bootstrap-styled/v4/lib/Nav';
+import Form from '@bootstrap-styled/v4/lib/Form';
+import Input from '@bootstrap-styled/v4/lib/Input';
 
 
 export const defaultProps = {

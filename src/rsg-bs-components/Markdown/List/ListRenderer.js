@@ -1,7 +1,7 @@
 import React, { Children, cloneElement } from 'react';
 import PropTypes from 'prop-types';
-import Ol from 'bootstrap-styled/lib/Ol';
-import Ul from 'bootstrap-styled/lib/Ul';
+import Ol from '@bootstrap-styled/v4/lib/Ol';
+import Ul from '@bootstrap-styled/v4/lib/Ul';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
