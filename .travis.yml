@@ -7,6 +7,11 @@ branches:
   except:
     - gh-pages # will be deployed to, no need to build it
 
+notifications: 
+  irc: "chat.freenode.net#yeutech"
+email:
+  - dev@yeutech.com
+
 cache:
   directories:
     - node_modules
