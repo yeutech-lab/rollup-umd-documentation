@@ -230,10 +230,10 @@
     "lint-staged"
   ],
   "dependencies": {
-    "@bootstrap-styled/navigation-bar": "^1.8.1",
-    "bootstrap-styled": "^1.7.1",
-    "bootstrap-styled-mixins": "^1.0.4",
-    "bootstrap-styled-provider": "^1.1.6",
+    "@bootstrap-styled/navigation-bar": "1.8.1",
+    "bootstrap-styled": "1.7.1",
+    "bootstrap-styled-mixins": "1.0.4",
+    "bootstrap-styled-provider": "1.1.6",
     "bootstrap-styled-theme": "0.0.1",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
