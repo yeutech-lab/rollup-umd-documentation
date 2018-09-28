@@ -10,7 +10,7 @@ branches:
 notifications: 
   irc: "chat.freenode.net#yeutech"
 email:
-  - dev@yeutech.com
+  - dev@yeutech.vn
 
 cache:
   directories:
