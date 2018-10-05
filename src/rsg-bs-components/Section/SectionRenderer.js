@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Section from 'bootstrap-styled/lib/Section';
+import Section from '@bootstrap-styled/v4/lib/Section';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import A from 'bootstrap-styled/lib/A';
-import Fa from 'bootstrap-styled/lib/Fa';
-import { hoverFocusActive } from 'bootstrap-styled-mixins/lib/hover';
+import A from '@bootstrap-styled/v4/lib/A';
+import Fa from '@bootstrap-styled/v4/lib/Fa';
+import { hoverFocusActive } from '@bootstrap-styled/css-mixins/lib/hover';
 import styled from 'styled-components';
 import cn from 'classnames';
 import omit from 'lodash.omit';

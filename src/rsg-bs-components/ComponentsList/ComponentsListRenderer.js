@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Collapse from 'bootstrap-styled/lib/Collapse';
-import Ul from 'bootstrap-styled/lib/Ul';
-import Li from 'bootstrap-styled/lib/Li';
-import Fa from 'bootstrap-styled/lib/Fa';
-import { hover } from 'bootstrap-styled-mixins/lib/hover';
+import Collapse from '@bootstrap-styled/v4/lib/Collapse';
+import Ul from '@bootstrap-styled/v4/lib/Ul';
+import Li from '@bootstrap-styled/v4/lib/Li';
+import Fa from '@bootstrap-styled/v4/lib/Fa';
+import { hover } from '@bootstrap-styled/css-mixins/lib/hover';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';
 import cn from 'classnames';

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'bootstrap-styled/lib/Button';
-import P from 'bootstrap-styled/lib/P';
-import Fa from 'bootstrap-styled/lib/Fa';
+import Button from '@bootstrap-styled/v4/lib/Button';
+import P from '@bootstrap-styled/v4/lib/P';
+import Fa from '@bootstrap-styled/v4/lib/Fa';
 import filterSectionsByName from 'react-styleguidist/lib/utils/filterSectionsByName';
 import ComponentsList from 'rsg-components/ComponentsList';
 import styled from 'styled-components';

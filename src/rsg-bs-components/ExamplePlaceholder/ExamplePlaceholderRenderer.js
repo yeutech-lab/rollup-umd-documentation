@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'bootstrap-styled/lib/Button';
-import { hover } from 'bootstrap-styled-mixins/lib/hover';
+import Button from '@bootstrap-styled/v4/lib/Button';
+import { hover } from '@bootstrap-styled/css-mixins/lib/hover';
 import omit from 'lodash.omit';
 import styled from 'styled-components';
 import mapToCssModules from 'map-to-css-modules/lib';

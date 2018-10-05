@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Fa from 'bootstrap-styled/lib/Fa';
+import Fa from '@bootstrap-styled/v4/lib/Fa';
 import getUrl from 'react-styleguidist/lib/utils/getUrl';
 import ToolbarButton from 'rsg-components/ToolbarButton';
 
