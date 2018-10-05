@@ -1,6 +1,6 @@
 {
   "name": "@yeutech-lab/rollup-umd-documentation",
-  "version": "2.3.20",
+  "version": "2.3.21",
   "description": "Quickly build awesome documentation for your rollup-umd project.",
   "main": "lib/index.js",
   "jsnext:main": "@yeutech-lab/rollup-umd-documentation.esm.js",

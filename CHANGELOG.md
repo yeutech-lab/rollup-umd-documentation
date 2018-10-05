@@ -1,3 +1,11 @@
+## [2.3.21](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.20...v2.3.21) (2018-10-05)
+
+
+### Bug Fixes
+
+* **package.json:** imports form bootstrap and co. ([89f3b25](https://github.com/yeutech-lab/rollup-umd-documentation/commit/89f3b25))
+* **src/rsg***:** prepared with bs migration to [@botostrap-stlyed](https://github.com/botostrap-stlyed) ([89e00d0](https://github.com/yeutech-lab/rollup-umd-documentation/commit/89e00d0))
+
 ## [2.3.20](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.19...v2.3.20) (2018-09-13)
 
 
