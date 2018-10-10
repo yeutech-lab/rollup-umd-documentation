@@ -2,7 +2,7 @@
 /**
  * Testing our ExamplesRenderer component
  */
-import { BootstrapProvider } from 'bootstrap-styled-provider';
+import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider';
 import { shallow } from 'enzyme';
 import React from 'react';
 import ExamplesRenderer from '../ExamplesRenderer';

@@ -2,7 +2,7 @@
 /**
  * Testing our HeadingRenderer component
  */
-import { BootstrapProvider } from 'bootstrap-styled-provider';
+import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider';
 import { mount } from 'enzyme';
 import React from 'react';
 import HeadingRenderer, { defaultProps } from '../HeadingRenderer';
