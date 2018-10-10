@@ -1,3 +1,10 @@
+## [2.3.22](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.21...v2.3.22) (2018-10-10)
+
+
+### Bug Fixes
+
+* **migration BS:** added right version of [@bootstrap-styled](https://github.com/bootstrap-styled)/* + modified imports ([790c69c](https://github.com/yeutech-lab/rollup-umd-documentation/commit/790c69c))
+
 ## [2.3.21](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.20...v2.3.21) (2018-10-05)
 
 
