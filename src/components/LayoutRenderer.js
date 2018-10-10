@@ -8,7 +8,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 
-import { BootstrapProvider } from 'bootstrap-styled-provider';
+import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider';
 require('!!../../loaders/style-loader!../../loaders/css-loader!font-awesome/css/font-awesome.css'); // eslint-disable-line import/no-webpack-loader-syntax
 import theme from '../theme';
 import StyleGuideRenderer from '../rsg-bs-components/StyleGuide/StyleGuideRenderer';

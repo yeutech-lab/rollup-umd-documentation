@@ -2,7 +2,7 @@
 /**
  * Testing our LinkRenderer component
  */
-import { BootstrapProvider } from 'bootstrap-styled-provider';
+import BootstrapProvider from '@bootstrap-styled/provider/lib/BootstrapProvider';
 import { shallow } from 'enzyme';
 import React from 'react';
 import LinkRenderer from '../LinkRenderer';
