@@ -235,7 +235,7 @@
     "@bootstrap-styled/navigation-bar": "^1.8.11",
     "@bootstrap-styled/provider": "^1.0.2",
     "@bootstrap-styled/v4": "^1.0.0",
-    "bootstrap-styled": "file:bootstrap-styled-1.7.8.tgz",
+    "bootstrap-styled": "^1.7.8",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
     "clipboard-copy": "^2.0.0",
