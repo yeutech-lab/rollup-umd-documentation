@@ -1,3 +1,11 @@
+## [2.3.24](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.23...v2.3.24) (2018-10-15)
+
+
+### Bug Fixes
+
+* **dependencies:** updated bootstrap-styled & co. ([67dddd4](https://github.com/yeutech-lab/rollup-umd-documentation/commit/67dddd4))
+* **navigation-bar:** updated package. ([fa81ceb](https://github.com/yeutech-lab/rollup-umd-documentation/commit/fa81ceb))
+
 ## [2.3.23](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.22...v2.3.23) (2018-10-11)
 
 
