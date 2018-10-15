@@ -1,6 +1,6 @@
 {
   "name": "@yeutech-lab/rollup-umd-documentation",
-  "version": "2.3.23",
+  "version": "2.3.21",
   "description": "Quickly build awesome documentation for your rollup-umd project.",
   "main": "lib/index.js",
   "jsnext:main": "@yeutech-lab/rollup-umd-documentation.esm.js",
@@ -232,10 +232,10 @@
   ],
   "dependencies": {
     "@bootstrap-styled/css-mixins": "^1.0.0",
-    "@bootstrap-styled/navigation-bar": "^1.8.11",
+    "@bootstrap-styled/navigation-bar": "^1.8.13",
     "@bootstrap-styled/provider": "^1.0.2",
-    "@bootstrap-styled/v4": "^1.0.0",
-    "bootstrap-styled": "^1.7.8",
+    "@bootstrap-styled/v4": "^1.0.2",
+    "bootstrap-styled": "^1.8.1",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
     "clipboard-copy": "^2.0.0",
