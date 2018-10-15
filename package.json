@@ -232,7 +232,7 @@
   ],
   "dependencies": {
     "@bootstrap-styled/css-mixins": "^1.0.0",
-    "@bootstrap-styled/navigation-bar": "^1.8.12",
+    "@bootstrap-styled/navigation-bar": "^1.8.13",
     "@bootstrap-styled/provider": "^1.0.2",
     "@bootstrap-styled/v4": "^1.0.2",
     "bootstrap-styled": "^1.8.1",
