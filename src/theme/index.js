@@ -8,7 +8,7 @@ const themeBsYeutech = makeThemeBs({
   '$btn-primary-bg': '#1C00ff00',
   '$btn-primary-border': '#1C00ff00',
   '$btn-box-shadow': '#1C00ff00 !important',
-  '$headings-font-family': '"Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+  '$headings-font-family': '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
   '$headings-font-weight': 'normal',
   '$font-size-h1': '36px',
   '$font-size-h2': '30px',
@@ -28,13 +28,11 @@ const themeBsYeutech = makeThemeBs({
 });
 
 const themeNavigationYeutech = makeThemeNavigationStyleguide({
-  navigationStyleguide: {
-    '$nav-styleguide-bg-color': 'white',
-    '$nav-styleguide-border': 'none',
-    '$nav-styleguide-width': {
-      sm: '100%',
-      md: '250px',
-    },
+  '$nav-styleguide-bg-color': 'white',
+  '$nav-styleguide-border': '1px solid #CCC',
+  '$nav-styleguide-width': {
+    sm: '100%',
+    md: '260px',
   },
 });
 

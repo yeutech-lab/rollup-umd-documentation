@@ -4,7 +4,7 @@
  * LayoutRenderer
  *
  */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
 
@@ -21,7 +21,7 @@ import LogoYeutech from '../static/logo-yeutech.svg';
  * @returns {XML}
  * @constructor
  */
-class LayoutRenderer extends PureComponent {
+class LayoutRenderer extends Component {
   componentWillMount() {
     // NOTE: we can't use componentWillMount if later we use react-router!
     if (this.props.ga.id) {
@@ -30,16 +30,17 @@ class LayoutRenderer extends PureComponent {
     }
   }
   render() {
-    const { theme, className, title, children, toc, hasSidebar, logoMenu, logoFooter } = this.props;
+    const { className, title, version, children, toc, hasSidebar, logoMenu, logoFooter } = this.props;
     return (
       <BootstrapProvider
-        reset={true}
-        injectGlobal={true}
+        reset
+        injectGlobal
         theme={theme}
       >
         <StyleGuideRenderer
           className={className}
           title={title}
+          version={version}
           logoMenu={logoMenu}
           logoFooter={logoFooter}
           toc={toc}
@@ -55,7 +56,6 @@ class LayoutRenderer extends PureComponent {
 LayoutRenderer.defaultProps = {
   title: 'rollup-documentation',
   className: null,
-  theme,
   ga: {
     id: null,
   },

@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
+
 import Props from 'rsg-components/Props';
 import Methods from 'rsg-components/Methods';
 
 export default function Usage({ props: { props, methods } }) {
-  const propsNode = props && <Props props={props} />;
-  const methodsNode = methods && methods.length > 0 && <Methods methods={methods} />;
+  const propsNode = !isEmpty(props) && <Props props={props} />;
+  const methodsNode = !isEmpty(methods) && <Methods methods={methods} />;
 
   if (!propsNode && !methodsNode) {
     return null;

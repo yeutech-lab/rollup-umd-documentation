@@ -46,6 +46,7 @@ export const propTypes = {
   className: PropTypes.string, // eslint-disable-line react/require-default-props
   code: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  editorConfig: PropTypes.object, // eslint-disable-line react/require-default-props
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
@@ -84,12 +85,22 @@ class EditorUnstyled extends Component {
     this.handleChange = debounce(this.handleChange.bind(this), UPDATE_DELAY);
   }
 
-  shouldComponentUpdate() {
-    return false;
+  shouldComponentUpdate(nextProps) {
+    return !!(this.getEditorConfig(nextProps).readOnly && nextProps.code !== this.props.code);
+  }
+
+  getEditorConfig(props) {
+    return {
+      ...this.context.config.editorConfig,
+      ...props.editorConfig,
+    };
   }
 
   handleChange(editor, metadata, newCode) {
-    this.props.onChange(newCode);
+    const { onChange } = this.props;
+    if (onChange) {
+      onChange(newCode);
+    }
   }
 
   render() {
@@ -99,14 +110,14 @@ class EditorUnstyled extends Component {
       cssModule,
       ...attributes
     } = omit(this.props, ['theme']);
-    const { editorConfig } = this.context.config;
+
     return (
       <CodeMirror
         className={mapToCssModules(cn(className, 'rsg-editor'), cssModule)}
         {...attributes}
         value={code}
         onChange={this.handleChange}
-        options={editorConfig}
+        options={this.getEditorConfig(this.props)}
       />
     );
   }

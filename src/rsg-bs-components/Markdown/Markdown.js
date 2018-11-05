@@ -10,6 +10,9 @@ import Pre from 'rsg-components/Markdown/Pre';
 import Code from 'rsg-components/Code';
 import Checkbox from 'rsg-components/Markdown/Checkbox';
 import Hr from 'rsg-components/Markdown/Hr';
+import Details from 'rsg-components/Markdown/Details/DetailsRenderer';
+import DetailsSummary from 'rsg-components/Markdown/Details/DetailsSummaryRenderer';
+
 import { Table, TableHead, TableBody, TableRow, TableCell } from 'rsg-components/Markdown/Table';
 
 // We’re explicitly specifying Webpack loaders here so we could skip specifying them in Webpack configuration.
@@ -120,6 +123,13 @@ export const baseOverrides = {
   td: {
     component: TableCell,
   },
+  details: {
+    component: Details,
+  },
+  summary: {
+    component: DetailsSummary,
+  },
+
 };
 
 export const inlineOverrides = {

@@ -28,6 +28,8 @@ export const propTypes = {
   name: PropTypes.string,
   /** Display argument type name. */
   type: PropTypes.object,
+  /** Default value. */
+  default: PropTypes.string,
   /** Display argument description. */
   description: PropTypes.string,
   /** Toggle returns and display string "Returns". */
@@ -53,13 +55,20 @@ const ArgumentRendererUnstyled = (props) => {
   const {
     className,
     name,
-    type,
     description,
     returns,
     block,
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
+
+  let { type } = this.props;
+
+  const isOptional = type && type.type === 'OptionalType';
+  const defaultValue = props.default;
+  if (isOptional) {
+    type = type.expression;
+  }
 
   return (
     <Group
@@ -73,7 +82,13 @@ const ArgumentRendererUnstyled = (props) => {
           {type && ':'}
         </span>
       )}
-      {type && <Type>{type.name}</Type>}
+      {type && (
+        <Type>
+          {type.name}
+          {isOptional && '?'}
+          {!!defaultValue && `=${defaultValue}`}
+        </Type>
+      )}
       {type && description && ' — '}
       {description && <Markdown text={`${description}`} inline />}
     </Group>

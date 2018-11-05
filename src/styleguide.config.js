@@ -118,6 +118,7 @@ export default function createConfig(userConfig = {}, options = {}) {
     theme: {},
     title: pkg.name,
     verbose: false,
+    version: pkg.version,
     webpackConfig: webpackMerge({
       plugins: [
         new webpack.SourceMapDevToolPlugin({
@@ -226,6 +227,7 @@ export default function createConfig(userConfig = {}, options = {}) {
       ToolbarButtonRenderer: path.join(__dirname, '../lib/rsg-bs-components/ToolbarButton/ToolbarButtonRenderer.js'),
       TypeRenderer: path.join(__dirname, '../lib/rsg-bs-components/Type/TypeRenderer.js'),
       Usage: path.join(__dirname, '../lib/rsg-bs-components/Usage/Usage.js'),
+      VersionRenderer: path.join(__dirname, '../lib/rsg-bs-components/Version/VersionRenderer.js'),
       WelcomeRenderer: path.join(__dirname, '../lib/rsg-bs-components/Welcome/WelcomeRenderer.js'),
     },
     getComponentPathLine(componentPath) {

@@ -19,7 +19,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   };
   // font
   // - font-family
-  v['$rsg-font-family-base'] = u['$rsg-font-family-base'] || '"Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+  v['$rsg-font-family-base'] = u['$rsg-font-family-base'] || '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"';
   v['$rsg-font-family-monospace'] = u['$rsg-font-family-monospace'] || 'Consolas, "Liberation Mono", Menlo, monospace';
   v['$rsg-font-family-highlight'] = u['$rsg-font-family-highlight'] || 'SF Mono, Monaco, "Inconsolata", "Fira Code", "Fira Mono", "Droid Sans Mono", Consolas, "Roboto Mono", "Source Code Pro", monospace';
   // - font-size
@@ -104,7 +104,7 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   };
   v['$rsg-styleguide-sidebar-close-transition'] = u['$rsg-styleguide-sidebar-close-transition'] || 'transform ease-out 500ms';
   v['$rsg-styleguide-sidebar-close-transform'] = u['$rsg-styleguide-sidebar-close-transform'] || {
-    md: 'translateX(-250px)',
+    md: 'translateX(-260px)',
     lg: 'translateX(0px)',
   };
   v['$rsg-styleguide-sidebar-button-transform'] = u['$rsg-styleguide-sidebar-button-transform'] || 'rotate(0deg)';
@@ -120,8 +120,8 @@ export function makeTheme(userTheme = { styleguide: {} }) {
     md: 'visible',
     lg: 'hidden',
   };
-  v['$rsg-styleguide-sidebar-open-button-transition'] = u['$rsg-styleguide-sidebar-open-button-transition'] || 'transform 500ms';
-  v['$rsg-styleguide-sidebar-open-button-transform'] = u['$rsg-styleguide-sidebar-open-button-transform'] || 'translateX(230px) rotate(90deg)';
+  v['$rsg-styleguide-sidebar-open-button-transition'] = u['$rsg-styleguide-sidebar-open-button-transition'] || 'transform ease-out 500ms';
+  v['$rsg-styleguide-sidebar-open-button-transform'] = u['$rsg-styleguide-sidebar-open-button-transform'] || 'translateX(193px) rotate(90deg)';
   v['$rsg-styleguide-sidebar-close-button-transition'] = u['$rsg-styleguide-sidebar-close-button-transition'] || 'transform 700ms';
   v['$rsg-styleguide-sidebar-close-button-z-index'] = u['$rsg-styleguide-sidebar-close-button-z-index'] || '-500';
   v['$rsg-styleguide-sidebar-close-button-transform'] = u['$rsg-styleguide-sidebar-close-button-transform'] || {
@@ -395,13 +395,13 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   // - sidebar
   v['$rsg-sidebar-linear-gradient'] = u['$rsg-sidebar-linear-gradient'] || v['$rsg-color-sidebar-background'];
   v['$rsg-sidebar-box-shadow'] = u['$rsg-sidebar-box-shadow'] || {
-    xs: 'non',
-    sm: `${v['$rsg-space'].xs} 0 5px -2px #e2e2e2`,
+    xs: 'none',
+    sm: '1px 0px 5px 2px rgba(0,0,0,.15)',
   };
   v['$rsg-sidebar-logo-padding'] = u['$rsg-sidebar-logo-padding'] || '30px 20px 0 20px';
   v['$rsg-sidebar-logo-align'] = u['$rsg-sidebar-logo-align'] || 'center';
-  v['$rsg-sidebar-logo-title-line-height'] = u['$rsg-sidebar-logo-title-line-height'] || '1';
-  v['$rsg-sidebar-logo-title-word-wrap'] = u['$rsg-sidebar-logo-title-word-wrap'] || 'break-word';
+  v['$rsg-sidebar-title-line-height'] = u['$rsg-sidebar-logo-title-line-height'] || '1';
+  v['$rsg-sidebar-title-word-wrap'] = u['$rsg-sidebar-logo-title-word-wrap'] || 'break-word';
   v['$rsg-sidebar-logo-svg-height'] = u['$rsg-sidebar-logo-svg-height'] || '35px';
   v['$rsg-sidebar-logo-svg-margin'] = u['$rsg-sidebar-logo-svg-margin'] || '0 0 0 -8px';
   // - table of content
@@ -434,16 +434,15 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-component-list-heading-button-outline'] = u['$rsg-component-list-heading-button-outline'] || '0';
   v['$rsg-component-list-heading-button-border'] = u['$rsg-component-list-heading-button-border'] || 'none';
   v['$rsg-component-list-heading-button-cursor'] = u['$rsg-component-list-heading-button-cursor'] || 'pointer';
-  v['$rsg-component-list-heading-margin'] = u['$rsg-component-list-heading-margin'] || '15px 0 0 0';
-  v['$rsg-component-list-heading-border-bottom'] = u['$rsg-component-list-heading-border-bottom'] || `1px solid ${v['$rsg-gray-light']}`;
+  v['$rsg-component-list-heading-margin'] = u['$rsg-component-list-heading-margin'] || '0';
+  v['$rsg-component-list-heading-border-bottom'] = u['$rsg-component-list-heading-border-bottom'] || 'none';
   v['$rsg-component-list-heading-color'] = u['$rsg-component-list-heading-color'] || v['$rsg-color-base'];
   v['$rsg-component-list-heading-hover-color'] = u['$rsg-component-list-heading-hover-color'] || v['$rsg-color-primary'];
-  v['$rsg-component-list-heading-font-size'] = u['$rsg-component-list-heading-font-size'] || v['$rsg-font-size'].lg;
-  v['$rsg-component-list-heading-font-weight'] = u['$rsg-component-list-heading-font-weight'] || '500';
-  v['$rsg-component-list-icon-margin'] = u['$rsg-component-list-icon-margin'] || '15px 15px 0 0';
+  v['$rsg-component-list-heading-font-size'] = u['$rsg-component-list-heading-font-size'] || v['$rsg-font-size'].md;
+  v['$rsg-component-list-icon-margin'] = u['$rsg-component-list-icon-margin'] || '0 15px 0 0';
   v['$rsg-component-list-icon-color'] = u['$rsg-component-list-icon-color'] || v['$rsg-component-list-heading-color'];
   v['$rsg-component-list-icon-transition'] = u['$rsg-component-list-icon-transition'] || 'transform 1s';
-  v['$rsg-component-list-icon-transform'] = u['$rsg-component-list-icon-transform'] || 'translateY(-10px) rotateX(180deg)';
+  v['$rsg-component-list-icon-transform'] = u['$rsg-component-list-icon-transform'] || 'rotateX(180deg)';
   // table
   v['$rsg-table-border'] = u['$rsg-table-border'] || 'none';
   v['$rsg-table-layout'] = u['$rsg-table-layout'] || {
@@ -548,6 +547,11 @@ export function makeTheme(userTheme = { styleguide: {} }) {
   v['$rsg-welcome-max-width'] = u['$rsg-welcome-max-width'] || '1000';
   v['$rsg-welcome-margin'] = u['$rsg-welcome-margin'] || '0 auto';
   v['$rsg-welcome-padding'] = u['$rsg-welcome-padding'] || v['$rsg-space'].md;
+  // Version
+  v['$rsg-version-color'] = u['$rsg-version-color'] || v['$rsg-white'];
+  v['$rsg-version-margin'] = u['$rsg-version-margin'] || '0';
+  v['$rsg-version-font-family'] = u['$rsg-version-font-family'] || 'inherit';
+  v['$rsg-version-font-size'] = u['$rsg-version-font-size'] || v['$rsg-font-size'].md;
   newTheme.styleguide = v;
   return { ...userTheme, ...newTheme };
 }

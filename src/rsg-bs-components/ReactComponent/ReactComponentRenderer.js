@@ -10,14 +10,15 @@ import Pathline from 'rsg-components/Pathline';
 export const defaultProps = {
   theme: {
     styleguide: {
-      '$rsg-react-component-margin': '0 0 40px 0',
-      '$rsg-react-component-header-margin': '0 0 16px 0',
+      '$rsg-react-component-margin-bottom': '40px',
+      '$rsg-react-component-header-margin-bottom': '16px',
       '$rsg-react-component-docs-color': '#333',
       '$rsg-react-component-docs-font-size': '16px',
+      '$rsg-react-component-tabs-margin-bottom': '16px',
+      '$rsg-react-component-tabs-button-margin-bottom': '8px',
       '$rsg-react-component-tabs-overflow-x': 'auto',
-      '$rsg-react-component-tabs-overflow-y': 'hidden',
-      '$rsg-react-component-tabs-margin': '0 0 16px 0',
-      '$rsg-react-component-tabs-button-margin': '0 0 8px 0',
+      '$rsg-react-component-tabs-max-width': '100%',
+      '$rsg-react-component-tabs-webkit-overflow-scrolling': 'touch',
     },
   },
 };
@@ -50,14 +51,16 @@ export const propTypes = {
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
-      '$rsg-react-component-margin': PropTypes.string,
-      '$rsg-react-component-header-margin': PropTypes.string,
+      '$rsg-react-component-margin-bottom': PropTypes.string,
+      '$rsg-react-component-header-margin-bottom': PropTypes.string,
       '$rsg-react-component-docs-color': PropTypes.string,
       '$rsg-react-component-docs-font-size': PropTypes.string,
+      '$rsg-react-component-tabs-margin-bottom': PropTypes.string,
+      '$rsg-react-component-tabs-button-margin-bottom': PropTypes.string,
       '$rsg-react-component-tabs-overflow-x': PropTypes.string,
-      '$rsg-react-component-tabs-overflow-y': PropTypes.string,
-      '$rsg-react-component-tabs-margin': PropTypes.string,
-      '$rsg-react-component-tabs-button-margin': PropTypes.string,
+      '$rsg-react-component-tabs-max-width': PropTypes.string,
+      '$rsg-react-component-tabs-webkit-overflow-scrolling': PropTypes.string,
+
     }),
   }),
   /**
@@ -103,7 +106,7 @@ const ReactComponentRendererUnstyled = (props) => {
       {tabButtons && (
         <div className="rsg-react-component-tabs">
           <div className="rsg-react-component-tabs-button">{tabButtons}</div>
-          {tabBody}
+          <div className="rsg-react-component-tabs-body">{tabBody}</div>
         </div>
       )}
       {examples}
@@ -117,20 +120,23 @@ ReactComponentRendererUnstyled.propTypes = propTypes;
 const ReactComponentRenderer = styled(ReactComponentRendererUnstyled)` 
   ${(props) => `
     &.rsg-react-component {
-      margin: ${props.theme.styleguide['$rsg-react-component-margin']};
+      margin-bottom: ${props.theme.styleguide['$rsg-react-component-margin-bottom']};
       .rsg-react-component-header {
-        margin: ${props.theme.styleguide['$rsg-react-component-header-margin']};
+        margin-bottom: ${props.theme.styleguide['$rsg-react-component-header-margin-bottom']};
       }
       .rsg-react-component-docs {
         color: ${props.theme.styleguide['$rsg-react-component-docs-color']};
         font-size: ${props.theme.styleguide['$rsg-react-component-docs-font-size']};
       }
       .rsg-react-component-tabs {
-        overflow-x: ${props.theme.styleguide['$rsg-react-component-tabs-overflow-x']};
-        overflow-y: ${props.theme.styleguide['$rsg-react-component-tabs-overflow-y']};
-        margin: ${props.theme.styleguide['$rsg-react-component-tabs-margin']};
+        margin-bottom: ${props.theme.styleguide['$rsg-react-component-tabs-margin-bottom']};
         .rsg-react-component-tab-buttons {
-          margin: ${props.theme.styleguide['$rsg-react-component-tabs-button-margin']};
+          margin-bottom: ${props.theme.styleguide['$rsg-react-component-tabs-button-margin-bottom']};
+        }
+        .rsg-react-components-tabs-body {
+          overflow-x: ${props.theme.styleguide['$rsg-react-component-tabs-overflow-x']};
+          max-width: ${props.theme.styleguide['$rsg-react-component-tabs-max-width']};
+          -webkit-overflow-scrolling: ${props.theme.styleguide['$rsg-react-component-tabs-webkit-overflow-scrolling']};
         }
       }
     }

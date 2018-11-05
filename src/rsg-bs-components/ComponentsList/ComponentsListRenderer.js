@@ -23,7 +23,7 @@ export const propTypes = {
     href: PropTypes.string,
     filepath: PropTypes.string,
     heading: PropTypes.bool,
-    level: PropTypes.number,
+    sectionDepth: PropTypes.number,
     content: PropTypes.oneOfType([
       PropTypes.object,
       PropTypes.bool,
@@ -51,7 +51,6 @@ export const propTypes = {
       '$rsg-component-list-heading-color': PropTypes.string,
       '$rsg-component-list-heading-hover-color': PropTypes.string,
       '$rsg-component-list-heading-font-size': PropTypes.string,
-      '$rsg-component-list-heading-font-weight': PropTypes.string,
       '$rsg-component-list-icon-margin': PropTypes.string,
       '$rsg-component-list-icon-color': PropTypes.string,
       '$rsg-component-list-icon-transition': PropTypes.string,
@@ -73,7 +72,7 @@ export const defaultProps = { // eslint-disable-next-line react/default-props-ma
       href: '/#first-component',
       filepath: 'first-component.md',
       heading: false,
-      level: 0,
+      sectionDepth: 0,
       content: false,
       collapse: true,
       slug: 'first-component',
@@ -90,15 +89,14 @@ export const defaultProps = { // eslint-disable-next-line react/default-props-ma
       '$rsg-component-list-heading-button-border': 'none',
       '$rsg-component-list-heading-button-cursor': 'pointer',
       '$rsg-component-list-heading-margin': '15px 0 0 0',
-      '$rsg-component-list-heading-border-bottom': '1px solid #d8d8d8',
+      '$rsg-component-list-heading-border-bottom': 'none',
       '$rsg-component-list-heading-color': '#292b2c',
       '$rsg-component-list-heading-hover-color': '#B31255',
       '$rsg-component-list-heading-font-size': '16px',
-      '$rsg-component-list-heading-font-weight': '500',
-      '$rsg-component-list-icon-margin': '15px 15px 0 0',
+      '$rsg-component-list-icon-margin': '0 15px 0 0',
       '$rsg-component-list-icon-color': '#292b2c',
       '$rsg-component-list-icon-transition': 'transform 1s',
-      '$rsg-component-list-icon-transform': 'translateY(-10px) rotateX(180deg)',
+      '$rsg-component-list-icon-transform': 'rotateX(180deg)',
     },
   },
 };
@@ -117,12 +115,12 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
       this.state.itemList.forEach(({
         heading,
         name,
-        level,
+        sectionDepth,
         collapse,
       }) => {
         if (heading) {
           newState[`${name}-is-open`] = collapse;
-          newState[`${name}-index`] = level;
+          newState[`${name}-index`] = sectionDepth;
         }
       });
       this.setState(newState);
@@ -169,6 +167,7 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
     if (!itemList.length) {
       return null;
     }
+
     return (
       <Ul
         className={mapToCssModules(cn(className, 'rsg-component-list'), cssModule)}
@@ -179,11 +178,11 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
           name,
           href,
           content,
-          level,
+          sectionDepth,
         }) => (
           <Li
             key={href}
-            className={`list-${level}`}
+            className={`list-${sectionDepth}`}
           >
             {heading ? (
               <div
@@ -191,31 +190,32 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
                 tabIndex="0"
                 onClick={() => this.onClick(name)}
                 onKeyPress={() => this.onClick(name)}
-                className="list-button d-flex justify-content-between"
+                className="list-button font-weight-bold d-flex align-items-center justify-content-between"
               >
                 <Link
-                  className={`level-${level}`}
+                  className={`level-${sectionDepth}`}
                   href={href}
                 >
                   {name}
                 </Link>
                 <Fa
-                  className={`rsg-component-list-icon ${!this.state[`${name}-is-open`] ? 'no-collapse' : ''}`}
+                  className={`rsg-component-list-icon font-weight-bold ${!this.state[`${name}-is-open`] ? 'no-collapse' : ''}`}
                   size="lg"
                   angle-up
                 />
               </div>
             ) : (
               <Link
-                className={`level-${level}`}
+                className={`level-${sectionDepth}`}
                 href={href}
               >
                 {name}
               </Link>
-            )}
-            <Collapse isOpen={this.state[`${name}-is-open`]}>
-              {content}
-            </Collapse>
+            )}{content ? (
+              <Collapse isOpen={this.state[`${name}-is-open`]} className="font-weight-normal mt-2">
+                {content}
+              </Collapse>
+            ) : null}
           </Li>
         ))}
       </Ul>
@@ -226,8 +226,8 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
 const ComponentsListRenderer = styled(ComponentsListRendererUnstyled)` 
   ${(props) => `
     &.rsg-component-list {
-        color: ${props.theme.styleguide['$rsg-component-list-color']}; !important;
-        font-size: ${props.theme.styleguide['$rsg-component-list-font-size']} !important;
+        color: ${props.theme.styleguide['$rsg-component-list-color']};
+        font-size: ${props.theme.styleguide['$rsg-component-list-font-size']};
         line-height: ${props.theme.styleguide['$rsg-component-list-line-height']};
         .list-0 {
           margin: ${props.theme.styleguide['$rsg-component-list-heading-margin']};
@@ -239,19 +239,18 @@ const ComponentsListRenderer = styled(ComponentsListRendererUnstyled)`
           }
         }
       & .level-0 {
-        color: ${props.theme.styleguide['$rsg-component-list-heading-color']} !important;
+        color: ${props.theme.styleguide['$rsg-component-list-heading-color']};
   ${hover(
     `
-      color: ${props.theme.styleguide['$rsg-component-list-heading-hover-color']} !important;
+      color: ${props.theme.styleguide['$rsg-component-list-heading-hover-color']};
 
     `
   )}
-        font-size: ${props.theme.styleguide['$rsg-component-list-heading-font-size']} !important;
-        font-weight: ${props.theme.styleguide['$rsg-component-list-heading-font-weight']} !important;
+        font-size: ${props.theme.styleguide['$rsg-component-list-heading-font-size']};
       }
       & .rsg-component-list-icon {
         margin: ${props.theme.styleguide['$rsg-component-list-icon-margin']};
-        color: ${props.theme.styleguide['$rsg-component-list-icon-color']} !important;
+        color: ${props.theme.styleguide['$rsg-component-list-icon-color']};
         transition: ${props.theme.styleguide['$rsg-component-list-icon-transition']};
       }
       & .rsg-component-list-icon.no-collapse {
