@@ -39,6 +39,8 @@ export const propTypes = {
   sections: PropTypes.node,
   /** Toggle isolated style. */
   isolated: PropTypes.bool,
+  /** Set a one page per section. */
+  pagePerSection: PropTypes.bool,
   /** Depth used in `<HeadingSection />` component. */
   depth: PropTypes.number.isRequired,
   /** Theme variables. Can be: */
@@ -67,6 +69,7 @@ const SectionRendererUnstyled = (props) => {
     depth,
     isolated,
     description,
+    pagePerSection,
     cssModule,
     ...attributes
   } = omit(props, ['theme']);
@@ -77,7 +80,13 @@ const SectionRendererUnstyled = (props) => {
       {...attributes}
     >
       {name && (
-        <SectionHeading depth={depth} id={slug} slotName="sectionToolbar" slotProps={props}>
+        <SectionHeading
+          depth={depth}
+          id={slug}
+          slotName="sectionToolbar"
+          pagePerSection={pagePerSection}
+          slotProps={props}
+        >
           {name}
         </SectionHeading>
       )}

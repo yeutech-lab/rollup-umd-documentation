@@ -28,7 +28,7 @@ export const defaultProps = { // eslint-disable-next-line react/default-props-ma
       '$rsg-toc-collapse-button-content-icon-transform': 'translateY(2px) rotateX(180deg)',
     },
   },
-  useIsolatedLinks: false,
+  useRouterLinks: false,
 };
 
 export const propTypes = {
@@ -37,7 +37,7 @@ export const propTypes = {
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
   sections: PropTypes.array.isRequired,
-  useIsolatedLinks: PropTypes.bool,
+  useRouterLinks: PropTypes.bool,
   /** Theme variables. Can be: */
   theme: PropTypes.shape({
     styleguide: PropTypes.shape({
@@ -100,30 +100,41 @@ class TableOfContentsUnstyled extends Component {
     }
   }
 
-  renderLevel(sections, useIsolatedLinks = false, level = 0) {
+  renderLevel(sections, useRouterLinks = false, hashPath = [], useHashId = false) {
     const { isOpenCollapse } = this.state;
-    let levelIndex = 0;
-    levelIndex += level;
+
     const items = sections.map((section) => {
       const children = [...(section.sections || []), ...(section.components || [])];
+      const sectionDepth = section.sectionDepth || 0;
+      const childHashPath =
+        sectionDepth === 0 && useHashId ? hashPath : [...hashPath, section.name];
       return Object.assign({}, section, {
         heading: !!section.name && children.length > 0,
-        level: levelIndex,
+        content:
+          children.length > 0 &&
+          this.renderLevel(children, useRouterLinks, childHashPath, sectionDepth === 0),
         collapse: isOpenCollapse,
-        content: children.length > 0 && this.renderLevel(children, useIsolatedLinks, 1),
       });
     });
-    return <ComponentsList items={items} useIsolatedLinks={useIsolatedLinks} isOpenCollapse={isOpenCollapse} />;
+    return (
+      <ComponentsList
+        items={items}
+        hashPath={hashPath}
+        useHashId={useHashId}
+        useRouterLinks={useRouterLinks}
+        isOpenCollapse={isOpenCollapse}
+      />
+    );
   }
 
   renderSections() {
     const { searchTerm } = this.state;
-    const { sections, useIsolatedLinks } = this.props;
+    const { sections, useRouterLinks } = this.props;
     // If there is only one section, we treat it as a root section
     // In this case the name of the section won't be rendered and it won't get left padding
     const firstLevel = sections.length === 1 ? sections[0].components : sections;
     const filtered = filterSectionsByName(firstLevel, searchTerm);
-    return this.renderLevel(filtered, useIsolatedLinks);
+    return this.renderLevel(filtered, useRouterLinks);
   }
 
   render() {
@@ -131,7 +142,7 @@ class TableOfContentsUnstyled extends Component {
       className,
       cssModule,
       ...attributes
-    } = omit(this.props, ['theme', 'useIsolatedLinks']);
+    } = omit(this.props, ['theme', 'useRouterLinks']);
     const {
       searchTerm,
       hasCollapse,

@@ -26,6 +26,7 @@ export const defaultProps = {
       '$rsg-path-line-icon-cursor': 'pointer',
       '$rsg-path-line-icon-bottom': '3px',
       '$rsg-path-line-icon-hover-color': '#B31255',
+      '$rsg-path-line-word-break': 'break-all',
     },
   },
 };
@@ -53,6 +54,7 @@ export const propTypes = {
       '$rsg-path-line-icon-cursor': PropTypes.string,
       '$rsg-path-line-icon-bottom': PropTypes.string,
       '$rsg-path-line-icon-hover-color': PropTypes.string,
+      '$rsg-path-line-word-break': PropTypes.string,
     }),
   }),
   /**
@@ -94,6 +96,7 @@ const PathlineRenderer = styled(PathlineRendererUnstyled)`
   ${(props) => `
     &.rsg-path-line {
       font-family: ${props.theme.styleguide['$rsg-path-line-font-family']};
+      word-break: ${props.theme.styleguide['$rsg-path-line-word-break']};
   ${bp.up(
     'xs',
     props.theme['$grid-breakpoints'],

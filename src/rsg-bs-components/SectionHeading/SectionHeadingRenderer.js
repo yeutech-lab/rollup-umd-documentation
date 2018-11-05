@@ -152,8 +152,11 @@ const SectionHeadingRenderer = styled(SectionHeadingRendererUnstyled)`
         }
       }
       & .deprecated {
-        text-decoration: ${props.theme.styleguide['$rsg-section-heading-deprecated-text-decoration']};
         cursor: ${props.theme.styleguide['$rsg-section-heading-deprecated-cursor']};
+        &, &:hover {
+          text-decoration: ${props.theme.styleguide['$rsg-section-heading-deprecated-text-decoration']};
+
+        }
       }
       & .toolbar {
         margin-left: ${props.theme.styleguide['$rsg-section-heading-toolbar-margin-left']};

@@ -127,9 +127,11 @@ const HeadingRenderer = styled(HeadingRendererUnstyled)`
       }
       &.rsg-heading.h5 {
         font-size: ${props.theme.styleguide['$rsg-heading-mobile-font-size'].h5};
+        fontWeight: 'bold',
       }
       &.rsg-heading.h6 {
         font-size: ${props.theme.styleguide['$rsg-heading-mobile-font-size'].h6};
+        fontStyle: 'italic',
       }
     `
   )}

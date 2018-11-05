@@ -16,7 +16,7 @@ export const defaultProps = {
       '$rsg-error-line-height': '1.2',
       '$rsg-error-font-size': '13px',
       '$rsg-error-stack-color': '#c00',
-      '$rsg-error-stack-white-space': 'pre',
+      '$rsg-error-stack-white-space': 'pre-wrap',
       '$rsg-error-stack-font-family': 'Consolas, "Liberation Mono", Menlo, monospace',
       '$rsg-error-message-color': '#c00',
       '$rsg-error-message-font-family': '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',

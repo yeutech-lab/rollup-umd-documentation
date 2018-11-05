@@ -15,7 +15,7 @@ export const defaultProps = {
       '$rsg-playground-error-font-size': '13px',
       '$rsg-playground-error-font-family': 'Consolas, "Liberation Mono", Menlo, monospace',
       '$rsg-playground-error-color': '#c00',
-      '$rsg-playground-error-white-space': 'pre',
+      '$rsg-playground-error-white-space': 'pre-wrap',
     },
   },
 };

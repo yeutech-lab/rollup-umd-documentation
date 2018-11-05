@@ -89,6 +89,8 @@ export const propTypes = {
   children: PropTypes.node.isRequired,
   /** Table of content element to be rendered. */
   toc: PropTypes.node.isRequired,
+  /** Version of documentation. */
+  version: PropTypes.string,
   /** Toggle sidebar style. */
   hasSidebar: PropTypes.bool,
   /** Logo attributes in order to render menu logo. */
@@ -193,8 +195,8 @@ class StyleGuideRendererUnstyled extends Component {
     isOpenSidebar: false,
   };
 
-  shouldComponentUpdate(nextState) {
-    return (this.state.isOpenSidebar !== nextState.isOpenSidebar);
+  shouldComponentUpdate(nextProps, nextState) {
+    return (this.state.isOpenSidebar !== nextState.isOpenSidebar) || (this.props.children !== nextProps.children);
   }
 
   toggleSideBar = () => {
@@ -207,6 +209,7 @@ class StyleGuideRendererUnstyled extends Component {
     const {
       className,
       title,
+      version,
       children,
       toc,
       hasSidebar,
@@ -239,15 +242,13 @@ class StyleGuideRendererUnstyled extends Component {
                 bars
               />
             </div>
-            <SideBar className={`sidebar ${isOpenSidebar ? 'sidebar-open' : 'sidebar-close'}`} logo={logoMenu} title={title} items={toc} />
+            <SideBar className={`sidebar ${isOpenSidebar ? 'sidebar-open' : 'sidebar-close'}`} version={version} logo={logoMenu} title={title} items={toc} />
             <Ribbon />
           </div>
         )}
         <main className={`content ${isOpenSidebar && hasSidebar ? 'sidebar-open' : 'sidebar-close'}`} >
           {children}
-          {hasSidebar && (
-            <FooterRenderer logo={logoFooter} />
-          )}
+          <FooterRenderer logo={logoFooter} />
         </main>
       </div>
     );
@@ -291,22 +292,6 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
     `
   )}
       }
-    }
-    .content.sidebar-open {
-  ${bp.up(
-    'md',
-    props.theme['$grid-breakpoints'],
-    `
-      transform: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-transform'].md};
-    `
-  )}
-  ${bp.up(
-    'lg',
-    props.theme['$grid-breakpoints'],
-    `
-      transform: ${props.theme.styleguide['$rsg-styleguide-content-sidebar-open-transform'].lg};
-    `
-  )}
     }
     .content.sidebar-close {
   ${bp.up(
@@ -398,6 +383,8 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
       box-shadow: ${props.theme.styleguide['$rsg-styleguide-sidebar-button-box-shadow']};
       position: ${props.theme.styleguide['$rsg-styleguide-sidebar-button-position']};
       transition: ${props.theme.styleguide['$rsg-styleguide-sidebar-button-transition']};
+      top: 30px;
+      z-index: 4999;
   ${hover(`
     color: ${props.theme.styleguide['$rsg-styleguide-sidebar-button-hover-color']};
   `)} 
@@ -433,6 +420,7 @@ const StyleGuideRenderer = styled(StyleGuideRendererUnstyled)`
     props.theme['$grid-breakpoints'],
     `
       transform: ${props.theme.styleguide['$rsg-styleguide-sidebar-open-button-transform']};
+      color: white;
     `
   )}
     }
