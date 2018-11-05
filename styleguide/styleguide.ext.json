@@ -10,18 +10,21 @@
     "url": "https://github.com/yeutech-lab/rollup-umd-documentation",
     "text": "Fork us on GitHub"
   },
+  "pagePerSection": true,
   "sections": [
     {
       "name": "Introduction",
-      "content": "docs/introduction.md"
-    },
-    {
-      "name": "Installation",
-      "content": "docs/installation.md"
-    },
-    {
-      "name": "Upgrading",
-      "content": "docs/upgrading.md"
+      "content": "docs/introduction.md",
+      "sections": [
+        {
+          "name": "Installation",
+          "content": "docs/installation.md"
+        },
+        {
+          "name": "Upgrading",
+          "content": "docs/upgrading.md"
+        }
+      ]
     },
     {
       "name": "Configuration",
