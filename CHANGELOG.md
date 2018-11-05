@@ -1,3 +1,16 @@
+# [2.4.0](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.24...v2.4.0) (2018-11-05)
+
+
+### Bug Fixes
+
+* **package.json:** updated to "react-styleguidist": "8.0.2" ([220ad63](https://github.com/yeutech-lab/rollup-umd-documentation/commit/220ad63))
+* **rsg-components and theming:** updated rsg components following upgrade of react-styleguidist, added theming variables and improved old theme. ([1e086b0](https://github.com/yeutech-lab/rollup-umd-documentation/commit/1e086b0))
+
+
+### Features
+
+* **styleguide.ext.json:** added functionality pagePerSection and reorganized content accordingly. ([c45c794](https://github.com/yeutech-lab/rollup-umd-documentation/commit/c45c794))
+
 ## [2.3.24](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.23...v2.3.24) (2018-10-15)
 
 
