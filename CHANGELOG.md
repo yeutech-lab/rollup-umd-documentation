@@ -1,3 +1,10 @@
+## [2.4.1](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.0...v2.4.1) (2018-11-06)
+
+
+### Bug Fixes
+
+* **imports:** corrected import alias for slots/. ([ece2b51](https://github.com/yeutech-lab/rollup-umd-documentation/commit/ece2b51))
+
 # [2.4.0](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.3.24...v2.4.0) (2018-11-05)
 
 
