@@ -218,7 +218,7 @@ export default function createConfig(userConfig = {}, options = {}) {
       SectionRenderer: path.join(__dirname, '../lib/rsg-bs-components/Section/SectionRenderer.js'),
       SectionHeadingRenderer: path.join(__dirname, '../lib/rsg-bs-components/SectionHeading/SectionHeadingRenderer.js'),
       SectionsRenderer: path.join(__dirname, '../lib/rsg-bs-components/Sections/SectionsRenderer.js'),
-      slots: path.join(__dirname, '../lib/rsg-bs-components/slots/index.js'),
+      slots: path.join(__dirname, '../lib/rsg-bs-components/slots'),
       TabButtonRenderer: path.join(__dirname, '../lib/rsg-bs-components/TabButton/TabButtonRenderer.js'),
       TableRenderer: path.join(__dirname, '../lib/rsg-bs-components/Table/TableRenderer.js'),
       TableOfContents: path.join(__dirname, '../lib/rsg-bs-components/TableOfContents/TableOfContents'),
