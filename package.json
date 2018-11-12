@@ -231,11 +231,11 @@
     "lint-staged"
   ],
   "dependencies": {
-    "@bootstrap-styled/css-mixins": "^1.0.1",
-    "@bootstrap-styled/navigation-bar": "^1.8.13",
-    "@bootstrap-styled/provider": "^1.0.2",
-    "@bootstrap-styled/v4": "^1.0.2",
-    "bootstrap-styled": "^1.8.1",
+    "@bootstrap-styled/css-mixins": "^1.0.2",
+    "@bootstrap-styled/navigation-bar": "^1.8.18",
+    "@bootstrap-styled/provider": "^1.1.4",
+    "@bootstrap-styled/v4": "^1.1.5",
+    "bootstrap-styled": "^1.0.1",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
     "clipboard-copy": "^2.0.0",
@@ -260,7 +260,7 @@
     "react-group": "^1.0.6",
     "react-transition-group": "^2.2.1",
     "style-loader": "^0.21.0",
-    "styled-components": "^3.4.6",
+    "styled-components": "^4.0.3",
     "url-loader": "^0.5.8",
     "webpack": "^4.6.0",
     "webpack-merge": "^4.1.2"
