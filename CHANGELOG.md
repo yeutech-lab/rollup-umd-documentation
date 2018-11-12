@@ -1,3 +1,10 @@
+## [2.4.2](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.1...v2.4.2) (2018-11-12)
+
+
+### Performance Improvements
+
+* **bs:** added new packages rdy from stlyed v.4 ([db4c6c4](https://github.com/yeutech-lab/rollup-umd-documentation/commit/db4c6c4))
+
 ## [2.4.1](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.0...v2.4.1) (2018-11-06)
 
 
