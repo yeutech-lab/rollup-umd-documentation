@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-npx rollup-umd-scripts doc variable \
+npx @rollup-umd/documentation-cli variable \
   PACKAGE_NAME=$(node -p "require('./package.json').name") \
   PACKAGE_PEERS="$(npx rollup-umd-scripts peer npm-install-cmd)" \
   PACKAGE_VERSION=$(node -p "require('./package.json').version") \
@@ -12,5 +12,5 @@ npx rollup-umd-scripts doc variable \
   CI_PROJECT_NAME=$(echo $TRAVIS_REPO_SLUG | awk -F / '{print $2}') \
   IMG_SHIELD_PUBLISHING=$(npx rollup-umd-scripts publish status --badge)
 
-npx rollup-umd-scripts doc add-section -n 'Code of conduct' -a 'FAQ' -c 'CODE_OF_CONDUCT.md' --force
-npx rollup-umd-scripts doc add-section -n 'Changelog' -a 'Code of conduct' -c 'CHANGELOG.md' --force
+npx @rollup-umd/documentation-cli add-section -n 'Code of conduct' -a 'FAQ' -c 'CODE_OF_CONDUCT.md' --force
+npx @rollup-umd/documentation-cli add-section -n 'Changelog' -a 'Code of conduct' -c 'CHANGELOG.md' --force
