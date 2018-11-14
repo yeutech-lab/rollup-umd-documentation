@@ -231,11 +231,11 @@
     "lint-staged"
   ],
   "dependencies": {
-    "@bootstrap-styled/css-mixins": "^1.0.2",
-    "@bootstrap-styled/navigation-bar": "^1.8.19",
+    "@bootstrap-styled/css-mixins": "^1.1.0",
+    "@bootstrap-styled/navigation-bar": "^1.8.20",
     "@bootstrap-styled/provider": "^1.1.5",
-    "@bootstrap-styled/v4": "^1.1.6",
-    "bootstrap-styled": "^2.0.2",
+    "@bootstrap-styled/v4": "^1.2.2",
+    "bootstrap-styled": "^2.0.3",
     "buble": "^0.19.3",
     "classnames": "^2.2.5",
     "clipboard-copy": "^2.0.0",
