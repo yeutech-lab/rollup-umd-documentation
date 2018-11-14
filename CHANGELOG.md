@@ -1,3 +1,11 @@
+## [2.4.3](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.2...v2.4.3) (2018-11-14)
+
+
+### Bug Fixes
+
+* **dependencies:** [@bs](https://github.com/bs). ([12da8e6](https://github.com/yeutech-lab/rollup-umd-documentation/commit/12da8e6))
+* **dependencies:** Update bootstrap-styled to v2.0.2, added .npmrc with package-lock=false ([eb20b52](https://github.com/yeutech-lab/rollup-umd-documentation/commit/eb20b52))
+
 ## [2.4.2](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.1...v2.4.2) (2018-11-12)
 
 
