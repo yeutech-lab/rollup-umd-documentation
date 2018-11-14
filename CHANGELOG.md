@@ -1,3 +1,11 @@
+## [2.4.4](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.3...v2.4.4) (2018-11-14)
+
+
+### Bug Fixes
+
+* **dependencies:** update provider ([758da90](https://github.com/yeutech-lab/rollup-umd-documentation/commit/758da90))
+* **dependencies:** upgrade bootstrap-styled and v4 ([be20265](https://github.com/yeutech-lab/rollup-umd-documentation/commit/be20265))
+
 ## [2.4.3](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.2...v2.4.3) (2018-11-14)
 
 
