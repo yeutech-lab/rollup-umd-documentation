@@ -14,7 +14,7 @@ describe('<ComponentsListRenderer />', () => {
     props = Object.assign(defaultProps, {
       items: [
         {
-          name: 'First component',
+          visibleName: 'First component',
           href: '/#first-component',
           filepath: 'first-component.md',
           heading: false,
@@ -56,7 +56,7 @@ describe('<ComponentsListRenderer />', () => {
       heading: false,
       href: '/#first-component',
       level: 0,
-      name: 'First component',
+      visibleName: 'First component',
       sections: [],
       slug: 'first-component',
     }]);
@@ -66,7 +66,7 @@ describe('<ComponentsListRenderer />', () => {
       theme,
       items: [
         {
-          name: 'First component',
+          visibleName: 'First component',
           href: '/#first-component',
           filepath: 'first-component.md',
           heading: true,
@@ -77,7 +77,7 @@ describe('<ComponentsListRenderer />', () => {
           components: [],
           sections: [
             {
-              name: 'Sub component',
+              visibleName: 'Sub component',
               href: '/#sub-component',
               filepath: 'sub-component.md',
               heading: false,

@@ -29,7 +29,7 @@ export const propTypes = {
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
   /** Name used in id. */
-  name: PropTypes.string.isRequired,
+  visibleName: PropTypes.string,
   /** Heading element to be rendered. */
   heading: PropTypes.node.isRequired,
   /** Component directory file path. */
@@ -75,7 +75,7 @@ export const propTypes = {
 const ReactComponentRendererUnstyled = (props) => {
   const {
     className,
-    name,
+    visibleName,
     heading,
     pathLine,
     description,
@@ -89,7 +89,7 @@ const ReactComponentRendererUnstyled = (props) => {
 
   return (
     <div
-      id={`${name}-container`}
+      id={`${visibleName}-container`}
       className={mapToCssModules(cn(className, 'rsg-react-component'), cssModule)}
       {...attributes}
     >

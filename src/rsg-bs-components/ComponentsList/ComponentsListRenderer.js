@@ -19,7 +19,7 @@ export const propTypes = {
   className: PropTypes.string, // eslint-disable-line react/require-default-props
   /** Items used to create component list such as table of content and section. Can be: */
   items: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
+    visibleName: PropTypes.string,
     href: PropTypes.string,
     filepath: PropTypes.string,
     heading: PropTypes.bool,
@@ -68,7 +68,7 @@ export const propTypes = {
 export const defaultProps = { // eslint-disable-next-line react/default-props-match-prop-types
   items: [
     {
-      name: 'First component',
+      visibleName: 'First component',
       href: '/#first-component',
       filepath: 'first-component.md',
       heading: false,
@@ -114,13 +114,13 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
       const newState = {};
       this.state.itemList.forEach(({
         heading,
-        name,
+        visibleName,
         sectionDepth,
         collapse,
       }) => {
         if (heading) {
-          newState[`${name}-is-open`] = collapse;
-          newState[`${name}-index`] = sectionDepth;
+          newState[`${visibleName}-is-open`] = collapse;
+          newState[`${visibleName}-index`] = sectionDepth;
         }
       });
       this.setState(newState);
@@ -136,22 +136,22 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
     }
   }
 
-  onClick = (name) => {
+  onClick = (visibleName) => {
     this.setState({
-      [`${name}-is-open`]: !this.state[`${name}-is-open`],
+      [`${visibleName}-is-open`]: !this.state[`${visibleName}-is-open`],
     });
   }
 
   updateItems(items, cb) {
     this.setState({
-      itemList: items.filter((item) => item.name),
+      itemList: items.filter((item) => item.visibleName),
     }, cb);
   }
   updateCollapseItems(isCollapse) {
     const newState = {};
-    this.state.itemList.forEach(({ heading, name }) => {
+    this.state.itemList.forEach(({ heading, visibleName }) => {
       if (heading) {
-        newState[`${name}-is-open`] = isCollapse;
+        newState[`${visibleName}-is-open`] = isCollapse;
       }
     });
     this.setState(newState);
@@ -175,7 +175,7 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
       >
         {itemList.map(({
           heading,
-          name,
+          visibleName,
           href,
           content,
           sectionDepth,
@@ -188,18 +188,18 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
               <div
                 role="button"
                 tabIndex="0"
-                onClick={() => this.onClick(name)}
-                onKeyPress={() => this.onClick(name)}
+                onClick={() => this.onClick(visibleName)}
+                onKeyPress={() => this.onClick(visibleName)}
                 className="list-button font-weight-bold d-flex align-items-center justify-content-between"
               >
                 <Link
                   className={`level-${sectionDepth}`}
                   href={href}
                 >
-                  {name}
+                  {visibleName}
                 </Link>
                 <Fa
-                  className={`rsg-component-list-icon font-weight-bold ${!this.state[`${name}-is-open`] ? 'no-collapse' : ''}`}
+                  className={`rsg-component-list-icon font-weight-bold ${!this.state[`${visibleName}-is-open`] ? 'no-collapse' : ''}`}
                   size="lg"
                   angle-up
                 />
@@ -209,10 +209,10 @@ class ComponentsListRendererUnstyled extends React.Component { // eslint-disable
                 className={`level-${sectionDepth}`}
                 href={href}
               >
-                {name}
+                {visibleName}
               </Link>
             )}{content ? (
-              <Collapse isOpen={this.state[`${name}-is-open`]} className="font-weight-normal mt-2">
+              <Collapse isOpen={this.state[`${visibleName}-is-open`]} className="font-weight-normal mt-2">
                 {content}
               </Collapse>
             ) : null}

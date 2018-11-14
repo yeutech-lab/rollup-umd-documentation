@@ -39,7 +39,7 @@ export const propTypes = {
    */
   className: PropTypes.string, // eslint-disable-line react/require-default-props
   /** Display button name. */
-  name: PropTypes.string,
+  visibleName: PropTypes.string,
   /** Set function passed to onclick button event. */
   onClick: PropTypes.func,
   /** Toggle button active style. */
@@ -81,7 +81,7 @@ export const propTypes = {
 const TabButtonRendererUnstyled = (props) => {
   const {
     className,
-    name,
+    visibleName,
     onClick,
     active,
     children,
@@ -97,7 +97,7 @@ const TabButtonRendererUnstyled = (props) => {
         { active }
       ), cssModule)}
       {...attributes}
-      name={name}
+      name={visibleName}
       onClick={onClick}
     >
       {children}
