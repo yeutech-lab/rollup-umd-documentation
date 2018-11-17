@@ -1,3 +1,10 @@
+## [2.4.5](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.4...v2.4.5) (2018-11-17)
+
+
+### Bug Fixes
+
+* **favicon:** added default yeutech favicon ([262019b](https://github.com/yeutech-lab/rollup-umd-documentation/commit/262019b))
+
 ## [2.4.4](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.3...v2.4.4) (2018-11-14)
 
 
