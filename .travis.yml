@@ -62,7 +62,7 @@ jobs:
         - 'lts/*'
       skip_cleanup: true
       script:
-        - npx semantic-release
+        - npx semantic-release --debug
 
     # Job: Page
     - stage: deploy
