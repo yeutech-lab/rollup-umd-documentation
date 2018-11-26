@@ -7,9 +7,9 @@ branches:
   except:
     - gh-pages # will be deployed to, no need to build it
 
-cache:
-  directories:
-    - node_modules
+#cache:
+#  directories:
+#    - node_modules
 
 before_install:
     - npm install -g npm
@@ -62,7 +62,7 @@ jobs:
         - 'lts/*'
       skip_cleanup: true
       script:
-        - GH_TOKEN=$GH_TOKEN npx semantic-release --debug
+        - GH_TOKEN=$GH_TOKEN npx semantic-release
 
     # Job: Page
     - stage: deploy
