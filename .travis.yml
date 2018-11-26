@@ -62,7 +62,9 @@ jobs:
         - 'lts/*'
       skip_cleanup: true
       script:
-        - GH_TOKEN=$GH_TOKEN npx semantic-release
+        - npm ls @octokit/request
+        - npm ls node-fetch
+        - npx semantic-release
 
     # Job: Page
     - stage: deploy
