@@ -104,7 +104,7 @@ const SideBarUnstyled = (props) => {
           )}
         </Logo>
         <p className="navigation-title">{title}</p>
-        {version && <Version>v{version}</Version>}
+        {version && <Version>v.{version}</Version>}
       </div>
       <div className="font-weight-bold">
         {items}
