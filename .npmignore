@@ -7,6 +7,8 @@ internals
 .eslintignore
 bundle-stats.html
 CODE_OF_CONDUCT.md
+CHANGELOG.md
+CONTRIBUTING.md
 declination.json
 rollup.config.js
 /styleguide.config.js
