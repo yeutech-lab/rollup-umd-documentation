@@ -1,3 +1,16 @@
+## [2.4.6](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.5...v2.4.6) (2018-11-26)
+
+
+### Bug Fixes
+
+* **dependencies:** installed node-fetch@2.3.0 to fix error from styled-components using old version of node-fetch ([d6d4a1c](https://github.com/yeutech-lab/rollup-umd-documentation/commit/d6d4a1c))
+* **menu:** remove . prefixing version number and upgrade [@semantic-release](https://github.com/semantic-release) dependencies ([9d97a9c](https://github.com/yeutech-lab/rollup-umd-documentation/commit/9d97a9c))
+* **release:** downgrade [@semantic-release](https://github.com/semantic-release)/github to 5.2.1 ([d0b9765](https://github.com/yeutech-lab/rollup-umd-documentation/commit/d0b9765))
+* **release:** remove github dependencies ([dcc7344](https://github.com/yeutech-lab/rollup-umd-documentation/commit/dcc7344))
+* **release:** remove github dependencies ([cb84026](https://github.com/yeutech-lab/rollup-umd-documentation/commit/cb84026))
+* **release:** remove github dependencies ([8662b4a](https://github.com/yeutech-lab/rollup-umd-documentation/commit/8662b4a))
+* **semantic:** removing gitlab plugin and added github plugin ([1cc5c6b](https://github.com/yeutech-lab/rollup-umd-documentation/commit/1cc5c6b))
+
 ## [2.4.5](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.4...v2.4.5) (2018-11-17)
 
 
