@@ -1,3 +1,10 @@
+## [2.4.7](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.6...v2.4.7) (2018-12-05)
+
+
+### Bug Fixes
+
+* **packages:** updated bs ecosystem. ([4665cc0](https://github.com/yeutech-lab/rollup-umd-documentation/commit/4665cc0))
+
 ## [2.4.6](https://github.com/yeutech-lab/rollup-umd-documentation/compare/v2.4.5...v2.4.6) (2018-11-26)
 
 
